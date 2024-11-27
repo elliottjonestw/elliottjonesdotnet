@@ -1,21 +1,16 @@
-name: FTP Deploy
-
-on:
-  push:
-    branches:
-      - main
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Deploy to FTP
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.vpd.vvw.mybluehost.me
-        username: ${{ secrets.FTP_USERNAME }}
+        username: elliottjones
         password: ${{ secrets.FTP_PASSWORD }}
