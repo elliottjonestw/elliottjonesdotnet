@@ -313,5 +313,49 @@ h1.blog-title {
     font-size: 1.4em;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Ensures buttons are evenly spaced */
+    width: 100%;
+    padding: 0; /* Remove internal padding in the navbar itself */
+    margin: 0; /* Remove any extra margin */
+    box-sizing: border-box; /* Ensure it respects the container width */
+    background-color: transparent; /* Keep the background transparent */
+    margin-bottom: 20px; /* Space below navbar */
+    margin-top: 20px; /* Space above navbar */
+    gap: 10px; /* Add space between buttons */
+}
 
+.nav-button {
+    flex: 1; /* Buttons equally share space */
+    text-align: center; /* Center-align text in buttons */
+    padding: 8px 16px; /* Add space inside buttons */
+    margin: 0; /* Remove gaps between buttons */
+    background-color: #0077cc; /* Button color */
+    color: white; /* Text color */
+    font-size: 0.95rem; /* Slightly smaller font size */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove default borders */
+    border-radius: 0; /* Remove border radius for a clean edge */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
 
+.nav-button:hover {
+    background-color: #005fa3; /* Darker hover effect */
+}
+
+.nav-button:active {
+    background-color: #004a82; /* Even darker when clicked */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: nowrap; /* Prevent wrapping of buttons */
+    }
+
+    .nav-button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 6px 12px; /* Adjust button padding */
+    }
+}
