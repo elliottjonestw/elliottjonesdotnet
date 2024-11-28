@@ -34,39 +34,8 @@
 
 <body>
   <div class="cv-container">
-    <div class="header">
-      <a href="headshot.png" data-lightbox="headshot">
-        <img src="headshot.png" alt="Profile Picture" class="profile-picture">
-      </a>
-      <div class="name-and-headline">
-
-        <!-- ➡️ Name and Headline -->
-
-        <h1>Elliott Jones</h1>
-        <h2 class="headline">New Taipei City</h2>
-
-        <!-- ⬅️ Name and Headline -->
-
-        
-        <!-- ➡️ Social Buttons -->
-
-        <div class="social-buttons">
-          <a href="https://www.linkedin.com/in/elliottjonesjiehan/"><img src="linkedin.png" alt="LinkedIn" class="social-button"></a> 
-          <a href="mailto:elliottpublic.ghbxi@passinbox.com"><img src="email.png" alt="Email Button" class="social-button"></a>
-        </div>
-
-        <!-- ⬅️ Social Buttons -->
-
-      </div>
-    </div>
-
-    <!-- ➡️ Bio -->
-
-    <p>Close to a decade in Taiwan and mainland China. Near-native level Mandarin Chinese fluency. Have worked for the British government in Shanghai and for many of Taiwan’s top hardware and software companies.</p>
-
-    <!-- ⬅️ Bio -->
-
-    <br><hr><br>
+    
+<link rel="preload" href="bio.html" as="document">
 
     <!-- ➡️ Work Experience -->
 
@@ -403,6 +372,26 @@ window.onclick = function(event) {
     </div> -->
 
   <!-- ⬅️ Video Popup -->
+
+<script>
+        // Function to fetch and inject the bio content into the page
+        function loadBio() {
+            fetch('bio.html')
+                .then(response => response.text())
+                .then(data => {
+                    // Inject the fetched HTML into the #bio-section
+                    document.getElementById('bio-section').innerHTML = data;
+                    // Fade in the bio content after it's injected
+                    document.getElementById('bio-section').style.opacity = 1;
+                })
+                .catch(error => console.error('Error loading bio:', error));
+        }
+
+        // Load the bio content on page load
+        window.onload = function() {
+            loadBio();
+        };
+    </script>
 
 
   <!-- ➡️ External Scripts -->
