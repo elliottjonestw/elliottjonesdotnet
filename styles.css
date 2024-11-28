@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-.cv-container {
+.main-area {
     width: 80%;
     max-width: 800px;
     margin: 50px auto;
@@ -34,7 +34,7 @@ body {
     flex-direction: column;
 }
 
-.cv-container h1 {
+.main-area h1 {
     text-align: left;
     color: #333;
     margin: 0;
