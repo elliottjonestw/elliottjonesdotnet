@@ -130,6 +130,34 @@
 
     <!-- ⬅️ Blog Content -->
 
+    </div>
+
+    <!-- ➡️ Language Selector -->
+
+    <div class="language-selector">
+      <label for="language-select">Language:</label> <select id="language-select" onchange="changeLanguage()">
+        <option value="../../en/blog/first_time_tocfl.html">
+          English
+        </option>
+        <option value="../../zh/blog/first_time_tocfl.html">
+          繁體中文
+        </option>
+      </select>
+    </div>
+
+    <script>
+      function changeLanguage() {
+          var select = document.getElementById("language-select");
+          var selectedValue = select.value;
+          if (selectedValue) {
+              window.location.href = selectedValue;
+          }
+      }
+    </script> 
+
+  <!-- ⬅️ Language Selector -->
+
+
     <!-- ➡️ External Scripts -->
 
     <script src="../../lightbox-plus-jquery.js"></script>

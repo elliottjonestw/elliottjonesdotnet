@@ -110,6 +110,33 @@
 
     <!-- ⬅️ Blog Articles -->
 
+        </div>
+
+    <!-- ➡️ Language Selector -->
+
+    <div class="language-selector">
+      <label for="language-select">語言：</label> <select id="language-select" onchange="changeLanguage()">
+        <option value="../zh/blog.html">
+          繁體中文
+        </option>
+        <option value="../en/blog.html">
+          English
+        </option>
+      </select>
+    </div>
+
+    <script>
+      function changeLanguage() {
+          var select = document.getElementById("language-select");
+          var selectedValue = select.value;
+          if (selectedValue) {
+              window.location.href = selectedValue;
+          }
+      }
+    </script> 
+
+  <!-- ⬅️ Language Selector -->
+
     <!-- ➡️ External Scripts -->
 
     <script src="../lightbox-plus-jquery.js"></script>
