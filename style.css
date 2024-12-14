@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     background-color: #f4f4f4;
@@ -361,7 +365,7 @@ h1.blog-title {
 }
 
 h2 {
-    margin-top:4px;
+    margin-top:12px;
     font-size: 1.4rem;
     color: #3b3b3b;
 }
