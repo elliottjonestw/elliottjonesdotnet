@@ -12,5 +12,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.mey.ddk.mybluehost.me
-        username: elliott@mey.ddk.mybluehost.me
+        username: elliott@elliottjones.net
         password: ${{ secrets.FTP_PASSWORD }}
