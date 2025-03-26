@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ftp.vpd.vvw.mybluehost.me
-        username: elliottjones@vpd.vvw.mybluehost.me
+        server: ftp.mey.ddk.mybluehost.me
+        username: elliott@mey.ddk.mybluehost.me
         password: ${{ secrets.FTP_PASSWORD }}
