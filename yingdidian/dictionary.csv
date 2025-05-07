@@ -1,0 +1,31 @@
+type,simplified,traditional,pinyin,english,tw-specific,rarer-alternative,yingdidian-named,archaic
+country,英国,英國,Yīng guó,United Kingdom (UK),FALSE,FALSE,FALSE,FALSE
+country,大不列颠及北爱尔兰联合王国,大不列顛暨北愛爾蘭聯合王國,Dà bù liè diān jí běi ài ěr lán lián hé wáng guó,United Kingdom of Great Britain and Northern Ireland,FALSE,FALSE,FALSE,FALSE
+country,英格兰,英格蘭,Yīng gé lán,England,FALSE,FALSE,FALSE,FALSE
+country,威尔士,威爾士,Wēi ěr shì,Wales,FALSE,FALSE,FALSE,FALSE
+country,北爱尔兰,北愛爾蘭,Běi ài ěr lán,Northern Ireland,FALSE,FALSE,FALSE,FALSE
+country,苏格兰,蘇格蘭,Sū gé lán,Scotland,FALSE,FALSE,FALSE,FALSE
+metro county,大曼彻斯特,大曼徹斯特,Dà màn chè sī tè,Greater Manchester,FALSE,FALSE,FALSE,FALSE
+metro county,大曼切斯特,大曼切斯特,Dà màn qiè sī tè,Greater Manchester,FALSE,TRUE,FALSE,FALSE
+metro county,默西赛德,默西賽德,Mò xī sài dé,Merseyside,FALSE,FALSE,FALSE,FALSE
+metro county,默西塞德,默西塞德,Mò xī sāi dé,Merseyside,FALSE,FALSE,FALSE,FALSE
+metro county,南约克,南約克,Nán yuē kè,South Yorkshire,FALSE,FALSE,FALSE,FALSE
+metro county,泰恩-威尔,泰恩-威爾,Tài ēn-wēi ěr,Tyne and Wear,FALSE,FALSE,FALSE,FALSE
+metro county,西米德兰兹,西米德蘭茲,Xī mǐ dé lán zī,West Midlands,FALSE,FALSE,FALSE,FALSE
+metro county,西米德兰,西米德蘭,Xī mǐ dé lán,West Midlands,FALSE,FALSE,FALSE,FALSE
+metro county,西密德兰,西密德蘭,Xī mì dé lán,West Midlands,FALSE,TRUE,FALSE,FALSE
+metro county,西密德兰兹,西密德蘭茲,Xī mì dé lán zī,West Midlands,FALSE,TRUE,FALSE,FALSE
+metro county,西约克,西約克,Xī yuē kè,West Yorkshire,FALSE,FALSE,FALSE,FALSE
+city,伍尔弗汉普顿,伍爾弗漢普頓,Wǔ ěr fú hàn pǔ dùn,Wolverhampton,FALSE,FALSE,FALSE,FALSE
+city,伯明翰,伯明翰,Bó míng hàn,Birmingham,FALSE,FALSE,FALSE,FALSE
+city,伯明罕,伯明罕,Bó míng hǎn,Birmingham,TRUE,FALSE,FALSE,FALSE
+city,巴斯,巴斯,Bā sī,Bath,FALSE,FALSE,FALSE,FALSE
+city,曼彻斯特,曼徹斯,Màn chè sī tè,Manchester,FALSE,FALSE,FALSE,FALSE
+city,曼切斯特,曼切斯,Màn qiè sī tè,Manchester,FALSE,TRUE,FALSE,FALSE
+city,考文垂,考文垂,Kǎo wén chuí,Coventry,FALSE,FALSE,FALSE,FALSE
+city,科芬特里,科芬特里,Kē fēn tè lǐ,Coventry,TRUE,FALSE,FALSE,FALSE
+city,科芬翠,科芬翠,Kē fēn cuì,Coventry,TRUE,TRUE,FALSE,FALSE
+city,高云地利,高雲地利,Gāo yún dì lì,Coventry,FALSE,TRUE,FALSE,FALSE
+city,伦敦,倫敦,Lún dūn,London,FALSE,FALSE,FALSE,FALSE
+city,𪢠吨,囒噸,Lán dūn,London,FALSE,FALSE,FALSE,TRUE
+suburb,芬奇费德,芬奇費德,Fēn qí fèi dé,Finchfield,FALSE,FALSE,TRUE,FALSE
