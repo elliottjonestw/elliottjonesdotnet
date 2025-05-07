@@ -244,7 +244,7 @@
     let showTraditional = false;
 
     window.addEventListener('DOMContentLoaded', () => {
-      fetch('dictionary.csv')
+      fetch('https://raw.githubusercontent.com/elliottjonestw/yingdidian/refs/heads/main/dictionary.csv')
         .then(response => response.text())
         .then(csv => {
           data = parseCSV(csv);
