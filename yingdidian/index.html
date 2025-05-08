@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,42 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>英地典 - Chinese-English Dictionary of UK Place Names</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 1rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 700px;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-    }
-
-    .heading {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .heading .title-cn {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    .heading .title-en {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-      line-height: 1.4;
-    }
-
     .controls {
       display: flex;
       justify-content: space-between;
@@ -183,27 +148,6 @@
       display: block;
     }
 
-    .footer {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .footer a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 1rem;
-      }
-
       .controls {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -219,6 +163,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="global.css">
 </head>
 <body>
   <div class="container">
@@ -226,6 +171,12 @@
       <div class="title-cn">英地典</div>
       <div class="title-en">Chinese-English<br>Dictionary of UK Place Names</div>
     </div>
+
+<div class="navbar">
+    <a href="index.html" class="nav-button">Search</a>
+    <a href="https://github.com/elliottjonestw/yingdidian" class="nav-button">Submit</a>
+    <a href="updates.html" class="nav-button">Updates</a>
+</div>
 
     <div class="controls">
       <input type="text" id="search" placeholder="Coventry" autocomplete="off" />
