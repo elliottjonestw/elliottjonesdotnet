@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,23 +28,6 @@
     #search::-webkit-search-results-button,
     #search::-webkit-search-results-decoration {
       display: none;
-    }
-
-    .toggle-button {
-      padding: 0.7rem 1rem;
-      font-size: 0.9rem;
-      background-color: #eeeeee;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      cursor: pointer;
-      white-space: nowrap;
-      width: 100px;
-      text-align: center;
-      transition: background-color 0.2s;
-    }
-
-    .toggle-button:hover {
-      background-color: #d6d6d6;
     }
 
     .results {
@@ -147,21 +129,6 @@
     .tag:hover::after {
       display: block;
     }
-
-      .controls {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 0.5rem;
-      }
-
-      #search {
-        flex: 1;
-      }
-
-      .toggle-button {
-        width: auto;
-      }
-    }
   </style>
   <link rel="stylesheet" href="global.css">
 </head>
@@ -172,15 +139,13 @@
       <div class="title-en">Chinese-English<br>Dictionary of UK Place Names</div>
     </div>
 
-<div class="navbar">
-    <a href="index.html" class="nav-button">Search</a>
-    <a href="https://github.com/elliottjonestw/yingdidian" class="nav-button">Submit</a>
-    <a href="updates.html" class="nav-button">Updates</a>
-</div>
+    <div class="navbar">
+      <a href="index.html" class="nav-button">搜寻 Search</a>
+      <a href="updates.html" class="nav-button">更新記錄 Updates</a>
+    </div>
 
     <div class="controls">
       <input type="text" id="search" placeholder="Coventry" autocomplete="off" />
-      <button id="toggle-script" class="toggle-button">Simplified</button>
     </div>
 
     <div class="results" id="results"></div>
@@ -194,7 +159,6 @@
 
   <script>
     let data = [];
-    let showTraditional = false;
 
     window.addEventListener('DOMContentLoaded', () => {
       fetch('https://raw.githubusercontent.com/elliottjonestw/yingdidian/refs/heads/main/dictionary.csv')
@@ -205,12 +169,6 @@
         });
 
       document.getElementById('search').addEventListener('input', () => {
-        displayResults(filterData());
-      });
-
-      document.getElementById('toggle-script').addEventListener('click', () => {
-        showTraditional = !showTraditional;
-        document.getElementById('toggle-script').textContent = showTraditional ? 'Traditional' : 'Simplified';
         displayResults(filterData());
       });
     });
@@ -255,7 +213,11 @@
         const box = document.createElement('div');
         box.className = 'entry';
 
-        const script = showTraditional ? entry.traditional : entry.simplified;
+        // Always show simplified, add traditional in brackets only if different
+        let displayScript = entry.simplified;
+        if (entry.traditional && entry.traditional !== entry.simplified) {
+          displayScript += ` (${entry.traditional})`;
+        }
 
         const actions = document.createElement('div');
         actions.className = 'action-buttons';
@@ -265,7 +227,7 @@
         copyBtn.innerHTML = '<img src="copy.png" alt="Copy">';
         copyBtn.title = 'Copy to clipboard';
         copyBtn.addEventListener('click', () => {
-          navigator.clipboard.writeText(script);
+          navigator.clipboard.writeText(displayScript);
         });
 
         const searchBtn = document.createElement('button');
@@ -273,32 +235,31 @@
         searchBtn.innerHTML = '<img src="search.png" alt="Search">';
         searchBtn.title = 'Search on Google';
         searchBtn.addEventListener('click', () => {
-          const url = `https://www.google.com/search?q="${encodeURIComponent(script)}"`;
+          const url = `https://www.google.com/search?q=${encodeURIComponent(displayScript)}`;
           window.open(url, '_blank');
         });
 
         actions.appendChild(copyBtn);
         actions.appendChild(searchBtn);
 
-        box.innerHTML = `
-          <strong>${entry.english}</strong><br/>
-          <span>${script}</span><br/>
-          <em>${entry.pinyin}</em>
-        `;
+        box.innerHTML = 
+          `<strong>${entry.english}</strong><br/>
+           <span>${displayScript}</span><br/>
+           <em>${entry.pinyin}</em>`;
 
         const tags = document.createElement('div');
         tags.className = 'tags';
         if (entry['tw-specific'].toLowerCase() === 'true') {
-          tags.innerHTML += `<span class="tag" data-tooltip='This word has been marked as "Taiwan Variant", meaning it is used primarily by people and organizations from Taiwan, and is not the standard for people and organizations from mainland China.'>Taiwan Variant</span>`;
+          tags.innerHTML += `<span class="tag" data-tooltip='This word has been marked as "Taiwan Variant", meaning it is used primarily by people and organizations from Taiwan, and is not the standard for people and organizations from mainland China.'>台湾惯用 Taiwan Variant</span>`;
         }
         if (entry['rarer-alternative'].toLowerCase() === 'true') {
-          tags.innerHTML += `<span class="tag rarer" data-tooltip='This word has been marked as "Rare Variant", meaning it is not the primary Chinese translation for this word in mainland China or Taiwan. You may still see it used in some places, but its use in new content is not recommended.'>Rare Variant</span>`;
+          tags.innerHTML += `<span class="tag rarer" data-tooltip='This word has been marked as "Rare Variant", meaning it is not the primary Chinese translation for this word in mainland China or Taiwan. You may still see it used in some places, but its use in new content is not recommended.'>少用 Rare Variant</span>`;
         }
         if (entry['yingdidian-named'] && entry['yingdidian-named'].toLowerCase() === 'true') {
           tags.innerHTML += `<span class="tag ydd" data-tooltip='This word has been marked as "英地典-Named", meaning prior to the creation of this entry, there was no known Chinese translation for it. In an effort to standardize future translations of this word, we have created a phonetically accurate translation which you can use.'>英地典-Named</span>`;
         }
         if (entry['archaic'] && entry['archaic'].toLowerCase() === 'true') {
-          tags.innerHTML += `<span class="tag archaic" data-tooltip='This word has been marked as "Archaic", meaning it is no longer in use. Although it may appear in historic texts, its use in new content is not recommended.'>Archaic</span>`;
+          tags.innerHTML += `<span class="tag archaic" data-tooltip='This word has been marked as "Archaic", meaning it is no longer in use. Although it may appear in historic texts, its use in new content is not recommended.'>古词 Archaic</span>`;
         }
 
         box.appendChild(actions);
