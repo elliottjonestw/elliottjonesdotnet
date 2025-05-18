@@ -452,6 +452,10 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
+      if (window.innerWidth > 768) { // Adjust this threshold as needed
+          // Open the most recent work experience item on load
+          toggleDescription('workitem-1');
+      }
         setTimeout(showPopup, 3000);
     });
 
