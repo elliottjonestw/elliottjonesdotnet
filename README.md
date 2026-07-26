@@ -84,7 +84,33 @@ if you want one, that needs adding before the GA script fires.
 Pushing to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml),
 which builds the site and publishes `dist/` to GitHub Pages.
 
-One-time setup in the repository:
+### Where the site is served from
+
+The same build has to be correct in two places, which have different URL shapes:
+
+| Where            | URL                                                | Base path            |
+| ---------------- | -------------------------------------------------- | -------------------- |
+| Project pages    | `elliottjonestw.github.io/elliottjonesdotnet/`     | `/elliottjonesdotnet` |
+| Custom domain    | `elliottjones.net/`                                 | `/`                  |
+
+The workflow runs `actions/configure-pages`, which reports whichever is actually
+live, and passes `SITE` and `BASE_PATH` to the build. `astro.config.mjs` reads
+them. Nothing needs editing when you switch to the custom domain — set it in the
+repository settings and the next deploy corrects every asset URL, the canonical
+tag, the sitemap and the structured data by itself.
+
+If you hardcode `base` instead, assets are referenced from the origin root
+(`/_astro/…`) and 404 on the project URL — the whole page loads unstyled.
+
+Two notes while the site is on the project URL:
+
+- `robots.txt` and `sitemap.xml` are only authoritative at a domain root, so
+  crawlers will not read them at `…github.io/elliottjonesdotnet/robots.txt`.
+  They start working once the custom domain is live.
+- Local builds with no environment variables default to the custom domain, which
+  is what you want for checking the production output.
+
+### One-time setup in the repository
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Settings → Pages → Custom domain: `elliottjones.net`**, then tick

@@ -12,6 +12,7 @@ import {
   mandarin,
   person,
 } from '../data/site';
+import { absoluteUrl, canonicalUrl, withBase } from '../lib/url';
 
 interface Props {
   title?: string;
@@ -22,12 +23,10 @@ const { title = person.metaTitle, description = person.metaDescription } =
   Astro.props;
 
 const site = Astro.site ?? new URL(person.siteUrl);
-// build.format 'file' makes pathname '/index.html'; canonical URLs should be
-// extensionless, and the root should be a bare '/'.
-const cleanPath =
-  Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
-const canonical = new URL(cleanPath, site);
-const ogImage = new URL('/og.jpg', site);
+const canonical = canonicalUrl(Astro.url.pathname, site);
+const ogImage = absoluteUrl('og.jpg', site);
+/** Identity for the structured-data graph: whatever origin is actually live. */
+const home = canonicalUrl('/', site).href.replace(/\/$/, '');
 
 /**
  * ProfilePage wrapping a Person. Google reads ProfilePage for person-focused
@@ -39,28 +38,28 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'ProfilePage',
-      '@id': `${person.siteUrl}/#page`,
-      url: person.siteUrl,
+      '@id': `${home}/#page`,
+      url: home,
       name: title,
       description,
       inLanguage: 'en',
-      primaryImageOfPage: { '@id': `${person.siteUrl}/#og` },
-      mainEntity: { '@id': `${person.siteUrl}/#person` },
+      primaryImageOfPage: { '@id': `${home}/#og` },
+      mainEntity: { '@id': `${home}/#person` },
     },
     {
       '@type': 'ImageObject',
-      '@id': `${person.siteUrl}/#og`,
+      '@id': `${home}/#og`,
       url: ogImage.href,
       width: 1200,
       height: 630,
     },
     {
       '@type': 'Person',
-      '@id': `${person.siteUrl}/#person`,
+      '@id': `${home}/#person`,
       name: person.name,
       jobTitle: person.role,
       description,
-      url: person.siteUrl,
+      url: home,
       email: `mailto:${person.email}`,
       image: ogImage.href,
       sameAs: [person.linkedin],
@@ -163,10 +162,10 @@ const structuredData = {
     />
     <link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href={withBase("apple-touch-icon.png")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={withBase("favicon-32x32.png")} />
+    <link rel="icon" type="image/png" sizes="16x16" href={withBase("favicon-16x16.png")} />
+    <link rel="manifest" href={withBase("site.webmanifest")} />
     <meta name="theme-color" content="#0c1a1b" />
     <meta name="generator" content={Astro.generator} />
 

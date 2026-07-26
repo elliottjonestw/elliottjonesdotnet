@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>Redirecting — Elliott Jones</title>
+    <!-- Canonical points at the final home of the site. -->
     <link rel="canonical" href="https://elliottjones.net/" />
-    <meta http-equiv="refresh" content="0; url=/" />
+    <!-- Relative so this works whether the site is served from an apex domain
+         or from a GitHub Pages project sub-path. -->
+    <meta http-equiv="refresh" content="0; url=./" />
     <meta name="robots" content="noindex" />
   </head>
   <body>
-    <p>This page has moved. <a href="/">Continue to elliottjones.net</a>.</p>
-    <script>location.replace("/");</script>
+    <p>This page has moved. <a href="./">Continue to elliottjones.net</a>.</p>
+    <script>location.replace("./");</script>
   </body>
 </html>
