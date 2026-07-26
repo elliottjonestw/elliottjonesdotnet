@@ -1,0 +1,185 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import ScoreChart from './ScoreChart.astro';
+import { certificates, mandarin } from '../data/site';
+
+// Eagerly resolve the certificate scans so they can go through Astro's image
+// pipeline while still being addressed by filename from the data file.
+const certImages = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/certs/*.jpg',
+  { eager: true },
+);
+
+const resolved = certificates.map((cert) => ({
+  ...cert,
+  image: certImages[`../assets/certs/${cert.src}`]!.default,
+}));
+
+const { speakingVideo } = mandarin;
+---
+
+<section
+  id="mandarin"
+  class="on-ink relative overflow-hidden bg-ink text-paper section-pad"
+>
+  <div
+    class="pointer-events-none absolute -top-40 -left-32 h-[34rem] w-[34rem] rounded-full opacity-25 blur-3xl"
+    style="background:radial-gradient(circle,var(--color-jade) 0%,transparent 70%)"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="shell relative">
+    <header class="max-w-4xl">
+      <p class="eyebrow" data-reveal>The differentiator</p>
+      <h2 class="mt-5 text-section" data-reveal style="--reveal-delay:60ms">
+        {mandarin.headline}
+      </h2>
+      <p
+        class="mt-7 max-w-2xl text-lead text-paper/70"
+        data-reveal
+        style="--reveal-delay:120ms"
+      >
+        {mandarin.body}
+      </p>
+    </header>
+
+    {/* Official results, one card per tested skill. */}
+    <ul class="mt-14 grid gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+      {
+        mandarin.results.map((result, i) => (
+          <li
+            class:list={[
+              'rounded-xl border p-6 sm:p-7',
+              result.highlight
+                ? 'border-jade-bright/45 bg-jade-bright/[0.07]'
+                : 'border-paper/12 bg-paper/[0.03]',
+            ]}
+            data-reveal
+            style={`--reveal-delay:${i * 90}ms`}
+          >
+            <h3 class="font-display text-xl font-semibold">
+              {result.skill}
+            </h3>
+
+            <p
+              class:list={[
+                'font-display mt-5 text-4xl font-bold sm:text-[2.75rem]',
+                result.highlight ? 'text-jade-bright' : 'text-paper',
+              ]}
+            >
+              {result.cefr}
+            </p>
+
+            <dl class="mt-5 space-y-2 border-t border-paper/12 pt-5">
+              <div class="flex justify-between gap-3">
+                <dt class="mono-label text-paper/55">Score</dt>
+                <dd class="mono-label text-paper/85">{result.score}</dd>
+              </div>
+              <div class="flex justify-between gap-3">
+                <dt class="mono-label text-paper/55">TOCFL</dt>
+                <dd class="mono-label text-paper/85">{result.tocfl}</dd>
+              </div>
+              <div class="flex justify-between gap-3">
+                <dt class="mono-label text-paper/55">ACTFL</dt>
+                <dd class="mono-label text-paper/85">{result.actfl}</dd>
+              </div>
+              <div class="flex justify-between gap-3">
+                <dt class="mono-label text-paper/55">Sat</dt>
+                <dd class="mono-label text-paper/85">{result.date}</dd>
+              </div>
+            </dl>
+          </li>
+        ))
+      }
+    </ul>
+
+    {/* Trajectory and speaking demo, side by side on wide screens. */}
+    <div class="mt-16 grid gap-12 lg:mt-24 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal>
+        <h3 class="font-display text-2xl font-semibold">
+          The trend, not the snapshot
+        </h3>
+        <p class="mt-4 max-w-md text-paper/70">
+          I have sat the TOCFL listening exam four times since April 2024. Each
+          sitting has scored higher than the last, and the fourth crossed into
+          CEFR&nbsp;C1.
+        </p>
+        <div
+          class="mt-8 rounded-xl border border-paper/12 bg-paper/[0.03] p-6 text-paper sm:p-8"
+        >
+          <ScoreChart />
+        </div>
+      </div>
+
+      <div data-reveal style="--reveal-delay:100ms">
+        <h3 class="font-display text-2xl font-semibold">
+          Hear it
+        </h3>
+        <p class="mt-4 max-w-md text-paper/70">
+          Certificates measure comprehension. This is what my spoken Chinese
+          actually sounds like.
+        </p>
+        {/* Vimeo, without their player.js — nothing here uses the Player API,
+            so the page stays free of third-party script. */}
+        <div
+          class="mt-8 w-full overflow-hidden rounded-xl border border-paper/12 bg-ink-raised"
+          style={`aspect-ratio:${speakingVideo.aspectRatio}`}
+        >
+          <iframe
+            class="h-full w-full"
+            src={`https://player.vimeo.com/video/${speakingVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+            title={speakingVideo.title}
+            loading="lazy"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    {/* The paperwork. */}
+    <div class="mt-16 lg:mt-24">
+      <h3
+        class="font-display text-2xl font-semibold"
+        data-reveal
+      >
+        The paperwork
+      </h3>
+      <p class="mt-4 max-w-xl text-paper/70" data-reveal>
+        Issued by Taiwan’s Ministry of Education and its Steering Committee for
+        the Test of Proficiency&#8209;Huayu. Each carries a QR code and
+        registration number for verification.
+      </p>
+
+      <ul class="mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
+        {
+          resolved.map((cert, i) => (
+            <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
+              <figure class="group">
+                {/* Fixed A4 box so both scans render at exactly the same size
+                    despite tiny differences in their scanned aspect ratios. */}
+                <div
+                  class="aspect-[1/1.414] overflow-hidden rounded-lg border border-paper/12 bg-surface p-3"
+                >
+                  <Image
+                    src={cert.image}
+                    alt={`${cert.label}: ${cert.caption}`}
+                    widths={[380, 640, 900]}
+                    sizes="(min-width:640px) 22rem, 90vw"
+                    class="h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption class="mono-label mt-3 text-paper/55">
+                  {cert.caption}
+                </figcaption>
+              </figure>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { work } from '../data/site';
+---
+
+<section id="work" class="section-pad">
+  <div class="shell">
+    <SectionHeading
+      label="Selected work"
+      title="Published, in production, and open to inspection."
+      intro="A sample of documentation, product pages and campaigns written for industrial hardware and protocol analysis tools. Every link goes to live work."
+    />
+
+    <div class="mt-14 grid gap-x-12 gap-y-14 lg:mt-20 lg:grid-cols-3">
+      {
+        work.map((group, i) => (
+          <div data-reveal style={`--reveal-delay:${i * 90}ms`}>
+            <div class="flex items-baseline gap-3 border-b border-ink/12 pb-4">
+              <h3
+                class="font-display text-xl font-semibold"
+              >
+                {group.group}
+              </h3>
+              <span class="mono-label text-slate">{group.items.length}</span>
+            </div>
+            <p class="mt-4 text-sm text-slate">{group.note}</p>
+
+            <ul class="mt-5 space-y-px">
+              {group.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-start gap-3 py-2.5 transition-colors duration-300 hover:text-jade"
+                  >
+                    <span
+                      class="mt-2.5 h-px w-4 shrink-0 bg-ink/25 transition-all duration-300 group-hover:w-6 group-hover:bg-jade"
+                      aria-hidden="true"
+                    />
+                    <span class="text-[0.9375rem] leading-snug">
+                      {item.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

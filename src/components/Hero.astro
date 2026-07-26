@@ -1,0 +1,148 @@
+---
+import { Image } from 'astro:assets';
+import headshot from '../assets/headshot.png';
+import { hero, person } from '../data/site';
+---
+
+<section id="top" class="relative overflow-hidden pt-9 pb-16 sm:pt-12 lg:pb-24">
+  {/* Ambient jade wash behind the opening frame. Purely atmospheric. */}
+  <div
+    class="pointer-events-none absolute -top-1/3 -right-1/4 -z-10 h-[38rem] w-[38rem] rounded-full opacity-[0.13] blur-3xl"
+    style="background:radial-gradient(circle,var(--color-jade) 0%,transparent 68%)"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="shell">
+    {/* Portrait beside the details at every width. */}
+    <div class="flex items-center gap-5 sm:gap-8">
+      <div class="shrink-0" data-hero="1">
+        {/* The jade edge sits inside the layout box rather than around it, so
+            the portrait's left edge lines up exactly with the text below. */}
+        <div class="w-[4.5rem] sm:w-24 lg:w-28">
+          <Image
+            src={headshot}
+            alt={`${person.name}, ${person.role} at ${person.company}`}
+            widths={[72, 112, 160, 224]}
+            sizes="(min-width:1024px) 7rem, (min-width:640px) 6rem, 4.5rem"
+            class="aspect-square w-full rounded-2xl object-cover ring-1 ring-jade/25"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+
+      <div class="min-w-0">
+        <p class="eyebrow text-[0.6875rem] tracking-[0.12em] sm:text-xs sm:tracking-[0.16em]" data-hero="1">
+          {person.location}
+        </p>
+        <h1 class="font-display mt-2 text-display font-bold sm:mt-3">
+          <span class="hero-line">
+            <span class="block" data-hero="2">{person.name}</span>
+          </span>
+        </h1>
+        {/* Role and company break onto their own lines on narrow screens rather
+            than wrapping mid-phrase. */}
+        <p
+          class="mono-label mt-2 text-[0.625rem] tracking-[0.1em] text-jade sm:mt-3 sm:text-[0.6875rem] sm:tracking-[0.14em]"
+          data-hero="3"
+        >
+          <span class="block md:inline">{hero.eyebrow}</span>
+          <span class="hidden md:inline"> · </span>
+          <span class="block md:inline">{person.company}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 max-w-2xl" data-hero="4">
+      <p class="text-lead text-slate">{hero.lead}</p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a
+          href="#mandarin"
+          class="mono-label rounded-full bg-ink px-6 py-3.5 text-paper transition-colors duration-300 hover:bg-jade"
+        >
+          See the Mandarin evidence
+        </a>
+        <a
+          href="#experience"
+          class="mono-label rounded-full border border-ink/25 px-6 py-3.5 transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-paper"
+        >
+          Read the experience
+        </a>
+      </div>
+    </div>
+
+    {/* Credential strip. Every figure here is evidenced further down the page. */}
+    <dl
+      class="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-ink/10 md:grid-cols-4 lg:mt-20"
+      data-hero="5"
+    >
+      {/* Each tile is a flex column so the figures share a baseline even when a
+          label wraps to two lines on narrow screens. */}
+      {
+        hero.facts.map((fact) => (
+          <div class="group relative flex h-full flex-col justify-between gap-3 bg-paper p-5 transition-colors duration-300 sm:p-6 hover:bg-surface">
+            <dt class="mono-label text-slate">{fact.label}</dt>
+            <dd
+              class="font-display text-2xl font-bold transition-colors duration-300 group-hover:text-jade md:text-3xl"
+            >
+              {fact.value}
+            </dd>
+            {'href' in fact && fact.href && (
+              <a href={fact.href} class="absolute inset-0">
+                <span class="sr-only">
+                  {fact.label}: {fact.value}
+                </span>
+              </a>
+            )}
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  /* The name sits in a mask so it can rise into view on load. The padding keeps
+     descenders from being clipped by the mask. */
+  .hero-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+  }
+
+  /* Opening sequence: the name lifts in, then the supporting material follows. */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-hero] {
+      animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    [data-hero='1'] {
+      animation-delay: 0.05s;
+    }
+    [data-hero='2'] {
+      animation-delay: 0.16s;
+    }
+    [data-hero='3'] {
+      animation-delay: 0.3s;
+    }
+    [data-hero='4'] {
+      animation-delay: 0.42s;
+    }
+    [data-hero='5'] {
+      animation-delay: 0.52s;
+    }
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.85em);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

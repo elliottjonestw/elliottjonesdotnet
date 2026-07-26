@@ -1,0 +1,31 @@
+---
+interface Props {
+  /** Mono uppercase label, e.g. "Experience". */
+  label: string;
+  /** The section's actual heading. */
+  title: string;
+  /** Optional standfirst below the heading. */
+  intro?: string;
+  class?: string;
+}
+
+const { label, title, intro, class: className = '' } = Astro.props;
+---
+
+<header class={`max-w-3xl ${className}`}>
+  <p class="eyebrow" data-reveal>{label}</p>
+  <h2 class="mt-5 text-section" data-reveal style="--reveal-delay:60ms">
+    {title}
+  </h2>
+  {
+    intro && (
+      <p
+        class="mt-6 max-w-2xl text-lead text-slate"
+        data-reveal
+        style="--reveal-delay:120ms"
+      >
+        {intro}
+      </p>
+    )
+  }
+</header>

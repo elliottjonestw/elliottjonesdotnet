@@ -1,0 +1,187 @@
+---
+import { tocflListening as data } from '../data/site';
+
+/**
+ * TOCFL listening scores over four sittings, drawn as an inline SVG so it costs
+ * nothing to load and scales cleanly. The C1 threshold is the point of the
+ * chart: the line crosses it on the last sitting.
+ */
+
+const W = 660;
+const H = 300;
+const PAD = { top: 26, right: 96, bottom: 40, left: 40 };
+
+const { min, max } = data.axis;
+const plotW = W - PAD.left - PAD.right;
+const plotH = H - PAD.top - PAD.bottom;
+
+const x = (i: number) =>
+  PAD.left + (i / (data.points.length - 1)) * plotW;
+const y = (score: number) =>
+  PAD.top + (1 - (score - min) / (max - min)) * plotH;
+
+const line = data.points
+  .map((p, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)},${y(p.score).toFixed(1)}`)
+  .join(' ');
+
+const area = `${line} L${x(data.points.length - 1).toFixed(1)},${(PAD.top + plotH).toFixed(1)} L${PAD.left},${(PAD.top + plotH).toFixed(1)} Z`;
+
+const bands = [
+  { label: 'Level 5 · C1', floor: data.bandFloors.level5 },
+  { label: 'Level 4 · B2', floor: data.bandFloors.level4 },
+];
+---
+
+<figure class="w-full">
+  <svg
+    viewBox={`0 0 ${W} ${H}`}
+    class="score-chart w-full"
+    role="img"
+    aria-labelledby="chart-title chart-desc"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <title id="chart-title">TOCFL listening score across four sittings</title>
+    <desc id="chart-desc">
+      {
+        data.points.map((p) => `${p.date}: ${p.score} of 700`).join('. ') +
+          '. The Level 5, CEFR C1 threshold is 600, reached on 21 June 2025.'
+      }
+    </desc>
+
+    {/* Proficiency thresholds */}
+    {
+      bands.map((band) => (
+        <g>
+          <line
+            x1={PAD.left}
+            x2={PAD.left + plotW}
+            y1={y(band.floor)}
+            y2={y(band.floor)}
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-dasharray="3 4"
+            class={band.floor === data.bandFloors.level5 ? 'text-jade-bright/80' : 'text-paper/25'}
+          />
+          <text
+            x={PAD.left + plotW + 8}
+            y={y(band.floor)}
+            dominant-baseline="middle"
+            class={`chart-band ${band.floor === data.bandFloors.level5 ? 'fill-jade-bright' : 'fill-paper/45'}`}
+          >
+            {band.label}
+          </text>
+        </g>
+      ))
+    }
+
+    <path d={area} class="fill-jade-bright/10 chart-area" />
+    <path
+      d={line}
+      fill="none"
+      stroke="currentColor"
+      class="text-jade-bright chart-line"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    {
+      data.points.map((p, i) => (
+        <g class="chart-point" style={`--i:${i}`}>
+          <circle
+            cx={x(i)}
+            cy={y(p.score)}
+            r={i === data.points.length - 1 ? 6 : 4}
+            class={
+              i === data.points.length - 1
+                ? 'fill-jade-bright'
+                : 'fill-ink stroke-jade-bright'
+            }
+            stroke-width="2"
+          />
+          <text
+            x={x(i)}
+            y={y(p.score) - (i === data.points.length - 1 ? 16 : 14)}
+            text-anchor="middle"
+            class={`chart-value ${i === data.points.length - 1 ? 'fill-jade-bright' : 'fill-paper/70'}`}
+          >
+            {p.score}
+          </text>
+          <text
+            x={x(i)}
+            y={PAD.top + plotH + 24}
+            text-anchor="middle"
+            class="chart-axis fill-paper/50"
+          >
+            {p.short}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+</figure>
+
+<style>
+  .chart-value,
+  .chart-axis,
+  .chart-band {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .chart-value {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .chart-band {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  /* The line draws itself in when the chart scrolls into view — the rise is the
+     whole point of the figure, so it is worth showing rather than stating.
+
+     The whole ancestor chain sits inside :global() deliberately. Astro scopes
+     every compound in a selector, and [data-reveal] belongs to the parent
+     component, so scoping it would stop these rules matching and leave the
+     chart permanently blank. */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html.js-reveal [data-reveal]) .chart-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+    }
+
+    :global(html.js-reveal [data-reveal].is-revealed) .chart-line {
+      animation: draw 1.6s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+    }
+
+    :global(html.js-reveal [data-reveal]) .chart-point,
+    :global(html.js-reveal [data-reveal]) .chart-area {
+      opacity: 0;
+    }
+
+    :global(html.js-reveal [data-reveal].is-revealed) .chart-point {
+      animation: fade-in 0.5s ease forwards;
+      animation-delay: calc(0.45s + var(--i) * 0.32s);
+    }
+
+    :global(html.js-reveal [data-reveal].is-revealed) .chart-area {
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+</style>

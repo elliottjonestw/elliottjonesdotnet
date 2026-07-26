@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import SectionHeading from './SectionHeading.astro';
+import { experience } from '../data/site';
+---
+
+<section id="experience" class="section-pad">
+  <div class="shell">
+    <SectionHeading
+      label="Experience"
+      title="From consulate IT to OT security customer success."
+      intro="Technical writing, product marketing, systems engineering and now customer success — each role inside a Taiwanese or Chinese organisation, and each conducted in Mandarin."
+    />
+
+    {/* Reverse-chronological, so the rail carries real information: the dates
+        are the structure, not decoration. */}
+    <ol class="mt-14 lg:mt-20">
+      {
+        experience.map((role, i) => (
+          <li
+            class="group relative border-t border-ink/12 last:border-b"
+            data-reveal
+            style={`--reveal-delay:${Math.min(i, 4) * 70}ms`}
+          >
+            {/* Jade wipe on hover — the only decoration on the row. */}
+            <span
+              class="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-jade transition-transform duration-500 ease-out group-hover:scale-x-100"
+              aria-hidden="true"
+            />
+
+            <div class="grid gap-x-8 gap-y-4 py-8 sm:py-10 lg:grid-cols-[10rem_1fr] lg:gap-x-12">
+              <div class="flex items-start gap-4 lg:flex-col lg:gap-3">
+                <Image
+                  src={role.logo}
+                  alt=""
+                  widths={[48, 96]}
+                  sizes="3rem"
+                  class="h-12 w-12 shrink-0 rounded-md bg-surface object-contain p-1.5 ring-1 ring-ink/10"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="mono-label text-slate">{role.period}</p>
+                  {role.current && (
+                    <p class="mono-label mt-1.5 inline-flex items-center gap-1.5 text-jade">
+                      <span class="relative flex h-1.5 w-1.5">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-jade opacity-60" />
+                        <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-jade" />
+                      </span>
+                      Current
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  class="font-display text-[clamp(1.375rem,2.6vw,1.875rem)] font-semibold tracking-tight"
+                >
+                  {role.title}
+                </h3>
+                <p class="mono-label mt-2 text-jade">{role.company}</p>
+                <p class="mt-4 max-w-2xl text-slate">{role.summary}</p>
+
+                {role.media && (
+                  <ul class="mt-7 grid gap-4 sm:grid-cols-3">
+                    {role.media.map((clip) => (
+                      <li>
+                        <figure>
+                          <div class="aspect-video overflow-hidden rounded-lg bg-ink/5 ring-1 ring-ink/10">
+                            <iframe
+                              class="h-full w-full"
+                              src={`https://www.youtube-nocookie.com/embed/${clip.youtubeId}`}
+                              title={clip.caption}
+                              loading="lazy"
+                              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              referrerpolicy="strict-origin-when-cross-origin"
+                              allowfullscreen
+                            />
+                          </div>
+                          <figcaption class="mono-label mt-2.5 text-slate">
+                            {clip.caption}
+                          </figcaption>
+                        </figure>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

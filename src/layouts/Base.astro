@@ -1,0 +1,244 @@
+---
+import '../styles/global.css';
+// Resolve the hashed URLs of the two faces that render above the fold, so they
+// can be preloaded without hardcoding build hashes.
+import displayFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
+import bodyFont from '@fontsource-variable/literata/files/literata-latin-wght-normal.woff2?url';
+import {
+  certifications,
+  education,
+  experience,
+  knowsAbout,
+  mandarin,
+  person,
+} from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = person.metaTitle, description = person.metaDescription } =
+  Astro.props;
+
+const site = Astro.site ?? new URL(person.siteUrl);
+// build.format 'file' makes pathname '/index.html'; canonical URLs should be
+// extensionless, and the root should be a bare '/'.
+const cleanPath =
+  Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
+const canonical = new URL(cleanPath, site);
+const ogImage = new URL('/og.jpg', site);
+
+/**
+ * ProfilePage wrapping a Person. Google reads ProfilePage for person-focused
+ * pages, and the Person node carries the credentials a recruiter would search
+ * for — the TOCFL results in particular.
+ */
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': `${person.siteUrl}/#page`,
+      url: person.siteUrl,
+      name: title,
+      description,
+      inLanguage: 'en',
+      primaryImageOfPage: { '@id': `${person.siteUrl}/#og` },
+      mainEntity: { '@id': `${person.siteUrl}/#person` },
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': `${person.siteUrl}/#og`,
+      url: ogImage.href,
+      width: 1200,
+      height: 630,
+    },
+    {
+      '@type': 'Person',
+      '@id': `${person.siteUrl}/#person`,
+      name: person.name,
+      jobTitle: person.role,
+      description,
+      url: person.siteUrl,
+      email: `mailto:${person.email}`,
+      image: ogImage.href,
+      sameAs: [person.linkedin],
+      nationality: { '@type': 'Country', name: 'United Kingdom' },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Taipei',
+        addressCountry: 'TW',
+      },
+      worksFor: { '@type': 'Organization', name: person.company },
+      knowsAbout: [...knowsAbout],
+      knowsLanguage: [
+        {
+          '@type': 'Language',
+          name: 'English',
+          alternateName: 'en',
+        },
+        {
+          '@type': 'Language',
+          name: 'Mandarin Chinese',
+          alternateName: 'zh',
+        },
+      ],
+      alumniOf: education.map((entry) => ({
+        '@type': 'EducationalOrganization',
+        name: entry.school,
+      })),
+      hasOccupation: experience.map((role) => ({
+        '@type': 'Occupation',
+        name: role.title,
+        occupationLocation: { '@type': 'Place', name: 'Taiwan' },
+      })),
+      hasCredential: [
+        ...mandarin.results.map((result) => ({
+          '@type': 'EducationalOccupationalCredential',
+          name: `TOCFL ${result.tocfl.split(' · ')[0]} ${result.skill} — CEFR ${result.cefr}`,
+          credentialCategory: 'Language proficiency',
+          recognizedBy: {
+            '@type': 'GovernmentOrganization',
+            name: 'Ministry of Education, Taiwan',
+          },
+        })),
+        ...certifications.map((cert) => ({
+          '@type': 'EducationalOccupationalCredential',
+          name: cert.title,
+          credentialCategory: 'Certification',
+          recognizedBy: { '@type': 'Organization', name: cert.issuer },
+        })),
+      ],
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="author" content={person.name} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    {/* Open Graph — this is what LinkedIn renders when the link is shared. */}
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={person.name} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content={`${person.name} — ${person.role} at ${person.company}, Taipei. Certified CEFR C1 Mandarin.`}
+    />
+    <meta property="profile:first_name" content="Elliott" />
+    <meta property="profile:last_name" content="Jones" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {/* The display and body faces both render above the fold. */}
+    <link
+      rel="preload"
+      href={displayFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0c1a1b" />
+    <meta name="generator" content={Astro.generator} />
+
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+
+    {/* Enable reveal animations only when JS runs and motion is welcome, so the
+        page is never left blank for anyone else. */}
+    <script is:inline>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-reveal');
+      }
+    </script>
+
+    {/* GA4, carried over from the previous site. Production builds only, so
+        local development never reaches the property. */}
+    {
+      import.meta.env.PROD && (
+        <Fragment>
+          <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${person.gaMeasurementId}`}
+          />
+          {/* set:html rather than define:vars — the latter wraps the snippet in
+              an IIFE, which would stop gtag() being callable from elsewhere. */}
+          <script
+            is:inline
+            set:html={`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${person.gaMeasurementId}');`}
+          />
+        </Fragment>
+      )
+    }
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+      >Skip to content</a
+    >
+    <slot />
+
+    <script>
+      // Scroll reveal. One shared observer; each element unobserves itself once
+      // it has played, so nothing keeps running after the first pass.
+      const targets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+
+      if (
+        'IntersectionObserver' in window &&
+        document.documentElement.classList.contains('js-reveal')
+      ) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          },
+          { rootMargin: '0px 0px -12% 0px', threshold: 0.08 },
+        );
+
+        for (const el of targets) observer.observe(el);
+      } else {
+        for (const el of targets) el.classList.add('is-revealed');
+      }
+    </script>
+  </body>
+</html>

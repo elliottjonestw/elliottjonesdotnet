@@ -1,0 +1,32 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { capabilities } from '../data/site';
+---
+
+<section id="capabilities" class="bg-surface section-pad">
+  <div class="shell">
+    <SectionHeading
+      label="What I do"
+      title="A technical communicator who also runs the account."
+    />
+
+    <ul class="mt-14 grid gap-px overflow-hidden rounded-xl bg-ink/10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+      {
+        capabilities.map((item, i) => (
+          <li
+            class="bg-paper p-7 transition-colors duration-300 hover:bg-surface sm:p-8"
+            data-reveal
+            style={`--reveal-delay:${Math.min(i, 5) * 60}ms`}
+          >
+            <h3
+              class="font-display text-lg font-semibold"
+            >
+              {item.heading}
+            </h3>
+            <p class="mt-3 text-[0.9375rem] text-slate">{item.detail}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

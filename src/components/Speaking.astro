@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import SectionHeading from './SectionHeading.astro';
+import { speaking } from '../data/site';
+---
+
+<section id="speaking" class="bg-surface section-pad">
+  <div class="shell">
+    <SectionHeading
+      label="Speaking"
+      title="Speaker at Taiwan’s largest security conference."
+      intro="Two sessions at CYBERSEC 2024, presenting TeamT5’s threat intelligence research to an APAC security audience."
+    />
+
+    <ul class="mt-14 grid gap-5 lg:mt-20 lg:grid-cols-2">
+      {
+        speaking.map((talk, i) => (
+          <li
+            class="flex flex-col rounded-xl border border-ink/12 p-7 transition-colors duration-500 hover:border-jade/50 sm:p-9"
+            data-reveal
+            style={`--reveal-delay:${i * 90}ms`}
+          >
+            <div class="flex items-center gap-3">
+              <Image
+                src={talk.logo}
+                alt=""
+                widths={[40, 80]}
+                sizes="2.5rem"
+                class="h-10 w-10 rounded bg-surface object-contain"
+                loading="lazy"
+              />
+              <div>
+                <p class="mono-label text-jade">{talk.event}</p>
+                <p class="mono-label text-slate">{talk.date}</p>
+              </div>
+            </div>
+
+            <h3
+              class="font-display mt-6 text-[clamp(1.25rem,2.2vw,1.625rem)] font-semibold tracking-tight"
+            >
+              {talk.title}
+            </h3>
+            <p class="mt-4 text-[0.9375rem] text-slate">{talk.abstract}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

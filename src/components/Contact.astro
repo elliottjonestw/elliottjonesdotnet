@@ -1,0 +1,127 @@
+---
+import { person } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<section
+  id="contact"
+  class="on-ink relative overflow-hidden bg-ink text-paper section-pad"
+>
+  <div
+    class="pointer-events-none absolute -right-40 -bottom-48 h-[36rem] w-[36rem] rounded-full opacity-25 blur-3xl"
+    style="background:radial-gradient(circle,var(--color-jade) 0%,transparent 70%)"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="shell relative">
+    <p class="eyebrow" data-reveal>Contact</p>
+
+    <h2
+      class="mt-5 max-w-3xl text-section"
+      data-reveal
+      style="--reveal-delay:60ms"
+    >
+      If you need someone who can hold both sides of the conversation, let’s
+      talk.
+    </h2>
+
+    <p
+      class="mt-6 max-w-xl text-lead text-paper/70"
+      data-reveal
+      style="--reveal-delay:120ms"
+    >
+      Based in {person.location}. Open to customer success, technical writing and
+      product roles where English and Mandarin both matter.
+    </p>
+
+    <div
+      class="mt-12 flex flex-wrap items-center gap-3"
+      data-reveal
+      style="--reveal-delay:180ms"
+    >
+      {/* Copies rather than opening a mail client — mailto: is unreliable in
+          browsers without a registered handler. */}
+      <button
+        type="button"
+        class="mono-label rounded-full bg-paper px-7 py-4 text-ink transition-colors duration-300 hover:bg-jade-bright"
+        data-copy-email
+        data-email={person.email}
+      >
+        <span data-copy-label>Copy email address</span>
+      </button>
+      <a
+        href={person.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mono-label rounded-full border border-paper/30 px-7 py-4 transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
+      >
+        LinkedIn
+      </a>
+    </div>
+
+    {/* Also shown as plain selectable text, so the address is available even if
+        the clipboard API is blocked. */}
+    <p class="mt-6 text-sm break-all text-paper/55" data-reveal>
+      <span class="select-all">{person.email}</span>
+    </p>
+
+    {/* Politeness level "polite" so the confirmation is announced without
+        interrupting whatever the user is doing. */}
+    <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
+
+    <footer class="mt-20 border-t border-paper/12 pt-8">
+      <p class="mono-label text-paper/60">© {year} {person.name}</p>
+    </footer>
+  </div>
+</section>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-copy-email]');
+  const label = button?.querySelector<HTMLElement>('[data-copy-label]');
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+
+  if (button && label) {
+    const idle = label.textContent ?? 'Copy email address';
+    let reset: number | undefined;
+
+    const say = (text: string) => {
+      label.textContent = text;
+      if (status) status.textContent = text;
+      window.clearTimeout(reset);
+      reset = window.setTimeout(() => {
+        label.textContent = idle;
+        if (status) status.textContent = '';
+      }, 2600);
+    };
+
+    button.addEventListener('click', async () => {
+      const email = button.dataset.email ?? '';
+
+      try {
+        await navigator.clipboard.writeText(email);
+        say('Copied');
+        return;
+      } catch {
+        // Clipboard API unavailable or blocked (no permission, insecure
+        // context). Fall back to a temporary selection + execCommand.
+      }
+
+      try {
+        const field = document.createElement('textarea');
+        field.value = email;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.append(field);
+        field.select();
+        const ok = document.execCommand('copy');
+        field.remove();
+        say(ok ? 'Copied' : 'Press ⌘C to copy');
+      } catch {
+        say('Select the address below');
+      }
+    });
+  }
+</script>

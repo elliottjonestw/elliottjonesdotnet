@@ -1,0 +1,221 @@
+@import 'tailwindcss';
+
+/* Latin-only variable faces, self-hosted. The unicode-range declarations in
+   these packages mean non-latin subsets are never fetched. */
+@import '@fontsource-variable/schibsted-grotesk/index.css';
+@import '@fontsource-variable/literata/index.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/* Traditional Chinese, subset to exactly the five characters the site uses: the
+   official TOCFL level names 流利級 (Level 5) and 高階級 (Level 4). Adding another
+   Chinese character means regenerating this file — see the README. */
+@font-face {
+  font-family: 'Noto Sans TC Gloss';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../assets/fonts/noto-sans-tc-gloss.woff2') format('woff2');
+  unicode-range: U+5229, U+6D41, U+7D1A, U+968E, U+9AD8;
+}
+
+@theme {
+  /* ── Palette ───────────────────────────────────────────────────────────
+     Ink and jade. The ground is a cool, faintly green off-white — the paper
+     of a spec sheet rather than a cream notebook. Jade (青瓷 celadon) carries
+     the Mandarin thread through the page; brass is reserved for credentials. */
+  --color-ink: #0c1a1b;
+  --color-ink-raised: #16292a;
+  --color-ink-line: #24413f;
+  --color-slate: #52666a;
+  --color-paper: #f5f7f4;
+  --color-surface: #ffffff;
+  --color-mist: #d9e3dd;
+  --color-jade: #1f6b57;
+  --color-jade-bright: #6fbfa4;
+  --color-brass: #8a6529;
+  --color-brass-light: #d8ab63;
+
+  /* ── Type ──────────────────────────────────────────────────────────────
+     Schibsted Grotesk carries the voice: an editorial grotesque, crisp without
+     being mechanical. Literata handles prose because this is a writer's site.
+     Plex Mono is the data layer: dates, scores, labels. */
+  --font-display: 'Schibsted Grotesk Variable', ui-sans-serif, system-ui,
+    sans-serif;
+  --font-body: 'Literata Variable', ui-serif, Georgia, serif;
+  /* The Noto subset sits in the mono stack so the official TOCFL level names
+     (流利級, 高階級) render from it while everything else stays Plex Mono. */
+  --font-mono: 'IBM Plex Mono', 'Noto Sans TC Gloss', 'PingFang TC',
+    'Microsoft JhengHei', ui-monospace, SFMono-Regular, monospace;
+
+  --text-display: clamp(2.375rem, 5.5vw, 4.75rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.032em;
+
+  --text-section: clamp(1.875rem, 3.9vw, 3rem);
+  --text-section--line-height: 1.02;
+  --text-section--letter-spacing: -0.025em;
+
+  --text-lead: clamp(1.125rem, 1.15rem + 0.6vw, 1.5rem);
+  --text-lead--line-height: 1.55;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    --rule: color-mix(in oklab, var(--color-ink) 12%, transparent);
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      scroll-behavior: auto;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 650;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-jade);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-jade);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-ink :focus-visible {
+    outline-color: var(--color-jade-bright);
+  }
+}
+
+@layer components {
+  /* Page gutter, shared by every section so the vertical rhythm never drifts. */
+  .shell {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 4rem);
+  }
+
+  .section-pad {
+    padding-block: clamp(3.75rem, 6.5vw, 6rem);
+  }
+
+  /* The mono label that heads every section. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-slate);
+  }
+
+  .on-ink .eyebrow {
+    color: color-mix(in oklab, var(--color-paper) 68%, transparent);
+  }
+
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.35s var(--ease-out-quint);
+  }
+
+  @media (hover: hover) {
+    .link-underline:hover {
+      background-size: 0% 1px;
+      background-position: 100% 100%;
+    }
+  }
+}
+
+@layer utilities {
+  /* Scroll reveal. Elements start hidden only when JS is running and motion is
+     allowed, so no-JS and reduced-motion visitors get the full page instantly. */
+  [data-reveal] {
+    opacity: 1;
+  }
+
+  html.js-reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 0.8s var(--ease-out-quint),
+      transform 0.8s var(--ease-out-quint);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html.js-reveal [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.js-reveal [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/* Nobody gets moving decoration if they have asked the OS not to send any.
+   Scoped to decorative helpers so functional transitions still resolve. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
