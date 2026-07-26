@@ -397,6 +397,6 @@ export const capabilities = [
   {
     heading: 'Cross-cultural delivery',
     detail:
-      'Ten years working inside Taiwanese and Chinese organisations, translating between local engineering culture and international customers.',
+      'Ten years working inside Taiwanese organisations, translating between local engineering culture and international customers.',
   },
 ] as const;
