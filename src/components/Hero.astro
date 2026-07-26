@@ -84,11 +84,15 @@ import { hero, person } from '../data/site';
       class="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-ink/10 md:grid-cols-4 lg:mt-20"
       data-hero="5"
     >
-      {/* Each tile is a flex column so the figures share a baseline even when a
-          label wraps to two lines on narrow screens. */}
+      {/* The figure reads first and the label sits underneath it. The column is
+          reversed rather than reordered in the markup, so the dt still precedes
+          its dd for anyone reading the list through assistive technology.
+          justify-between pins the figures to the top and the labels to the
+          bottom, so both stay aligned across tiles even when a label wraps to
+          two lines on narrow screens. */}
       {
         hero.facts.map((fact) => (
-          <div class="group relative flex h-full flex-col justify-between gap-3 bg-paper p-5 transition-colors duration-300 sm:p-6 hover:bg-surface">
+          <div class="group relative flex h-full flex-col-reverse justify-between gap-3 bg-paper p-5 transition-colors duration-300 sm:p-6 hover:bg-surface">
             <dt class="mono-label text-slate">{fact.label}</dt>
             <dd
               class="font-display text-2xl font-bold transition-colors duration-300 group-hover:text-jade md:text-3xl"

@@ -62,7 +62,7 @@ export const hero = {
   facts: [
     { value: 'CEFR C1', label: 'Certified Mandarin', href: '#mandarin' },
     { value: '10+ yrs', label: 'In Taiwan & China' },
-    { value: '6', label: 'Employers in APAC', href: '#experience' },
+    { value: '2 talks', label: 'At CYBERSEC', href: '#speaking' },
     { value: 'Native', label: 'British English' },
   ],
 } as const;
