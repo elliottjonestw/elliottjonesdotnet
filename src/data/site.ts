@@ -21,6 +21,10 @@ import ouLogo from '../assets/logos/ou.png';
 import teamt5Logo from '../assets/logos/teamt5.png';
 import tibboLogo from '../assets/logos/tibbo.png';
 import txoneLogo from '../assets/logos/txone.jpg';
+import paint51Shot from '../assets/projects/paint5-1.png';
+import paint51Zoom from '../assets/projects/paint5-1-zoom.png';
+import mandaShot from '../assets/projects/manda-1.png';
+import mandaShot2 from '../assets/projects/manda-2.png';
 
 /* ── Identity ─────────────────────────────────────────────────────────── */
 
@@ -296,6 +300,105 @@ export const work = [
       {
         label: "Easily automate and monitor farms with Tibbo's latest solutions",
         href: 'https://us15.campaign-archive.com/?u=a2ba07dd12fa729ce1704dba7&id=b82614f89a',
+      },
+    ],
+  },
+] as const;
+
+/* ── Personal projects ────────────────────────────────────────────────── */
+
+/**
+ * Personal projects, published with their source. The copy deliberately
+ * describes what the application does rather than claiming authorship of the
+ * code. Every claim is taken from the project's own README or from the running
+ * application.
+ */
+export const projects = [
+  {
+    title: 'Manda Chinese',
+    kind: 'Browser & desktop app',
+    year: '2026',
+    summary:
+      'Everything needed to learn Chinese in one free platform. Paste any Simplified or Traditional text and it becomes an annotated reader, with pinyin, definitions, audio and an HSK level on every word. The same codebase runs in the browser and ships as native Windows and macOS builds.',
+    highlights: [
+      'Any Chinese text becomes an annotated reader, with lookups and audio',
+      'CC-CEDICT dictionary, 120,000+ entries, with handwriting search',
+      'Word segmentation by jieba, compiled to WebAssembly',
+      'Photo, EPUB and subtitle import, all parsed in the browser',
+      'Spaced repetition across flashcards, cloze and passage sessions',
+      'A learning path and level badges for both HSK 3.0 and TOCFL',
+      'Speed-reading trainer, from 120 to 400 words per minute',
+      'Native builds through Tauri, which uses the OS webview, not Electron',
+      'Genuinely offline: data sits in IndexedDB, cloud sync is optional',
+    ],
+    stack: ['React', 'TypeScript', 'Vite', 'Tauri'],
+    links: [
+      {
+        label: 'Open the app',
+        href: 'https://mandachinese.com',
+        primary: true,
+      },
+      {
+        label: 'Install it',
+        href: 'https://mandachinese.com/install',
+        primary: false,
+      },
+    ],
+    shots: [
+      {
+        image: mandaShot,
+        alt: 'The Manda reader showing a Chinese passage with tone-coloured characters and pinyin under every word. A lookup opened on 有趣 gives its pinyin, HSK 4 and TOCFL 2 badges and the definition “interesting; fascinating; amusing”, above a level breakdown putting the text at an estimated HSK 4 across 32 analysed words.',
+        caption: 'A word lookup, open in the reader',
+      },
+      {
+        image: mandaShot2,
+        alt: 'The Manda dashboard, showing four words due for review with flashcard and cloze buttons, a day streak and review counters, and a vocabulary panel reporting 5,309 known words — 4.26 per cent of the dictionary.',
+        caption: 'The dashboard and review queue',
+      },
+    ],
+  },
+  {
+    title: 'Paint 5.1 Remade for Modern Systems',
+    kind: 'Browser & desktop app',
+    year: '2026',
+    summary:
+      'Microsoft Paint, as it shipped in Windows XP, rebuilt from scratch in TypeScript — running in the browser and natively on macOS and Windows. Not a theme and not a tribute: a reimplementation that reproduces the original’s features, and limitations.',
+    /** Kept short deliberately: each one has to hold a single line in the card. */
+    highlights: [
+      'All 16 original tools, with their original option panes',
+      'BMP (1/4/8/24-bit), GIF, JPEG and PNG via hand-written codecs',
+      'Hand-written rasterisers, so shapes land on the original’s pixels',
+      'The menu bar as XP shipped it, down to Stretch/Skew',
+      'Undo capped at three levels, and wiped by a black-and-white conversion',
+      'Canvas grows into white, but a moved selection leaves background colour',
+      'Touch and gesture support on phones, with no mobile reflow',
+      'Builds for macOS, Windows and the browser with no native toolchain',
+      '55 self-tests driving the real rasterisers, tools and codecs',
+    ],
+    stack: ['TypeScript', 'Electron', 'esbuild'],
+    /** The project's own docs/ screenshots, unretouched. */
+    shots: [
+      {
+        image: paint51Shot,
+        alt: 'Paint 5.1 running, with the original toolbox, tool options, colour palette and status bar around a canvas holding a drawing of a house, a tree and a sun.',
+        caption: 'The application running',
+      },
+      {
+        image: paint51Zoom,
+        alt: 'The same canvas at eight times magnification, every pixel drawn as a discrete square on the grid, with 8× selected in the zoom options.',
+        caption: '8× zoom, pixel grid on',
+      },
+    ],
+    links: [
+      {
+        label: 'Open the app',
+        href: 'https://elliottjonestw.github.io/paint5.1/',
+        primary: true,
+      },
+      {
+        label: 'Source on GitHub',
+        href: 'https://github.com/elliottjonestw/paint5.1',
+        primary: false,
       },
     ],
   },
