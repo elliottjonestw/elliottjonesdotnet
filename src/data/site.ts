@@ -396,7 +396,7 @@ export const projects = [
         primary: true,
       },
       {
-        label: 'Source on GitHub',
+        label: 'GitHub',
         href: 'https://github.com/elliottjonestw/paint5.1',
         primary: false,
       },
