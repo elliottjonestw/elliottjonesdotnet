@@ -66,7 +66,11 @@
   :root {
     --rule: color-mix(in oklab, var(--color-ink) 12%, transparent);
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    /* Anchor targets land flush against the top of the viewport. There is no
+       sticky header to clear, and any offset here leaves a strip of the
+       previous section visible — very obvious where a pale section meets a
+       dark one. */
+    scroll-padding-top: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {
