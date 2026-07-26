@@ -20,17 +20,58 @@ import { hero, person } from '../data/site';
   </div>
 
   <div class="shell">
-    {/* Portrait beside the details at every width. */}
-    <div class="flex items-center gap-5 sm:gap-8">
+    {/* Two separate arrangements rather than one that bends. Below 480px — the
+        widest phone in portrait — the introduction is cut back to the portrait,
+        the name and the job title; place and employer are dropped because the
+        lead paragraph directly beneath names both. That leaves the name enough
+        width to sit beside the portrait without being squeezed. */}
+
+    {/* ── Phone portrait ───────────────────────────────────────────────── */}
+    <div class="flex items-center gap-4 min-[480px]:hidden">
+      <div class="w-16 shrink-0" data-hero="1">
+        <Image
+          src={headshot}
+          alt={`${person.name}, ${person.role} at ${person.company}`}
+          widths={[64, 128, 192]}
+          sizes="4rem"
+          class="aspect-square w-full rounded-xl object-cover ring-1 ring-jade/25"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <div class="min-w-0">
+        {/* Sized off the viewport so the name always clears the portrait on one
+            line, from 320px up. */}
+        <h1
+          class="font-display text-[clamp(2rem,9.5vw,2.75rem)] leading-[0.94] font-bold tracking-[-0.032em]"
+        >
+          <span class="hero-line">
+            <span class="block" data-hero="2">{person.name}</span>
+          </span>
+        </h1>
+        {/* balance rather than a hard break: on the narrowest screens the title
+            splits evenly instead of leaving one word stranded. */}
+        <p
+          class="mono-label mt-2 text-[0.625rem] leading-[1.7] tracking-[0.12em] text-balance text-jade"
+          data-hero="3"
+        >
+          {hero.eyebrow}
+        </p>
+      </div>
+    </div>
+
+    {/* ── 480px and up ─────────────────────────────────────────────────── */}
+    <div class="hidden items-center gap-6 min-[480px]:flex sm:gap-8">
       <div class="shrink-0" data-hero="1">
         {/* The jade edge sits inside the layout box rather than around it, so
             the portrait's left edge lines up exactly with the text below. */}
-        <div class="w-[4.5rem] sm:w-24 lg:w-28">
+        <div class="w-20 sm:w-24 lg:w-28">
           <Image
             src={headshot}
             alt={`${person.name}, ${person.role} at ${person.company}`}
-            widths={[72, 112, 160, 224]}
-            sizes="(min-width:1024px) 7rem, (min-width:640px) 6rem, 4.5rem"
+            widths={[80, 112, 160, 224]}
+            sizes="(min-width:1024px) 7rem, (min-width:640px) 6rem, 5rem"
             class="aspect-square w-full rounded-2xl object-cover ring-1 ring-jade/25"
             loading="eager"
             fetchpriority="high"
@@ -39,10 +80,10 @@ import { hero, person } from '../data/site';
       </div>
 
       <div class="min-w-0">
-        <p class="eyebrow text-[0.6875rem] tracking-[0.12em] sm:text-xs sm:tracking-[0.16em]" data-hero="1">
+        <p class="eyebrow text-xs tracking-[0.16em]" data-hero="1">
           {person.location}
         </p>
-        <h1 class="font-display mt-2 text-display font-bold sm:mt-3">
+        <h1 class="font-display mt-3 text-display font-bold">
           <span class="hero-line">
             <span class="block" data-hero="2">{person.name}</span>
           </span>
@@ -50,7 +91,7 @@ import { hero, person } from '../data/site';
         {/* Role and company break onto their own lines on narrow screens rather
             than wrapping mid-phrase. */}
         <p
-          class="mono-label mt-2 text-[0.625rem] tracking-[0.1em] text-jade sm:mt-3 sm:text-[0.6875rem] sm:tracking-[0.14em]"
+          class="mono-label mt-3 text-[0.6875rem] tracking-[0.14em] text-jade"
           data-hero="3"
         >
           <span class="block md:inline">{hero.eyebrow}</span>
@@ -63,16 +104,21 @@ import { hero, person } from '../data/site';
     <div class="mt-8 max-w-5xl" data-hero="4">
       <p class="text-lead text-slate">{hero.lead}</p>
 
-      <div class="mt-8 flex flex-wrap items-center gap-3">
+      {/* On a phone the two calls to action stack full width — a thumb-sized
+          target across the screen rather than two ragged pills. From 480px up
+          they sit on one row at their content width. */}
+      <div
+        class="mt-8 flex flex-col gap-3 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:items-center"
+      >
         <a
           href="#mandarin"
-          class="mono-label rounded-full bg-ink px-6 py-3.5 text-paper transition-colors duration-300 hover:bg-jade"
+          class="mono-label block rounded-full bg-ink px-6 py-4 text-center text-paper transition-colors duration-300 hover:bg-jade min-[480px]:py-3.5"
         >
           See my Mandarin
         </a>
         <a
           href="#experience"
-          class="mono-label rounded-full border border-ink/25 px-6 py-3.5 transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-paper"
+          class="mono-label block rounded-full border border-ink/25 px-6 py-4 text-center transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-paper min-[480px]:py-3.5"
         >
           Where I've worked
         </a>
