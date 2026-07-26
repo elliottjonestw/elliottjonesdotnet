@@ -88,6 +88,22 @@
 
     <h2>Experience</h2>
 
+      <!-- Work Experience Item -2 -->
+
+      <div class="item">
+        <div class="item-header">
+          <img src="mainarea-imgs/txone.jpg" alt="TXOne Logo" class="logo">
+          <div class="item-info">
+            <h3>Product Customer Success Manager</h3>
+            <p class="second-line">TXOne Networks</p>
+          </div><button class="toggle-button" onclick="toggleDescription('workitem-2')">+</button>
+        </div>
+        <div id="workitem-2" class="item-description">
+          <p><b>Nov 2025 - Present</b></p>
+          <p>Managing customer success and technical writing for Stellar.</p>
+        </div>
+      </div>
+
       <!-- Work Experience Item -1 -->
 
       <div class="item">
@@ -99,7 +115,7 @@
           </div><button class="toggle-button" onclick="toggleDescription('workitem-1')">+</button>
         </div>
         <div id="workitem-1" class="item-description">
-          <p><b>Nov 2024 - Present</b></p>
+          <p><b>Nov 2024 - Nov 2025</b></p>
           <p>Managing technical documentation for all Tibbo Technology hardware and software products.</p>
         </div>
       </div>
@@ -496,7 +512,7 @@
     document.addEventListener("DOMContentLoaded", function() {
       if (window.innerWidth > 768) { // Adjust this threshold as needed
           // Open the most recent work experience item on load
-          toggleDescription('workitem-1');
+          toggleDescription('workitem-2');
       }
         setTimeout(showPopup, 3000);
     });

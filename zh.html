@@ -87,6 +87,22 @@
 
     <h2>工作經驗</h2>
 
+      <!-- Work Experience Item -2 -->
+
+      <div class="item">
+        <div class="item-header">
+          <img src="mainarea-imgs/txone.jpg" alt="TXOne Logo" class="logo">
+          <div class="item-info">
+            <h3>客戶成功經理（產品）</h3>
+            <p class="second-line">睿控網安</p>
+          </div><button class="toggle-button" onclick="toggleDescription('workitem-2')">+</button>
+        </div>
+        <div id="workitem-2" class="item-description">
+          <p><b>2025年11月 - 現在</b></p>
+          <p>負責 Stellar 的客戶成功和技術寫作管理。</p>
+        </div>
+      </div>
+
       <!-- Work Experience Item -1 -->
 
       <div class="item">
@@ -98,7 +114,7 @@
           </div><button class="toggle-button" onclick="toggleDescription('workitem-1')">+</button>
         </div>
         <div id="workitem-1" class="item-description">
-          <p><b>2024年11月 - 現在</b></p>
+          <p><b>2024年11月 - 2025年11月</b></p>
           <p>管理集博的硬體與軟體產品技術文件。</p>
         </div>
       </div>
@@ -465,7 +481,7 @@
     document.addEventListener("DOMContentLoaded", function() {
       if (window.innerWidth > 768) { // Adjust this threshold as needed
           // Open the most recent work experience item on load
-          toggleDescription('workitem-1');
+          toggleDescription('workitem-2');
       }
         setTimeout(showPopup, 3000);
     });
