@@ -61,7 +61,7 @@ export const hero = {
   /** Shown as a mono data strip beneath the lead. Each is verifiable elsewhere on the page. */
   facts: [
     { value: 'CEFR C1', label: 'Certified Mandarin', href: '#mandarin' },
-    { value: '10+ yrs', label: 'In Taiwan & China' },
+    { value: '10+ yrs', label: 'In Taiwan & mainland China' },
     { value: '2 talks', label: 'At CYBERSEC', href: '#speaking' },
     { value: 'Native', label: 'British English' },
   ],
