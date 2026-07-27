@@ -94,12 +94,12 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
       <div class="shrink-0" data-hero="1">
         {/* The jade edge sits inside the layout box rather than around it, so
             the portrait's left edge lines up exactly with the text below. */}
-        <div class="w-20 sm:w-24 lg:w-28">
+        <div class="portrait">
           <Image
             src={headshot}
             alt={`${person.name}, ${person.role} at ${person.company}`}
-            widths={[80, 112, 160, 224]}
-            sizes="(min-width:1024px) 7rem, (min-width:640px) 6rem, 5rem"
+            widths={[136, 204, 272]}
+            sizes="8.25rem"
             class="aspect-square w-full rounded-2xl object-cover ring-1 ring-jade/25"
             style="view-transition-name:hero-portrait-wide"
             loading="eager"
@@ -206,6 +206,37 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
   @media (min-width: 480px) {
     .hero {
       padding-top: clamp(2.5rem, 15svh, 12rem);
+    }
+  }
+
+  /* From 480px up the portrait is sized to the exact height of the type beside
+     it — place, name, job title — rather than to a fixed width, so its bottom
+     edge finishes level with the last line of that block at every width.
+
+     The height is the three line boxes plus the two 0.75rem gaps (mt-3)
+     between them. The negative margin on .hero-line cancels the padding that
+     protects the descenders, so the name contributes its line box and nothing
+     more. Only the name is fluid, and it is fluid by the same --text-display
+     the h1 is set in, so the portrait cannot drift out of step with it. Below
+     md the job title and the employer sit on separate lines, which is the
+     second title line box there. */
+  .portrait {
+    --line-place: 1rem; /* text-xs */
+    --line-name: calc(var(--text-display) * var(--text-display--line-height));
+    --line-title: calc(0.6875rem * 1.7); /* mono label at the body leading */
+
+    width: calc(
+      var(--line-place) + 0.75rem + var(--line-name) + 0.75rem +
+        var(--line-title) * 2
+    );
+  }
+
+  @media (min-width: 768px) {
+    .portrait {
+      width: calc(
+        var(--line-place) + 0.75rem + var(--line-name) + 0.75rem +
+          var(--line-title)
+      );
     }
   }
 
