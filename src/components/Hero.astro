@@ -9,10 +9,18 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
 
 {/* The hero fills the first screen, so the dark section below it never bleeds
     into the fold. min-height rather than height: if the content is taller than
-    the viewport the section simply grows. */}
+    the viewport the section simply grows.
+
+    On a phone the content is pinned to the top rather than centred in the
+    screen, so the gap above the portrait is exactly the top padding whatever
+    the locale. Centred, it isn't: the English lead runs longer than the
+    Chinese one, so the two overflow the viewport by different amounts and
+    open at visibly different heights. 2rem clears the language chip, which
+    sits to the right of the name at these widths; below 360px the name runs
+    far enough right to pass under the chip, so there it is pushed clear. */}
 <section
   id="top"
-  class="relative flex min-h-svh flex-col justify-center overflow-hidden pt-9 pb-16 max-[479px]:pt-16 sm:pt-12 lg:pb-24"
+  class="relative flex min-h-svh flex-col justify-center overflow-hidden pt-9 pb-16 max-[479px]:justify-start max-[479px]:pt-8 max-[359px]:pt-20 sm:pt-12 lg:pb-24"
 >
   {/* Ambient jade wash behind the opening frame. Purely atmospheric. */}
   <div
@@ -45,9 +53,10 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
 
       <div class="min-w-0">
         {/* Sized off the viewport so the name always clears the portrait on one
-            line, from 320px up. */}
+            line, from 320px up — and, from 360px up, ends clear of the language
+            chip in the corner rather than running under it. */}
         <h1
-          class="font-display text-[clamp(2rem,9.5vw,2.75rem)] leading-[0.94] font-bold tracking-[-0.032em]"
+          class="font-display text-[clamp(2rem,9.2vw,2.75rem)] leading-[0.94] font-bold tracking-[-0.032em]"
         >
           <span class="hero-line">
             <span class="block" data-hero="2">{person.name}</span>
