@@ -1,0 +1,139 @@
+---
+/**
+ * The join between an ink section and the paper on the other side of it.
+ *
+ * Left alone, those joins are butt edges: the dark simply starts. This gives
+ * each one an arrival — a jade hairline that draws across the edge as it comes
+ * into view, and a short wash of jade soaking off the edge into the dark, so
+ * the boundary reads as a fold in the page rather than two sheets pushed
+ * together.
+ *
+ * Belongs inside the ink section, anchored to whichever edge faces the paper.
+ * There are three such edges on the page: the top and bottom of Mandarin, and
+ * the top of Contact. Contact's bottom edge is the end of the document, so it
+ * has nothing to meet and takes no seam.
+ *
+ * The draw is driven by the shared [data-reveal] observer rather than
+ * animation-timeline: view(). A view() timeline resolves against the nearest
+ * scrollport ancestor, and both ink sections are overflow-hidden to clip their
+ * radial washes — which makes them scroll containers, so the timeline would be
+ * measured against the section itself and never advance. The observer has no
+ * such problem, already handles reduced motion and no-JS, and is what the score
+ * chart draws off too.
+ */
+
+interface Props {
+  /** Which edge of the ink section this sits on. */
+  edge: 'top' | 'bottom';
+}
+
+const { edge } = Astro.props;
+---
+
+<div class="seam" data-edge={edge} data-reveal aria-hidden="true">
+  <span class="seam-bleed"></span>
+  <span class="seam-rule"></span>
+</div>
+
+<style>
+  .seam {
+    position: absolute;
+    inset-inline: 0;
+    height: 5rem;
+    pointer-events: none;
+  }
+
+  .seam[data-edge='top'] {
+    top: 0;
+  }
+
+  .seam[data-edge='bottom'] {
+    bottom: 0;
+  }
+
+  /* The hairline, flush against the edge itself. Faded out at both ends so it
+     reads as light catching the fold rather than a drawn border. */
+  .seam-rule {
+    position: absolute;
+    inset-inline: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-jade-bright) 14%,
+      var(--color-jade-bright) 86%,
+      transparent
+    );
+    /* Drawn by default. Only a browser that is running the reveal script hides
+       it to begin with, so no-JS and reduced-motion readers get the finished
+       hairline rather than nothing at all. */
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .seam[data-edge='top'] .seam-rule {
+    top: 0;
+  }
+
+  .seam[data-edge='bottom'] .seam-rule {
+    bottom: 0;
+  }
+
+  /* The wash coming off the edge, into the dark. */
+  .seam-bleed {
+    position: absolute;
+    inset-inline: 0;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .seam[data-edge='top'] .seam-bleed {
+    top: 0;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-jade-bright) 16%, transparent),
+      transparent
+    );
+  }
+
+  .seam[data-edge='bottom'] .seam-bleed {
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--color-jade-bright) 16%, transparent),
+      transparent
+    );
+  }
+
+  /* The generic reveal — fade up from 1.5rem — would drag the whole seam down
+     off its edge, so it is cancelled here and replaced with the draw. Same
+     shape as the score chart: the ancestor chain goes inside :global() because
+     html and [data-reveal] both belong to other components, and Astro would
+     otherwise scope them to this one and stop the rules matching. */
+  :global(html.js-reveal) .seam[data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html.js-reveal) .seam[data-reveal] .seam-rule {
+      transform: scaleX(0);
+      transition: transform 1.1s var(--ease-out-quint);
+    }
+
+    :global(html.js-reveal) .seam[data-reveal] .seam-bleed {
+      opacity: 0;
+      /* Trails the hairline: the light lands first, the dark soaks after. */
+      transition: opacity 1.4s var(--ease-out-quint) 0.25s;
+    }
+
+    :global(html.js-reveal) .seam[data-reveal].is-revealed .seam-rule {
+      transform: scaleX(1);
+    }
+
+    :global(html.js-reveal) .seam[data-reveal].is-revealed .seam-bleed {
+      opacity: 1;
+    }
+  }
+</style>

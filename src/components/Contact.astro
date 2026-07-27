@@ -1,4 +1,5 @@
 ---
+import SectionSeam from './SectionSeam.astro';
 import { getContent } from '../data/content';
 import { resolveLocale } from '../i18n/locales';
 
@@ -17,6 +18,9 @@ const year = new Date().getFullYear();
     aria-hidden="true"
   >
   </div>
+
+  {/* Top edge only — the bottom of this section is the bottom of the page. */}
+  <SectionSeam edge="top" />
 
   <div class="shell relative">
     <p class="eyebrow" data-reveal>{contact.eyebrow}</p>
