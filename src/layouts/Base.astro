@@ -262,6 +262,66 @@ gtag('config', '${person.gaMeasurementId}');`}
     <SectionRail />
     <slot />
 
+    {/* Reopen the other locale at the place the reader left, rather than at the
+        top of the page. The switch records which section the top of the window
+        was in and how far through it; this puts the reader back at the same
+        point in the other language.
+
+        A fraction rather than a pixel offset, because a section is not the same
+        height in both languages — so the same offset lands somewhere else in
+        the other one, and the further down the page the reader is, the further
+        out it drifts.
+
+        Inline and classic on purpose, and placed here rather than in the head:
+        the document above it is parsed, so the sections can be measured. */}
+    <script is:inline>
+      (function () {
+        var raw;
+        try {
+          raw = sessionStorage.getItem('locale-scroll');
+          // One shot. A reload or a later visit should open at the top.
+          sessionStorage.removeItem('locale-scroll');
+        } catch (error) {
+          return; // Storage blocked; the page opens at the top.
+        }
+        if (!raw) return;
+
+        var saved;
+        try {
+          saved = JSON.parse(raw);
+        } catch (error) {
+          return;
+        }
+
+        function apply() {
+          var section = document.getElementById(saved.id);
+          if (!section) return;
+
+          var box = section.getBoundingClientRect();
+          var target = box.top + window.scrollY + saved.through * box.height;
+          var furthest =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+          // 'instant' matters: :root carries scroll-behavior: smooth, and
+          // without it the restore would animate — the reader would watch the
+          // new language scroll itself into place, which is the thing this
+          // exists to avoid.
+          window.scrollTo({
+            top: Math.max(0, Math.min(target, furthest)),
+            behavior: 'instant',
+          });
+        }
+
+        // Applied twice, deliberately. This first call covers browsers with no
+        // pagereveal. The second matters everywhere else: a navigation settles
+        // its own scroll position at the first render, which lands on top of
+        // anything done during parsing and would put the reader back at the
+        // top. pagereveal fires after that and before the first frame.
+        apply();
+        window.addEventListener('pagereveal', apply);
+      })();
+    </script>
+
     <style>
       .scroll-progress {
         position: fixed;
