@@ -12,16 +12,21 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
     into the fold. min-height rather than height: if the content is taller than
     the viewport the section simply grows.
 
-    On a phone the content is pinned to the top rather than centred in the
-    screen, so the gap above the portrait is exactly the top padding whatever
-    the locale. Centred, it isn't: the English lead runs longer than the
-    Chinese one, so the two overflow the viewport by different amounts and
-    open at visibly different heights. 2rem clears the language chip, which
-    sits to the right of the name at these widths; below 360px the name runs
-    far enough right to pass under the chip, so there it is pushed clear. */}
+    The content is pinned to the top of the screen rather than centred in it,
+    at every width, so the gap above the portrait is exactly the top padding
+    whatever the locale. Centred, it is not: the copy is not the same height
+    in both languages — at 1440px the English lead wraps to four lines against
+    the Chinese three, which makes the block 37px taller — and centring splits
+    that difference, opening the two locales 18px apart. Measuring from the
+    top instead is immune to it, and to the same problem in the credential
+    labels, which wrap at different widths in the two languages.
+
+    2rem clears the language chip, which sits to the right of the name at
+    phone widths; below 360px the name runs far enough right to pass under the
+    chip, so there it is pushed clear. */}
 <section
   id="top"
-  class="relative flex min-h-svh flex-col justify-center overflow-hidden pt-9 pb-16 max-[479px]:justify-start max-[479px]:pt-8 max-[359px]:pt-20 sm:pt-12 lg:pb-24"
+  class="hero relative flex min-h-svh flex-col justify-start overflow-hidden pt-8 pb-16 max-[359px]:pt-20 lg:pb-24"
 >
   {/* Ambient jade wash behind the opening frame. Purely atmospheric. */}
   <div
@@ -188,6 +193,22 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
 </section>
 
 <style>
+  /* From 480px up the introduction is set down from the top by a share of the
+     window, rather than by the fixed 2rem the phone layout uses. A share
+     because the amount of room to play with is the window's, and a fixed inset
+     that looks considered on a laptop looks stuck to the ceiling on a tall
+     display. 15svh reproduces where the English hero already sat on a 900px
+     window almost to the pixel; the bounds stop it collapsing on a short
+     window or drifting too far down a very tall one.
+
+     Whatever it resolves to, it resolves to the same number in both locales,
+     which is the point. */
+  @media (min-width: 480px) {
+    .hero {
+      padding-top: clamp(2.5rem, 15svh, 12rem);
+    }
+  }
+
   /* The name sits in a mask so it can rise into view on load. The padding keeps
      descenders from being clipped by the mask. */
   .hero-line {
