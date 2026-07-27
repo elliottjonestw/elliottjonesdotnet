@@ -14,10 +14,14 @@ const { work } = getContent(resolveLocale(Astro.currentLocale));
       intro={work.section.intro}
     />
 
+    {/* min-w-0 on each column: the rows below truncate rather than wrap, and a
+        grid item defaults to min-width:auto — without it the column is sized to
+        the longest untruncated title and the whole page overflows on a phone,
+        carrying the fixed language switch off the right edge with it. */}
     <div class="mt-14 grid gap-x-12 gap-y-14 lg:mt-20 lg:grid-cols-3">
       {
         work.groups.map((group, i) => (
-          <div data-reveal style={`--reveal-delay:${i * 90}ms`}>
+          <div class="min-w-0" data-reveal style={`--reveal-delay:${i * 90}ms`}>
             <div class="flex items-baseline gap-3 border-b border-ink/12 pb-4">
               <h3
                 class="font-display text-xl font-semibold"

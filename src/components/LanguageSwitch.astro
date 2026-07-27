@@ -7,25 +7,39 @@ const lang = resolveLocale(Astro.currentLocale);
 
 {/* Fixed in the top corner on every page, with its own opaque pill rather
     than inheriting section colour — the page scrolls behind it through both
-    light and on-ink sections, and a translucent chip stays legible on both. */}
+    light and on-ink sections, and a translucent chip stays legible on both.
+
+    Below 480px it collapses to a single round chip carrying one glyph — the
+    language you would switch to. A phone has no room for a two-part control
+    up there without the hero having to be padded down to clear it, and with
+    only two locales the pair is a toggle anyway: the one on offer is the one
+    you are not reading. */}
 <nav
   aria-label="Language"
-  class="fixed top-4 right-4 z-50 flex items-center gap-0.5 rounded-full border border-ink/15 bg-paper/95 p-1 shadow-sm backdrop-blur-sm"
+  class="fixed top-4 right-4 z-50 flex items-center gap-0.5 rounded-full border border-ink/15 bg-paper/95 p-0.5 shadow-sm backdrop-blur-sm min-[480px]:p-1"
 >
   {
     locales.map((locale) => {
       const active = locale.code === lang;
       return active ? (
-        <span class="mono-label rounded-full bg-ink px-3 py-1.5 text-paper">
+        <span class="mono-label hidden rounded-full bg-ink px-3 py-1.5 text-paper min-[480px]:block">
           {locale.label}
         </span>
       ) : (
         <a
           href={withBase(locale.path)}
-          class="mono-label rounded-full px-3 py-1.5 text-slate transition-colors duration-300 hover:bg-ink/8 hover:text-ink"
+          aria-label={locale.name}
+          class="mono-label flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors duration-300 hover:bg-ink/8 hover:text-ink min-[480px]:h-auto min-[480px]:w-auto min-[480px]:px-3 min-[480px]:py-1.5 min-[480px]:text-slate"
           data-lang-link
         >
-          {locale.label}
+          {/* Tracking is set for a run of Latin capitals; on a lone glyph it
+              only pushes it off centre. */}
+          <span class="tracking-normal min-[480px]:hidden" aria-hidden="true">
+            {locale.short}
+          </span>
+          <span class="hidden min-[480px]:inline" aria-hidden="true">
+            {locale.label}
+          </span>
         </a>
       );
     })

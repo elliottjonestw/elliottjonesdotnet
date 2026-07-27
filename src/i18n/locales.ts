@@ -17,16 +17,30 @@ export interface LocaleMeta {
   ogLocale: string;
   /** Label shown in the language switch. */
   label: string;
+  /** Single-glyph label for the compact phone switch. */
+  short: string;
+  /** The language's own name, used as the accessible name of the switch. */
+  name: string;
 }
 
 export const locales: LocaleMeta[] = [
-  { code: 'en', path: '', hreflang: 'en', ogLocale: 'en_GB', label: 'EN' },
+  {
+    code: 'en',
+    path: '',
+    hreflang: 'en',
+    ogLocale: 'en_GB',
+    label: 'EN',
+    short: 'EN',
+    name: 'English',
+  },
   {
     code: 'zh-Hant-TW',
     path: 'zh-tw',
     hreflang: 'zh-Hant-TW',
     ogLocale: 'zh_TW',
     label: '中文',
+    short: '中',
+    name: '中文',
   },
 ];
 
