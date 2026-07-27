@@ -136,7 +136,7 @@
   }
 
   .section-pad {
-    padding-block: clamp(3.75rem, 6.5vw, 6rem);
+    padding-block: clamp(1.875rem, 3.25vw, 3rem);
   }
 
   /* The mono label that heads every section. */
