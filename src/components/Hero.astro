@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Odometer from './Odometer.astro';
 import headshot from '../assets/headshot.png';
 import { getContent } from '../data/content';
 import { resolveLocale } from '../i18n/locales';
@@ -164,13 +165,13 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
           bottom, so both stay aligned across tiles even when a label wraps to
           two lines on narrow screens. */}
       {
-        hero.facts.map((fact) => (
+        hero.facts.map((fact, i) => (
           <div class="group relative flex h-full flex-col-reverse justify-between gap-3 bg-paper p-5 transition-colors duration-300 sm:p-6 hover:bg-surface">
             <dt class="mono-label text-slate">{fact.label}</dt>
             <dd
               class="font-display text-2xl font-bold transition-colors duration-300 group-hover:text-jade md:text-3xl"
             >
-              {fact.value}
+              <Odometer value={fact.value} index={i} />
             </dd>
             {'href' in fact && fact.href && (
               <a href={fact.href} class="absolute inset-0">

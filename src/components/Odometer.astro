@@ -1,0 +1,121 @@
+---
+/**
+ * A credential figure with its numerals on rollers.
+ *
+ * Every digit becomes its own strip of 0–9 behind a one-line window, and the
+ * strip spins a full cycle before settling on the digit it was always going to
+ * land on. Everything that is not a digit — 'CEFR C', '+ yrs', ' 場' — is
+ * carried through untouched, so only the data moves.
+ *
+ * The strip carries two full cycles rather than one. Resting on the second
+ * means the roll can start from the same digit in the first cycle and travel
+ * ten places to reach it, which gives every figure an identical spin no matter
+ * what it ends on — a '0' would otherwise have nowhere to travel from.
+ *
+ * The rollers are decorative: the value is also emitted once, whole, for
+ * assistive technology, and the visual layer is hidden from it.
+ */
+
+interface Props {
+  value: string;
+  /** Which tile this is, so the four figures do not spin in unison. */
+  index?: number;
+}
+
+const { value, index = 0 } = Astro.props;
+
+/* \d takes one digit at a time — each needs its own roller — while \D+ takes
+   the longest run of everything else. */
+const parts = value.match(/\d|\D+/g) ?? [value];
+const cycle = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let ordinal = 0;
+---
+
+<span class="sr-only">{value}</span>
+
+<span class="odo-value" aria-hidden="true">
+  {
+    parts.map((part) => {
+      if (!/^\d$/.test(part)) return <span class="odo-static">{part}</span>;
+      const position = ordinal++;
+      return (
+        <span class="odo" style={`--d:${part};--tile:${index};--n:${position}`}>
+          <span class="odo-track">
+            {cycle.map((digit) => (
+              <span>{digit}</span>
+            ))}
+            {cycle.map((digit) => (
+              <span>{digit}</span>
+            ))}
+          </span>
+        </span>
+      );
+    })
+  }
+</span>
+
+<style>
+  /* Laid out as a row of equal-height boxes rather than as inline text. An
+     inline-block that clips its overflow takes its baseline from its bottom
+     margin edge instead of from the text inside it, so a roller set inline
+     would sit off the baseline of the letters beside it by the depth of the
+     font's descender. Matching the heights and stacking them in a row sidesteps
+     the baseline rules altogether. */
+  .odo-value {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    line-height: 1;
+  }
+
+  .odo-static,
+  .odo {
+    height: 1em;
+    line-height: 1;
+    /* The runs carry their own spacing — ' talks' leads with a space — and a
+       flex item would otherwise drop it at the start of the line box. */
+    white-space: pre;
+  }
+
+  .odo {
+    display: inline-block;
+    overflow: hidden;
+    /* The window is as wide as the widest digit in the strip either way, so the
+       figure cannot change width mid-spin. Tabular figures make the resting
+       state agree with that. */
+    font-variant-numeric: tabular-nums;
+  }
+
+  .odo-track {
+    display: block;
+    transform: translateY(calc((var(--d) + 10) * -1em));
+  }
+
+  .odo-track > span {
+    display: block;
+    height: 1em;
+    line-height: 1;
+  }
+
+  /* Spins in as the credential strip arrives — 0.52s is where [data-hero='5']
+     comes in — with each digit settling just after the one to its left.
+     Suppressed on a locale switch for the same reason the rest of the opening
+     sequence is; see the note in Hero.astro. */
+  @media (prefers-reduced-motion: no-preference) {
+    .odo-track {
+      animation: odo-roll 1.15s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+      animation-delay: calc(0.52s + var(--tile) * 0.07s + var(--n) * 0.09s);
+    }
+
+    :global(html.vt-nav) .odo-track {
+      animation: none;
+    }
+  }
+
+  @keyframes odo-roll {
+    from {
+      transform: translateY(calc(var(--d) * -1em));
+    }
+  }
+</style>
