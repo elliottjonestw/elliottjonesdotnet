@@ -1,6 +1,9 @@
 ---
-import { person } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
 
+const { contact, person } = getContent(resolveLocale(Astro.currentLocale));
+const body = contact.body.replace('{location}', person.location);
 const year = new Date().getFullYear();
 ---
 
@@ -16,24 +19,22 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="shell relative">
-    <p class="eyebrow" data-reveal>Contact</p>
+    <p class="eyebrow" data-reveal>{contact.eyebrow}</p>
 
     <h2
       class="mt-5 max-w-3xl text-section"
       data-reveal
       style="--reveal-delay:60ms"
     >
-      If you need someone who can hold both sides of the conversation, let’s
-      talk.
+      {contact.title}
     </h2>
 
     <p
-      class="mt-6 max-w-xl text-lead text-paper/70"
+      class="mt-6 max-w-5xl text-lead text-paper/70"
       data-reveal
       style="--reveal-delay:120ms"
     >
-      Based in {person.location}. Open to customer success, technical writing and
-      product roles where English and Mandarin both matter.
+      {body}
     </p>
 
     <div
@@ -48,8 +49,11 @@ const year = new Date().getFullYear();
         class="mono-label rounded-full bg-paper px-7 py-4 text-ink transition-colors duration-300 hover:bg-jade-bright"
         data-copy-email
         data-email={person.email}
+        data-copy-success={contact.copySuccess}
+        data-copy-fallback-key={contact.copyFallbackKey}
+        data-copy-fallback-select={contact.copyFallbackSelect}
       >
-        <span data-copy-label>Copy email address</span>
+        <span data-copy-label>{contact.copyIdle}</span>
       </button>
       <a
         href={person.linkedin}
@@ -57,7 +61,7 @@ const year = new Date().getFullYear();
         rel="noopener noreferrer"
         class="mono-label rounded-full border border-paper/30 px-7 py-4 transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
       >
-        LinkedIn
+        {contact.linkedinLabel}
       </a>
     </div>
 
@@ -98,10 +102,14 @@ const year = new Date().getFullYear();
 
     button.addEventListener('click', async () => {
       const email = button.dataset.email ?? '';
+      const success = button.dataset.copySuccess ?? 'Copied';
+      const fallbackKey = button.dataset.copyFallbackKey ?? 'Press ⌘C to copy';
+      const fallbackSelect =
+        button.dataset.copyFallbackSelect ?? 'Select the address below';
 
       try {
         await navigator.clipboard.writeText(email);
-        say('Copied');
+        say(success);
         return;
       } catch {
         // Clipboard API unavailable or blocked (no permission, insecure
@@ -118,9 +126,9 @@ const year = new Date().getFullYear();
         field.select();
         const ok = document.execCommand('copy');
         field.remove();
-        say(ok ? 'Copied' : 'Press ⌘C to copy');
+        say(ok ? success : fallbackKey);
       } catch {
-        say('Select the address below');
+        say(fallbackSelect);
       }
     });
   }

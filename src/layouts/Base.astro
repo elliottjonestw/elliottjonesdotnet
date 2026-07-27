@@ -4,20 +4,22 @@ import '../styles/global.css';
 // can be preloaded without hardcoding build hashes.
 import displayFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
 import bodyFont from '@fontsource-variable/literata/files/literata-latin-wght-normal.woff2?url';
-import {
-  certifications,
-  education,
-  experience,
-  knowsAbout,
-  mandarin,
-  person,
-} from '../data/site';
+import { getContent } from '../data/content';
+import { locales, resolveLocale } from '../i18n/locales';
 import { absoluteUrl, canonicalUrl, withBase } from '../lib/url';
+import LanguageSwitch from '../components/LanguageSwitch.astro';
 
 interface Props {
   title?: string;
   description?: string;
 }
+
+const lang = resolveLocale(Astro.currentLocale);
+const isZh = lang === 'zh-Hant-TW';
+const content = getContent(lang);
+const { knowsAbout, mandarin, person } = content;
+const { roles: experience } = content.experience;
+const { certifications, education } = content.credentials;
 
 const { title = person.metaTitle, description = person.metaDescription } =
   Astro.props;
@@ -27,6 +29,12 @@ const canonical = canonicalUrl(Astro.url.pathname, site);
 const ogImage = absoluteUrl('og.jpg', site);
 /** Identity for the structured-data graph: whatever origin is actually live. */
 const home = canonicalUrl('/', site).href.replace(/\/$/, '');
+
+/** Every locale's home page, for hreflang alternates and the OG locale tag. */
+const alternates = locales.map((locale) => ({
+  ...locale,
+  href: canonicalUrl(withBase(locale.path), site).href,
+}));
 
 /**
  * ProfilePage wrapping a Person. Google reads ProfilePage for person-focused
@@ -42,7 +50,7 @@ const structuredData = {
       url: home,
       name: title,
       description,
-      inLanguage: 'en',
+      inLanguage: lang,
       primaryImageOfPage: { '@id': `${home}/#og` },
       mainEntity: { '@id': `${home}/#person` },
     },
@@ -63,10 +71,10 @@ const structuredData = {
       email: `mailto:${person.email}`,
       image: ogImage.href,
       sameAs: [person.linkedin],
-      nationality: { '@type': 'Country', name: 'United Kingdom' },
+      nationality: { '@type': 'Country', name: isZh ? '英國' : 'United Kingdom' },
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Taipei',
+        addressLocality: isZh ? '台北市' : 'Taipei',
         addressCountry: 'TW',
       },
       worksFor: { '@type': 'Organization', name: person.company },
@@ -74,13 +82,13 @@ const structuredData = {
       knowsLanguage: [
         {
           '@type': 'Language',
-          name: 'English',
+          name: isZh ? '英文' : 'English',
           alternateName: 'en',
         },
         {
           '@type': 'Language',
-          name: 'Mandarin Chinese',
-          alternateName: 'zh',
+          name: isZh ? '中文（國語）' : 'Mandarin Chinese',
+          alternateName: 'zh-Hant',
         },
       ],
       alumniOf: education.map((entry) => ({
@@ -90,7 +98,7 @@ const structuredData = {
       hasOccupation: experience.map((role) => ({
         '@type': 'Occupation',
         name: role.title,
-        occupationLocation: { '@type': 'Place', name: 'Taiwan' },
+        occupationLocation: { '@type': 'Place', name: isZh ? '台灣' : 'Taiwan' },
       })),
       hasCredential: [
         ...mandarin.results.map((result) => ({
@@ -99,7 +107,7 @@ const structuredData = {
           credentialCategory: 'Language proficiency',
           recognizedBy: {
             '@type': 'GovernmentOrganization',
-            name: 'Ministry of Education, Taiwan',
+            name: mandarin.governmentBody,
           },
         })),
         ...certifications.map((cert) => ({
@@ -115,7 +123,7 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,10 +137,34 @@ const structuredData = {
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
 
+    {/* hreflang alternates — every locale's home page points at every other,
+        plus itself, and x-default falls back to English for anyone whose
+        browser language doesn't match either tag. */}
+    {
+      alternates.map((locale) => (
+        <link rel="alternate" hreflang={locale.hreflang} href={locale.href} />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={alternates.find((locale) => locale.code === 'en')?.href}
+    />
+
     {/* Open Graph — this is what LinkedIn renders when the link is shared. */}
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content={person.name} />
-    <meta property="og:locale" content="en_GB" />
+    <meta
+      property="og:locale"
+      content={locales.find((locale) => locale.code === lang)?.ogLocale}
+    />
+    {
+      locales
+        .filter((locale) => locale.code !== lang)
+        .map((locale) => (
+          <meta property="og:locale:alternate" content={locale.ogLocale} />
+        ))
+    }
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -140,10 +172,7 @@ const structuredData = {
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content={`${person.name} — ${person.role} at ${person.company}, Taipei. Certified CEFR C1 Mandarin.`}
-    />
+    <meta property="og:image:alt" content={person.ogImageAlt} />
     <meta property="profile:first_name" content="Elliott" />
     <meta property="profile:last_name" content="Jones" />
 
@@ -210,8 +239,9 @@ gtag('config', '${person.gaMeasurementId}');`}
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
-      >Skip to content</a
+      >{content.nav.skipToContent}</a
     >
+    <LanguageSwitch />
     <slot />
 
     <script>

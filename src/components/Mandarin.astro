@@ -2,7 +2,10 @@
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import ScoreChart from './ScoreChart.astro';
-import { certificates, mandarin } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { certificates, mandarin } = getContent(resolveLocale(Astro.currentLocale));
 
 // Eagerly resolve the certificate scans so they can go through Astro's image
 // pipeline while still being addressed by filename from the data file.
@@ -31,13 +34,15 @@ const { speakingVideo } = mandarin;
   </div>
 
   <div class="shell relative">
-    <header class="max-w-4xl">
-      <p class="eyebrow" data-reveal>The differentiator</p>
-      <h2 class="mt-5 text-section" data-reveal style="--reveal-delay:60ms">
+    {/* Cap on the headline, not the header, so the body can run to the same
+        measure as the hero's lead. */}
+    <header>
+      <p class="eyebrow" data-reveal>{mandarin.eyebrow}</p>
+      <h2 class="mt-5 max-w-4xl text-section" data-reveal style="--reveal-delay:60ms">
         {mandarin.headline}
       </h2>
       <p
-        class="mt-7 max-w-2xl text-lead text-paper/70"
+        class="mt-7 max-w-5xl text-lead text-paper/70"
         data-reveal
         style="--reveal-delay:120ms"
       >
@@ -74,19 +79,19 @@ const { speakingVideo } = mandarin;
 
             <dl class="mt-5 space-y-2 border-t border-paper/12 pt-5">
               <div class="flex justify-between gap-3">
-                <dt class="mono-label text-paper/55">Score</dt>
+                <dt class="mono-label text-paper/55">{mandarin.resultsLabels.score}</dt>
                 <dd class="mono-label text-paper/85">{result.score}</dd>
               </div>
               <div class="flex justify-between gap-3">
-                <dt class="mono-label text-paper/55">TOCFL</dt>
+                <dt class="mono-label text-paper/55">{mandarin.resultsLabels.tocfl}</dt>
                 <dd class="mono-label text-paper/85">{result.tocfl}</dd>
               </div>
               <div class="flex justify-between gap-3">
-                <dt class="mono-label text-paper/55">ACTFL</dt>
+                <dt class="mono-label text-paper/55">{mandarin.resultsLabels.actfl}</dt>
                 <dd class="mono-label text-paper/85">{result.actfl}</dd>
               </div>
               <div class="flex justify-between gap-3">
-                <dt class="mono-label text-paper/55">Sat</dt>
+                <dt class="mono-label text-paper/55">{mandarin.resultsLabels.sat}</dt>
                 <dd class="mono-label text-paper/85">{result.date}</dd>
               </div>
             </dl>
@@ -99,12 +104,10 @@ const { speakingVideo } = mandarin;
     <div class="mt-16 grid gap-12 lg:mt-24 lg:grid-cols-2 lg:gap-16">
       <div data-reveal>
         <h3 class="font-display text-2xl font-semibold">
-          The trend, not the snapshot
+          {mandarin.trend.title}
         </h3>
         <p class="mt-4 max-w-md text-paper/70">
-          I have sat the TOCFL listening exam four times since April 2024. Each
-          sitting has scored higher than the last, and the fourth crossed into
-          CEFR&nbsp;C1.
+          {mandarin.trend.body}
         </p>
         <div
           class="mt-8 rounded-xl border border-paper/12 bg-paper/[0.03] p-6 text-paper sm:p-8"
@@ -115,11 +118,10 @@ const { speakingVideo } = mandarin;
 
       <div data-reveal style="--reveal-delay:100ms">
         <h3 class="font-display text-2xl font-semibold">
-          Hear it
+          {mandarin.hear.title}
         </h3>
         <p class="mt-4 max-w-md text-paper/70">
-          Certificates measure comprehension. This is what my spoken Chinese
-          actually sounds like.
+          {mandarin.hear.body}
         </p>
         {/* Vimeo, without their player.js — nothing here uses the Player API,
             so the page stays free of third-party script. */}
@@ -145,12 +147,10 @@ const { speakingVideo } = mandarin;
         class="font-display text-2xl font-semibold"
         data-reveal
       >
-        The paperwork
+        {mandarin.paperwork.title}
       </h3>
-      <p class="mt-4 max-w-xl text-paper/70" data-reveal>
-        Issued by Taiwan’s Ministry of Education and its Steering Committee for
-        the Test of Proficiency&#8209;Huayu. Each carries a QR code and
-        registration number for verification.
+      <p class="mt-4 max-w-5xl text-paper/70" data-reveal>
+        {mandarin.paperwork.body}
       </p>
 
       <ul class="mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">

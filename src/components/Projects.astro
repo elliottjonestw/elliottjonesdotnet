@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import SectionHeading from './SectionHeading.astro';
-import { projects } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { projects } = getContent(resolveLocale(Astro.currentLocale));
 ---
 
 <section id="projects" class="bg-surface section-pad">
   <div class="shell">
-    <SectionHeading
-      label="Personal projects"
-      title="Ideas I took from specification to production."
-    />
+    <SectionHeading label={projects.section.label} title={projects.section.title} />
 
     {/* One card per project, laid out wide rather than in a column grid, so a
         single entry reads as deliberate instead of half a row. */}
@@ -17,7 +17,7 @@ import { projects } from '../data/site';
         standfirst under it, so the usual gap reads as a hole. */}
     <ul class="mt-9 space-y-5 lg:mt-12">
       {
-        projects.map((project, i) => (
+        projects.items.map((project, i) => (
           <li
             class="rounded-xl border border-ink/12 p-7 transition-colors duration-500 hover:border-jade/50 sm:p-9"
             data-reveal
@@ -87,7 +87,7 @@ import { projects } from '../data/site';
               </div>
 
               <div class="lg:col-start-1 lg:row-start-2">
-                <p class="mono-label hidden text-slate md:block">Stack</p>
+                <p class="mono-label hidden text-slate md:block">{projects.stackLabel}</p>
                 <ul class="mt-4 hidden flex-wrap gap-2 md:flex">
                   {project.stack.map((item) => (
                     <li class="mono-label rounded-full border border-ink/15 px-3 py-1.5 text-slate">

@@ -1,19 +1,22 @@
 ---
 import SectionHeading from './SectionHeading.astro';
-import { work } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { work } = getContent(resolveLocale(Astro.currentLocale));
 ---
 
 <section id="work" class="section-pad">
   <div class="shell">
     <SectionHeading
-      label="Selected work"
-      title="Published, in production, and open to inspection."
-      intro="A sample of documentation, product pages and campaigns written for industrial hardware and protocol analysis tools. Every link goes to live work."
+      label={work.section.label}
+      title={work.section.title}
+      intro={work.section.intro}
     />
 
     <div class="mt-14 grid gap-x-12 gap-y-14 lg:mt-20 lg:grid-cols-3">
       {
-        work.map((group, i) => (
+        work.groups.map((group, i) => (
           <div data-reveal style={`--reveal-delay:${i * 90}ms`}>
             <div class="flex items-baseline gap-3 border-b border-ink/12 pb-4">
               <h3
@@ -28,17 +31,20 @@ import { work } from '../data/site';
             <ul class="mt-5 space-y-px">
               {group.items.map((item) => (
                 <li>
+                  {/* title carries the full label, since long ones are
+                      truncated to keep every row on a single line. */}
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title={item.label}
                     class="group flex items-start gap-3 py-2.5 transition-colors duration-300 hover:text-jade"
                   >
                     <span
                       class="mt-2.5 h-px w-4 shrink-0 bg-ink/25 transition-all duration-300 group-hover:w-6 group-hover:bg-jade"
                       aria-hidden="true"
                     />
-                    <span class="text-[0.9375rem] leading-snug">
+                    <span class="min-w-0 truncate text-[0.9375rem] leading-snug">
                       {item.label}
                     </span>
                   </a>

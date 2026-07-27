@@ -1,0 +1,30 @@
+---
+// The Traditional Chinese home page. Same section components as the English
+// root page — each one reads its copy from src/data/content.zh-TW.ts via
+// Astro.currentLocale, which Astro resolves from this file's location under
+// the locale path configured in astro.config.mjs.
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Mandarin from '../../components/Mandarin.astro';
+import Experience from '../../components/Experience.astro';
+import Capabilities from '../../components/Capabilities.astro';
+import Work from '../../components/Work.astro';
+import Projects from '../../components/Projects.astro';
+import Speaking from '../../components/Speaking.astro';
+import Credentials from '../../components/Credentials.astro';
+import Contact from '../../components/Contact.astro';
+---
+
+<Base>
+  <main id="main">
+    <Hero />
+    <Mandarin />
+    <Experience />
+    <Capabilities />
+    <Work />
+    <Projects />
+    <Speaking />
+    <Credentials />
+    <Contact />
+  </main>
+</Base>

@@ -1,18 +1,18 @@
 ---
 import SectionHeading from './SectionHeading.astro';
-import { capabilities } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { capabilities } = getContent(resolveLocale(Astro.currentLocale));
 ---
 
 <section id="capabilities" class="bg-surface section-pad">
   <div class="shell">
-    <SectionHeading
-      label="What I do"
-      title="A technical communicator who also runs the account."
-    />
+    <SectionHeading label={capabilities.section.label} title={capabilities.section.title} />
 
     <ul class="mt-14 grid gap-px overflow-hidden rounded-xl bg-ink/10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
       {
-        capabilities.map((item, i) => (
+        capabilities.items.map((item, i) => (
           <li
             class="bg-paper p-7 transition-colors duration-300 hover:bg-surface sm:p-8"
             data-reveal

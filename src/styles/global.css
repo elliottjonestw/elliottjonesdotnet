@@ -39,10 +39,16 @@
   /* ── Type ──────────────────────────────────────────────────────────────
      Schibsted Grotesk carries the voice: an editorial grotesque, crisp without
      being mechanical. Literata handles prose because this is a writer's site.
-     Plex Mono is the data layer: dates, scores, labels. */
-  --font-display: 'Schibsted Grotesk Variable', ui-sans-serif, system-ui,
-    sans-serif;
-  --font-body: 'Literata Variable', ui-serif, Georgia, serif;
+     Plex Mono is the data layer: dates, scores, labels.
+
+     Neither Latin display face ships Chinese glyphs, so the Traditional
+     Chinese page falls through to the best system CJK font on each platform —
+     PingFang TC on Apple platforms, Microsoft JhengHei on Windows, Noto Sans
+     CJK TC elsewhere — rather than a second self-hosted webfont. */
+  --font-display: 'Schibsted Grotesk Variable', 'PingFang TC',
+    'Microsoft JhengHei', 'Noto Sans TC', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Literata Variable', 'PingFang TC', 'Microsoft JhengHei',
+    'Noto Sans TC', ui-serif, Georgia, serif;
   /* The Noto subset sits in the mono stack so the official TOCFL level names
      (流利級, 高階級) render from it while everything else stays Plex Mono. */
   --font-mono: 'IBM Plex Mono', 'Noto Sans TC Gloss', 'PingFang TC',
@@ -153,6 +159,16 @@
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+  }
+
+  /* Wide tracking and an uppercase transform read as a stylistic flourish on
+     Latin text but as broken spacing on Chinese characters, which have no
+     case and are already spaced for the grid they're drawn on. :lang()
+     matches the BCP 47 prefix, so this covers zh-Hant and zh-Hant-TW alike. */
+  :lang(zh-Hant) .eyebrow,
+  :lang(zh-Hant) .mono-label {
+    letter-spacing: 0.02em;
+    text-transform: none;
   }
 
   .link-underline {

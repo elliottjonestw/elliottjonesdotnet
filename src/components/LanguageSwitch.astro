@@ -1,0 +1,66 @@
+---
+import { locales, resolveLocale } from '../i18n/locales';
+import { withBase } from '../lib/url';
+
+const lang = resolveLocale(Astro.currentLocale);
+---
+
+{/* Fixed in the top corner on every page, with its own opaque pill rather
+    than inheriting section colour — the page scrolls behind it through both
+    light and on-ink sections, and a translucent chip stays legible on both. */}
+<nav
+  aria-label="Language"
+  class="fixed top-4 right-4 z-50 flex items-center gap-0.5 rounded-full border border-ink/15 bg-paper/95 p-1 shadow-sm backdrop-blur-sm"
+>
+  {
+    locales.map((locale) => {
+      const active = locale.code === lang;
+      return active ? (
+        <span class="mono-label rounded-full bg-ink px-3 py-1.5 text-paper">
+          {locale.label}
+        </span>
+      ) : (
+        <a
+          href={withBase(locale.path)}
+          class="mono-label rounded-full px-3 py-1.5 text-slate transition-colors duration-300 hover:bg-ink/8 hover:text-ink"
+          data-lang-link
+        >
+          {locale.label}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<script>
+  // Preserve scroll position across a language switch, so a reader deep in
+  // the page lands on the same section on the other locale's home page
+  // rather than being bounced back to the top. Computed at click time (not
+  // page load), since the reader has usually scrolled without ever putting a
+  // hash in the URL — window.location.hash alone would miss that.
+  const sections = [
+    ...document.querySelectorAll<HTMLElement>('main > section[id]'),
+  ];
+
+  const currentSectionId = () => {
+    let current = sections[0]?.id;
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= window.innerHeight / 3) {
+        current = section.id;
+      }
+    }
+    return current;
+  };
+
+  for (const link of document.querySelectorAll<HTMLAnchorElement>(
+    '[data-lang-link]',
+  )) {
+    link.addEventListener('click', () => {
+      const id = currentSectionId();
+      if (!id) return;
+      const target = new URL(link.href, window.location.origin);
+      target.hash = `#${id}`;
+      link.href = target.href;
+    });
+  }
+</script>

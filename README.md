@@ -1,7 +1,9 @@
 # elliottjones.net
 
 Personal resume site for Elliott Jones — a single static page built with
-[Astro](https://astro.build) and Tailwind CSS, deployed to GitHub Pages.
+[Astro](https://astro.build) and Tailwind CSS, deployed to GitHub Pages. It
+ships in two languages: English at `/`, and Taiwan-style Traditional Chinese
+at `/zh-tw`, using Astro's built-in i18n routing.
 
 ## Running it
 
@@ -19,24 +21,40 @@ npm run dev
 
 ## Editing content
 
-**All page content lives in [`src/data/site.ts`](src/data/site.ts).** Bio,
-experience, TOCFL results, portfolio links, speaking, certifications and
-education are typed data — edit that one file and the page follows. Components
-in `src/components` handle presentation only.
+**Page content lives in `src/data/content.en.ts` and
+[`src/data/content.zh-TW.ts`](src/data/content.zh-TW.ts)** — one fully
+written-out object per locale, both satisfying the `SiteContent` type in
+[`src/data/content.ts`](src/data/content.ts). Bio, experience, TOCFL results,
+portfolio links, speaking, certifications and education are typed data — edit
+the matching field in both files and the page follows. Components in
+`src/components` call `getContent(Astro.currentLocale)` and handle
+presentation only; they don't hardcode copy.
 
-Two things worth knowing:
+Two locale files rather than one file with per-field overrides, because copy
+that has to read naturally in each language doesn't compose well as a diff.
+The one exception is `src/data/shared/speaking.ts`: the two CYBERSEC talks are
+imported by both locale files unchanged, because they're deliberately kept in
+English on the Chinese page too.
+
+Three things worth knowing:
 
 - **The Mandarin speaking video** is a Vimeo embed configured by
   `mandarin.speakingVideo`. If you swap the video, update `aspectRatio` to match
   the new one — Vimeo's own embed snippet states it as a `padding-top`
   percentage, where 75% means `4 / 3`.
-- **The only Chinese on the page** is the official TOCFL level names printed on
-  the certificates — 流利級 (Level 5) and 高階級 (Level 4). Those five characters
-  are served by a hand-subset font at
+- **Chinese text on the English page** is limited to the official TOCFL level
+  names printed on the certificates — 流利級 (Level 5) and 高階級 (Level 4).
+  Those five characters are served by a hand-subset font at
   `src/assets/fonts/noto-sans-tc-gloss.woff2` (2 KB), which sits in the
   `--font-mono` stack so it only ever supplies those glyphs. Adding another
-  Chinese character means regenerating the subset — see below — otherwise it
-  falls back to a system font.
+  Chinese character to the English page means regenerating the subset — see
+  below — otherwise it falls back to a system font.
+- **The Chinese page** doesn't get a second self-hosted webfont. Its display
+  and body faces fall through to whichever system CJK font the visitor's
+  platform ships — PingFang TC on Apple platforms, Microsoft JhengHei on
+  Windows, Noto Sans CJK TC elsewhere — declared as fallbacks in
+  `--font-display` and `--font-body` in
+  [`src/styles/global.css`](src/styles/global.css).
 
 ### Regenerating the Chinese subset font
 
@@ -48,33 +66,49 @@ Download the `.woff2` the returned CSS points at, save it over
 `src/assets/fonts/noto-sans-tc-gloss.woff2`, and update the `unicode-range` in
 the `@font-face` block in [`src/styles/global.css`](src/styles/global.css).
 
+## Adding or editing a language
+
+Locales are declared in two places that need to agree:
+[`astro.config.mjs`](astro.config.mjs) (`i18n.locales`, which controls
+routing) and [`src/i18n/locales.ts`](src/i18n/locales.ts) (`locales`, which
+drives the language switch, hreflang tags and the sitemap). A new locale also
+needs its own `src/data/content.<code>.ts` and a
+`src/pages/<path>/index.astro` that mirrors `src/pages/index.astro`.
+
 ## SEO and analytics
 
 Everything lives in [`src/layouts/Base.astro`](src/layouts/Base.astro) and is
-driven by `src/data/site.ts`:
+driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
 
 - **Title, description, canonical** — canonical URLs are normalised to
   extensionless paths (`https://elliottjones.net/`, not `/index.html`).
+- **hreflang alternates** — every locale's home page carries a `<link
+  rel="alternate" hreflang="…">` to every other locale plus itself, and an
+  `x-default` pointing at English, so Google serves each visitor the right
+  language rather than treating the two pages as duplicate content.
 - **Open Graph and Twitter cards** point at `public/og.jpg` (1200×630) — the
-  card LinkedIn renders when the link is shared. To change it, re-render the
+  card LinkedIn renders when the link is shared. `og:locale` and
+  `og:locale:alternate` switch per page. To change the image, re-render the
   card and replace that file.
 - **Structured data** — a `ProfilePage` wrapping a `Person`, including
   `knowsLanguage`, `alumniOf`, `hasOccupation` and `hasCredential` (the three
   TOCFL results plus both certifications), so the Mandarin credentials are
-  machine-readable. Validate at
+  machine-readable on both locales. Validate at
   [search.google.com/test/rich-results](https://search.google.com/test/rich-results).
 - **`robots.txt`** allows everything and points at the sitemap.
   `sitemap.xml` is generated at build time by
   [`src/pages/sitemap.xml.ts`](src/pages/sitemap.xml.ts) so `lastmod` tracks the
-  deploy instead of going stale.
+  deploy instead of going stale, and lists both locales with the same hreflang
+  alternates as the pages themselves.
 - **Google Analytics 4** — property `G-YH3506Y1XQ`, carried over from the old
   site, set as `person.gaMeasurementId`. It is wrapped in
   `import.meta.env.PROD`, so `npm run dev` never sends hits to the property.
 - **Search Console** — the old `google2e17a48e58355e7b.html` verification file
   still ships at the site root, so verification survives the rebuild.
-- **Old URLs** — `/en.html`, `/zh.html` and the portfolio/blog indexes are
-  `noindex` meta-refresh stubs that canonicalise to `/`, so existing inbound
-  links and search equity land on the rebuild.
+- **Old URLs** — `/en.html` is a `noindex` meta-refresh stub that
+  canonicalises to `/`; `/zh.html` canonicalises to the new `/zh-tw` page.
+  The portfolio/blog indexes still point at `/`. This keeps existing inbound
+  links and search equity landing on the rebuild.
 
 Note there is no cookie consent banner. The previous site ran GA the same way;
 if you want one, that needs adding before the GA script fires.

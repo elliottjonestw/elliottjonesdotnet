@@ -29,6 +29,15 @@ export default defineConfig({
     format: 'file',
     inlineStylesheets: 'auto',
   },
+  // English at the root, Taiwan Traditional Chinese under /zh-tw/. English
+  // carries no prefix so every existing indexed URL keeps working unchanged.
+  i18n: {
+    locales: ['en', { path: 'zh-tw', codes: ['zh-Hant-TW'] }],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

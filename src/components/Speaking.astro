@@ -1,20 +1,23 @@
 ---
 import { Image } from 'astro:assets';
 import SectionHeading from './SectionHeading.astro';
-import { speaking } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { speaking } = getContent(resolveLocale(Astro.currentLocale));
 ---
 
 <section id="speaking" class="section-pad">
   <div class="shell">
     <SectionHeading
-      label="Speaking"
-      title="Speaker at Taiwan’s largest security conference."
-      intro="Two sessions at CYBERSEC 2024, presenting TeamT5’s threat intelligence research to an APAC security audience."
+      label={speaking.section.label}
+      title={speaking.section.title}
+      intro={speaking.section.intro}
     />
 
     <ul class="mt-14 grid gap-5 lg:mt-20 lg:grid-cols-2">
       {
-        speaking.map((talk, i) => (
+        speaking.talks.map((talk, i) => (
           <li
             class="flex flex-col rounded-xl border border-ink/12 p-7 transition-colors duration-500 hover:border-jade/50 sm:p-9"
             data-reveal

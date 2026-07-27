@@ -1,7 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import headshot from '../assets/headshot.png';
-import { hero, person } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
 ---
 
 {/* The hero fills the first screen, so the dark section below it never bleeds
@@ -9,7 +12,7 @@ import { hero, person } from '../data/site';
     the viewport the section simply grows. */}
 <section
   id="top"
-  class="relative flex min-h-svh flex-col justify-center overflow-hidden pt-9 pb-16 sm:pt-12 lg:pb-24"
+  class="relative flex min-h-svh flex-col justify-center overflow-hidden pt-9 pb-16 max-[479px]:pt-24 sm:pt-12 lg:pb-24"
 >
   {/* Ambient jade wash behind the opening frame. Purely atmospheric. */}
   <div
@@ -114,13 +117,13 @@ import { hero, person } from '../data/site';
           href="#mandarin"
           class="mono-label block rounded-full bg-ink px-6 py-4 text-center text-paper transition-colors duration-300 hover:bg-jade min-[480px]:py-3.5"
         >
-          See my Mandarin
+          {hero.ctaMandarin}
         </a>
         <a
           href="#experience"
           class="mono-label block rounded-full border border-ink/25 px-6 py-4 text-center transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-paper min-[480px]:py-3.5"
         >
-          Where I've worked
+          {hero.ctaExperience}
         </a>
       </div>
     </div>

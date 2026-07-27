@@ -1,22 +1,25 @@
 ---
 import { Image } from 'astro:assets';
 import SectionHeading from './SectionHeading.astro';
-import { experience } from '../data/site';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { experience } = getContent(resolveLocale(Astro.currentLocale));
 ---
 
 <section id="experience" class="section-pad">
   <div class="shell">
     <SectionHeading
-      label="Experience"
-      title="From consulate IT to OT security customer success."
-      intro="Technical writing, product marketing, systems engineering and now customer success — each role inside a Taiwanese organisation, and each conducted in Mandarin."
+      label={experience.section.label}
+      title={experience.section.title}
+      intro={experience.section.intro}
     />
 
     {/* Reverse-chronological, so the rail carries real information: the dates
         are the structure, not decoration. */}
     <ol class="mt-14 lg:mt-20">
       {
-        experience.map((role, i) => (
+        experience.roles.map((role, i) => (
           <li
             class="group relative border-t border-ink/12 last:border-b"
             data-reveal
@@ -28,7 +31,10 @@ import { experience } from '../data/site';
               aria-hidden="true"
             />
 
-            <div class="grid gap-x-8 gap-y-4 py-8 sm:py-10 lg:grid-cols-[10rem_1fr] lg:gap-x-12">
+            {/* 12rem rather than 10rem for the rail: it now carries the employer
+                as well as the dates, and most company names fit on one line at
+                this width. */}
+            <div class="grid gap-x-8 gap-y-4 py-8 sm:py-10 lg:grid-cols-[12rem_1fr] lg:gap-x-12">
               <div class="flex items-start gap-4 lg:flex-col lg:gap-3">
                 <Image
                   src={role.logo}
@@ -39,16 +45,8 @@ import { experience } from '../data/site';
                   loading="lazy"
                 />
                 <div>
-                  <p class="mono-label text-slate">{role.period}</p>
-                  {role.current && (
-                    <p class="mono-label mt-1.5 inline-flex items-center gap-1.5 text-jade">
-                      <span class="relative flex h-1.5 w-1.5">
-                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-jade opacity-60" />
-                        <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-jade" />
-                      </span>
-                      Current
-                    </p>
-                  )}
+                  <p class="mono-label text-jade">{role.company}</p>
+                  <p class="mono-label mt-1.5 text-slate">{role.period}</p>
                 </div>
               </div>
 
@@ -58,8 +56,9 @@ import { experience } from '../data/site';
                 >
                   {role.title}
                 </h3>
-                <p class="mono-label mt-2 text-jade">{role.company}</p>
-                <p class="mt-4 max-w-2xl text-slate">{role.summary}</p>
+                {/* No measure cap: the date rail beside it already holds the
+                    summary to a comfortable line length. */}
+                <p class="mt-4 text-slate">{role.summary}</p>
 
                 {role.media && (
                   <ul class="mt-7 grid gap-4 sm:grid-cols-3">
