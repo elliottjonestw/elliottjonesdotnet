@@ -119,8 +119,22 @@ const items = nav.sections.map((section) => {
     height: 36px;
     border-radius: 999px;
     background: var(--color-ink);
-    transition: transform 0.5s var(--ease-out-quint);
     will-change: transform;
+    /* Not drawn until it knows which mark it is on. The page does not always
+       open at the top — a locale switch reopens it wherever the reader was —
+       and an unplaced marker defaults to the first icon, so showing it before
+       the position is known means showing the wrong answer. Nothing is lost
+       without scripting: the marker tracks scrolling, so with no script to
+       track it there is nothing for it to say. */
+    visibility: hidden;
+  }
+
+  /* Placed. Now it can be seen, and only now may it move — otherwise its
+     arrival on the opening section would animate as a slide down from the
+     introduction, a move nobody made. */
+  .rail-list.is-placed .rail-thumb {
+    visibility: visible;
+    transition: transform 0.5s var(--ease-out-quint);
   }
 
   .rail-link {
@@ -237,6 +251,7 @@ const items = nav.sections.map((section) => {
   // IntersectionObserver: sections here are full-height and often overlap the
   // viewport two at a time, which observers report as a tie.
   const rail = document.querySelector<HTMLElement>('[data-rail]');
+  const list = rail?.querySelector<HTMLElement>('.rail-list');
   const thumb = rail?.querySelector<HTMLElement>('[data-rail-thumb]');
   const links = [...(rail?.querySelectorAll<HTMLAnchorElement>('[data-rail-link]') ?? [])];
 
@@ -296,7 +311,20 @@ const items = nav.sections.map((section) => {
       onScroll();
     };
 
-    update();
+    // The first placement waits for the first animation frame rather than
+    // happening now. The page does not always open at the top: a locale switch
+    // reopens it part-way down, and that scroll is settled after this module
+    // runs but before anything is painted. Reading the position now would put
+    // the marker on the introduction, paint it there, and leave it to correct
+    // itself a frame later — which is the flash this avoids. Frame callbacks
+    // run after that scroll has settled and still before the first paint.
+    requestAnimationFrame(() => {
+      update();
+      // Movement is enabled only once the marker is on its first mark, so the
+      // opening position is arrived at rather than travelled to.
+      requestAnimationFrame(() => list?.classList.add('is-placed'));
+    });
+
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
   }
