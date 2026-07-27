@@ -207,11 +207,6 @@ export const zhTW: SiteContent = {
         summary:
           '負責全球領先工業級 DRAM 與 Flash 製造商的英文內容。',
         logo: innodiskLogo,
-        media: [
-          { youtubeId: 'nFokMe9Khm4', caption: '在 COMPUTEX 的採訪' },
-          { youtubeId: 'xpaVDeuMswk', caption: '我編寫並配音的影片' },
-          { youtubeId: 'DdlSHMB7xOQ', caption: '我配音的廣告' },
-        ],
       },
       {
         title: '系統工程師',

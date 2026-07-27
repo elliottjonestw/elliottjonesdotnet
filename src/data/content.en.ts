@@ -207,11 +207,6 @@ export const en: SiteContent = {
         summary:
           'Managed English language content for the world’s leading industrial DRAM and flash manufacturer.',
         logo: innodiskLogo,
-        media: [
-          { youtubeId: 'nFokMe9Khm4', caption: 'Interviewed at COMPUTEX' },
-          { youtubeId: 'xpaVDeuMswk', caption: 'Video I wrote and voiced' },
-          { youtubeId: 'DdlSHMB7xOQ', caption: 'Advertisement I voiced' },
-        ],
       },
       {
         title: 'IT Systems Engineer',
