@@ -171,6 +171,42 @@
     text-transform: none;
   }
 
+  /* Mobile-only swipe gallery. On phones the items become a horizontal
+     scroll-snap track; the visible peek of the next item signals that it's
+     swipeable, so no dots or JS are needed. At sm+ this is overridden to
+     display:grid and the per-list column counts (sm:grid-cols-* on the
+     element) take over, matching the existing desktop layout exactly. */
+  .swipe-rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    margin-inline: -1rem; /* bleed out to the page gutter */
+    padding-inline: 1rem;
+    padding-block-end: 1rem;
+    scrollbar-width: none; /* Firefox */
+  }
+  .swipe-rail::-webkit-scrollbar {
+    display: none; /* WebKit / Chromium */
+  }
+  .swipe-rail > li {
+    scroll-snap-align: center;
+    flex: 0 0 85%; /* fill the viewport with a peek of the next item */
+  }
+
+  @media (min-width: 640px) {
+    .swipe-rail {
+      display: grid;
+      margin-inline: 0;
+      padding-inline: 0;
+      padding-block-end: 0;
+    }
+    .swipe-rail > li {
+      flex: initial;
+    }
+  }
+
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 100% 1px;

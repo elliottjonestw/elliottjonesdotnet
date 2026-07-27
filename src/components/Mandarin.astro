@@ -50,8 +50,10 @@ const { speakingVideo } = mandarin;
       </p>
     </header>
 
-    {/* Official results, one card per tested skill. */}
-    <ul class="mt-14 grid gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+    {/* Official results, one card per tested skill. On mobile the row becomes
+        a swipeable scroll-snap gallery (see scoped styles below); on sm+ it
+        reverts to the normal 2-/3-column grid. */}
+    <ul class="swipe-rail mt-14 gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
       {
         mandarin.results.map((result, i) => (
           <li
@@ -153,7 +155,7 @@ const { speakingVideo } = mandarin;
         {mandarin.paperwork.body}
       </p>
 
-      <ul class="mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
+      <ul class="swipe-rail mt-8 max-w-3xl gap-6 sm:grid-cols-2">
         {
           resolved.map((cert, i) => (
             <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
