@@ -39,7 +39,7 @@ export const zhTW: SiteContent = {
     metaDescription:
       '睿控網安（TXOne Networks）產品客戶成功經理。十餘年台灣與中國大陸經驗，取得 CEFR C1 中文能力認證。以英文為母語，專精 OT 資安、工業硬體與威脅情資領域的雙語技術溝通。',
     ogImageAlt:
-      'Elliott Jones——睿控網安（TXOne Networks）產品客戶成功經理，現居台北。取得 CEFR C1 中文能力認證。',
+      'Elliott Jones，睿控網安（TXOne Networks）產品客戶成功經理，現居台北。取得 CEFR C1 中文能力認證。',
     gaMeasurementId: 'G-YH3506Y1XQ',
   },
 
@@ -74,7 +74,7 @@ export const zhTW: SiteContent = {
 
   hero: {
     eyebrow: '產品客戶成功經理',
-    lead: '我在台北的睿控網安負責 OT 資安軟體的客戶成功——而且是用中文完成這份工作。在台灣與中國大陸生活超過十年，讓我具備業界大多數技術溝通者所沒有的能力：我能用中文與工程團隊討論，再寫出對外發布的英文內容。',
+    lead: '我在台北的睿控網安負責 OT 資安軟體的客戶成功，而且整份工作都是用中文完成。在台灣與中國大陸生活超過十年，讓我具備業界大多數技術溝通者所沒有的能力：我能用中文與工程團隊討論，再寫出對外發布的英文內容。',
     facts: [
       { value: 'CEFR C1', label: '中文能力認證', href: '#mandarin' },
       { value: '10+ 年', label: '台灣與中國大陸經驗' },
@@ -175,7 +175,7 @@ export const zhTW: SiteContent = {
       label: '工作經歷',
       title: '從領事館 IT 到 OT 資安客戶成功。',
       intro:
-        '技術寫作、產品行銷、系統工程，到現在的客戶成功——每個職位都在台灣的組織裡，也都是用中文完成。',
+        '從技術寫作、產品行銷、系統工程，到現在的客戶成功，每個職位都在台灣的組織裡，也都是用中文完成。',
     },
     roles: [
       {
