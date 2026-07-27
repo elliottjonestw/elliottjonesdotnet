@@ -50,14 +50,18 @@ const year = new Date().getFullYear();
           browsers without a registered handler. */}
       <button
         type="button"
-        class="mono-label rounded-full bg-paper px-7 py-4 text-ink transition-colors duration-300 hover:bg-jade-bright"
+        class="copy-button mono-label rounded-full bg-paper px-7 py-4 text-ink transition-colors duration-300 hover:bg-jade-bright"
         data-copy-email
         data-email={person.email}
         data-copy-success={contact.copySuccess}
         data-copy-fallback-key={contact.copyFallbackKey}
         data-copy-fallback-select={contact.copyFallbackSelect}
       >
-        <span data-copy-label>{contact.copyIdle}</span>
+        {/* The confirmation, wiped through the pill rather than only spelled
+            out in it. Purely decorative — the words still change, and the live
+            region below announces them. */}
+        <span class="copy-fill" aria-hidden="true"></span>
+        <span class="copy-text" data-copy-label>{contact.copyIdle}</span>
       </button>
       <a
         href={person.linkedin}
@@ -85,6 +89,44 @@ const year = new Date().getFullYear();
   </div>
 </section>
 
+<style>
+  .copy-button {
+    position: relative;
+    /* Keeps the fill inside the pill's rounded ends. */
+    overflow: hidden;
+  }
+
+  .copy-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--color-jade);
+    transform: scaleX(0);
+    /* The resting origin is the one the fill leaves by. Setting it here rather
+       than only on the way out means the origin has already flipped by the time
+       the class is removed, so the wipe goes out the same way it came in —
+       left to right — instead of retreating back the way it arrived.
+       Switching it is free: at scaleX(0) and scaleX(1) both origins look
+       identical, so the change is never visible. */
+    transform-origin: right;
+    transition: transform 0.45s var(--ease-out-quint);
+  }
+
+  .copy-button.is-copied .copy-fill {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .copy-text {
+    position: relative;
+  }
+
+  /* Flips as the fill passes under it rather than ahead of it. */
+  .copy-button.is-copied .copy-text {
+    color: var(--color-paper);
+    transition: color 0.2s linear 0.18s;
+  }
+</style>
+
 <script>
   const button = document.querySelector<HTMLButtonElement>('[data-copy-email]');
   const label = button?.querySelector<HTMLElement>('[data-copy-label]');
@@ -94,13 +136,18 @@ const year = new Date().getFullYear();
     const idle = label.textContent ?? 'Copy email address';
     let reset: number | undefined;
 
-    const say = (text: string) => {
+    // `copied` drives the wipe, so it is only set where the address actually
+    // reached the clipboard — the fallbacks are instructions to the reader, not
+    // confirmations, and should not be dressed as success.
+    const say = (text: string, copied = false) => {
       label.textContent = text;
       if (status) status.textContent = text;
+      button.classList.toggle('is-copied', copied);
       window.clearTimeout(reset);
       reset = window.setTimeout(() => {
         label.textContent = idle;
         if (status) status.textContent = '';
+        button.classList.remove('is-copied');
       }, 2600);
     };
 
@@ -113,7 +160,7 @@ const year = new Date().getFullYear();
 
       try {
         await navigator.clipboard.writeText(email);
-        say(success);
+        say(success, true);
         return;
       } catch {
         // Clipboard API unavailable or blocked (no permission, insecure
@@ -130,7 +177,7 @@ const year = new Date().getFullYear();
         field.select();
         const ok = document.execCommand('copy');
         field.remove();
-        say(ok ? success : fallbackKey);
+        say(ok ? success : fallbackKey, ok);
       } catch {
         say(fallbackSelect);
       }
