@@ -55,6 +55,18 @@ export const en: SiteContent = {
 
   nav: {
     skipToContent: 'Skip to content',
+    sectionsLabel: 'Sections',
+    sections: [
+      { id: 'top', label: 'Introduction' },
+      { id: 'mandarin', label: 'Mandarin' },
+      { id: 'experience', label: 'Experience' },
+      { id: 'capabilities', label: 'What I do' },
+      { id: 'work', label: 'Selected work' },
+      { id: 'projects', label: 'Personal projects' },
+      { id: 'speaking', label: 'Speaking' },
+      { id: 'credentials', label: 'Credentials' },
+      { id: 'contact', label: 'Contact' },
+    ],
   },
 
   hero: {

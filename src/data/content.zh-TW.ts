@@ -58,6 +58,18 @@ export const zhTW: SiteContent = {
 
   nav: {
     skipToContent: '跳至主要內容',
+    sectionsLabel: '章節導覽',
+    sections: [
+      { id: 'top', label: '簡介' },
+      { id: 'mandarin', label: '中文能力' },
+      { id: 'experience', label: '工作經歷' },
+      { id: 'capabilities', label: '我能做什麼' },
+      { id: 'work', label: '精選作品' },
+      { id: 'projects', label: '個人專案' },
+      { id: 'speaking', label: '演講' },
+      { id: 'credentials', label: '資格認證' },
+      { id: 'contact', label: '聯絡方式' },
+    ],
   },
 
   hero: {

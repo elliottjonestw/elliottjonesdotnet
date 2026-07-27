@@ -1,0 +1,293 @@
+---
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+const { nav } = getContent(resolveLocale(Astro.currentLocale));
+
+/**
+ * One glyph per section id, drawn on the same 24px grid at a uniform stroke so
+ * the column reads as a set rather than nine borrowed marks. Keyed by id, so a
+ * section that appears in `nav.sections` without an icon here fails loudly at
+ * build time rather than rendering an empty button.
+ */
+const icons: Record<string, string> = {
+  top: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  mandarin:
+    '<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
+  experience:
+    '<rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  capabilities:
+    '<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
+  work: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/>',
+  projects: '<path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>',
+  speaking:
+    '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/>',
+  credentials:
+    '<circle cx="12" cy="8" r="6"/><path d="m15.5 13 1.4 8-4.9-3-4.9 3 1.4-8"/>',
+  contact:
+    '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 7 8.9 5.5a2 2 0 0 0 2.2 0L22 7"/>',
+};
+
+const items = nav.sections.map((section) => {
+  const icon = icons[section.id];
+  if (!icon) throw new Error(`SectionRail: no icon for section "${section.id}"`);
+  return { ...section, icon };
+});
+---
+
+{/* A fixed column of section marks, desktop only. It carries its own opaque
+    pill rather than inheriting section colour — the page scrolls behind it
+    through both light and on-ink sections — matching the language switch in
+    the opposite corner. Hidden below 1280px, where the page gutter is too
+    narrow to hold it clear of the text, and on short viewports. */}
+<nav class="rail no-print" aria-label={nav.sectionsLabel} data-rail>
+  <ul class="rail-list">
+    {/* The filled marker is one element that slides, rather than a background
+        appearing and disappearing on nine separate buttons. */}
+    <span class="rail-thumb" aria-hidden="true" data-rail-thumb></span>
+    {
+      items.map((item) => (
+        <li>
+          <a href={`#${item.id}`} class="rail-link" aria-label={item.label} data-rail-link>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+              set:html={item.icon}
+            />
+            <span class="rail-tip" aria-hidden="true">{item.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .rail {
+    display: none;
+    position: fixed;
+    top: 50%;
+    /* Held close to the edge of the window, drifting in only slightly as the
+       viewport widens. */
+    left: clamp(0.75rem, 1.1vw, 1.375rem);
+    z-index: 40;
+    transform: translateY(-50%);
+  }
+
+  /* Desktop only, and only where there is height for nine marks plus air. */
+  @media (min-width: 1280px) and (min-height: 600px) {
+    .rail {
+      display: block;
+    }
+  }
+
+  .rail-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Spacing is taken from the height of the window rather than fixed, so the
+       column stays generously spaced on a tall screen and closes up — instead
+       of running off the top and bottom — on a short one. */
+    gap: clamp(10px, 3.1vh, 32px);
+    padding: 8px;
+    margin: 0;
+    list-style: none;
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+    background: color-mix(in oklab, var(--color-paper) 95%, transparent);
+    backdrop-filter: blur(10px);
+    box-shadow:
+      0 1px 2px color-mix(in oklab, var(--color-ink) 6%, transparent),
+      0 12px 32px -12px color-mix(in oklab, var(--color-ink) 22%, transparent);
+  }
+
+  .rail-thumb {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: var(--color-ink);
+    transition: transform 0.5s var(--ease-out-quint);
+    will-change: transform;
+  }
+
+  .rail-link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: var(--color-slate);
+    transition: color 0.35s var(--ease-out-quint);
+  }
+
+  .rail-link svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  @media (hover: hover) {
+    .rail-link:hover {
+      color: var(--color-ink);
+    }
+  }
+
+  .rail-link[aria-current='true'],
+  .rail-link[aria-current='true']:hover {
+    color: var(--color-paper);
+  }
+
+  /* Label, revealed beside the mark on hover or keyboard focus. */
+  .rail-tip {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-4px, -50%);
+    transition:
+      opacity 0.3s var(--ease-out-quint),
+      transform 0.3s var(--ease-out-quint);
+  }
+
+  :global(:lang(zh-Hant)) .rail-tip {
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  /* The pointer, cut from the same ink as the label. */
+  .rail-tip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    background: inherit;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  @media (hover: hover) {
+    .rail-link:hover .rail-tip {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+
+  .rail-link:focus-visible .rail-tip {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  /* Arrives once the opening sequence in the hero has played out. */
+  @media (prefers-reduced-motion: no-preference) {
+    .rail-list {
+      animation: rail-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s backwards;
+    }
+  }
+
+  @keyframes rail-in {
+    from {
+      opacity: 0;
+      transform: translateX(-0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  // Marks whichever section currently owns the upper third of the viewport, and
+  // slides the thumb onto it. Position is read on scroll rather than through an
+  // IntersectionObserver: sections here are full-height and often overlap the
+  // viewport two at a time, which observers report as a tie.
+  const rail = document.querySelector<HTMLElement>('[data-rail]');
+  const thumb = rail?.querySelector<HTMLElement>('[data-rail-thumb]');
+  const links = [...(rail?.querySelectorAll<HTMLAnchorElement>('[data-rail-link]') ?? [])];
+
+  if (rail && thumb && links.length) {
+    const sections = links.map((link) =>
+      document.getElementById(decodeURIComponent(link.hash.slice(1))),
+    );
+
+    let current = -1;
+
+    // Measured off the rendered links rather than cached, because the gap
+    // between them is sized from the height of the window — so the marker has
+    // to be put back on its mark after a resize as well as after a scroll.
+    const place = () => {
+      if (current < 0) return;
+      thumb.style.transform = `translateY(${links[current].offsetTop - links[0].offsetTop}px)`;
+    };
+
+    const apply = (index: number) => {
+      if (index === current) return;
+      links[current]?.removeAttribute('aria-current');
+      links[index].setAttribute('aria-current', 'true');
+      current = index;
+      place();
+    };
+
+    const activeIndex = () => {
+      // The last section is short enough that it may never cross the line, so
+      // hitting the bottom of the page selects it outright.
+      const atBottom =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 2;
+      if (atBottom) return links.length - 1;
+
+      const line = window.innerHeight * 0.35;
+      let index = 0;
+      sections.forEach((section, i) => {
+        if (section && section.getBoundingClientRect().top <= line) index = i;
+      });
+      return index;
+    };
+
+    let queued = false;
+    const update = () => {
+      queued = false;
+      apply(activeIndex());
+    };
+
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    };
+
+    const onResize = () => {
+      place();
+      onScroll();
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
+  }
+</script>

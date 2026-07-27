@@ -8,6 +8,7 @@ import { getContent } from '../data/content';
 import { locales, resolveLocale } from '../i18n/locales';
 import { absoluteUrl, canonicalUrl, withBase } from '../lib/url';
 import LanguageSwitch from '../components/LanguageSwitch.astro';
+import SectionRail from '../components/SectionRail.astro';
 
 interface Props {
   title?: string;
@@ -242,6 +243,7 @@ gtag('config', '${person.gaMeasurementId}');`}
       >{content.nav.skipToContent}</a
     >
     <LanguageSwitch />
+    <SectionRail />
     <slot />
 
     <script>

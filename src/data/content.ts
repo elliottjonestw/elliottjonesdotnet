@@ -42,6 +42,11 @@ export interface MandarinResult {
   highlight: boolean;
 }
 
+export interface NavSection {
+  id: string;
+  label: string;
+}
+
 export interface SectionCopy {
   label: string;
   title: string;
@@ -139,6 +144,13 @@ export interface SiteContent {
   knowsAbout: string[];
   nav: {
     skipToContent: string;
+    /** Accessible name of the section rail that floats at the left on desktop. */
+    sectionsLabel: string;
+    /**
+     * The rail's contents, in page order. `id` must match a `<section id>` in
+     * `index.astro`; the icon for each id lives in `SectionRail.astro`.
+     */
+    sections: NavSection[];
   };
   hero: {
     eyebrow: string;
