@@ -78,6 +78,10 @@ const items = nav.sections.map((section) => {
     left: clamp(0.75rem, 1.1vw, 1.375rem);
     z-index: 40;
     transform: translateY(-50%);
+    /* Held still through a locale switch rather than cross-faded: the glyphs
+       are identical in both locales, so fading one set into the other only
+       flickers. */
+    view-transition-name: section-rail;
   }
 
   /* Desktop only, and only where there is height for nine marks plus air. */
@@ -202,10 +206,16 @@ const items = nav.sections.map((section) => {
     transform: translate(0, -50%);
   }
 
-  /* Arrives once the opening sequence in the hero has played out. */
+  /* Arrives once the opening sequence in the hero has played out — but not on
+     a locale switch, where the rail is one of the fixed anchors the transition
+     holds still. See the note on [data-hero] in Hero.astro. */
   @media (prefers-reduced-motion: no-preference) {
     .rail-list {
       animation: rail-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s backwards;
+    }
+
+    :global(html.vt-nav) .rail-list {
+      animation: none;
     }
   }
 

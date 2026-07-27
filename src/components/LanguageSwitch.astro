@@ -17,6 +17,7 @@ const lang = resolveLocale(Astro.currentLocale);
 <nav
   aria-label="Language"
   class="fixed top-4 right-4 z-50 flex items-center gap-0.5 rounded-full border border-ink/15 bg-paper/95 p-0.5 shadow-sm backdrop-blur-sm min-[480px]:p-1"
+  style="view-transition-name:language-switch"
 >
   {
     locales.map((locale) => {
@@ -52,6 +53,11 @@ const lang = resolveLocale(Astro.currentLocale);
   // rather than being bounced back to the top. Computed at click time (not
   // page load), since the reader has usually scrolled without ever putting a
   // hash in the URL — window.location.hash alone would miss that.
+  //
+  // Still required alongside the view transition: the transition animates
+  // between the two documents, but the second one is a fresh navigation and
+  // starts at the top unless a fragment says otherwise. The two are
+  // complementary — this decides where you land, the transition decides how.
   const sections = [
     ...document.querySelectorAll<HTMLElement>('main > section[id]'),
   ];

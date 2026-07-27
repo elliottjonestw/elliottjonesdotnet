@@ -211,6 +211,19 @@ const structuredData = {
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('js-reveal');
       }
+
+      // Mark documents entered through a view transition — that is, from the
+      // other locale — so the entrance animations can stand down and let the
+      // morph carry the arrival on its own. pagereveal fires before the new
+      // document's first frame, which is early enough for the class to apply
+      // before anything has started playing. Browsers without the event are
+      // also browsers without cross-document view transitions, so there is
+      // nothing to suppress there either.
+      window.addEventListener('pagereveal', (event) => {
+        if (event.viewTransition) {
+          document.documentElement.classList.add('vt-nav');
+        }
+      });
     </script>
 
     {/* GA4, carried over from the previous site. Production builds only, so

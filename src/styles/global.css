@@ -126,6 +126,60 @@
   }
 }
 
+/* ── Cross-document view transitions ────────────────────────────────────
+   Both locales ship this stylesheet, so the English and Chinese home pages
+   opt in together and switching between them morphs rather than blinks. The
+   name and the portrait are byte-identical in both locales, so the named
+   elements below hold their exact position while the language changes
+   underneath them — the page appears to translate itself in place.
+
+   Deliberately outside @layer. @view-transition is only valid at the top
+   level of a stylesheet or inside a conditional group rule; @layer is a
+   grouping rule but not a conditional one, so a copy of this nested in a
+   layer parses and then does nothing at all.
+
+   The media query is the opt-out for reduced motion, rather than cancelling
+   the pseudo-element animations further down: with the transition still
+   running but its animations removed, the old and new snapshots just sit
+   stacked on top of one another. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+/* Slower and softer than the 250ms linear default, to match the page. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: var(--ease-out-quint);
+}
+
+/* The anchors do not cross-fade — they simply stay put. What they contain is
+   identical in both locales, so fading one into the other would only flicker
+   where nothing has actually changed. */
+::view-transition-old(hero-name-wide),
+::view-transition-new(hero-name-wide),
+::view-transition-old(hero-name-compact),
+::view-transition-new(hero-name-compact),
+::view-transition-old(hero-portrait-wide),
+::view-transition-new(hero-portrait-wide),
+::view-transition-old(hero-portrait-compact),
+::view-transition-new(hero-portrait-compact),
+::view-transition-old(section-rail),
+::view-transition-new(section-rail) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* The switch itself does change — EN and 中文 trade places inside it — so it
+   keeps a cross-fade, just a quicker one than the page behind it. */
+::view-transition-old(language-switch),
+::view-transition-new(language-switch) {
+  animation-duration: 0.3s;
+  animation-timing-function: var(--ease-out-quint);
+}
+
 @layer components {
   /* Page gutter, shared by every section so the vertical rhythm never drifts. */
   .shell {

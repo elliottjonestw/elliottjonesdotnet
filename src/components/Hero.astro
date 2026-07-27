@@ -40,12 +40,18 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
     {/* ── Phone portrait ───────────────────────────────────────────────── */}
     <div class="flex items-center gap-4 min-[480px]:hidden">
       <div class="w-16 shrink-0" data-hero="1">
+        {/* Anchors for the cross-locale view transition. The two hero
+            arrangements are mutually exclusive at every width, so only one of
+            each pair is ever rendered — which is what keeps the names unique.
+            They carry separate names rather than sharing one because a
+            duplicate rendered name aborts the whole transition. */}
         <Image
           src={headshot}
           alt={`${person.name}, ${person.role} at ${person.company}`}
           widths={[64, 128, 192]}
           sizes="4rem"
           class="aspect-square w-full rounded-xl object-cover ring-1 ring-jade/25"
+          style="view-transition-name:hero-portrait-compact"
           loading="eager"
           fetchpriority="high"
         />
@@ -59,7 +65,11 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
           class="font-display text-[clamp(2rem,9.2vw,2.75rem)] leading-[0.94] font-bold tracking-[-0.032em]"
         >
           <span class="hero-line">
-            <span class="block" data-hero="2">{person.name}</span>
+            <span
+              class="block"
+              data-hero="2"
+              style="view-transition-name:hero-name-compact">{person.name}</span
+            >
           </span>
         </h1>
         {/* balance rather than a hard break: on the narrowest screens the title
@@ -85,6 +95,7 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
             widths={[80, 112, 160, 224]}
             sizes="(min-width:1024px) 7rem, (min-width:640px) 6rem, 5rem"
             class="aspect-square w-full rounded-2xl object-cover ring-1 ring-jade/25"
+            style="view-transition-name:hero-portrait-wide"
             loading="eager"
             fetchpriority="high"
           />
@@ -97,7 +108,11 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
         </p>
         <h1 class="font-display mt-3 text-display font-bold">
           <span class="hero-line">
-            <span class="block" data-hero="2">{person.name}</span>
+            <span
+              class="block"
+              data-hero="2"
+              style="view-transition-name:hero-name-wide">{person.name}</span
+            >
           </span>
         </h1>
         {/* Role and company break onto their own lines on narrow screens rather
@@ -181,10 +196,21 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
     margin-bottom: -0.14em;
   }
 
-  /* Opening sequence: the name lifts in, then the supporting material follows. */
+  /* Opening sequence: the name lifts in, then the supporting material follows.
+
+     Suppressed when the page was reached by a view transition — i.e. from the
+     other locale. The opening sequence is for arriving at the site, not for
+     changing its language, and replaying it here would fight the morph: the
+     new document is captured on its first frame, where these elements are
+     still at opacity 0, so the transition would dissolve into nothing and the
+     hero would then rise in behind it. */
   @media (prefers-reduced-motion: no-preference) {
     [data-hero] {
       animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+
+    :global(html.vt-nav) [data-hero] {
+      animation: none;
     }
     [data-hero='1'] {
       animation-delay: 0.05s;
