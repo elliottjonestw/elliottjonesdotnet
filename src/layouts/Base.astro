@@ -255,9 +255,59 @@ gtag('config', '${person.gaMeasurementId}');`}
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
       >{content.nav.skipToContent}</a
     >
+    {/* How far through the page you are, drawn across the top of the window.
+        Sits above the language switch and the rail, both of which it crosses. */}
+    <div class="scroll-progress no-print" aria-hidden="true"></div>
     <LanguageSwitch />
     <SectionRail />
     <slot />
+
+    <style>
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        /* Over the language switch (50) and the section rail (40); the bar
+           crosses both and should not disappear behind either. */
+        z-index: 60;
+        pointer-events: none;
+        transform-origin: left;
+        /* Empty by default, so a browser without scroll-driven animations shows
+           nothing at all rather than a bar that is permanently full. */
+        transform: scaleX(0);
+        /* Deep jade at the start, bright at the leading edge. A single flat
+           jade would be legible over the paper sections and nearly lost over
+           the two ink ones — the page runs both under this bar. */
+        background: linear-gradient(
+          to right,
+          var(--color-jade),
+          var(--color-jade-bright)
+        );
+      }
+
+      /* The @supports guard matters: without it a browser that does not know
+         animation-timeline would drop that one declaration, run the animation
+         on the document timeline, and fill the bar once on load. */
+      @supports (animation-timeline: scroll()) {
+        @media (prefers-reduced-motion: no-preference) {
+          .scroll-progress {
+            animation: scroll-progress linear;
+            animation-timeline: scroll(root block);
+          }
+        }
+      }
+
+      @keyframes scroll-progress {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+    </style>
 
     <script>
       // Scroll reveal. One shared observer; each element unobserves itself once
