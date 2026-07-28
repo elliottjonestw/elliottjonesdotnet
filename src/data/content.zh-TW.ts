@@ -74,7 +74,7 @@ export const zhTW: SiteContent = {
 
   hero: {
     eyebrow: '產品客戶成功經理',
-    lead: '我在台北的睿控網安負責 OT 資安軟體的客戶成功，而且整份工作都是用中文完成。在台灣與中國大陸生活超過十年，讓我具備業界大多數技術溝通者所沒有的能力：我能用中文與工程團隊討論，再寫出對外發布的英文內容。',
+    lead: '我在台北的睿控網安負責 OT 資安軟體的客戶成功。在台灣與中國大陸生活十年多，讓我具備業界大多數技術溝通者所沒有的能力：我能用中文與工程團隊討論，再寫出對外發布的英文內容。',
     facts: [
       { value: 'CEFR C1', label: '中文能力認證', href: '#mandarin' },
       { value: '10+ 年', label: '台灣與中國大陸經驗' },
@@ -121,11 +121,11 @@ export const zhTW: SiteContent = {
     ],
     trend: {
       title: '趨勢，而非單次成績',
-      body: '自2024年4月以來，我已經參加過四次 TOCFL 聽力測驗。每次成績都比前一次更高，第四次更達到了 CEFR C1 的門檻。',
+      body: '自2024年以來，我已經參加過四次 TOCFL 聽力測驗。每次成績都比前一次更高，第四次更達到了 CEFR C1 的門檻。',
     },
     hear: {
       title: '聽聽看',
-      body: '證書衡量的是理解能力，這段影片則是我實際說中文的樣子。',
+      body: '證書只能證明有限的能力，這段影片則是我說中文的樣子。',
     },
     paperwork: {
       title: '官方證書',
@@ -175,7 +175,7 @@ export const zhTW: SiteContent = {
       label: '工作經歷',
       title: '從領事館 IT 到 OT 資安客戶成功。',
       intro:
-        '從技術寫作、產品行銷、系統工程，到現在的客戶成功，每個職位都在台灣的組織裡，也都是用中文完成。',
+        '從技術寫作、產品行銷、系統工程，到現在客戶成功，每個職位都在台灣企業，也用中文完成。',
     },
     roles: [
       {
@@ -234,7 +234,7 @@ export const zhTW: SiteContent = {
       {
         heading: '客戶成功',
         detail:
-          '直接以中文與客戶及工程團隊合作，負責 OT 資安軟體的導入、技術支援與帳戶健康度管理。',
+          '直接以中文與客戶及工程團隊合作，負責 OT 資安軟體的導入、技術支援與帳戶健康管理。',
       },
       {
         heading: '技術寫作',
@@ -436,7 +436,7 @@ export const zhTW: SiteContent = {
       label: '演講',
       title: '台灣最大資安會議的講者。',
       intro:
-        '在 CYBERSEC 2024 資安大會發表兩場演講，向亞太資安社群分享 TeamT5 的威脅情資研究成果。',
+        '在 CYBERSEC 2024 資安大會發表兩場演講，向亞太資安社群分享 TeamT5 的威脅情資成果。',
     },
     // Kept in English, as on the English page — see the module comment above.
     talks: speakingTalks,

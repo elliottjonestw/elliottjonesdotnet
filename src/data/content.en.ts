@@ -122,7 +122,7 @@ export const en: SiteContent = {
     },
     hear: {
       title: 'Hear it',
-      body: 'Certificates measure comprehension. This is what my spoken Chinese actually sounds like.',
+      body: 'Certificates only prove so much. This is what my spoken Chinese actually sounds like.',
     },
     paperwork: {
       title: 'The paperwork',
