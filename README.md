@@ -156,15 +156,11 @@ Two notes while the site is on the project URL:
 
 `public/CNAME` already contains the domain, so it ships with every build.
 
-The previous site deployed over FTP to Bluehost. That workflow is preserved,
-disabled, at `old/.github/workflows/ftp-deploy.yml` — the old site stays live at
-the current host until DNS is repointed.
+`public/CNAME` already contains the domain, so it ships with every build.
 
-## The `old/` directory
+The previous site deployed over FTP to Bluehost.
 
-The entire previous site is archived under [`old/`](old/) for reference: the
-English and Chinese pages, the portfolio, the TOCFL blog, the 英地典 place-name
-dictionary, and the original assets. Nothing there is built or served.
+## Redirects from the old URLs
 
 Old URLs that were indexed (`/en.html`, `/zh.html`, the portfolio and blog
 indexes) have meta-refresh stubs in `public/` so inbound links land on the

@@ -1,12 +1,10 @@
 /**
  * Taiwan-style Traditional Chinese content — a full translation of
- * content.en.ts, not a partial override. Job titles and company names
- * follow the Chinese wording used on the previous site (archived at
- * /old/zh.html) where that page covered them; everything added since is
- * translated fresh. Two things are deliberately left in English, matching
- * content.en.ts exactly: the CYBERSEC talks (imported from the same shared
- * module) and the qualification grades/module names under Education, which
- * are the literal titles awarded by a British institution.
+ * content.en.ts, not a partial override. Two things are deliberately left
+ * in English, matching content.en.ts exactly: the CYBERSEC talks (imported
+ * from the same shared module) and the qualification grades/module names
+ * under Education, which are the literal titles awarded by a British
+ * institution.
  */
 
 import awsLogo from '../assets/logos/aws.png';

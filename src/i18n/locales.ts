@@ -44,13 +44,9 @@ export const locales: LocaleMeta[] = [
   },
 ];
 
-export const defaultLocale: LocaleCode = 'en';
+const defaultLocale: LocaleCode = 'en';
 
 /** Narrows Astro.currentLocale (a plain string, possibly undefined) to a known locale. */
 export function resolveLocale(value: string | undefined): LocaleCode {
   return value === 'zh-Hant-TW' ? 'zh-Hant-TW' : defaultLocale;
-}
-
-export function getLocaleMeta(code: LocaleCode): LocaleMeta {
-  return locales.find((locale) => locale.code === code) ?? locales[0];
 }
