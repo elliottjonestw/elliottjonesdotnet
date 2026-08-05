@@ -18,7 +18,7 @@ about how.
 
 ## My credentials
 
-Taiwan's Ministry of Education runs the TOCFL, and I have sat it three times.
+Taiwan's Ministry of Education runs the TOCFL, and I have sat it multiple times.
 
 | Skill     | Score     | TOCFL level      | CEFR | ACTFL         |
 | --------- | --------- | ---------------- | ---- | ------------- |
