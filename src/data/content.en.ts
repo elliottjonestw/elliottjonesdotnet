@@ -178,7 +178,7 @@ export const en: SiteContent = {
     },
     roles: [
       {
-        title: 'Product Customer Success Manager',
+        title: 'Customer Success Manager',
         company: 'TXOne Networks',
         period: 'Nov 2025 — Present',
         summary:

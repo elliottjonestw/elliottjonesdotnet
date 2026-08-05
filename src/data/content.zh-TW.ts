@@ -178,7 +178,7 @@ export const zhTW: SiteContent = {
     },
     roles: [
       {
-        title: '產品客戶成功經理',
+        title: '客戶成功經理',
         company: '睿控網安',
         period: '2025年11月 – 現在',
         summary: '負責睿控網安 OT 端點防護產品 Stellar 的客戶成功與技術寫作。',
