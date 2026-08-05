@@ -14,6 +14,7 @@ import { withBase } from '../lib/url';
 
 const locale = resolveLocale(Astro.currentLocale);
 const { blog } = getContent(locale);
+const homeHref = withBase(locale === 'zh-Hant-TW' ? 'zh-tw' : '');
 
 const posts = await getPosts(locale);
 const tags = collectTags(posts);
@@ -26,7 +27,7 @@ const tags = collectTags(posts);
         header it has nothing to clear: the language switch is in the opposite
         corner. */}
     <p>
-      <a href={withBase('')} class="mono-label link-underline text-slate">
+      <a href={homeHref} class="mono-label link-underline text-slate">
         <span aria-hidden="true">←&nbsp;</span>{blog.backToSite}
       </a>
     </p>
