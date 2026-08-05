@@ -166,8 +166,13 @@
 ::view-transition-new(hero-portrait-wide),
 ::view-transition-old(hero-portrait-compact),
 ::view-transition-new(hero-portrait-compact),
+/* The contents column on a post: the marks are identical in both locales —
+   only the tips behind them change — so it is held still for the same reason
+   the section rail is. */
 ::view-transition-old(section-rail),
-::view-transition-new(section-rail) {
+::view-transition-new(section-rail),
+::view-transition-old(toc-rail),
+::view-transition-new(toc-rail) {
   animation: none;
   mix-blend-mode: normal;
 }

@@ -1,7 +1,17 @@
 ---
-import { locales, resolveLocale } from '../i18n/locales';
+import { locales, resolveLocale, type LocaleCode } from '../i18n/locales';
 import { withBase } from '../lib/url';
 
+interface Props {
+  /**
+   * Where each locale's copy of the current page lives, without the base
+   * prefix. Only translated sub-pages need this — everything else is one of
+   * the two home pages, which is what a locale's own `path` already is.
+   */
+  paths?: Partial<Record<LocaleCode, string>>;
+}
+
+const { paths } = Astro.props;
 const lang = resolveLocale(Astro.currentLocale);
 ---
 
@@ -28,7 +38,7 @@ const lang = resolveLocale(Astro.currentLocale);
         </span>
       ) : (
         <a
-          href={withBase(locale.path)}
+          href={withBase(paths?.[locale.code] ?? locale.path)}
           aria-label={locale.name}
           class="mono-label flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors duration-300 hover:bg-ink/8 hover:text-ink min-[480px]:h-auto min-[480px]:w-auto min-[480px]:px-3 min-[480px]:py-1.5 min-[480px]:text-slate"
           data-lang-link

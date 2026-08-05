@@ -223,6 +223,36 @@ export interface SiteContent {
     copyFallbackSelect: string;
     linkedinLabel: string;
   };
+  /**
+   * Every string the blog needs. The posts themselves are Markdown files under
+   * src/content/blog, one folder per locale — only the furniture around them
+   * lives here.
+   */
+  blog: {
+    /** Homepage teaser section. */
+    sectionLabel: string;
+    sectionTitle: string;
+    /** The h1 of the blog index at /blog and /zh-tw/blog. */
+    indexTitle: string;
+    metaTitle: string;
+    metaDescription: string;
+    /** Accessible name of the tag filter, and its "no filter" pill. */
+    filterLabel: string;
+    allTags: string;
+    /** Shown when a tag filter leaves the list empty. */
+    noPosts: string;
+    readMore: string;
+    allPosts: string;
+    /** Follows the number: "6 min read". */
+    minRead: string;
+    publishedOn: string;
+    newerPost: string;
+    olderPost: string;
+    backToTop: string;
+    /** The link out of the blog and back to the single-page site. */
+    backToSite: string;
+    tableOfContents: string;
+  };
 }
 
 export function getContent(locale: LocaleCode): SiteContent {

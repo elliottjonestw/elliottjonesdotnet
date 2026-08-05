@@ -1,0 +1,141 @@
+---
+/**
+ * The two most recent posts, on the home page.
+ *
+ * Deliberately a teaser rather than a feed: the point is to show that there is
+ * writing here and give one route into it. Everything else is on /blog.
+ */
+import SectionHeading from './SectionHeading.astro';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+import { getPosts, listPath } from '../lib/blog';
+
+const locale = resolveLocale(Astro.currentLocale);
+const { blog } = getContent(locale);
+
+const posts = (await getPosts(locale)).slice(0, 2);
+---
+
+{/* On the raised ground, so the section is read as its own thing rather than
+    as a continuation of Speaking above it — the two sit on either side of that
+    edge and both hold cards, so sharing a colour merges them. It also keeps
+    the page's alternation intact: Credentials, below, takes the paper Speaking
+    would otherwise have handed straight on. */}
+{
+  posts.length > 0 && (
+    <section id="blog" class="bg-surface section-pad">
+      <div class="shell">
+        <SectionHeading label={blog.sectionLabel} title={blog.sectionTitle} />
+
+        <ul class="swipe-rail mt-9 gap-5 sm:grid-cols-2 lg:mt-12">
+          {posts.map((entry, i) => (
+            <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
+              <a href={entry.href} class="post-card">
+                <p class="mono-label text-slate">
+                  <time datetime={entry.dateISO}>{entry.dateLabel}</time>
+                  <span aria-hidden="true"> · </span>
+                  {entry.minutes}&nbsp;{blog.minRead}
+                </p>
+
+                <h3 class="post-card-title">{entry.post.data.title}</h3>
+
+                <p class="post-card-excerpt">{entry.excerpt}</p>
+
+                {entry.post.data.tags.length > 0 && (
+                  <ul class="post-card-tags">
+                    {entry.post.data.tags.map((tag) => (
+                      <li class="mono-label rounded-full border border-ink/15 px-3 py-1.5 text-slate">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Pushed to the foot of the card, so the two cards agree on
+                    where the link is however long their excerpts run. */}
+                <p class="post-card-more mono-label text-jade">
+                  {blog.readMore}
+                  <span aria-hidden="true">&nbsp;→</span>
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <p class="mt-10" data-reveal style="--reveal-delay:180ms">
+          <a href={listPath(locale)} class="mono-label link-underline text-slate">
+            {blog.allPosts}
+            <span aria-hidden="true">&nbsp;→</span>
+          </a>
+        </p>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+    transition: border-color 0.5s var(--ease-out-quint);
+  }
+
+  @media (min-width: 640px) {
+    .post-card {
+      padding: 2.25rem;
+    }
+  }
+
+  @media (hover: hover) {
+    .post-card:hover {
+      border-color: color-mix(in oklab, var(--color-jade) 50%, transparent);
+    }
+
+    .post-card:hover .post-card-title {
+      color: var(--color-jade);
+    }
+
+    .post-card:hover .post-card-more span {
+      transform: translateX(0.25rem);
+    }
+  }
+
+  .post-card-title {
+    margin-block-start: 1.5rem;
+    font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    transition: color 0.35s var(--ease-out-quint);
+  }
+
+  .post-card-excerpt {
+    margin-block-start: 1rem;
+    color: var(--color-slate);
+    font-size: 0.9375rem;
+  }
+
+  .post-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-block-start: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  /* The card's height is set by whichever excerpt is longer; this holds the
+     link to the bottom of both. */
+  .post-card-more {
+    margin-block-start: auto;
+    padding-block-start: 1.75rem;
+  }
+
+  .post-card-more span {
+    display: inline-block;
+    transition: transform 0.35s var(--ease-out-quint);
+  }
+</style>

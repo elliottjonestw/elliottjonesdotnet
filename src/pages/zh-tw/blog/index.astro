@@ -1,0 +1,26 @@
+---
+// The Traditional Chinese blog index. Same component as the English one at
+// src/pages/blog/index.astro; the locale comes from this file's position under
+// the locale path configured in astro.config.mjs.
+import Base from '../../../layouts/Base.astro';
+import BlogIndex from '../../../components/BlogIndex.astro';
+import { getContent } from '../../../data/content';
+import { blogIndexSchema } from '../../../lib/blog';
+
+const { blog, person } = getContent('zh-Hant-TW');
+
+// Without this the page inherits Base's ProfilePage, which describes the home
+// page under the home page's @id. See blogIndexSchema.
+const schema = await blogIndexSchema('zh-Hant-TW', Astro.site ?? new URL(person.siteUrl));
+---
+
+<Base
+  title={blog.metaTitle}
+  description={blog.metaDescription}
+  rail="none"
+  ogType="website"
+  structuredData={schema}
+  altPaths={{ en: 'blog', 'zh-Hant-TW': 'zh-tw/blog' }}
+>
+  <BlogIndex />
+</Base>

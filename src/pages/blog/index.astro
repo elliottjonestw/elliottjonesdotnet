@@ -1,0 +1,27 @@
+---
+// The English blog index. Its Chinese counterpart is
+// src/pages/zh-tw/blog/index.astro — same component, other locale.
+import Base from '../../layouts/Base.astro';
+import BlogIndex from '../../components/BlogIndex.astro';
+import { getContent } from '../../data/content';
+import { blogIndexSchema } from '../../lib/blog';
+
+const { blog, person } = getContent('en');
+
+// Without this the page inherits Base's ProfilePage, which describes the home
+// page under the home page's @id. See blogIndexSchema.
+const schema = await blogIndexSchema('en', Astro.site ?? new URL(person.siteUrl));
+---
+
+{/* No rail: the section marks belong to the single-page flow, and a list of
+    posts is already its own contents. */}
+<Base
+  title={blog.metaTitle}
+  description={blog.metaDescription}
+  rail="none"
+  ogType="website"
+  structuredData={schema}
+  altPaths={{ en: 'blog', 'zh-Hant-TW': 'zh-tw/blog' }}
+>
+  <BlogIndex />
+</Base>

@@ -1,0 +1,31 @@
+---
+// One route per English post. The Chinese posts are built by the matching file
+// at src/pages/zh-tw/blog/[slug].astro; the two differ only in which locale
+// they ask the collection for.
+import { render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import { getPosts, neighbours, toToc, type PostSummary } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getPosts('en');
+  // The whole locale's list rides along on every route, so each post can find
+  // its neighbours without querying the collection a second time.
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry, posts },
+  }));
+}
+
+interface Props {
+  entry: PostSummary;
+  posts: PostSummary[];
+}
+
+const { entry, posts } = Astro.props;
+const { Content, headings } = await render(entry.post);
+const { newer, older } = neighbours(posts, entry.slug);
+---
+
+<BlogPost entry={entry} toc={toToc(headings)} newer={newer} older={older}>
+  <Content />
+</BlogPost>

@@ -1,9 +1,9 @@
 # elliottjones.net
 
-Personal resume site for Elliott Jones — a single static page built with
-[Astro](https://astro.build) and Tailwind CSS, deployed to GitHub Pages. It
-ships in two languages: English at `/`, and Taiwan-style Traditional Chinese
-at `/zh-tw`, using Astro's built-in i18n routing.
+Personal resume site for Elliott Jones — a single static page plus a blog,
+built with [Astro](https://astro.build) and Tailwind CSS, deployed to GitHub
+Pages. It ships in two languages: English at `/`, and Taiwan-style Traditional
+Chinese at `/zh-tw`, using Astro's built-in i18n routing.
 
 ## Running it
 
@@ -66,6 +66,63 @@ Download the `.woff2` the returned CSS points at, save it over
 `src/assets/fonts/noto-sans-tc-gloss.woff2`, and update the `unicode-range` in
 the `@font-face` block in [`src/styles/global.css`](src/styles/global.css).
 
+## Writing a post
+
+Posts are Markdown files in an Astro content collection, declared in
+[`src/content.config.ts`](src/content.config.ts). **The folder decides the
+language** — there is no locale field in the frontmatter, so a post's language
+and its URL cannot disagree.
+
+```
+src/content/blog/
+  en/why-bilingual.md      →  /blog/why-bilingual
+  zh-tw/why-bilingual.md   →  /zh-tw/blog/why-bilingual
+```
+
+A translation pair is two files with the **same filename** in the two folders.
+That shared name is what joins them: it drives the hreflang alternates, the
+language switch on a post, and the sitemap. A post that exists in one language
+only still builds — its language switch falls back to the other language's
+blog index rather than a URL that was never generated.
+
+Frontmatter:
+
+```yaml
+---
+title: Why this site is written twice
+date: 2025-02-01
+tags: ['Language', 'Writing']
+cover:
+  src: why-bilingual/cover.jpg # path inside src/assets/blog/
+  alt: A dark field split down the middle.
+---
+```
+
+`cover` is optional; when present it becomes the post's `og:image`, rendered
+to 1200×630 at build time. There is deliberately **no description, excerpt or
+reading-time field** — all three are derived in
+[`src/lib/blog.ts`](src/lib/blog.ts): the excerpt and meta description from the
+post's first rendered paragraph, and the reading time from word count for
+English and character count for Chinese, since the two are not measured in the
+same unit.
+
+Images live in `src/assets/blog/<post-slug>/` and are referenced from the body
+by a relative path (`../../../assets/blog/why-bilingual/content-tree.png`), so
+Astro optimises them. Prose styling — headings, quotes, code blocks, figures,
+galleries, embeds — is [`src/styles/blog.css`](src/styles/blog.css), imported
+by `BlogPost.astro` rather than globally, so the home page never carries it.
+Code blocks are highlighted by Astro's built-in Shiki; the language label in
+the corner is drawn from the `data-language` attribute Shiki writes.
+
+Two posts also appear on the home page, in `LatestPosts.astro`, as a `#blog`
+section between Speaking and Credentials — with its own tracked mark in the
+section rail, like every other section. It sits on the raised ground so it
+doesn't merge into Speaking above it, which is why Credentials below it is on
+paper: the page alternates all the way down. The route out to the full blog is
+the "All posts" link inside the section. On a post the rail becomes a table of
+contents built from the post's `h2`/`h3` headings, headed by an untracked mark
+back to the index.
+
 ## Adding or editing a language
 
 Locales are declared in two places that need to agree:
@@ -73,7 +130,11 @@ Locales are declared in two places that need to agree:
 routing) and [`src/i18n/locales.ts`](src/i18n/locales.ts) (`locales`, which
 drives the language switch, hreflang tags and the sitemap). A new locale also
 needs its own `src/data/content.<code>.ts` and a
-`src/pages/<path>/index.astro` that mirrors `src/pages/index.astro`.
+`src/pages/<path>/index.astro` that mirrors `src/pages/index.astro`. For the
+blog, it also needs a `src/content/blog/<path>/` folder, a
+`src/pages/<path>/blog/index.astro` and a `src/pages/<path>/blog/[slug].astro`
+mirroring the English pair, and an entry in the `folders` map in
+[`src/lib/blog.ts`](src/lib/blog.ts).
 
 ## SEO and analytics
 
@@ -82,33 +143,38 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
 
 - **Title, description, canonical** — canonical URLs are normalised to
   extensionless paths (`https://elliottjones.net/`, not `/index.html`).
-- **hreflang alternates** — every locale's home page carries a `<link
-  rel="alternate" hreflang="…">` to every other locale plus itself, and an
-  `x-default` pointing at English, so Google serves each visitor the right
-  language rather than treating the two pages as duplicate content.
+- **hreflang alternates** — every page carries a `<link rel="alternate"
+  hreflang="…">` to every locale's copy of itself, plus an `x-default`
+  pointing at English, so Google serves each visitor the right language rather
+  than treating the two pages as duplicate content. Pages other than the home
+  pages pass their own per-locale routes to `Base` as `altPaths`.
 - **Open Graph and Twitter cards** point at `public/og.jpg` (1200×630) — the
   card LinkedIn renders when the link is shared. `og:locale` and
   `og:locale:alternate` switch per page. To change the image, re-render the
-  card and replace that file.
+  card and replace that file. A post with a `cover` overrides it with its own
+  1200×630 crop, and switches `og:type` to `article`.
 - **Structured data** — a `ProfilePage` wrapping a `Person`, including
   `knowsLanguage`, `alumniOf`, `hasOccupation` and `hasCredential` (the three
   TOCFL results plus both certifications), so the Mandarin credentials are
-  machine-readable on both locales. Validate at
+  machine-readable on both locales. Posts replace it with a `BlogPosting`
+  graph. Validate at
   [search.google.com/test/rich-results](https://search.google.com/test/rich-results).
 - **`robots.txt`** allows everything and points at the sitemap.
   `sitemap.xml` is generated at build time by
   [`src/pages/sitemap.xml.ts`](src/pages/sitemap.xml.ts) so `lastmod` tracks the
-  deploy instead of going stale, and lists both locales with the same hreflang
-  alternates as the pages themselves.
+  deploy instead of going stale, and lists both locales' home pages, blog
+  indexes and posts with the same hreflang alternates as the pages
+  themselves.
 - **Google Analytics 4** — property `G-YH3506Y1XQ`, carried over from the old
   site, set as `person.gaMeasurementId`. It is wrapped in
   `import.meta.env.PROD`, so `npm run dev` never sends hits to the property.
 - **Search Console** — the old `google2e17a48e58355e7b.html` verification file
   still ships at the site root, so verification survives the rebuild.
 - **Old URLs** — `/en.html` is a `noindex` meta-refresh stub that
-  canonicalises to `/`; `/zh.html` canonicalises to the new `/zh-tw` page.
-  The portfolio/blog indexes still point at `/`. This keeps existing inbound
-  links and search equity landing on the rebuild.
+  canonicalises to `/`; `/zh.html` canonicalises to the new `/zh-tw` page. The
+  old blog indexes at `/en/blog` and `/zh/blog` now point at `/blog` and
+  `/zh-tw/blog`; the portfolio indexes still point at `/`. This keeps existing
+  inbound links and search equity landing on the rebuild.
 
 Note there is no cookie consent banner. The previous site ran GA the same way;
 if you want one, that needs adding before the GA script fires.
@@ -164,4 +230,5 @@ The previous site deployed over FTP to Bluehost.
 
 Old URLs that were indexed (`/en.html`, `/zh.html`, the portfolio and blog
 indexes) have meta-refresh stubs in `public/` so inbound links land on the
-rebuild rather than a 404.
+rebuild rather than a 404. The two blog stubs point at the new blog; the rest
+point at the home page.

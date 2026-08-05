@@ -1,0 +1,397 @@
+/**
+ * Blog prose.
+ *
+ * Imported by BlogPost.astro rather than by global.css, so the home page —
+ * which is every visitor's first request — does not carry the weight of styles
+ * only a post ever uses.
+ *
+ * Everything here hangs off `.prose`, which wraps the rendered Markdown and
+ * nothing else. The elements inside it come from Markdown, so they cannot be
+ * given classes; this is the one place on the site where bare tag selectors
+ * are the right tool.
+ */
+
+.prose {
+  /* The measure. Everything keeps to it: images, code, tables and embeds all
+     line up with the text rather than bleeding past it, so the column has one
+     edge down its whole length. */
+  max-width: 68ch;
+  margin-inline: auto;
+  font-size: 1.0625rem;
+  line-height: 1.78;
+  color: var(--color-ink);
+}
+
+.prose > * + * {
+  margin-block-start: 1.5em;
+}
+
+/* ── Headings ──────────────────────────────────────────────────────────── */
+
+.prose :is(h2, h3, h4) {
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  /* :root sets scroll-padding-top: 0 so the home page's full-height sections
+     land flush. A heading is not a section, and an anchor that puts it hard
+     against the top edge reads as cut off — so the offset is put back here,
+     on the only elements the contents rail ever scrolls to. */
+  scroll-margin-top: 5rem;
+}
+
+.prose h2 {
+  margin-block-start: 2.4em;
+  font-size: clamp(1.5rem, 2.6vw, 1.9375rem);
+  line-height: 1.15;
+}
+
+.prose h3 {
+  margin-block-start: 2em;
+  font-size: clamp(1.1875rem, 1.9vw, 1.4375rem);
+  line-height: 1.25;
+}
+
+.prose h4 {
+  margin-block-start: 1.8em;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+
+/* The heading a reader has just jumped to, marked briefly so an in-page jump
+   is visible rather than silent. */
+.prose :is(h2, h3, h4):target {
+  animation: prose-target 2.4s var(--ease-out-quint);
+}
+
+@keyframes prose-target {
+  from {
+    background-color: color-mix(in oklab, var(--color-jade) 16%, transparent);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prose :is(h2, h3, h4):target {
+    animation: none;
+  }
+}
+
+/* ── Links ─────────────────────────────────────────────────────────────── */
+
+.prose a {
+  color: var(--color-jade);
+  /* The same wipe the rest of the site uses, rather than a static underline. */
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.35s var(--ease-out-quint);
+}
+
+@media (hover: hover) {
+  .prose a:hover {
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+  }
+}
+
+/* ── Lists ─────────────────────────────────────────────────────────────── */
+
+.prose :is(ul, ol) {
+  padding-inline-start: 1.4em;
+}
+
+.prose li + li {
+  margin-block-start: 0.5em;
+}
+
+.prose li::marker {
+  color: var(--color-jade);
+  font-size: 0.9em;
+}
+
+.prose ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+/* A jade rule for a bullet, matching the dashes that head the lists in the
+   Work and Projects sections. */
+.prose ul > li {
+  position: relative;
+  padding-inline-start: 1.75em;
+}
+
+.prose ul > li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  /* Half of the first line's height, so the rule sits on the x-height of the
+     text rather than at the top of a wrapped item. */
+  top: calc(0.89em - 1px);
+  width: 1em;
+  height: 1px;
+  background: color-mix(in oklab, var(--color-jade) 65%, transparent);
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose :is(ul, ol) :is(ul, ol) {
+  margin-block-start: 0.5em;
+}
+
+/* ── Quotes ────────────────────────────────────────────────────────────── */
+
+.prose blockquote {
+  margin-inline: 0;
+  padding: 0.25em 0 0.25em 1.5em;
+  border-inline-start: 2px solid var(--color-jade);
+  font-style: italic;
+  color: var(--color-slate);
+}
+
+.prose blockquote p {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+/* Chinese has no italic; a slanted CJK face is a synthetic oblique and reads
+   as a rendering fault. The jade rule already does the work of setting the
+   quote apart, so the slant is simply dropped. */
+:lang(zh-Hant) .prose blockquote {
+  font-style: normal;
+}
+
+/* ── Code ──────────────────────────────────────────────────────────────── */
+
+.prose :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--color-ink) 7%, transparent);
+  /* A run of code should not be broken across lines mid-identifier, but a long
+     path in a narrow column has to give somewhere. */
+  overflow-wrap: break-word;
+}
+
+/* Shiki renders the block; everything below only re-houses it, so the token
+   colours stay whatever the highlighter chose. */
+.prose pre {
+  position: relative;
+  margin-block: 2.25em;
+  padding: 2.5rem 1.25rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-ink-line);
+  /* Overriding Shiki's inline background — the theme's own near-black is not
+     this site's ink. */
+  background: var(--color-ink-raised) !important;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.prose pre code {
+  font-family: var(--font-mono);
+  /* Shiki puts the width on the code element; a wide line must be allowed to
+     push past the pre's box so the scroll it triggers reaches the end of it. */
+  display: inline-block;
+  min-width: 100%;
+}
+
+/* The language, set into the top-left of the block. Astro's Shiki integration
+   writes data-language onto the <pre>, so no wrapper element is needed. */
+.prose pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.75rem;
+  inset-inline-start: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-jade-bright);
+}
+
+/* A block with no language declared gets the rule but no label. */
+.prose pre[data-language='plaintext']::before {
+  content: none;
+}
+
+/* ── Figures and images ────────────────────────────────────────────────── */
+
+.prose :is(img, video) {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+}
+
+.prose figure {
+  margin-block: 2.25em;
+  /* Explicitly zero rather than absent: the UA stylesheet hangs 40px off each
+     side of a figure. Everything in the prose keeps to the one measure. */
+  margin-inline: 0;
+}
+
+.prose figcaption {
+  margin-block-start: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  text-align: center;
+}
+
+:lang(zh-Hant) .prose figcaption {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* A standalone image — Markdown's `![alt](src)`, which arrives wrapped in a
+   paragraph of its own — is treated as a figure too. */
+.prose p:has(> img:only-child) {
+  margin-block: 2.25em;
+}
+
+/* ── Galleries ─────────────────────────────────────────────────────────── */
+
+/* Two images side by side. Written in the post as a <div class="gallery">
+   around consecutive images, since Markdown has no syntax for it. */
+.prose .gallery {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2.25em;
+}
+
+@media (min-width: 640px) {
+  .prose .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* One row for the images, one for the captions. Scans are never quite the
+       same proportion as each other, and without this a four-pixel difference
+       in height puts the two captions on different lines. */
+    grid-template-rows: auto auto;
+  }
+
+  .prose .gallery > figure {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+  }
+}
+
+/* A Markdown image inside a gallery still arrives wrapped in its own
+   paragraph, and the standalone-image rule above would space it as if it were
+   alone on the page. p:has() outweighs a plain descendant selector, so the
+   same selector is repeated inside :is() to win the specificity back. */
+.prose .gallery :is(figure, p, p:has(> img:only-child)) {
+  margin: 0;
+}
+
+/* ── Embeds ────────────────────────────────────────────────────────────── */
+
+/* <div class="embed"><iframe …></iframe></div> — a 16:9 box that holds its
+   shape while the video loads, so nothing below it jumps. */
+.prose .embed {
+  margin-block: 2.25em;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  background: var(--color-ink);
+}
+
+.prose .embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Rules and tables ──────────────────────────────────────────────────── */
+
+/* The same jade hairline the ink sections are folded along, faded out at both
+   ends so it reads as light on a crease rather than a drawn border. */
+.prose hr {
+  height: 1px;
+  border: 0;
+  margin-block: 3em;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--color-jade) 55%, transparent) 14%,
+    color-mix(in oklab, var(--color-jade) 55%, transparent) 86%,
+    transparent
+  );
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose :is(th, td) {
+  padding: 0.7rem 0.9rem;
+  text-align: start;
+  border-bottom: 1px solid
+    color-mix(in oklab, var(--color-ink) 12%, transparent);
+}
+
+.prose th {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+:lang(zh-Hant) .prose th {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* A table is the one block that cannot be made to wrap gracefully. At phone
+   widths five columns of short data become five columns of three-line cells,
+   which is unreadable as a table — the rows stop looking like rows. Below the
+   measure it becomes its own scroll container instead, so a row stays on one
+   line and the page never carries sideways with it.
+
+   display: block is what makes a table scrollable without a wrapper element,
+   which is the point: the tables here come from Markdown, so there is nowhere
+   to put one. The rows still lay themselves out as a table inside it. */
+@media (max-width: 640px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* ── Marks ─────────────────────────────────────────────────────────────── */
+
+.prose strong {
+  font-weight: 650;
+}
+
+.prose mark {
+  background: color-mix(in oklab, var(--color-jade) 22%, transparent);
+  color: inherit;
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+}
+
+.prose :is(sup, sub) {
+  font-size: 0.75em;
+}

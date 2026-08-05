@@ -1,0 +1,332 @@
+---
+/**
+ * The blog index — every post in one locale, newest first.
+ *
+ * Written once and rendered by both /blog and /zh-tw/blog, in the same way the
+ * home page's sections are: the locale comes from Astro.currentLocale, which
+ * Astro resolves from the route the page sits on.
+ */
+import { Image } from 'astro:assets';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+import { collectTags, getPosts } from '../lib/blog';
+import { withBase } from '../lib/url';
+
+const locale = resolveLocale(Astro.currentLocale);
+const { blog } = getContent(locale);
+
+const posts = await getPosts(locale);
+const tags = collectTags(posts);
+---
+
+<main id="main">
+  <div class="shell section-pad">
+    {/* No padding of its own — the shell's own block padding is all the air
+        this needs above it. The link sits at the left, so unlike the post
+        header it has nothing to clear: the language switch is in the opposite
+        corner. */}
+    <p>
+      <a href={withBase('')} class="mono-label link-underline text-slate">
+        <span aria-hidden="true">←&nbsp;</span>{blog.backToSite}
+      </a>
+    </p>
+
+    {/* Set at the same size as the section headings on the home page, so the
+        blog reads as another part of the same site rather than somewhere
+        else. It stands alone — no eyebrow above it and no standfirst under
+        it, because the posts start straight after. */}
+    <h1 class="mt-8 max-w-3xl text-section" data-reveal>{blog.indexTitle}</h1>
+
+    {/* Filtering is the one thing on this page that needs scripting, so the
+        control is not drawn until something is there to run it. Every post is
+        in the HTML either way — the filter only hides rows. */}
+    {
+      tags.length > 1 && (
+        <>
+          <nav
+            class="tag-filter"
+            aria-label={blog.filterLabel}
+            data-tag-filter
+            hidden
+          >
+            <button type="button" class="tag-pill" data-tag="" aria-pressed="true">
+              {blog.allTags}
+            </button>
+            {tags.map((tag) => (
+              <button
+                type="button"
+                class="tag-pill"
+                data-tag={tag}
+                aria-pressed="false"
+              >
+                {tag}
+              </button>
+            ))}
+          </nav>
+          <script is:inline>
+            // Inline and immediate, so the control does not flash in a moment
+            // after the list it belongs to.
+            document.querySelector('[data-tag-filter]').hidden = false;
+          </script>
+        </>
+      )
+    }
+
+    <ol class="post-list">
+      {
+        posts.map((entry, i) => (
+          <li
+            class="post-row"
+            data-post
+            data-tags={`|${entry.post.data.tags.join('|')}|`}
+            data-reveal
+            style={`--reveal-delay:${i * 70}ms`}
+          >
+            {/* Two columns once there is room, the cover held to the right of
+                the copy; one column below that, with the cover moved to the
+                head of the row in CSS. Source order keeps the words first —
+                what a screen reader should hear, and what the desktop layout
+                wants — while a phone gets the picture first, so the row opens
+                with something to look at and "Read more" still ends it. */}
+            <a
+              href={entry.href}
+              class:list={['post-row-link', entry.cover && 'has-cover']}
+            >
+              <div class="post-row-text">
+                <p class="mono-label text-slate">
+                  <time datetime={entry.dateISO}>{entry.dateLabel}</time>
+                  <span aria-hidden="true"> · </span>
+                  {entry.minutes}&nbsp;{blog.minRead}
+                </p>
+
+                <h2 class="post-row-title">{entry.post.data.title}</h2>
+
+                <p class="post-row-excerpt">{entry.excerpt}</p>
+
+                {entry.post.data.tags.length > 0 && (
+                  <ul class="post-row-tags">
+                    {entry.post.data.tags.map((tag) => (
+                      <li class="mono-label rounded-full border border-ink/15 px-3 py-1.5 text-slate">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <p class="post-row-more mono-label text-jade">
+                  {blog.readMore}
+                  <span aria-hidden="true">&nbsp;→</span>
+                </p>
+              </div>
+
+              {/* alt="" — the title beside it already says what the post is,
+                  and the whole row is one link, so describing the art again
+                  only makes the link longer to hear. */}
+              {entry.cover && (
+                <Image
+                  src={entry.cover.image}
+                  alt=""
+                  widths={[280, 420, 560]}
+                  sizes="(min-width:768px) 17.5rem, 92vw"
+                  quality={82}
+                  class="post-row-cover"
+                  loading="lazy"
+                />
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="mt-10 text-slate" data-empty hidden>{blog.noPosts}</p>
+  </div>
+</main>
+
+<style>
+  /* A class can beat the UA stylesheet's [hidden] rule, and several below do.
+     The attribute is what the filter toggles, so it has to win. */
+  [hidden] {
+    display: none !important;
+  }
+
+  .tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-block-start: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .tag-pill {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent);
+    color: var(--color-slate);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      color 0.35s var(--ease-out-quint),
+      border-color 0.35s var(--ease-out-quint),
+      background-color 0.35s var(--ease-out-quint);
+  }
+
+  :global(:lang(zh-Hant)) .tag-pill {
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  @media (hover: hover) {
+    .tag-pill:hover {
+      border-color: color-mix(in oklab, var(--color-ink) 40%, transparent);
+      color: var(--color-ink);
+    }
+  }
+
+  .tag-pill[aria-pressed='true'],
+  .tag-pill[aria-pressed='true']:hover {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .post-list {
+    margin-block-start: clamp(1.75rem, 3.5vw, 2.5rem);
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-row {
+    border-top: 1px solid var(--rule);
+  }
+
+  .post-row:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* The whole row is the target, so the reader never has to find the title. */
+  .post-row-link {
+    display: grid;
+    gap: 1.75rem;
+    padding-block: clamp(2rem, 3.5vw, 2.75rem);
+  }
+
+  /* Stacked, the cover leads. Left at the foot of the row it would sit
+     immediately above the next row's hairline and read as that post's. */
+  @media (max-width: 767px) {
+    .post-row-cover {
+      order: -1;
+    }
+  }
+
+  /* Only a row that has a cover takes the second column — otherwise the copy
+     would stop short against an empty one. */
+  @media (min-width: 768px) {
+    .post-row-link.has-cover {
+      grid-template-columns: minmax(0, 1fr) 17.5rem;
+      gap: 2.5rem;
+      align-items: start;
+    }
+  }
+
+  .post-row-cover {
+    width: 100%;
+    height: auto;
+    /* Held to the covers' own 1200×630, so a row's height does not depend on
+       whatever proportion the art happens to arrive in. */
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+    transition: border-color 0.5s var(--ease-out-quint);
+  }
+
+  @media (hover: hover) {
+    .post-row-link:hover .post-row-cover {
+      border-color: color-mix(in oklab, var(--color-jade) 50%, transparent);
+    }
+  }
+
+  .post-row-title {
+    margin-block-start: 0.85rem;
+    max-width: 30ch;
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    transition: color 0.35s var(--ease-out-quint);
+  }
+
+  .post-row-excerpt {
+    margin-block-start: 1rem;
+    max-width: 62ch;
+    color: var(--color-slate);
+    font-size: 1rem;
+  }
+
+  .post-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-block-start: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-row-more {
+    margin-block-start: 1.5rem;
+  }
+
+  .post-row-more span {
+    display: inline-block;
+    transition: transform 0.35s var(--ease-out-quint);
+  }
+
+  @media (hover: hover) {
+    .post-row-link:hover .post-row-title {
+      color: var(--color-jade);
+    }
+
+    .post-row-link:hover .post-row-more span {
+      transform: translateX(0.25rem);
+    }
+  }
+</style>
+
+<script>
+  // Client-side tag filtering. Every post is already in the document; this only
+  // hides the rows that do not carry the tag, so the page is complete and the
+  // list is correct before this runs and if it never does.
+  const filter = document.querySelector<HTMLElement>('[data-tag-filter]');
+
+  if (filter) {
+    const buttons = [
+      ...filter.querySelectorAll<HTMLButtonElement>('button[data-tag]'),
+    ];
+    const rows = [...document.querySelectorAll<HTMLElement>('[data-post]')];
+    const empty = document.querySelector<HTMLElement>('[data-empty]');
+
+    const apply = (tag: string) => {
+      let shown = 0;
+      for (const row of rows) {
+        // Delimited on both sides, so "Writing" cannot match "Writing tools".
+        const match = !tag || (row.dataset.tags ?? '').includes(`|${tag}|`);
+        row.hidden = !match;
+        if (match) shown += 1;
+      }
+      if (empty) empty.hidden = shown > 0;
+      for (const button of buttons) {
+        button.setAttribute(
+          'aria-pressed',
+          String((button.dataset.tag ?? '') === tag),
+        );
+      }
+    };
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => apply(button.dataset.tag ?? ''));
+    }
+  }
+</script>

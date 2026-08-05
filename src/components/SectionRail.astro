@@ -1,12 +1,26 @@
 ---
 import { getContent } from '../data/content';
 import { resolveLocale } from '../i18n/locales';
+import { listPath } from '../lib/blog';
+import type { TocEntry } from '../lib/blog';
 
-const { nav } = getContent(resolveLocale(Astro.currentLocale));
+interface Props {
+  /**
+   * When given, the rail becomes a table of contents for the post on screen —
+   * one mark per h2/h3 — instead of the home page's section icons. Same shell,
+   * same thumb, same tips; only what the marks stand for changes.
+   */
+  toc?: TocEntry[];
+}
+
+const { toc } = Astro.props;
+
+const locale = resolveLocale(Astro.currentLocale);
+const { nav, blog } = getContent(locale);
 
 /**
  * One glyph per section id, drawn on the same 24px grid at a uniform stroke so
- * the column reads as a set rather than nine borrowed marks. Keyed by id, so a
+ * the column reads as a set rather than ten borrowed marks. Keyed by id, so a
  * section that appears in `nav.sections` without an icon here fails loudly at
  * build time rather than rendering an empty button.
  */
@@ -22,11 +36,16 @@ const icons: Record<string, string> = {
   projects: '<path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>',
   speaking:
     '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/>',
+  /** The nib, for the writing. */
+  blog: '<path d="M12 20h9"/><path d="M16.4 3.6a2.1 2.1 0 0 1 3 3L7.4 18.6a2 2 0 0 1-.9.5l-2.9.8a.5.5 0 0 1-.6-.6l.8-2.9a2 2 0 0 1 .5-.85Z"/>',
   credentials:
     '<circle cx="12" cy="8" r="6"/><path d="m15.5 13 1.4 8-4.9-3-4.9 3 1.4-8"/>',
   contact:
     '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 7 8.9 5.5a2 2 0 0 0 2.2 0L22 7"/>',
 };
+
+/** Back out of a post, to the listing it came from. */
+const backIcon = '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>';
 
 const items = nav.sections.map((section) => {
   const icon = icons[section.id];
@@ -40,15 +59,24 @@ const items = nav.sections.map((section) => {
     through both light and on-ink sections — matching the language switch in
     the opposite corner. Hidden below 1280px, where the page gutter is too
     narrow to hold it clear of the text, and on short viewports. */}
-<nav class="rail no-print" aria-label={nav.sectionsLabel} data-rail>
+<nav
+  class:list={['rail', 'no-print', toc && 'rail--toc']}
+  aria-label={toc ? blog.tableOfContents : nav.sectionsLabel}
+  data-rail
+>
   <ul class="rail-list">
     {/* The filled marker is one element that slides, rather than a background
-        appearing and disappearing on nine separate buttons. */}
+        appearing and disappearing on ten separate buttons. */}
     <span class="rail-thumb" aria-hidden="true" data-rail-thumb></span>
+
+    {/* The way out, at the head of the contents. A post is not part of the
+        single-page flow, so unlike every other mark in this column it needs a
+        route back — and it is deliberately untracked, so the thumb never
+        lands on it. */}
     {
-      items.map((item) => (
-        <li>
-          <a href={`#${item.id}`} class="rail-link" aria-label={item.label} data-rail-link>
+      toc && (
+        <li class="rail-aside rail-aside--head">
+          <a href={listPath(locale)} class="rail-link" aria-label={blog.allPosts}>
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -58,12 +86,72 @@ const items = nav.sections.map((section) => {
               stroke-linejoin="round"
               aria-hidden="true"
               focusable="false"
-              set:html={item.icon}
+              set:html={backIcon}
             />
-            <span class="rail-tip" aria-hidden="true">{item.label}</span>
+            <span class="rail-tip" aria-hidden="true">
+              {blog.allPosts}
+            </span>
           </a>
         </li>
-      ))
+      )
+    }
+
+    {
+      toc
+        ? toc.map((heading, i) => (
+            <li>
+              <a
+                href={`#${heading.id}`}
+                class="rail-link"
+                aria-label={heading.text}
+                data-rail-link
+              >
+                {/* Its position in the post, rather than a glyph — a heading
+                    is arbitrary text and there is nothing to draw for it, but
+                    "you are on 3 of 6" is worth knowing without hovering.
+                    Mono, like every other number on the site. */}
+                <span
+                  class="rail-number"
+                  data-depth={heading.depth}
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+                {/* The heading goes in an inner span so the line clamp has
+                    something to hang off that is not the tip itself — the
+                    tip carries the arrow, which sits outside its box and
+                    would be cut off by the clamp's overflow. */}
+                <span class="rail-tip" aria-hidden="true">
+                  <span class="rail-tip-text">{heading.text}</span>
+                </span>
+              </a>
+            </li>
+          ))
+        : items.map((item) => (
+            <li>
+              <a
+                href={`#${item.id}`}
+                class="rail-link"
+                aria-label={item.label}
+                data-rail-link
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                  set:html={item.icon}
+                />
+                <span class="rail-tip" aria-hidden="true">
+                  {item.label}
+                </span>
+              </a>
+            </li>
+          ))
     }
   </ul>
 </nav>
@@ -80,11 +168,17 @@ const items = nav.sections.map((section) => {
     transform: translateY(-50%);
     /* Held still through a locale switch rather than cross-faded: the glyphs
        are identical in both locales, so fading one set into the other only
-       flickers. */
+       flickers. The contents rail is named separately because it is a
+       different column of marks — the two should never be morphed into one
+       another when a reader moves between the home page and a post. */
     view-transition-name: section-rail;
   }
 
-  /* Desktop only, and only where there is height for nine marks plus air. */
+  .rail--toc {
+    view-transition-name: toc-rail;
+  }
+
+  /* Desktop only, and only where there is height for ten marks plus air. */
   @media (min-width: 1280px) and (min-height: 600px) {
     .rail {
       display: block;
@@ -109,6 +203,14 @@ const items = nav.sections.map((section) => {
     box-shadow:
       0 1px 2px color-mix(in oklab, var(--color-ink) 6%, transparent),
       0 12px 32px -12px color-mix(in oklab, var(--color-ink) 22%, transparent);
+  }
+
+  /* A contents list is as long as the post is, rather than a fixed ten, so it
+     closes up further than the section rail does. Deliberately not given its
+     own scroll: the tips sit outside this box, and any overflow other than
+     visible would cut them off. */
+  .rail--toc .rail-list {
+    gap: clamp(6px, 1.5vh, 16px);
   }
 
   .rail-thumb {
@@ -155,6 +257,34 @@ const items = nav.sections.map((section) => {
     height: 17px;
   }
 
+  /* The heading marks. Every one is centred on the same axis — an indent, at
+     36px, only makes the column look ragged — so depth is carried by size and
+     weight instead. Lining figures, so 1 and 10 sit on the same centre. */
+  .rail-number {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: 0;
+    line-height: 1;
+    transition:
+      font-size 0.35s var(--ease-out-quint),
+      opacity 0.35s var(--ease-out-quint);
+  }
+
+  .rail-number[data-depth='3'] {
+    font-size: 0.625rem;
+    font-weight: 400;
+    opacity: 0.75;
+  }
+
+  /* The one mark that leaves the page, set off from the ones that scroll it. */
+  .rail-aside--head {
+    border-bottom: 1px solid
+      color-mix(in oklab, var(--color-ink) 12%, transparent);
+    padding-bottom: clamp(8px, 2vh, 20px);
+  }
+
   @media (hover: hover) {
     .rail-link:hover {
       color: var(--color-ink);
@@ -188,6 +318,37 @@ const items = nav.sections.map((section) => {
     transition:
       opacity 0.3s var(--ease-out-quint),
       transform 0.3s var(--ease-out-quint);
+  }
+
+  /* Heading text is a sentence, not a label: it is left in its own case, and
+     allowed to wrap.
+
+     width: max-content is doing the real work. The tip is absolutely
+     positioned against a 36px link, so shrink-to-fit measures it against
+     36px of available width and folds the heading into a column one word
+     wide — a max-width alone never gets a look in, because the box was
+     never wide to begin with. max-content sizes it to the unwrapped
+     heading first; the cap then pulls it back and lets it wrap. */
+  .rail--toc .rail-tip {
+    width: max-content;
+    max-width: min(24rem, 32vw);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    line-height: 1.35;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: normal;
+  }
+
+  /* Two lines at the outside. At this width that is around 120 characters,
+     so it only ever bites on a heading nobody should be writing — but when
+     it does, it truncates rather than growing a paragraph in the margin. */
+  .rail--toc .rail-tip-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
   }
 
   :global(:lang(zh-Hant)) .rail-tip {
@@ -228,6 +389,11 @@ const items = nav.sections.map((section) => {
       animation: rail-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s backwards;
     }
 
+    /* A post has no hero to wait for, so its contents arrive straight away. */
+    .rail--toc .rail-list {
+      animation-delay: 0.15s;
+    }
+
     :global(html.vt-nav) .rail-list {
       animation: none;
     }
@@ -249,7 +415,9 @@ const items = nav.sections.map((section) => {
   // Marks whichever section currently owns the upper third of the viewport, and
   // slides the thumb onto it. Position is read on scroll rather than through an
   // IntersectionObserver: sections here are full-height and often overlap the
-  // viewport two at a time, which observers report as a tie.
+  // viewport two at a time, which observers report as a tie. On a post the
+  // marks are headings rather than sections, but they are tracked the same way
+  // — this only ever asks where a link's target currently is.
   const rail = document.querySelector<HTMLElement>('[data-rail]');
   const list = rail?.querySelector<HTMLElement>('.rail-list');
   const thumb = rail?.querySelector<HTMLElement>('[data-rail-thumb]');
@@ -265,9 +433,11 @@ const items = nav.sections.map((section) => {
     // Measured off the rendered links rather than cached, because the gap
     // between them is sized from the height of the window — so the marker has
     // to be put back on its mark after a resize as well as after a scroll.
+    // Offset from the thumb's own resting place rather than from the first
+    // link, since the contents rail opens with an untracked mark above them.
     const place = () => {
       if (current < 0) return;
-      thumb.style.transform = `translateY(${links[current].offsetTop - links[0].offsetTop}px)`;
+      thumb.style.transform = `translateY(${links[current].offsetTop - thumb.offsetTop}px)`;
     };
 
     const apply = (index: number) => {
