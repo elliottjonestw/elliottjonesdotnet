@@ -516,7 +516,7 @@ export const zhTW: SiteContent = {
     newerPost: '較新的文章',
     olderPost: '較舊的文章',
     backToTop: '回到頂部',
-    backToSite: '返回',
+    backToSite: '首頁',
     tableOfContents: '目錄',
   },
 };
