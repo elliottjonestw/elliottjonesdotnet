@@ -249,6 +249,14 @@ export interface SiteContent {
     newerPost: string;
     olderPost: string;
     backToTop: string;
+    /** The labelled sharing panel beneath a post. */
+    sharePost: string;
+    shareLinkedIn: string;
+    shareX: string;
+    shareFacebook: string;
+    copyLink: string;
+    linkCopied: string;
+    copyUnavailable: string;
     /** The link out of the blog and back to the single-page site. */
     backToSite: string;
     tableOfContents: string;

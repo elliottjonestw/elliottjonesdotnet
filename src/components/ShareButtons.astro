@@ -1,0 +1,214 @@
+---
+/**
+ * A small, deliberately labelled sharing panel. Text labels make the targets
+ * clearer than logo-only buttons, especially on a phone, while the familiar
+ * marks keep the panel compact.
+ */
+interface Props {
+  title: string;
+  url: string;
+  labels: {
+    sharePost: string;
+    shareLinkedIn: string;
+    shareX: string;
+    shareFacebook: string;
+    copyLink: string;
+    linkCopied: string;
+    copyUnavailable: string;
+  };
+}
+
+const { title, url, labels } = Astro.props;
+const shareUrl = encodeURIComponent(url);
+const shareTitle = encodeURIComponent(title);
+---
+
+<aside class="share-panel" aria-labelledby="share-heading">
+  <p id="share-heading" class="mono-label text-slate">{labels.sharePost}</p>
+
+  <div class="share-actions">
+    <a
+      class="share-button"
+      href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${labels.sharePost}: ${labels.shareLinkedIn}`}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M6.6 8.4H3.3V21h3.3V8.4ZM5 3C3.9 3 3 3.9 3 5s.9 2 2 2 2-.9 2-2S6.1 3 5 3Zm16 10.8c0-3.8-2-5.6-4.7-5.6-2.2 0-3.1 1.2-3.7 2v-1.7H9.3V21h3.3v-6.2c0-1.6.3-3.1 2.3-3.1 2 0 2 1.9 2 3.2V21H21v-7.2Z" />
+      </svg>
+      <span>{labels.shareLinkedIn}</span>
+    </a>
+
+    <a
+      class="share-button"
+      href={`https://x.com/intent/post?text=${shareTitle}%20${shareUrl}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${labels.sharePost}: ${labels.shareX}`}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M18.9 2.8h3.7l-8.1 9.3L24 21.2h-7.4l-5.8-5.7-5 5.7H2l8.7-9.9L1.6 2.8h7.6l5.2 5.1 4.5-5.1Zm-1.3 16.4h2L8 4.6H5.8l11.8 14.6Z" />
+      </svg>
+      <span>{labels.shareX}</span>
+    </a>
+
+    <a
+      class="share-button"
+      href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${labels.sharePost}: ${labels.shareFacebook}`}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.7Z" />
+      </svg>
+      <span>{labels.shareFacebook}</span>
+    </a>
+
+    <button
+      type="button"
+      class="share-button share-button--copy"
+      data-copy-post-link
+      data-url={url}
+      data-copied={labels.linkCopied}
+      data-unavailable={labels.copyUnavailable}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M10.2 13.8a4 4 0 0 0 5.7.1l3-3a4 4 0 0 0-5.7-5.7l-1.7 1.7M13.8 10.2a4 4 0 0 0-5.7-.1l-3 3a4 4 0 0 0 5.7 5.7l1.7-1.7" />
+      </svg>
+      <span data-copy-post-label>{labels.copyLink}</span>
+    </button>
+  </div>
+
+  <p class="sr-only" role="status" aria-live="polite" data-copy-post-status></p>
+</aside>
+
+<style>
+  .share-panel {
+    margin-block-start: clamp(3.5rem, 6vw, 5rem);
+    padding-block-start: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .share-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+    margin-block-start: 0.875rem;
+  }
+
+  .share-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.875rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 16%, transparent);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      border-color 0.3s var(--ease-out-quint),
+      background-color 0.3s var(--ease-out-quint),
+      color 0.3s var(--ease-out-quint);
+  }
+
+  .share-button svg {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+    fill: currentColor;
+  }
+
+  .share-button--copy svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .share-button--copy {
+    border-color: var(--color-jade);
+    background: var(--color-jade);
+    color: var(--color-paper);
+  }
+
+  @media (hover: hover) {
+    .share-button:hover {
+      border-color: var(--color-jade);
+      background: color-mix(in oklab, var(--color-jade) 8%, transparent);
+      color: var(--color-jade);
+    }
+
+    .share-button--copy:hover {
+      border-color: var(--color-ink);
+      background: var(--color-ink);
+      color: var(--color-paper);
+    }
+  }
+
+  .share-button.is-copied {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :global(:lang(zh-Hant)) .share-button {
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  @media (min-width: 640px) {
+    .share-actions {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
+
+<script>
+  const initialiseCopyPostLink = () => {
+    const button = document.querySelector<HTMLButtonElement>('[data-copy-post-link]');
+    const label = button?.querySelector<HTMLElement>('[data-copy-post-label]');
+    const status = document.querySelector<HTMLElement>('[data-copy-post-status]');
+    if (!button || !label || button.dataset.ready) return;
+
+    button.dataset.ready = 'true';
+    const idle = label.textContent ?? 'Copy link';
+    let reset: number | undefined;
+
+    const say = (text: string, copied = false) => {
+      label.textContent = text;
+      status && (status.textContent = text);
+      button.classList.toggle('is-copied', copied);
+      window.clearTimeout(reset);
+      reset = window.setTimeout(() => {
+        label.textContent = idle;
+        status && (status.textContent = '');
+        button.classList.remove('is-copied');
+      }, 2200);
+    };
+
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.url ?? '');
+        say(button.dataset.copied ?? 'Link copied', true);
+      } catch {
+        say(button.dataset.unavailable ?? 'Unable to copy link');
+      }
+    });
+  };
+
+  initialiseCopyPostLink();
+  document.addEventListener('astro:page-load', initialiseCopyPostLink);
+</script>
