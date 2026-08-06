@@ -7,6 +7,7 @@
 import { Image, getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Base from './Base.astro';
+import ReadAloud from '../components/ReadAloud.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 /* Loaded here rather than from global.css: the home page is every visitor's
    first request and never renders a word of prose. */
@@ -176,12 +177,14 @@ const structuredData = {
               {minutes}&nbsp;{blog.minRead}
             </p>
 
+            <ReadAloud labels={blog} />
+
             {
               tags.length > 0 && (
                 <ul
                   class="mt-7 flex flex-wrap gap-2"
                   data-reveal
-                  style="--reveal-delay:120ms"
+                  style="--reveal-delay:180ms"
                 >
                   {tags.map((tag) => (
                     <li class="mono-label rounded-full border border-ink/15 px-3 py-1.5 text-slate">

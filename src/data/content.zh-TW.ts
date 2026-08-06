@@ -525,5 +525,8 @@ export const zhTW: SiteContent = {
     copyUnavailable: '無法複製連結',
     backToSite: '首頁',
     tableOfContents: '目錄',
+    readAloudIdle: '朗讀這篇文章',
+    readAloudStop: '停止朗讀',
+    readAloudUnsupported: '這個瀏覽器不支援語音朗讀',
   },
 };

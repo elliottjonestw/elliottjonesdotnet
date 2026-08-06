@@ -531,5 +531,8 @@ export const en: SiteContent = {
     copyUnavailable: 'Unable to copy link',
     backToSite: 'Home',
     tableOfContents: 'Contents',
+    readAloudIdle: 'Listen to this article',
+    readAloudStop: 'Stop listening',
+    readAloudUnsupported: 'Audio is not supported in this browser',
   },
 };

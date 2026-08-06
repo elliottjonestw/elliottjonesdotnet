@@ -260,6 +260,11 @@ export interface SiteContent {
     /** The link out of the blog and back to the single-page site. */
     backToSite: string;
     tableOfContents: string;
+    /** The read-aloud control in the post header. */
+    readAloudIdle: string;
+    readAloudStop: string;
+    /** Shown, disabled, where speech synthesis is unavailable. */
+    readAloudUnsupported: string;
   };
 }
 

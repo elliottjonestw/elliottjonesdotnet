@@ -1,0 +1,384 @@
+---
+/**
+ * Read-aloud for posts. The browser's own speech synthesis reads the article
+ * in the page's language — an English voice on /blog, a Chinese one on
+ * /zh-tw/blog — so there are no voice files to maintain and no third-party
+ * call, taking the most natural voice the visitor's device has to offer.
+ * Tables, code and diagrams stay silent, and a heading earns a longer breath
+ * before the body that follows it.
+ */
+interface Props {
+  labels: {
+    readAloudIdle: string;
+    readAloudStop: string;
+    readAloudUnsupported: string;
+  };
+}
+
+const { labels } = Astro.props;
+---
+
+<div class="read-aloud mt-7" data-reveal style="--reveal-delay:120ms">
+  <button
+    type="button"
+    class="read-aloud-button"
+    data-read-aloud
+    data-idle={labels.readAloudIdle}
+    data-stop={labels.readAloudStop}
+    data-unsupported={labels.readAloudUnsupported}
+  >
+    <svg
+      class="read-aloud-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.5 4.5 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z" />
+    </svg>
+    <svg
+      class="read-aloud-icon-stop"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M6 6h12v12H6Z" />
+    </svg>
+    <span data-read-aloud-label>{labels.readAloudIdle}</span>
+  </button>
+  <span class="sr-only" role="status" aria-live="polite" data-read-aloud-status></span>
+</div>
+
+<style>
+  .read-aloud-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.875rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 16%, transparent);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      border-color 0.3s var(--ease-out-quint),
+      background-color 0.3s var(--ease-out-quint),
+      color 0.3s var(--ease-out-quint);
+  }
+
+  .read-aloud-button svg {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+    fill: currentColor;
+  }
+
+  .read-aloud-icon-stop {
+    display: none;
+  }
+
+  /* Playing reads as the inverse of idle, the way the copy button's "copied"
+     state does. */
+  .read-aloud-button.is-playing {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .read-aloud-button.is-playing .read-aloud-icon {
+    display: none;
+  }
+
+  .read-aloud-button.is-playing .read-aloud-icon-stop {
+    display: block;
+  }
+
+  .read-aloud-button:disabled {
+    cursor: default;
+    opacity: 0.55;
+  }
+
+  @media (hover: hover) {
+    .read-aloud-button:not(:disabled):not(.is-playing):hover {
+      border-color: var(--color-jade);
+      background: color-mix(in oklab, var(--color-jade) 8%, transparent);
+      color: var(--color-jade);
+    }
+  }
+
+  :global(:lang(zh-Hant)) .read-aloud-button {
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+</style>
+
+<script>
+  interface Segment {
+    text: string;
+    heading: boolean;
+  }
+
+  /* Blocks that are pictures of information rather than prose. A table or a
+     diagram reads badly aloud, so it stays silent. `pre` covers ordinary code
+     and the Mermaid source blocks; `.mermaid` covers the rendered SVGs. */
+  const SKIP = 'table, pre, figure, img, .mermaid, [aria-hidden="true"]';
+
+  const normalise = (text: string | null | undefined) =>
+    text?.replace(/\s+/g, ' ').trim() ?? '';
+
+  /**
+   * Split a segment into utterances short enough for Chrome, which cuts a
+   * single utterance off at around fifteen seconds. Sentences stay whole
+   * wherever they fit.
+   */
+  const chunk = (text: string): string[] => {
+    const LIMIT = 180;
+    if (text.length <= LIMIT) return [text];
+
+    const sentences = text.split(/(?<=[.!?;:。！？；…])\s*/);
+    const out: string[] = [];
+    let current = '';
+    for (const sentence of sentences) {
+      if (!sentence) continue;
+      if (current && current.length + sentence.length + 1 > LIMIT) {
+        out.push(current);
+        current = sentence;
+      } else {
+        current = current ? `${current} ${sentence}` : sentence;
+      }
+    }
+    if (current) out.push(current);
+    return out;
+  };
+
+  /**
+   * Walk the prose in document order, keeping what is written to be read.
+   * Headings ride alone so the voice can breathe after them.
+   */
+  const collect = (segments: Segment[], root: Element) => {
+    for (const child of Array.from(root.children)) {
+      if (child.matches(SKIP)) continue;
+      const tag = child.tagName;
+
+      if (/^H[2-6]$/.test(tag)) {
+        const text = normalise(child.textContent);
+        if (text) segments.push({ text, heading: true });
+      } else if (tag === 'UL' || tag === 'OL') {
+        for (const item of Array.from(child.children)) {
+          if (item.tagName !== 'LI') continue;
+          const text = normalise(item.textContent);
+          if (text) segments.push({ text, heading: false });
+        }
+      } else if (tag === 'DIV') {
+        // A wrapper such as the gallery: look inside; its figures still skip.
+        collect(segments, child);
+      } else if (tag === 'P' || tag === 'BLOCKQUOTE') {
+        const text = normalise(child.textContent);
+        if (text) segments.push({ text, heading: false });
+      }
+    }
+  };
+
+  const initialiseReadAloud = () => {
+    const button =
+      document.querySelector<HTMLButtonElement>('[data-read-aloud]');
+    const label =
+      button?.querySelector<HTMLElement>('[data-read-aloud-label]');
+    const status = document.querySelector<HTMLElement>('[data-read-aloud-status]');
+    const prose = document.querySelector<HTMLElement>('.prose');
+    if (!button || !label || !prose || button.dataset.ready) return;
+
+    button.dataset.ready = 'true';
+    const idle = button.dataset.idle ?? label.textContent ?? '';
+    const stopText = button.dataset.stop ?? '';
+
+    if (!('speechSynthesis' in window)) {
+      label.textContent = button.dataset.unsupported ?? idle;
+      button.disabled = true;
+      return;
+    }
+
+    const synth = window.speechSynthesis;
+    const speechLang = document.documentElement.lang
+      .toLowerCase()
+      .startsWith('zh')
+      ? 'zh-TW'
+      : 'en-GB';
+
+    /* Voices arrive late on some browsers; asking early means they are more
+       likely ready by the time the reader presses the button. Picking from an
+       empty list would leave the OS default in place — usually the most
+       robotic voice on the machine — so start() waits briefly for this. */
+    synth.getVoices();
+
+    const whenVoicesReady = (): Promise<void> =>
+      new Promise((resolve) => {
+        if (synth.getVoices().length > 0) {
+          resolve();
+          return;
+        }
+        let wait: number;
+        const done = () => {
+          window.clearTimeout(wait);
+          synth.removeEventListener('voiceschanged', done);
+          resolve();
+        };
+        wait = window.setTimeout(done, 400);
+        synth.addEventListener('voiceschanged', done);
+      });
+
+    /**
+     * The best voice the device can offer the page. Dialect comes first — a
+     * Traditional Chinese post deserves a zh-TW voice, not whichever Mandarin
+     * voice sounds nicest — then quality: names carrying Natural, Neural,
+     * Premium or Enhanced mark the high-quality ones (Edge's online neural
+     * voices, the premium downloads on macOS), and a voice that is not a
+     * local service is a network voice, such as Chrome's Google voices,
+     * which beat the small ones bundled on disk.
+     */
+    const pickVoice = () => {
+      const norm = (value: string) => value.toLowerCase().replace(/_/g, '-');
+      const match = (lang: string) => {
+        if (speechLang === 'zh-TW') {
+          if (lang.startsWith('zh-hant-tw')) return 4;
+          if (lang.startsWith('zh-tw')) return 3;
+          if (lang.startsWith('zh-hant')) return 2;
+          if (lang.startsWith('zh')) return 1;
+          return 0;
+        }
+        if (lang.startsWith('en-gb')) return 2;
+        if (lang.startsWith('en')) return 1;
+        return 0;
+      };
+
+      let best: SpeechSynthesisVoice | undefined;
+      let bestScore = 0;
+      for (const voice of synth.getVoices()) {
+        const dialect = match(norm(voice.lang));
+        if (dialect === 0) continue;
+
+        let score = dialect * 10;
+        if (/natural|neural|premium|enhanced|online/i.test(voice.name)) {
+          score += 4;
+        }
+        if (!voice.localService) score += 2;
+
+        if (score > bestScore) {
+          best = voice;
+          bestScore = score;
+        }
+      }
+      return best;
+    };
+
+    let queue: { text: string; pauseAfter: number }[] = [];
+    let timer: number | undefined;
+    let cancelled = false;
+    let playing = false;
+
+    const setState = (isPlaying: boolean) => {
+      playing = isPlaying;
+      button.classList.toggle('is-playing', isPlaying);
+      const text = isPlaying ? stopText : idle;
+      label.textContent = text;
+      if (status) status.textContent = text;
+    };
+
+    const finish = () => {
+      window.clearTimeout(timer);
+      queue = [];
+      setState(false);
+    };
+
+    const stop = () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+      queue = [];
+      synth.cancel();
+      setState(false);
+    };
+
+    const speakNext = () => {
+      if (cancelled) return;
+      const item = queue.shift();
+      if (!item) {
+        finish();
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(item.text);
+      utterance.lang = speechLang;
+      const voice = pickVoice();
+      if (voice) utterance.voice = voice;
+
+      utterance.onend = () => {
+        // One utterance at a time: the gap between them is where the pause
+        // after a heading lives, and a timer is the only reliable way to
+        // control its length.
+        timer = window.setTimeout(speakNext, item.pauseAfter);
+      };
+      utterance.onerror = (event) => {
+        // cancel() reports an error on the utterance it interrupted; that is
+        // our own doing, not a reason to treat the reading as failed.
+        if (
+          cancelled ||
+          event.error === 'interrupted' ||
+          event.error === 'canceled'
+        ) {
+          return;
+        }
+        finish();
+      };
+      synth.speak(utterance);
+    };
+
+    const start = async () => {
+      const segments: Segment[] = [];
+
+      const title = normalise(
+        document.querySelector<HTMLElement>('.post-title')?.textContent,
+      );
+      if (title) segments.push({ text: title, heading: true });
+
+      collect(segments, prose);
+      if (segments.length === 0) return;
+
+      queue = segments.flatMap((segment) =>
+        chunk(segment.text).map((text, index, parts) => ({
+          text,
+          // A heading's last utterance carries the longer pause.
+          pauseAfter:
+            segment.heading && index === parts.length - 1 ? 750 : 120,
+        })),
+      );
+
+      cancelled = false;
+      synth.cancel();
+      setState(true);
+      await whenVoicesReady();
+      if (cancelled) return;
+      // A small beat after cancel(): some engines swallow a speak() that
+      // follows it too closely.
+      timer = window.setTimeout(speakNext, 50);
+    };
+
+    button.addEventListener('click', () => {
+      if (playing) stop();
+      else void start();
+    });
+  };
+
+  initialiseReadAloud();
+  document.addEventListener('astro:page-load', initialiseReadAloud);
+
+  // If the page ever changes without a full reload, silence the old article.
+  document.addEventListener('astro:page-load', () => {
+    window.speechSynthesis?.cancel();
+  });
+</script>
