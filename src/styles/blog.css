@@ -195,6 +195,28 @@
   color: var(--color-jade);
 }
 
+/* ── Diagrams ─────────────────────────────────────────────────────────── */
+
+/* Mermaid starts as a regular code block and is upgraded in BlogPost. The
+   wrapper keeps its paper-and-jade treatment in line with figures; the SVG
+   scales as one diagram so it never creates a horizontal scroll area. */
+.prose .mermaid {
+  margin-block: 2.25em;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  border-radius: 10px;
+  background: var(--color-surface);
+}
+
+.prose .mermaid svg {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
 /* ── Code ──────────────────────────────────────────────────────────────── */
 
 .prose :not(pre) > code {

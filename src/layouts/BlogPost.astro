@@ -244,6 +244,68 @@ const structuredData = {
   </main>
 </Base>
 
+<script>
+  const diagrams = document.querySelectorAll<HTMLElement>(
+    'pre[data-language="mermaid"]',
+  );
+
+  if (diagrams.length > 0) {
+    // Keep Mermaid out of the bundle for ordinary prose posts. The dynamic
+    // import only runs on pages that actually contain a Mermaid code block.
+    const { default: mermaid } = await import('mermaid');
+    const style = getComputedStyle(document.documentElement);
+    const colour = (name: string) => style.getPropertyValue(name).trim();
+
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'strict',
+      theme: 'base',
+      fontFamily: getComputedStyle(document.body).fontFamily,
+      themeVariables: {
+        background: colour('--color-paper'),
+        primaryColor: colour('--color-paper'),
+        primaryTextColor: colour('--color-ink'),
+        primaryBorderColor: colour('--color-jade'),
+        secondaryColor: colour('--color-surface'),
+        secondaryTextColor: colour('--color-ink'),
+        secondaryBorderColor: colour('--color-ink-line'),
+        tertiaryColor: colour('--color-mist'),
+        tertiaryTextColor: colour('--color-ink'),
+        tertiaryBorderColor: colour('--color-ink-line'),
+        lineColor: colour('--color-jade'),
+        edgeLabelBackground: colour('--color-paper'),
+      },
+      flowchart: {
+        htmlLabels: true,
+        useMaxWidth: true,
+        wrappingWidth: 220,
+      },
+    });
+
+    for (const [index, diagram] of diagrams.entries()) {
+      const source = diagram.querySelector('code')?.textContent?.trim();
+      if (!source) continue;
+
+      try {
+        const { svg, bindFunctions } = await mermaid.render(
+          `mermaid-${index}`,
+          source,
+        );
+        const rendered = document.createElement('div');
+        rendered.className = 'mermaid';
+        rendered.innerHTML = svg;
+        bindFunctions?.(rendered);
+        diagram.replaceWith(rendered);
+      } catch (error) {
+        // Leave the source block in place if a future post contains invalid
+        // Mermaid. A readable diagram definition is a better fallback than a
+        // missing section of the article.
+        console.error('Could not render Mermaid diagram:', error);
+      }
+    }
+  }
+</script>
+
 <style>
   /* The reading column. The prose sets its own identical measure, so the
      header, the cover and the footer line up with the body rather than with
