@@ -46,7 +46,7 @@ Taiwan's Ministry of Education runs the TOCFL, and I have sat it multiple times.
 
 </div>
 
-Two things about that table are worth saying plainly:
+There are two things that are important to mention:
 
 The first is that I only sat the exam once I was already fluent. I studied for
 its format, and you should: it is a strange test, and knowing its shape is
@@ -58,9 +58,6 @@ for a while. Speaking is probably my strongest skill. The TOCFL speaking test
 is unusually hard, and it makes you read your prompts off a screen, so a weak
 reader loses speaking marks for reasons that have nothing to do with speaking.
 My reading was the weak link, and it dragged the speaking number down with it.
-
-Behind all of it: over a decade in Taiwan and mainland China, a job I do in
-Mandarin every day, and a wife who does not speak much English.
 
 ## The three years I wasted
 
