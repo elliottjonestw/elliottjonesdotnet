@@ -178,22 +178,6 @@ const structuredData = {
             </p>
 
             <ReadAloud labels={blog} />
-
-            {
-              tags.length > 0 && (
-                <ul
-                  class="mt-7 flex flex-wrap gap-2"
-                  data-reveal
-                  style="--reveal-delay:180ms"
-                >
-                  {tags.map((tag) => (
-                    <li class="mono-label rounded-full border border-ink/15 px-3 py-1.5 text-slate">
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              )
-            }
           </header>
 
           {
