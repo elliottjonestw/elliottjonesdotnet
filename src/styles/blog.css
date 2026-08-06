@@ -141,8 +141,19 @@
   list-style: decimal;
 }
 
-.prose :is(ul, ol) :is(ul, ol) {
+.prose :is(ul, ol) > li > :is(ul, ol) {
   margin-block-start: 0.5em;
+  /* Top-level unordered lists start at the column edge so their jade rules
+     align with the surrounding prose. A child list needs its own inset,
+     otherwise its rules appear as if they belong to the parent item. */
+  padding-inline-start: 0.5em;
+}
+
+/* The top-level dash has generous breathing room. For a nested unordered
+   list that same gap looks like a second level of indentation, so pull its
+   text closer to the marker as well. */
+.prose :is(ul, ol) > li > ul > li {
+  padding-inline-start: 1.25em;
 }
 
 /* ── Quotes ────────────────────────────────────────────────────────────── */
