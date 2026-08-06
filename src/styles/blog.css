@@ -167,6 +167,34 @@
   font-style: normal;
 }
 
+/* ── Callouts ──────────────────────────────────────────────────────────── */
+
+/* A small explanatory aside, written in a post as
+   <aside class="callout">…</aside>. It uses the same jade edge as a quote,
+   but is deliberately upright and lightly surfaced so it reads as context,
+   not a pull quote. */
+.prose .callout {
+  margin-inline: 0;
+  padding: 1.1rem 1.25rem 1.2rem;
+  border-inline-start: 2px solid var(--color-jade);
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in oklab, var(--color-jade) 7%, transparent);
+}
+
+.prose .callout > * {
+  margin: 0;
+}
+
+.prose .callout-label {
+  margin-block-end: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-jade);
+}
+
 /* ── Code ──────────────────────────────────────────────────────────────── */
 
 .prose :not(pre) > code {
