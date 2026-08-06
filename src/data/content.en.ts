@@ -71,7 +71,7 @@ export const en: SiteContent = {
   },
 
   hero: {
-    eyebrow: 'Product Customer Success Manager',
+    eyebrow: 'Customer Success Manager',
     lead: 'I look after customer success for OT security software at TXOne Networks in Taipei — and I do the job in Mandarin. Over a decade in Taiwan and mainland China has given me something most technical communicators in this industry do not have: I can sit with an engineering team in Chinese and then write the English that goes out to the world.',
     facts: [
       { value: 'CEFR C1', label: 'Certified Mandarin', href: '#mandarin' },
