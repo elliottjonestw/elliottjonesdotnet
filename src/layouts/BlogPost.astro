@@ -14,7 +14,7 @@ import ShareButtons from '../components/ShareButtons.astro';
 import '../styles/blog.css';
 import { getContent } from '../data/content';
 import { locales } from '../i18n/locales';
-import { canonicalUrl } from '../lib/url';
+import { canonicalUrl, withBase } from '../lib/url';
 import {
   indexRoute,
   listPath,
@@ -91,6 +91,9 @@ const altPaths = Object.fromEntries(
 
 /** Where "all posts" goes, in both the rail and the foot of the article. */
 const indexHref = listPath(locale);
+const authorHref = withBase(
+  locales.find((meta) => meta.code === locale)?.path ?? '',
+);
 
 /** One Blog node per locale: they are two blogs' worth of URLs, not one. */
 const blogId = `${canonicalUrl(listPath(locale), site).href}#blog`;
@@ -173,6 +176,8 @@ const structuredData = {
               style="--reveal-delay:60ms"
             >
               <time datetime={dateISO}>{dateLabel}</time>
+              <span aria-hidden="true"> · </span>
+              By <a href={authorHref} class="link-underline">Elliott Jones</a>
               <span aria-hidden="true"> · </span>
               {minutes}&nbsp;{blog.minRead}
             </p>
