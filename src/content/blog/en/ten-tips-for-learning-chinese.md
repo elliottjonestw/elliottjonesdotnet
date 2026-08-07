@@ -20,11 +20,11 @@ about how.
 
 Taiwan's Ministry of Education runs the TOCFL, and I have sat it multiple times.
 
-| Skill     | Score     | TOCFL level      | CEFR | ACTFL         |
-| --------- | --------- | ---------------- | ---- | ------------- |
-| Listening | 625 / 700 | Level 5 · 流利級 | C1   | Advanced High |
-| Reading   | 570 / 700 | Level 4 · 高階級 | B2   | Advanced High |
-| Speaking  | 24 / 30   | Level 4 · 高階級 | B2   | Advanced Low  |
+| Skill     | Score     | TOCFL level      | CEFR | HSK   |
+| --------- | --------- | ---------------- | ---- | ----- |
+| Listening | 625 / 700 | Level 5 · 流利級 | C1   | HSK 7 |
+| Reading   | 570 / 700 | Level 4 · 高階級 | B2   | HSK 6 |
+| Speaking  | 24 / 30   | Level 4 · 高階級 | B2   | HSK 6 |
 
 <div class="gallery">
 
