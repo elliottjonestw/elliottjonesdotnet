@@ -517,6 +517,7 @@ export const en: SiteContent = {
     noPosts: 'No posts under that tag yet.',
     readMore: 'Read more',
     allPosts: 'All posts',
+    byAuthor: 'By ',
     minRead: 'min read',
     publishedOn: 'Published',
     newerPost: 'Newer post',

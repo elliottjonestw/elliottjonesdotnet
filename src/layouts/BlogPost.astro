@@ -177,7 +177,7 @@ const structuredData = {
             >
               <time datetime={dateISO}>{dateLabel}</time>
               <span aria-hidden="true"> · </span>
-              By <a href={authorHref} class="link-underline">Elliott Jones</a>
+              {blog.byAuthor}<a href={authorHref} class="link-underline">Elliott Jones</a>
               <span class="hidden sm:inline">
                 <span aria-hidden="true"> · </span>
                 {minutes}&nbsp;{blog.minRead}

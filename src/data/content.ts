@@ -243,6 +243,8 @@ export interface SiteContent {
     noPosts: string;
     readMore: string;
     allPosts: string;
+    /** Prefix before the linked author name in the post metadata. */
+    byAuthor: string;
     /** Follows the number: "6 min read". */
     minRead: string;
     publishedOn: string;

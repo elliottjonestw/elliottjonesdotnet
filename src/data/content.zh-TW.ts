@@ -511,6 +511,7 @@ export const zhTW: SiteContent = {
     noPosts: '這個標籤下還沒有文章。',
     readMore: '閱讀更多',
     allPosts: '所有文章',
+    byAuthor: '作者：',
     minRead: '分鐘閱讀',
     publishedOn: '發表於',
     newerPost: '較新的文章',
