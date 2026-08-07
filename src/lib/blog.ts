@@ -178,7 +178,7 @@ export function isoDate(date: Date): string {
 export function formatDate(date: Date, locale: LocaleCode): string {
   return new Intl.DateTimeFormat(
     locale === 'zh-Hant-TW' ? 'zh-Hant-TW' : 'en-GB',
-    { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' },
+    { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' },
   ).format(date);
 }
 
