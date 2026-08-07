@@ -312,7 +312,7 @@ gtag('config', '${person.gaMeasurementId}');`}
     {/* How far through the page you are, drawn across the top of the window.
         Sits above the language switch and the rail, both of which it crosses. */}
     <div class="scroll-progress no-print" aria-hidden="true"></div>
-    <LanguageSwitch paths={altPaths} />
+    <LanguageSwitch paths={altPaths} hideOnPrint={ogType === 'article'} />
     {toc ? <SectionRail toc={toc} /> : rail === 'sections' && <SectionRail />}
     <slot />
 

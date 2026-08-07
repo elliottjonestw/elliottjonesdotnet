@@ -9,9 +9,11 @@ interface Props {
    * the two home pages, which is what a locale's own `path` already is.
    */
   paths?: Partial<Record<LocaleCode, string>>;
+  /** Hide the fixed switch in print layouts, used by article pages. */
+  hideOnPrint?: boolean;
 }
 
-const { paths } = Astro.props;
+const { paths, hideOnPrint = false } = Astro.props;
 const lang = resolveLocale(Astro.currentLocale);
 ---
 
@@ -26,7 +28,10 @@ const lang = resolveLocale(Astro.currentLocale);
     you are not reading. */}
 <nav
   aria-label="Language"
-  class="fixed top-4 right-4 z-50 flex items-center gap-0.5 rounded-full border border-ink/15 bg-paper/95 p-0.5 shadow-sm backdrop-blur-sm min-[480px]:p-1"
+  class:list={[
+    'fixed top-4 right-4 z-50 flex items-center gap-0.5 rounded-full border border-ink/15 bg-paper/95 p-0.5 shadow-sm backdrop-blur-sm min-[480px]:p-1',
+    hideOnPrint && 'no-print',
+  ]}
   style="view-transition-name:language-switch"
 >
   {

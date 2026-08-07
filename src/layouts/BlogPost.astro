@@ -153,7 +153,7 @@ const structuredData = {
     <article class="section-pad">
       <div class="shell">
         <div class="post">
-          <p>
+          <p class="no-print">
             <a href={indexHref} class="mono-label link-underline text-slate">
               <span aria-hidden="true">←&nbsp;</span>{blog.allPosts}
             </a>
@@ -202,7 +202,7 @@ const structuredData = {
           <ShareButtons title={title} url={canonical} labels={blog} />
 
           {/* The way on, and the way back. */}
-          <nav class="post-nav" aria-label={blog.allPosts}>
+          <nav class="post-nav no-print" aria-label={blog.allPosts}>
             {
               [
                 { entry: newer, label: blog.newerPost },
@@ -220,7 +220,7 @@ const structuredData = {
             }
           </nav>
 
-          <div class="post-foot">
+          <div class="post-foot no-print">
             <a href={indexHref} class="mono-label link-underline text-slate">
               {blog.allPosts}
             </a>
