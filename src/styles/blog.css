@@ -206,6 +206,110 @@
   color: var(--color-jade);
 }
 
+/* ── Disclosures ───────────────────────────────────────────────────────── */
+
+/* An optional deep-dive, written in a post as
+   <details><summary>…</summary> … </details> and closed until asked for.
+   The summary is the one line a skimmer reads, so it wears the site's mono
+   label face rather than prose. */
+.prose details {
+  margin-block: 2.25em;
+  padding-inline: 1.25rem;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  border-radius: 10px;
+}
+
+.prose details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  /* The box pads its body; the summary bleeds back out of that padding so
+     its hover tint and open rule span the full width of the box. */
+  margin-inline: -1.25rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 9px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-jade);
+  transition: background-color 0.3s var(--ease-out-quint);
+}
+
+/* Safari still draws its own triangle unless the webkit marker is removed. */
+.prose details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (hover: hover) {
+  .prose details > summary:hover {
+    background: color-mix(in oklab, var(--color-jade) 7%, transparent);
+  }
+}
+
+/* A jade chevron pointing the way the section will open. */
+.prose details > summary::after {
+  content: '';
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-block-end: 1.5px solid currentColor;
+  border-inline-end: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.3s var(--ease-out-quint);
+}
+
+.prose details[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+/* Open, the summary becomes the head of the box: a rule below it and square
+   bottom corners, so the hover tint meets the border cleanly. */
+.prose details[open] > summary {
+  border-block-end: 1px solid
+    color-mix(in oklab, var(--color-ink) 12%, transparent);
+  border-radius: 9px 9px 0 0;
+}
+
+.prose details[open] {
+  padding-block-end: 1.5rem;
+}
+
+/* The body keeps prose spacing, measured from the summary rule rather than
+   from the top of the box. */
+.prose details > * + * {
+  margin-block-start: 1.5em;
+}
+
+.prose details > summary + * {
+  margin-block-start: 1.25rem;
+}
+
+.prose details > :last-child {
+  margin-block-end: 0;
+}
+
+:lang(zh-Hant) .prose details > summary {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+@media print {
+  /* A closed section still has to surrender its body to the printer, or a
+     printed article silently loses whatever was folded away. */
+  .prose details:not([open]) > *:not(summary) {
+    display: block;
+  }
+
+  .prose details:not([open]) > li {
+    display: list-item;
+  }
+}
+
 /* ── Diagrams ─────────────────────────────────────────────────────────── */
 
 /* Mermaid starts as a regular code block and is upgraded in BlogPost. The
