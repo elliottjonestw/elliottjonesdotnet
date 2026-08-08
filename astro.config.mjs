@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import { satteri } from '@astrojs/markdown-satteri';
+import { inlineTocPlugins } from './src/lib/markdown-toc';
 
 /**
  * Origin and base path come from the deploy environment, because the same build
@@ -28,6 +30,13 @@ export default defineConfig({
     // on GitHub Pages without relying on directory redirects.
     format: 'file',
     inlineStylesheets: 'auto',
+  },
+  markdown: {
+    // The default processor plus the [TOC] marker: a paragraph saying only
+    // [TOC] becomes a box of links to the post's headings, where it stands.
+    processor: satteri({
+      hastPlugins: [...inlineTocPlugins],
+    }),
   },
   // English at the root, Taiwan Traditional Chinese under /zh-tw/. English
   // carries no prefix so every existing indexed URL keeps working unchanged.

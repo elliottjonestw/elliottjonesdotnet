@@ -16,6 +16,8 @@ do in Mandarin, I picked up outside a classroom, and most of it outside any
 structure at all until I built one for myself. In this blog I talk
 about how.
 
+[TOC]
+
 ## My credentials
 
 Taiwan's Ministry of Education runs the TOCFL, and I have sat it multiple times.

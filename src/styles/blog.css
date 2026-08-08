@@ -206,6 +206,36 @@
   color: var(--color-jade);
 }
 
+/* ── Table of contents ─────────────────────────────────────────────────── */
+
+/* A paragraph saying only [TOC] becomes this box of links to the post's h2
+   and h3 headings, standing where the marker was written. The frame is the
+   disclosure's; the list keeps prose's jade rules for bullets. */
+.prose .post-toc {
+  margin-block: 2.25em;
+  padding: 1.25rem 1.5rem 1.4rem;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  border-radius: 10px;
+  background: var(--color-surface);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.prose .post-toc-title {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-jade);
+}
+
+:lang(zh-Hant) .prose .post-toc-title {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 /* ── Disclosures ───────────────────────────────────────────────────────── */
 
 /* An optional deep-dive, written in a post as

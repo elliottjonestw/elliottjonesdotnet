@@ -135,14 +135,21 @@ function stripTags(html: string): string {
  */
 export function getExcerpt(post: Post): string {
   const html = post.rendered?.html;
-  const first = html?.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i);
+  // The [TOC] marker renders its own <p> title inside the contents box; a
+  // post that opens with [TOC] must not have "Contents" as its excerpt.
+  const first = html?.match(
+    /<p\b(?![^>]*class="post-toc-title")[^>]*>([\s\S]*?)<\/p>/i,
+  );
   if (first) return stripTags(first[1]);
 
   const body = (post.body ?? '').replace(/```[\s\S]*?```/g, '');
   const block = body
     .split(/\n{2,}/)
     .map((part) => part.trim())
-    .find((part) => part && !/^([#>\-*|!]|\d+\.)/.test(part));
+    .find(
+      (part) =>
+        part && !/^([#>\-*|!]|\d+\.)/.test(part) && !/^\[toc\]$/i.test(part),
+    );
   return block ? stripTags(block).replace(/[*_`]/g, '') : '';
 }
 
