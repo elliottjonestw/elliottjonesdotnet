@@ -254,9 +254,9 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
      Suppressed when the page was reached by a view transition — i.e. from the
      other locale. The opening sequence is for arriving at the site, not for
      changing its language, and replaying it here would fight the morph: the
-     new document is captured on its first frame, where these elements are
-     still at opacity 0, so the transition would dissolve into nothing and the
-     hero would then rise in behind it. */
+     new document is captured on its first frame, mid-rise, so the snapshot
+     would freeze the hero below its resting place and the rise would replay
+     behind it. */
   @media (prefers-reduced-motion: no-preference) {
     [data-hero] {
       animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
@@ -282,14 +282,13 @@ const { hero, person } = getContent(resolveLocale(Astro.currentLocale));
     }
   }
 
+  /* Rise without a fade. The lead paragraph is the page's LCP element, and an
+     opacity animation holds its paint — and with it the largest contentful
+     paint — until the fade completes; a transform-only rise paints on the
+     first frame and still reads as the same opening sequence. */
   @keyframes hero-rise {
     from {
-      opacity: 0;
       transform: translateY(0.85em);
-    }
-    to {
-      opacity: 1;
-      transform: none;
     }
   }
 </style>

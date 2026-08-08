@@ -133,17 +133,32 @@ const { speakingVideo } = mandarin;
         {/* Vimeo, without their player.js — nothing here uses the Player API,
             so the page stays free of third-party script. */}
         <div
-          class="mt-8 w-full overflow-hidden rounded-xl border border-paper/12 bg-ink-raised"
+          class="relative mt-8 w-full overflow-hidden rounded-xl border border-paper/12 bg-ink-raised"
           style={`aspect-ratio:${speakingVideo.aspectRatio}`}
         >
+          {/* The src is handed over by the script below once the box nears the
+              viewport; until then the frame rests at about:blank in its sized
+              box. */}
           <iframe
             class="h-full w-full"
-            src={`https://player.vimeo.com/video/${speakingVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+            data-src={`https://player.vimeo.com/video/${speakingVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
             title={speakingVideo.title}
             loading="lazy"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
+          {/* Without scripting the frame would stay blank, so no-JS visits get
+              the real src up front, layered over the dormant frame. */}
+          <noscript>
+            <iframe
+              class="absolute inset-0 h-full w-full"
+              src={`https://player.vimeo.com/video/${speakingVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+              title={speakingVideo.title}
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </noscript>
         </div>
       </div>
     </div>
@@ -190,3 +205,31 @@ const { speakingVideo } = mandarin;
     </div>
   </div>
 </section>
+
+<script>
+  // loading="lazy" alone does not keep the player out of the first wave: the
+  // section sits one screen below the hero, inside Chrome's lazy-loading
+  // distance on a fast connection, so the player still downloads while the
+  // hero paints. Handing over the src here, once the box nears the viewport,
+  // is what actually keeps it out of the critical path.
+  const frames = [
+    ...document.querySelectorAll<HTMLIFrameElement>('iframe[data-src]'),
+  ];
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const frame = entry.target as HTMLIFrameElement;
+          frame.src = frame.dataset.src!;
+          observer.unobserve(frame);
+        }
+      },
+      { rootMargin: '600px 0px' },
+    );
+    for (const frame of frames) observer.observe(frame);
+  } else {
+    for (const frame of frames) frame.src = frame.dataset.src!;
+  }
+</script>

@@ -281,15 +281,17 @@ const structuredData = structuredDataOverride ?? profileGraph;
     </script>
 
     {/* GA4, carried over from the previous site. Production builds only, so
-        local development never reaches the property. */}
+        local development never reaches the property.
+
+        The config snippet runs immediately — it only queues into dataLayer,
+        and the library replays the queue when it arrives — but the library
+        itself is injected after the critical path: once the window has loaded
+        and gone idle, or on the first interaction if that comes sooner. In
+        the head it competed with the hero's fonts and portrait for the
+        connection, and most of it was unused during the load. */}
     {
       import.meta.env.PROD && (
         <Fragment>
-          <script
-            is:inline
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${person.gaMeasurementId}`}
-          />
           {/* set:html rather than define:vars — the latter wraps the snippet in
               an IIFE, which would stop gtag() being callable from elsewhere. */}
           <script
@@ -298,6 +300,31 @@ const structuredData = structuredDataOverride ?? profileGraph;
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${person.gaMeasurementId}');`}
+          />
+          <script
+            is:inline
+            set:html={`(function () {
+  var loaded = false;
+  function load() {
+    if (loaded) return;
+    loaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=${person.gaMeasurementId}';
+    document.head.appendChild(s);
+  }
+  window.addEventListener('load', function () {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(load, { timeout: 2000 });
+    } else {
+      window.setTimeout(load, 1000);
+    }
+  });
+  // A reader who interacts before the load event settles still counts.
+  ['scroll', 'click', 'keydown', 'touchstart'].forEach(function (type) {
+    window.addEventListener(type, load, { once: true, passive: true });
+  });
+})();`}
           />
         </Fragment>
       )
