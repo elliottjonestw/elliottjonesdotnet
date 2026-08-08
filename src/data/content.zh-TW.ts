@@ -183,6 +183,7 @@ export const zhTW: SiteContent = {
         period: '2025年11月 – 現在',
         summary: '負責睿控網安 OT 端點防護產品 Stellar 的客戶成功與技術寫作。',
         logo: txoneLogo,
+        logoAlt: '睿控網安標誌',
       },
       {
         title: '資深技術寫作者',
@@ -190,6 +191,7 @@ export const zhTW: SiteContent = {
         period: '2024年11月 – 2025年11月',
         summary: '負責集博科技所有硬體與軟體產品的技術文件。',
         logo: tibboLogo,
+        logoAlt: '集博科技標誌',
       },
       {
         title: '產品行銷經理',
@@ -198,6 +200,7 @@ export const zhTW: SiteContent = {
         summary:
           '負責威脅情資平台 ThreatVision 的產品行銷。',
         logo: teamt5Logo,
+        logoAlt: 'TeamT5 標誌',
       },
       {
         title: '資深技術寫作者',
@@ -206,6 +209,7 @@ export const zhTW: SiteContent = {
         summary:
           '負責全球領先工業級 DRAM 與 Flash 製造商的英文內容。',
         logo: innodiskLogo,
+        logoAlt: '宜鼎國際標誌',
       },
       {
         title: '系統工程師',
@@ -213,6 +217,7 @@ export const zhTW: SiteContent = {
         period: '2021年3月 – 2022年2月',
         summary: '支援大型線上遊戲平台，並參與其 AWS 雲端遷移專案。',
         logo: digitalForestLogo,
+        logoAlt: '數位森林科技標誌',
       },
       {
         title: '資訊科技與安全專員',
@@ -220,6 +225,7 @@ export const zhTW: SiteContent = {
         period: '2019年9月 – 2020年11月',
         summary: '負責管理英國駐上海總領事館超過100位使用者的 IT 系統。',
         logo: fcoLogo,
+        logoAlt: '英國駐上海總領事館標誌',
       },
     ],
   },
@@ -454,12 +460,14 @@ export const zhTW: SiteContent = {
         issuer: '亞馬遜雲端運算服務（AWS）',
         note: '已於2024年5月到期',
         logo: awsLogo,
+        logoAlt: '亞馬遜雲端運算服務（AWS）標誌',
       },
       {
         title: 'CompTIA A+',
         issuer: '美國電腦工業協會（CompTIA）',
         note: '已於2024年9月到期',
         logo: comptiaLogo,
+        logoAlt: 'CompTIA 標誌',
       },
     ],
     education: [
@@ -467,6 +475,7 @@ export const zhTW: SiteContent = {
         subject: '資訊科技',
         school: 'Dudley College of Technology',
         logo: dudleyLogo,
+        logoAlt: 'Dudley College of Technology 標誌',
         modules: [
           { name: 'Communication and Employability Skills for IT', grade: 'Distinction' },
           { name: 'Computer Systems', grade: 'Merit' },
@@ -483,6 +492,7 @@ export const zhTW: SiteContent = {
         subject: '健康及社會照護',
         school: '英國開放大學',
         logo: ouLogo,
+        logoAlt: '英國開放大學標誌',
         modules: [{ name: 'An introduction to health and social care', grade: 'Pass' }],
       },
     ],

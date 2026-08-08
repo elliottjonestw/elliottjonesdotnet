@@ -184,6 +184,7 @@ export const en: SiteContent = {
         summary:
           'Customer success and technical writing for Stellar, TXOne’s OT endpoint protection product.',
         logo: txoneLogo,
+        logoAlt: 'TXOne Networks logo',
       },
       {
         title: 'Senior Technical Writer',
@@ -192,6 +193,7 @@ export const en: SiteContent = {
         summary:
           'Owned the technical documentation for every Tibbo Technology hardware and software product.',
         logo: tibboLogo,
+        logoAlt: 'Tibbo Technology logo',
       },
       {
         title: 'Product Marketing Manager',
@@ -200,6 +202,7 @@ export const en: SiteContent = {
         summary:
           'Ran product marketing for ThreatVision, a cyber threat intelligence platform.',
         logo: teamt5Logo,
+        logoAlt: 'TeamT5 logo',
       },
       {
         title: 'Senior Technical Writer',
@@ -208,6 +211,7 @@ export const en: SiteContent = {
         summary:
           'Managed English language content for the world’s leading industrial DRAM and flash manufacturer.',
         logo: innodiskLogo,
+        logoAlt: 'Innodisk Corporation logo',
       },
       {
         title: 'IT Systems Engineer',
@@ -216,6 +220,7 @@ export const en: SiteContent = {
         summary:
           'Supported a large online gaming platform and worked on its migration to AWS.',
         logo: digitalForestLogo,
+        logoAlt: 'Digital Forest Technologies logo',
       },
       {
         title: 'IT & Security Coordinator',
@@ -224,6 +229,7 @@ export const en: SiteContent = {
         summary:
           'Managed IT systems for over 100 users at the British Consulate-General in Shanghai.',
         logo: fcoLogo,
+        logoAlt: 'British Consulate-General Shanghai logo',
       },
     ],
   },
@@ -460,12 +466,14 @@ export const en: SiteContent = {
         issuer: 'Amazon Web Services',
         note: 'Expired May 2024',
         logo: awsLogo,
+        logoAlt: 'Amazon Web Services logo',
       },
       {
         title: 'CompTIA A+',
         issuer: 'Computing Technology Industry Association',
         note: 'Expired September 2024',
         logo: comptiaLogo,
+        logoAlt: 'CompTIA logo',
       },
     ],
     education: [
@@ -473,6 +481,7 @@ export const en: SiteContent = {
         subject: 'Information Technology',
         school: 'Dudley College of Technology',
         logo: dudleyLogo,
+        logoAlt: 'Dudley College of Technology logo',
         modules: [
           { name: 'Communication and Employability Skills for IT', grade: 'Distinction' },
           { name: 'Computer Systems', grade: 'Merit' },
@@ -489,6 +498,7 @@ export const en: SiteContent = {
         subject: 'Health and Social Care',
         school: 'Open University',
         logo: ouLogo,
+        logoAlt: 'Open University logo',
         modules: [{ name: 'An introduction to health and social care', grade: 'Pass' }],
       },
     ],

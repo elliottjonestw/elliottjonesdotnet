@@ -59,6 +59,7 @@ export interface Role {
   period: string;
   summary: string;
   logo: ImageMetadata;
+  logoAlt: string;
   media?: { youtubeId: string; caption: string }[];
 }
 
@@ -106,6 +107,7 @@ export interface Certification {
   issuer: string;
   note: string;
   logo: ImageMetadata;
+  logoAlt: string;
 }
 
 export interface EducationModule {
@@ -117,6 +119,7 @@ export interface EducationEntry {
   subject: string;
   school: string;
   logo: ImageMetadata;
+  logoAlt: string;
   modules: EducationModule[];
 }
 
