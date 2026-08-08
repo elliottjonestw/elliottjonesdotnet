@@ -33,9 +33,9 @@ export const zhTW: SiteContent = {
     email: 'elliottpublic.ghbxi@passinbox.com',
     linkedin: 'https://www.linkedin.com/in/elliottjonesjiehan/',
     siteUrl: 'https://elliottjones.net',
-    metaTitle: 'Elliott Jones — 台北雙語產品客戶成功經理',
+    metaTitle: 'Elliott Jones — 台北雙語客戶成功經理',
     metaDescription:
-      '睿控網安（TXOne Networks）產品客戶成功經理。十餘年台灣與中國大陸經驗，取得 CEFR C1 中文能力認證。以英文為母語，專精 OT 資安、工業硬體與威脅情資領域的雙語技術溝通。',
+      '睿控網安（TXOne Networks）客戶成功經理。十餘年台灣與中國大陸經驗，取得 CEFR C1 中文能力認證。以英文為母語，專精 OT 資安、工業硬體與威脅情資領域的雙語技術溝通。',
     ogImageAlt:
       'Elliott Jones，睿控網安（TXOne Networks）產品客戶成功經理，現居台北。取得 CEFR C1 中文能力認證。',
     gaMeasurementId: 'G-YH3506Y1XQ',
