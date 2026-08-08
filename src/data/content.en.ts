@@ -34,7 +34,7 @@ export const en: SiteContent = {
     siteUrl: 'https://elliottjones.net',
     metaTitle: 'Elliott Jones — Bilingual Customer Success Manager in Taipei',
     metaDescription:
-      'Customer Success Manager at TXOne Networks. Over a decade in Taiwan and mainland China, with certified CEFR C1 Mandarin. Native English technical communicator across OT security, industrial hardware and threat intelligence.',
+      'Customer Success Manager at TXOne Networks. Over a decade in Taiwan and mainland China, with certified CEFR C1 Mandarin.',
     ogImageAlt:
       'Elliott Jones — Product Customer Success Manager at TXOne Networks, Taipei. Certified CEFR C1 Mandarin.',
     gaMeasurementId: 'G-YH3506Y1XQ',
