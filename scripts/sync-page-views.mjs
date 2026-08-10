@@ -85,7 +85,9 @@ const slugs = await publishedSlugs();
 const client = new BetaAnalyticsDataClient({ credentials });
 const [report] = await client.runReport({
   property: `properties/${propertyId}`,
-  dateRanges: [{ startDate: '2000-01-01', endDate: 'yesterday' }],
+  // The Data API will not accept dates earlier than 2015-08-14. Any GA4
+  // property created later simply has no rows before its own creation date.
+  dateRanges: [{ startDate: '2015-08-14', endDate: 'yesterday' }],
   dimensions: [{ name: 'pagePath' }],
   metrics: [{ name: 'screenPageViews' }],
   limit: 100000,
