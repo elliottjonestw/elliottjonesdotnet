@@ -61,6 +61,7 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
     };
 
     frame.title = thread.dataset.cusdisComposerLabel ?? 'Comments';
+    frame.setAttribute('scrolling', 'no');
     frame.style.height = '22rem';
     frame.srcdoc = `<!doctype html>
       <html>
@@ -69,7 +70,7 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
           <style>
             @font-face { font-family: 'Elliott Display'; src: url('${appearance.displayFont}') format('woff2'); font-style: normal; font-weight: 100 900; font-display: swap; }
             @font-face { font-family: 'Elliott Body'; src: url('${appearance.bodyFont}') format('woff2'); font-style: normal; font-weight: 100 900; font-display: swap; }
-            :root { color-scheme: light; }
+            :root { color-scheme: light; overflow-y: hidden; }
             body { color: #0c1a1b; font-family: 'Elliott Body', Georgia, serif; font-size: 1.0625rem; line-height: 1.7; }
             label, input, textarea, button, a { font-family: 'Elliott Display', system-ui, sans-serif; }
             label { color: #0c1a1b; font-weight: 500; }
