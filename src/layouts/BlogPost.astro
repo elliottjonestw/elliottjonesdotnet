@@ -209,7 +209,12 @@ const structuredData = {
             <slot />
           </div>
 
-          <PageViewCounter count={pageViewCount} locale={locale} label={blog.viewCount} />
+          <PageViewCounter
+            count={pageViewCount}
+            locale={locale}
+            heading={blog.viewCountHeading}
+            label={blog.viewCount}
+          />
           <ShareButtons title={title} url={canonical} labels={blog} />
 
           {/* The way on, and the way back. */}

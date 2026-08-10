@@ -7,10 +7,11 @@
 interface Props {
   count: number;
   locale: 'en' | 'zh-Hant-TW';
+  heading: string;
   label: string;
 }
 
-const { count, locale, label } = Astro.props;
+const { count, locale, heading, label } = Astro.props;
 const minimumViews = 10;
 const formattedCount = new Intl.NumberFormat(
   locale === 'zh-Hant-TW' ? 'zh-TW' : 'en-US',
@@ -20,31 +21,77 @@ const text = label.replace('{count}', formattedCount);
 
 {
   count >= minimumViews && (
-    <p class="post-views mono-label text-slate" data-reveal style="--reveal-delay:90ms">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" />
-        <circle cx="12" cy="12" r="2.5" />
-      </svg>
-      {text}
-    </p>
+    <aside
+      class="post-views"
+      aria-label={text}
+      data-reveal
+      style="--reveal-delay:90ms"
+    >
+      <div class="post-views-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" />
+          <circle cx="12" cy="12" r="2.5" />
+        </svg>
+      </div>
+      <div>
+        <p class="post-views-heading mono-label">{heading}</p>
+        <p class="post-views-count" aria-hidden="true">{formattedCount}</p>
+        <p class="sr-only">{text}</p>
+      </div>
+    </aside>
   )
 }
 
 <style>
   .post-views {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
-    gap: 0.45rem;
+    gap: clamp(1rem, 3vw, 1.5rem);
     margin-block-start: clamp(3.5rem, 6vw, 5rem);
+    padding: clamp(1.125rem, 3.5vw, 1.75rem);
+    border: 1px solid color-mix(in oklab, var(--color-jade) 58%, var(--rule));
+    border-radius: 0.75rem;
+    background: color-mix(in oklab, var(--color-surface) 88%, var(--color-jade));
+    box-shadow: 0.3rem 0.3rem 0 color-mix(in oklab, var(--color-jade) 15%, transparent);
   }
 
-  .post-views svg {
-    width: 1rem;
-    height: 1rem;
+  .post-views-icon {
+    display: grid;
+    width: clamp(2.75rem, 7vw, 3.5rem);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid color-mix(in oklab, var(--color-jade) 48%, transparent);
+    border-radius: 0.5rem;
+    background: color-mix(in oklab, var(--color-jade) 10%, transparent);
+    color: var(--color-jade);
+  }
+
+  .post-views-icon svg {
+    width: 52%;
+    height: 52%;
     fill: none;
     stroke: currentColor;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 1.65;
+  }
+
+  .post-views-heading {
+    color: var(--color-slate);
+  }
+
+  .post-views-count {
+    margin: 0.15rem 0 -0.05rem;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 650;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+  }
+
+  :global(:lang(zh-Hant)) .post-views-count {
+    letter-spacing: -0.02em;
   }
 </style>

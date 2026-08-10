@@ -250,6 +250,8 @@ export interface SiteContent {
     byAuthor: string;
     /** Follows the number: "6 min read". */
     minRead: string;
+    /** Heading for the public all-time view-count card. */
+    viewCountHeading: string;
     /** A public, all-time count. `{count}` is replaced with a localised number. */
     viewCount: string;
     publishedOn: string;
