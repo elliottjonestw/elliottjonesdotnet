@@ -168,6 +168,22 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
 - **Google Analytics 4** — property `G-YH3506Y1XQ`, carried over from the old
   site, set as `person.gaMeasurementId`. It is wrapped in
   `import.meta.env.PROD`, so `npm run dev` never sends hits to the property.
+- **Public article view counts** — the Pages workflow runs
+  `npm run sync:page-views` before every build and on a daily schedule. It asks
+  GA4 for all-time `screenPageViews`, combines the English and Traditional
+  Chinese routes that share a slug, and embeds the result in each article. A
+  count is shown only after it reaches 10 views. The source fallback is empty,
+  so local builds work without Analytics access.
+
+  To enable the sync, create a Google Cloud service account, enable the Google
+  Analytics Data API for its project, then give that account **Viewer** access
+  to the GA4 property. In the repository's **Settings → Secrets and variables
+  → Actions**, add `GA4_PROPERTY_ID` (the numeric Property ID, not the `G-`
+  Measurement ID) and `GA4_SERVICE_ACCOUNT_JSON` (the complete downloaded
+  service-account key JSON). The workflow never publishes either secret. The
+  script normalises trailing slashes, `index.html`, and the old GitHub project
+  path before matching an article route, so those historic visits join the
+  custom-domain total.
 - **Search Console** — the old `google2e17a48e58355e7b.html` verification file
   still ships at the site root, so verification survives the rebuild.
 - **Old URLs** — `/en.html` is a `noindex` meta-refresh stub that

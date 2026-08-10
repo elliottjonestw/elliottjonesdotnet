@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "sync:page-views": "node scripts/sync-page-views.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -17,6 +18,7 @@
     "@fontsource-variable/literata": "^5.3.0",
     "@fontsource-variable/schibsted-grotesk": "^5.3.0",
     "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@google-analytics/data": "^7.0.0",
     "astro": "^7.1.3",
     "mermaid": "^11.16.1"
   },

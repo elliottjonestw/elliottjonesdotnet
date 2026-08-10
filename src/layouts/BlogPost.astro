@@ -8,7 +8,9 @@ import { Image, getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Base from './Base.astro';
 import ReadAloud from '../components/ReadAloud.astro';
+import PageViewCounter from '../components/PageViewCounter.astro';
 import ShareButtons from '../components/ShareButtons.astro';
+import pageViews from '../data/page-views.json';
 /* Loaded here rather than from global.css: the home page is every visitor's
    first request and never renders a word of prose. */
 import '../styles/blog.css';
@@ -38,6 +40,7 @@ const { entry, toc, newer, older } = Astro.props;
 const { post, locale, slug, excerpt, minutes, dateLabel, dateISO, cover } =
   entry;
 const { title, tags } = post.data;
+const pageViewCount = (pageViews.views as Record<string, number>)[slug] ?? 0;
 
 /* The excerpt is a whole paragraph: right for the listing, too long for a
    search snippet. The <meta> tags get a trimmed copy. */
@@ -206,6 +209,7 @@ const structuredData = {
             <slot />
           </div>
 
+          <PageViewCounter count={pageViewCount} locale={locale} label={blog.viewCount} />
           <ShareButtons title={title} url={canonical} labels={blog} />
 
           {/* The way on, and the way back. */}

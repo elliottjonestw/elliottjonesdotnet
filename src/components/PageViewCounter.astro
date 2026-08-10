@@ -1,0 +1,50 @@
+---
+/**
+ * A deliberately static counter: its values are collected from GA4 while the
+ * site builds, so a reader never needs to wait for a client-side request and
+ * the reporting credentials never leave GitHub Actions.
+ */
+interface Props {
+  count: number;
+  locale: 'en' | 'zh-Hant-TW';
+  label: string;
+}
+
+const { count, locale, label } = Astro.props;
+const minimumViews = 10;
+const formattedCount = new Intl.NumberFormat(
+  locale === 'zh-Hant-TW' ? 'zh-TW' : 'en-US',
+).format(count);
+const text = label.replace('{count}', formattedCount);
+---
+
+{
+  count >= minimumViews && (
+    <p class="post-views mono-label text-slate" data-reveal style="--reveal-delay:90ms">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" />
+        <circle cx="12" cy="12" r="2.5" />
+      </svg>
+      {text}
+    </p>
+  )
+}
+
+<style>
+  .post-views {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-block-start: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .post-views svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.65;
+  }
+</style>

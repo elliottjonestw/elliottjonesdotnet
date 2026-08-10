@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # GA4 data is deliberately compiled into the static site once a day.
+  schedule:
+    - cron: '17 3 * * *'
   # Allows a manual run from the Actions tab.
   workflow_dispatch:
 
@@ -39,6 +42,12 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      - name: Sync public GA4 page-view counts
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: npm run sync:page-views
 
       - name: Build site
         env:
