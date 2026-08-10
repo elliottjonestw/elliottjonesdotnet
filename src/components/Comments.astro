@@ -13,9 +13,22 @@ interface Props {
   pageTitle: string;
   heading: string;
   composerLabel: string;
+  locale: {
+    post_comment: string;
+    loading: string;
+    email: string;
+    nickname: string;
+    reply_placeholder: string;
+    reply_btn: string;
+    sending: string;
+    mod_badge: string;
+    content_is_required: string;
+    nickname_is_required: string;
+    comment_has_been_sent: string;
+  };
 }
 
-const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
+const { pageId, pageUrl, pageTitle, heading, composerLabel, locale } = Astro.props;
 ---
 
 <section class="post-comments no-print" aria-labelledby="comments-heading">
@@ -30,6 +43,7 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
     data-page-url={pageUrl}
     data-page-title={pageTitle}
     data-cusdis-composer-label={composerLabel}
+    data-cusdis-locale={JSON.stringify(locale)}
     data-cusdis-display-font={displayFont}
     data-cusdis-body-font={bodyFont}
   ></div>
@@ -54,6 +68,7 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
       pageUrl: thread.dataset.pageUrl,
       pageTitle: thread.dataset.pageTitle,
     };
+    const widgetLocale = JSON.parse(thread.dataset.cusdisLocale ?? '{}');
     const appearance = {
       composerLabel: thread.dataset.cusdisComposerLabel ?? 'Comment',
       displayFont: thread.dataset.cusdisDisplayFont,
@@ -81,6 +96,7 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
             .text-gray-500 { color: #52666a !important; }
           </style>
           <script>window.__DATA__ = ${JSON.stringify(widgetData)};<\/script>
+          <script>window.CUSDIS_LOCALE = ${JSON.stringify(widgetLocale)};<\/script>
         </head>
         <body>
           <div id="root"></div>
