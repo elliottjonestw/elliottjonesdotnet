@@ -4,14 +4,18 @@
  * service. The ID is a stable route key, so changing a post title or canonical
  * domain cannot split its conversation into a new thread.
  */
+import displayFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
+import bodyFont from '@fontsource-variable/literata/files/literata-latin-wght-normal.woff2?url';
+
 interface Props {
   pageId: string;
   pageUrl: string;
   pageTitle: string;
   heading: string;
+  composerLabel: string;
 }
 
-const { pageId, pageUrl, pageTitle, heading } = Astro.props;
+const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
 ---
 
 <section class="post-comments no-print" aria-labelledby="comments-heading">
@@ -25,12 +29,94 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
     data-page-id={pageId}
     data-page-url={pageUrl}
     data-page-title={pageTitle}
+    data-cusdis-composer-label={composerLabel}
+    data-cusdis-display-font={displayFont}
+    data-cusdis-body-font={bodyFont}
   ></div>
 </section>
 
 <script is:inline async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <script>
+  const applyCusdisTheme = (frame: HTMLIFrameElement) => {
+    try {
+      const document = frame.contentWindow?.document;
+      const thread = frame.parentElement;
+      if (!document || !thread) return;
+
+      const composerLabel = thread.dataset.cusdisComposerLabel ?? 'Comment';
+      const composer = document.querySelector<HTMLLabelElement>('label[for="reply_content"]');
+      if (composer && composer.textContent !== composerLabel) {
+        composer.textContent = composerLabel;
+      }
+      const composerField = document.querySelector<HTMLTextAreaElement>('[name="reply_content"]');
+      if (composerField) composerField.title = composerLabel;
+
+      if (document.getElementById('elliottjones-cusdis-theme')) return;
+      const style = document.createElement('style');
+      style.id = 'elliottjones-cusdis-theme';
+      style.textContent = `
+        @font-face {
+          font-family: 'Elliott Display';
+          src: url('${thread.dataset.cusdisDisplayFont}') format('woff2');
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: 'Elliott Body';
+          src: url('${thread.dataset.cusdisBodyFont}') format('woff2');
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+        }
+        body {
+          color: #0c1a1b;
+          font-family: 'Elliott Body', Georgia, serif;
+          font-size: 1.0625rem;
+          line-height: 1.7;
+        }
+        label, input, textarea, button, a {
+          font-family: 'Elliott Display', system-ui, sans-serif;
+        }
+        label {
+          color: #0c1a1b;
+          font-weight: 500;
+        }
+        input, textarea {
+          border-color: color-mix(in srgb, #0c1a1b 16%, transparent) !important;
+          border-radius: 2px;
+          color: #0c1a1b !important;
+        }
+        input:focus, textarea:focus {
+          outline: 2px solid #1f6b57 !important;
+          outline-offset: 2px;
+        }
+        button.bg-gray-200 {
+          border-radius: 999px;
+          background: #1f6b57 !important;
+          color: #f5f7f4 !important;
+          font-size: 0.6875rem;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        .bg-blue-500 {
+          background: #1f6b57 !important;
+          color: #f5f7f4 !important;
+          font-family: 'Elliott Display', system-ui, sans-serif;
+          font-weight: 500;
+        }
+        .text-gray-500 {
+          color: #52666a !important;
+        }
+      `;
+      document.head.append(style);
+    } catch {
+      // The widget still works in browsers that isolate the iframe document.
+    }
+  };
+
   /**
    * Cusdis Cloud occasionally misses its initial iframe-resize message, leaving
    * its otherwise full discussion UI in the browser's 150px iframe default.
@@ -92,6 +178,7 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
 
     frame.dataset.resizeReady = 'true';
     const measure = () => {
+      applyCusdisTheme(frame);
       resizeCusdisFrame(frame);
       observeCusdisFrame(frame);
     };

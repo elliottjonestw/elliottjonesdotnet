@@ -263,6 +263,8 @@ export interface SiteContent {
     viewCountUpdated: string;
     /** Heading above the hosted discussion thread. */
     commentsHeading: string;
+    /** Label above the hosted comment composer. */
+    commentsComposerLabel: string;
     publishedOn: string;
     newerPost: string;
     olderPost: string;
