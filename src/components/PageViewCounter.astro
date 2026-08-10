@@ -14,6 +14,7 @@ interface Props {
   count: number;
   details?: PageViewDetails;
   generatedAt: string | null;
+  timeZone?: string;
   locale: 'en' | 'zh-Hant-TW';
   labels: {
     viewCountHeading: string;
@@ -27,7 +28,7 @@ interface Props {
   };
 }
 
-const { count, details, generatedAt, locale, labels } = Astro.props;
+const { count, details, generatedAt, timeZone, locale, labels } = Astro.props;
 const minimumViews = 10;
 const number = new Intl.NumberFormat(locale === 'zh-Hant-TW' ? 'zh-TW' : 'en-US');
 const formattedCount = number.format(count);
@@ -36,6 +37,7 @@ const updated = generatedAt
   ? new Intl.DateTimeFormat(locale === 'zh-Hant-TW' ? 'zh-TW' : 'en-GB', {
       dateStyle: 'medium',
       timeStyle: 'short',
+      ...(timeZone ? { timeZone } : {}),
     }).format(new Date(generatedAt))
   : undefined;
 const countries = details?.countries ?? [];
@@ -111,7 +113,9 @@ const largestCountryCount = Math.max(...countries.map((country) => country.count
         {
           updated && (
             <p class="post-views-updated mono-label">
-              {labels.viewCountUpdated.replace('{date}', updated)}
+              {labels.viewCountUpdated
+                .replace('{date}', updated)
+                .replace('{timeZone}', timeZone ?? 'UTC')}
             </p>
           )
         }
@@ -180,7 +184,7 @@ const largestCountryCount = Math.max(...countries.map((country) => country.count
     margin: 0.15rem 0 -0.05rem;
     color: var(--color-ink);
     font-family: var(--font-display);
-    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-size: clamp(2.1rem, 4.25vw, 2.75rem);
     font-weight: 650;
     letter-spacing: -0.04em;
     line-height: 0.9;
@@ -329,13 +333,9 @@ const largestCountryCount = Math.max(...countries.map((country) => country.count
   }
 
   @media (max-width: 520px) {
-    .post-views-summary {
-      grid-template-columns: auto minmax(0, 1fr);
-    }
-
-    .post-views-toggle {
-      grid-column: 2;
-      justify-self: start;
+    .post-views-toggle-open,
+    .post-views-toggle-close {
+      display: none !important;
     }
   }
 </style>

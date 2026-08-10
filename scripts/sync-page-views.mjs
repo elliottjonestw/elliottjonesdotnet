@@ -83,7 +83,7 @@ async function writeFallback(reason) {
   await mkdir(path.dirname(outputPath), { recursive: true });
   await writeFile(
     outputPath,
-    `${JSON.stringify({ generatedAt: null, views: {} }, null, 2)}\n`,
+    `${JSON.stringify({ generatedAt: null, timeZone: null, views: {} }, null, 2)}\n`,
   );
   console.warn(`Page-view sync skipped: ${reason}`);
 }
@@ -134,7 +134,9 @@ const [response] = await client.batchRunReports({
       limit: 100000,
     },
     {
-      dateRanges: [{ startDate: '30daysAgo', endDate: 'yesterday' }],
+      // Country totals follow the headline's all-time scope. The UI shows the
+      // top ten, which keeps the public summary useful without overwhelming it.
+      dateRanges: [{ startDate: '2015-08-14', endDate: 'yesterday' }],
       dimensions: [{ name: 'pagePath' }, { name: 'country' }],
       metrics: [{ name: 'screenPageViews' }],
       limit: 100000,
@@ -197,12 +199,12 @@ for (const [slug, countries] of countriesBySlug) {
   views[slug].countries = [...countries]
     .map(([name, count]) => ({ name, count }))
     .sort((first, second) => second.count - first.count || first.name.localeCompare(second.name))
-    .slice(0, 5);
+    .slice(0, 10);
 }
 
 await mkdir(path.dirname(outputPath), { recursive: true });
 await writeFile(
   outputPath,
-  `${JSON.stringify({ generatedAt: new Date().toISOString(), views }, null, 2)}\n`,
+  `${JSON.stringify({ generatedAt: new Date().toISOString(), timeZone: propertyTimeZone, views }, null, 2)}\n`,
 );
 console.log(`Synced GA4 page-view summaries for ${slugs.size} article(s).`);

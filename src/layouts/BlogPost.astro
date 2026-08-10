@@ -46,7 +46,12 @@ type PageViewDetails = {
   last30Days: number;
   countries: { name: string; count: number }[];
 };
-const pageView = (pageViews.views as Record<string, PageViewDetails>)[slug];
+const pageViewData = pageViews as {
+  generatedAt: string | null;
+  timeZone: string | null;
+  views: Record<string, PageViewDetails>;
+};
+const pageView = pageViewData.views[slug];
 
 /* The excerpt is a whole paragraph: right for the listing, too long for a
    search snippet. The <meta> tags get a trimmed copy. */
@@ -218,7 +223,8 @@ const structuredData = {
           <PageViewCounter
             count={pageView?.allTime ?? 0}
             details={pageView}
-            generatedAt={pageViews.generatedAt}
+            generatedAt={pageViewData.generatedAt}
+            timeZone={pageViewData.timeZone ?? undefined}
             locale={locale}
             labels={blog}
           />
