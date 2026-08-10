@@ -254,6 +254,13 @@ export interface SiteContent {
     viewCountHeading: string;
     /** A public, all-time count. `{count}` is replaced with a localised number. */
     viewCount: string;
+    viewCountDetailsOpen: string;
+    viewCountDetailsClose: string;
+    viewCountLast24Hours: string;
+    viewCountLast30Days: string;
+    viewCountCountries: string;
+    /** Timestamp below the expanded card. `{date}` is replaced locally. */
+    viewCountUpdated: string;
     publishedOn: string;
     newerPost: string;
     olderPost: string;

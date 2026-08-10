@@ -57,6 +57,28 @@ function slugForPath(pathname, slugs) {
   return slugs.has(slug) ? slug : undefined;
 }
 
+function valueOf(row, index) {
+  return row.metricValues?.[index]?.value ?? '0';
+}
+
+function dimensionOf(row, index) {
+  return row.dimensionValues?.[index]?.value ?? '';
+}
+
+/** A sortable YYYYMMDDHH in the GA property's own reporting timezone. */
+function dateHourInTimeZone(date, timeZone) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(date);
+  const part = (type) => parts.find((item) => item.type === type)?.value ?? '00';
+  return Number(`${part('year')}${part('month')}${part('day')}${part('hour')}`);
+}
+
 async function writeFallback(reason) {
   await mkdir(path.dirname(outputPath), { recursive: true });
   await writeFile(
@@ -83,21 +105,99 @@ try {
 
 const slugs = await publishedSlugs();
 const client = new BetaAnalyticsDataClient({ credentials });
-const [report] = await client.runReport({
-  property: `properties/${propertyId}`,
-  // The Data API will not accept dates earlier than 2015-08-14. Any GA4
-  // property created later simply has no rows before its own creation date.
-  dateRanges: [{ startDate: '2015-08-14', endDate: 'yesterday' }],
-  dimensions: [{ name: 'pagePath' }],
-  metrics: [{ name: 'screenPageViews' }],
-  limit: 100000,
+const property = `properties/${propertyId}`;
+const [response] = await client.batchRunReports({
+  property,
+  requests: [
+    {
+      // The Data API will not accept dates earlier than 2015-08-14. Any GA4
+      // property created later simply has no rows before its own creation date.
+      dateRanges: [{ startDate: '2015-08-14', endDate: 'yesterday' }],
+      dimensions: [{ name: 'pagePath' }],
+      metrics: [{ name: 'screenPageViews' }],
+      limit: 100000,
+    },
+    {
+      // `dateHour` lets us calculate the last 24 completed hourly buckets,
+      // instead of treating a whole calendar day as "the last 24 hours".
+      dateRanges: [{ startDate: 'yesterday', endDate: 'today' }],
+      dimensions: [{ name: 'pagePath' }, { name: 'dateHour' }],
+      metrics: [{ name: 'screenPageViews' }],
+      limit: 100000,
+    },
+    {
+      // A complete period avoids presenting a partly processed current day as
+      // a comparable 30-day total.
+      dateRanges: [{ startDate: '30daysAgo', endDate: 'yesterday' }],
+      dimensions: [{ name: 'pagePath' }],
+      metrics: [{ name: 'screenPageViews' }],
+      limit: 100000,
+    },
+    {
+      dateRanges: [{ startDate: '30daysAgo', endDate: 'yesterday' }],
+      dimensions: [{ name: 'pagePath' }, { name: 'country' }],
+      metrics: [{ name: 'screenPageViews' }],
+      limit: 100000,
+    },
+  ],
 });
 
-const views = Object.fromEntries([...slugs].map((slug) => [slug, 0]));
-for (const row of report.rows ?? []) {
-  const slug = slugForPath(row.dimensionValues?.[0]?.value ?? '', slugs);
-  if (!slug) continue;
-  views[slug] += Number(row.metricValues?.[0]?.value ?? 0);
+const [allTimeReport, hourlyReport, thirtyDayReport, countryReport] = response.reports ?? [];
+if (!allTimeReport || !hourlyReport || !thirtyDayReport || !countryReport) {
+  throw new Error('GA4 did not return every requested page-view report.');
+}
+
+const views = Object.fromEntries(
+  [...slugs].map((slug) => [
+    slug,
+    { allTime: 0, last24Hours: 0, last30Days: 0, countries: [] },
+  ]),
+);
+
+for (const row of allTimeReport.rows ?? []) {
+  const slug = slugForPath(dimensionOf(row, 0), slugs);
+  if (slug) views[slug].allTime += Number(valueOf(row, 0));
+}
+
+const propertyTimeZone = hourlyReport.metadata?.timeZone ?? 'UTC';
+const latestCompletedHour = dateHourInTimeZone(
+  new Date(Date.now() - 60 * 60 * 1000),
+  propertyTimeZone,
+);
+const firstIncludedHour = dateHourInTimeZone(
+  new Date(Date.now() - 24 * 60 * 60 * 1000),
+  propertyTimeZone,
+);
+
+for (const row of hourlyReport.rows ?? []) {
+  const slug = slugForPath(dimensionOf(row, 0), slugs);
+  const dateHour = Number(dimensionOf(row, 1));
+  if (slug && dateHour >= firstIncludedHour && dateHour <= latestCompletedHour) {
+    views[slug].last24Hours += Number(valueOf(row, 0));
+  }
+}
+
+for (const row of thirtyDayReport.rows ?? []) {
+  const slug = slugForPath(dimensionOf(row, 0), slugs);
+  if (slug) views[slug].last30Days += Number(valueOf(row, 0));
+}
+
+const countriesBySlug = new Map();
+for (const row of countryReport.rows ?? []) {
+  const slug = slugForPath(dimensionOf(row, 0), slugs);
+  const country = dimensionOf(row, 1);
+  if (!slug || !country || country === '(not set)') continue;
+
+  const countries = countriesBySlug.get(slug) ?? new Map();
+  countries.set(country, (countries.get(country) ?? 0) + Number(valueOf(row, 0)));
+  countriesBySlug.set(slug, countries);
+}
+
+for (const [slug, countries] of countriesBySlug) {
+  views[slug].countries = [...countries]
+    .map(([name, count]) => ({ name, count }))
+    .sort((first, second) => second.count - first.count || first.name.localeCompare(second.name))
+    .slice(0, 5);
 }
 
 await mkdir(path.dirname(outputPath), { recursive: true });
@@ -105,4 +205,4 @@ await writeFile(
   outputPath,
   `${JSON.stringify({ generatedAt: new Date().toISOString(), views }, null, 2)}\n`,
 );
-console.log(`Synced GA4 page views for ${slugs.size} article(s).`);
+console.log(`Synced GA4 page-view summaries for ${slugs.size} article(s).`);

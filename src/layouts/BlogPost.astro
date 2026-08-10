@@ -40,7 +40,13 @@ const { entry, toc, newer, older } = Astro.props;
 const { post, locale, slug, excerpt, minutes, dateLabel, dateISO, cover } =
   entry;
 const { title, tags } = post.data;
-const pageViewCount = (pageViews.views as Record<string, number>)[slug] ?? 0;
+type PageViewDetails = {
+  allTime: number;
+  last24Hours: number;
+  last30Days: number;
+  countries: { name: string; count: number }[];
+};
+const pageView = (pageViews.views as Record<string, PageViewDetails>)[slug];
 
 /* The excerpt is a whole paragraph: right for the listing, too long for a
    search snippet. The <meta> tags get a trimmed copy. */
@@ -210,10 +216,11 @@ const structuredData = {
           </div>
 
           <PageViewCounter
-            count={pageViewCount}
+            count={pageView?.allTime ?? 0}
+            details={pageView}
+            generatedAt={pageViews.generatedAt}
             locale={locale}
-            heading={blog.viewCountHeading}
-            label={blog.viewCount}
+            labels={blog}
           />
           <ShareButtons title={title} url={canonical} labels={blog} />
 
