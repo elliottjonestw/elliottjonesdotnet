@@ -303,6 +303,17 @@
     transform: none;
   }
 
+  /* A cross-document view transition already brings the new page on screen.
+     Letting the generic reveal run too makes blog headings and rows appear to
+     enter twice on browsers that support those transitions (notably iOS
+     Safari). `vt-nav` is set during pagereveal, before the incoming document's
+     first frame, so these elements are captured in their settled state. */
+  html.vt-nav [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html.js-reveal [data-reveal] {
       opacity: 1;
