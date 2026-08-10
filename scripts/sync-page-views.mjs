@@ -112,7 +112,9 @@ const [response] = await client.batchRunReports({
     {
       // The Data API will not accept dates earlier than 2015-08-14. Any GA4
       // property created later simply has no rows before its own creation date.
-      dateRanges: [{ startDate: '2015-08-14', endDate: 'yesterday' }],
+      // The headline is genuinely all-time, including the current (possibly
+      // still processing) day. The card already exposes when it was generated.
+      dateRanges: [{ startDate: '2015-08-14', endDate: 'today' }],
       dimensions: [{ name: 'pagePath' }],
       metrics: [{ name: 'screenPageViews' }],
       limit: 100000,
@@ -136,7 +138,7 @@ const [response] = await client.batchRunReports({
     {
       // Country totals follow the headline's all-time scope. The UI shows the
       // top ten, which keeps the public summary useful without overwhelming it.
-      dateRanges: [{ startDate: '2015-08-14', endDate: 'yesterday' }],
+      dateRanges: [{ startDate: '2015-08-14', endDate: 'today' }],
       dimensions: [{ name: 'pagePath' }, { name: 'country' }],
       metrics: [{ name: 'screenPageViews' }],
       limit: 100000,
