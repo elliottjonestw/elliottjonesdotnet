@@ -261,6 +261,8 @@ export interface SiteContent {
     viewCountCountries: string;
     /** Timestamp below the expanded card. `{date}` is replaced locally. */
     viewCountUpdated: string;
+    /** Heading above the hosted discussion thread. */
+    commentsHeading: string;
     publishedOn: string;
     newerPost: string;
     olderPost: string;

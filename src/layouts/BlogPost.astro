@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import Base from './Base.astro';
 import ReadAloud from '../components/ReadAloud.astro';
 import PageViewCounter from '../components/PageViewCounter.astro';
+import Comments from '../components/Comments.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import pageViews from '../data/page-views.json';
 /* Loaded here rather than from global.css: the home page is every visitor's
@@ -227,6 +228,12 @@ const structuredData = {
             timeZone={pageViewData.timeZone ?? undefined}
             locale={locale}
             labels={blog}
+          />
+          <Comments
+            pageId={`${locale}:${slug}`}
+            pageUrl={canonical}
+            pageTitle={title}
+            heading={blog.commentsHeading}
           />
           <ShareButtons title={title} url={canonical} labels={blog} />
 

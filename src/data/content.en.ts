@@ -537,6 +537,7 @@ export const en: SiteContent = {
     viewCountLast30Days: 'Last 30 days',
     viewCountCountries: 'Top countries',
     viewCountUpdated: 'Updated {date} · {timeZone}',
+    commentsHeading: 'Comments',
     publishedOn: 'Published',
     newerPost: 'Newer post',
     olderPost: 'Older post',

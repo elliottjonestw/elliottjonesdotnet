@@ -531,6 +531,7 @@ export const zhTW: SiteContent = {
     viewCountLast30Days: '過去 30 天',
     viewCountCountries: '熱門國家',
     viewCountUpdated: '更新於 {date} · {timeZone}',
+    commentsHeading: '留言討論',
     publishedOn: '發表於',
     newerPost: '較新的文章',
     olderPost: '較舊的文章',

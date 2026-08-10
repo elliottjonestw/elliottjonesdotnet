@@ -1,0 +1,46 @@
+---
+/**
+ * Hosted comments, deliberately kept behind Cusdis rather than a site-owned
+ * service. The ID is a stable route key, so changing a post title or canonical
+ * domain cannot split its conversation into a new thread.
+ */
+interface Props {
+  pageId: string;
+  pageUrl: string;
+  pageTitle: string;
+  heading: string;
+}
+
+const { pageId, pageUrl, pageTitle, heading } = Astro.props;
+---
+
+<section class="post-comments no-print" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="post-comments-heading mono-label">{heading}</h2>
+
+  <div
+    id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="3e5065fd-6e96-48e5-b342-e46a7856f18e"
+    data-page-id={pageId}
+    data-page-url={pageUrl}
+    data-page-title={pageTitle}
+  ></div>
+</section>
+
+<script is:inline async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<style>
+  .post-comments {
+    margin-block-start: clamp(3.5rem, 6vw, 5rem);
+    padding-block-start: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .post-comments-heading {
+    color: var(--color-slate);
+  }
+
+  #cusdis_thread {
+    margin-block-start: 1.25rem;
+  }
+</style>
