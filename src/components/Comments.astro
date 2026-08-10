@@ -19,6 +19,7 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
 
   <div
     id="cusdis_thread"
+    data-cusdis-thread
     data-host="https://cusdis.com"
     data-app-id="3e5065fd-6e96-48e5-b342-e46a7856f18e"
     data-page-id={pageId}
@@ -28,6 +29,70 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
 </section>
 
 <script is:inline async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  /**
+   * Cusdis Cloud occasionally misses its initial iframe-resize message, leaving
+   * its otherwise full discussion UI in the browser's 150px iframe default.
+   * Keep a generous no-scroll fallback, then use the embedded document's true
+   * height whenever the browser permits us to read it. The message listener
+   * covers comments that Cusdis adds after the first render.
+   */
+  const resizeCusdisFrame = (frame: HTMLIFrameElement) => {
+    try {
+      const document = frame.contentWindow?.document;
+      if (!document) return;
+
+      const height = Math.ceil(
+        Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+      );
+
+      if (height > 0) {
+        frame.style.height = `${height}px`;
+        frame.style.minHeight = '0';
+      }
+    } catch {
+      // Cusdis supplies a cross-origin document in some browsers. In that
+      // case the CSS fallback below remains in effect until its resize event.
+    }
+  };
+
+  const initialiseCusdisResize = () => {
+    const thread = document.querySelector<HTMLElement>('[data-cusdis-thread]');
+    const frame = thread?.querySelector<HTMLIFrameElement>('iframe');
+    if (!thread || !frame || frame.dataset.resizeReady) return;
+
+    frame.dataset.resizeReady = 'true';
+    const measure = () => resizeCusdisFrame(frame);
+    frame.addEventListener('load', () => {
+      [0, 200, 1_000, 3_000].forEach((delay) => window.setTimeout(measure, delay));
+    });
+    measure();
+  };
+
+  window.addEventListener('message', (event) => {
+    try {
+      const message = JSON.parse(event.data);
+      if (message.from !== 'cusdis' || message.event !== 'resize') return;
+
+      const height = Number(message.data);
+      const frame = document.querySelector<HTMLIFrameElement>('[data-cusdis-thread] iframe');
+      if (frame && Number.isFinite(height) && height > 0) {
+        frame.style.height = `${Math.ceil(height)}px`;
+        frame.style.minHeight = '0';
+      }
+    } catch {
+      // Ignore unrelated postMessage traffic.
+    }
+  });
+
+  initialiseCusdisResize();
+  const thread = document.querySelector<HTMLElement>('[data-cusdis-thread]');
+  if (thread) {
+    new MutationObserver(initialiseCusdisResize).observe(thread, { childList: true });
+  }
+  document.addEventListener('astro:page-load', initialiseCusdisResize);
+</script>
 
 <style>
   .post-comments {
@@ -42,5 +107,12 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
 
   #cusdis_thread {
     margin-block-start: 1.25rem;
+    min-height: 34rem;
+  }
+
+  #cusdis_thread :global(iframe) {
+    display: block;
+    width: 100%;
+    min-height: 34rem;
   }
 </style>
