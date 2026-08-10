@@ -51,6 +51,8 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
       }
       const composerField = document.querySelector<HTMLTextAreaElement>('[name="reply_content"]');
       if (composerField) composerField.title = composerLabel;
+      const attribution = document.querySelector<HTMLAnchorElement>('a[href="https://cusdis.com"]');
+      attribution?.parentElement?.remove();
 
       if (document.getElementById('elliottjones-cusdis-theme')) return;
       const style = document.createElement('style');
