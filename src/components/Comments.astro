@@ -35,8 +35,9 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
    * Cusdis Cloud occasionally misses its initial iframe-resize message, leaving
    * its otherwise full discussion UI in the browser's 150px iframe default.
    * Keep a generous no-scroll fallback, then use the embedded document's true
-   * height whenever the browser permits us to read it. The message listener
-   * covers comments that Cusdis adds after the first render.
+   * height whenever the browser permits us to read it. Cusdis's own resize
+   * message is unreliable after a form state change, so observe its document
+   * directly instead of accepting a potentially stale reported height.
    */
   const resizeCusdisFrame = (frame: HTMLIFrameElement) => {
     try {
@@ -58,34 +59,47 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
     }
   };
 
+  const observeCusdisFrame = (frame: HTMLIFrameElement) => {
+    if (frame.dataset.resizeObserved) return;
+
+    try {
+      const document = frame.contentWindow?.document;
+      if (!document?.body) return;
+
+      frame.dataset.resizeObserved = 'true';
+      const measure = () => {
+        // Let Cusdis finish its own mutation and message handling first; this
+        // is the final authoritative measurement for the containing iframe.
+        window.requestAnimationFrame(() => resizeCusdisFrame(frame));
+      };
+
+      new ResizeObserver(measure).observe(document.body);
+      new MutationObserver(measure).observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+      measure();
+    } catch {
+      // The bounded load measurements provide the fallback for browsers that
+      // do not expose the iframe document to its embedding page.
+    }
+  };
+
   const initialiseCusdisResize = () => {
     const thread = document.querySelector<HTMLElement>('[data-cusdis-thread]');
     const frame = thread?.querySelector<HTMLIFrameElement>('iframe');
     if (!thread || !frame || frame.dataset.resizeReady) return;
 
     frame.dataset.resizeReady = 'true';
-    const measure = () => resizeCusdisFrame(frame);
+    const measure = () => {
+      resizeCusdisFrame(frame);
+      observeCusdisFrame(frame);
+    };
     frame.addEventListener('load', () => {
       [0, 200, 1_000, 3_000].forEach((delay) => window.setTimeout(measure, delay));
     });
     measure();
   };
-
-  window.addEventListener('message', (event) => {
-    try {
-      const message = JSON.parse(event.data);
-      if (message.from !== 'cusdis' || message.event !== 'resize') return;
-
-      const height = Number(message.data);
-      const frame = document.querySelector<HTMLIFrameElement>('[data-cusdis-thread] iframe');
-      if (frame && Number.isFinite(height) && height > 0) {
-        frame.style.height = `${Math.ceil(height)}px`;
-        frame.style.minHeight = '0';
-      }
-    } catch {
-      // Ignore unrelated postMessage traffic.
-    }
-  });
 
   initialiseCusdisResize();
   const thread = document.querySelector<HTMLElement>('[data-cusdis-thread]');
