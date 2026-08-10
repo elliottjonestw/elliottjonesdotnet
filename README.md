@@ -169,7 +169,7 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
   site, set as `person.gaMeasurementId`. It is wrapped in
   `import.meta.env.PROD`, so `npm run dev` never sends hits to the property.
 - **Public article view counts** — the Pages workflow runs
-  `npm run sync:page-views` before every build and on a daily schedule. It asks
+  `npm run sync:page-views` before every build and on an hourly schedule. It asks
   GA4 for all-time `screenPageViews`, combines the English and Traditional
   Chinese routes that share a slug, and embeds the result in each article. A
   count is shown only after it reaches 10 views. Expanding the card also shows

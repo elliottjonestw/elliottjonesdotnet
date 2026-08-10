@@ -3,9 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # GA4 data is deliberately compiled into the static site once a day.
+  # GA4 data is compiled into the static site once an hour. Avoid the top of
+  # the hour, when GitHub may delay scheduled workflows during high load.
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '17 * * * *'
   # Allows a manual run from the Actions tab.
   workflow_dispatch:
 
