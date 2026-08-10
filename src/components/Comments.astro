@@ -156,9 +156,17 @@ const { pageId, pageUrl, pageTitle, heading, composerLabel } = Astro.props;
 
       frame.dataset.resizeObserved = 'true';
       const measure = () => {
-        // Let Cusdis finish its own mutation and message handling first; this
-        // is the final authoritative measurement for the containing iframe.
-        window.requestAnimationFrame(() => resizeCusdisFrame(frame));
+        if (frame.dataset.resizeQueued) return;
+        frame.dataset.resizeQueued = 'true';
+        // Cusdis posts a stale height just after a form-state mutation. Measure
+        // on the following frame, then once more after that message has landed.
+        window.requestAnimationFrame(() => {
+          delete frame.dataset.resizeQueued;
+          resizeCusdisFrame(frame);
+          [100, 500].forEach((delay) => {
+            window.setTimeout(() => resizeCusdisFrame(frame), delay);
+          });
+        });
       };
 
       new ResizeObserver(measure).observe(document.body);
