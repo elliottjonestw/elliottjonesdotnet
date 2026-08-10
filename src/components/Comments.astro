@@ -43,9 +43,10 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
       const document = frame.contentWindow?.document;
       if (!document) return;
 
-      const height = Math.ceil(
-        Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
-      );
+      // `documentElement.scrollHeight` can inherit the iframe's own minimum
+      // height, creating a feedback loop and a large empty area. The body is
+      // the element that contains Cusdis's actual form and comments.
+      const height = Math.ceil(document.body.scrollHeight);
 
       if (height > 0) {
         frame.style.height = `${height}px`;
@@ -107,7 +108,6 @@ const { pageId, pageUrl, pageTitle, heading } = Astro.props;
 
   #cusdis_thread {
     margin-block-start: 1.25rem;
-    min-height: 34rem;
   }
 
   #cusdis_thread :global(iframe) {
