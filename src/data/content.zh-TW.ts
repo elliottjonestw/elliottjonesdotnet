@@ -529,7 +529,7 @@ export const zhTW: SiteContent = {
     viewCountDetailsClose: '收合詳情',
     viewCountLast24Hours: '過去 24 小時',
     viewCountLast30Days: '過去 30 天',
-    viewCountCountries: '熱門國家',
+    viewCountCountries: '熱門地區',
     viewCountUpdated: '更新於 {date} · {timeZone}',
     commentsHeading: '留言討論',
     commentsComposerLabel: '留言',

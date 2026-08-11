@@ -535,7 +535,7 @@ export const en: SiteContent = {
     viewCountDetailsClose: 'Hide details',
     viewCountLast24Hours: 'Last 24 hours',
     viewCountLast30Days: 'Last 30 days',
-    viewCountCountries: 'Top countries',
+    viewCountCountries: 'Top regions',
     viewCountUpdated: 'Updated {date} · {timeZone}',
     commentsHeading: 'Comments',
     commentsComposerLabel: 'Comment',
