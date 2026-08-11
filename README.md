@@ -173,8 +173,9 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
   GA4 for all-time `screenPageViews`, combines the English and Traditional
   Chinese routes that share a slug, and embeds the result in each article. A
   count is shown only after it reaches 10 views. Expanding the card also shows
-  the last 24 completed hourly buckets, the last 30 complete days, and the
-  top five countries in that 30-day period. The source fallback is empty, so
+  the last 24 completed hourly buckets, the last 30 calendar days (including
+  the current partial day), and the top five countries across all time. The
+  source fallback is empty, so
   local builds work without Analytics access.
 
   To enable the sync, create a Google Cloud service account, enable the Google

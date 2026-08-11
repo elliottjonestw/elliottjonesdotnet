@@ -128,9 +128,10 @@ const [response] = await client.batchRunReports({
       limit: 100000,
     },
     {
-      // A complete period avoids presenting a partly processed current day as
-      // a comparable 30-day total.
-      dateRanges: [{ startDate: '30daysAgo', endDate: 'yesterday' }],
+      // Include today so a post less than 30 days old has a rolling total
+      // consistent with its all-time headline. `29daysAgo` through `today`
+      // is 30 calendar days, inclusive.
+      dateRanges: [{ startDate: '29daysAgo', endDate: 'today' }],
       dimensions: [{ name: 'pagePath' }],
       metrics: [{ name: 'screenPageViews' }],
       limit: 100000,
