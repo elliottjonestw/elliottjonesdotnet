@@ -12,6 +12,9 @@ npm install
 npm run dev
 ```
 
+Node 22.12 or newer is required (the `engines` field in `package.json`; CI
+builds on Node 22).
+
 | Command           | What it does                                  |
 | ----------------- | --------------------------------------------- |
 | `npm run dev`     | Dev server at http://localhost:4321            |
@@ -24,9 +27,10 @@ npm run dev
 **Page content lives in `src/data/content.en.ts` and
 [`src/data/content.zh-TW.ts`](src/data/content.zh-TW.ts)** — one fully
 written-out object per locale, both satisfying the `SiteContent` type in
-[`src/data/content.ts`](src/data/content.ts). Bio, experience, TOCFL results,
-portfolio links, speaking, certifications and education are typed data — edit
-the matching field in both files and the page follows. Components in
+[`src/data/content.ts`](src/data/content.ts). Bio, TOCFL results and the
+listening score chart, experience, capabilities, work links, projects,
+speaking, certifications, education and contact copy are typed data — edit the
+matching field in both files and the page follows. Components in
 `src/components` call `getContent(Astro.currentLocale)` and handle
 presentation only; they don't hardcode copy.
 
@@ -75,8 +79,8 @@ and its URL cannot disagree.
 
 ```
 src/content/blog/
-  en/why-bilingual.md      →  /blog/why-bilingual
-  zh-tw/why-bilingual.md   →  /zh-tw/blog/why-bilingual
+  en/ten-tips-for-learning-chinese.md     →  /blog/ten-tips-for-learning-chinese
+  zh-tw/ten-tips-for-learning-chinese.md  →  /zh-tw/blog/ten-tips-for-learning-chinese
 ```
 
 A translation pair is two files with the **same filename** in the two folders.
@@ -89,12 +93,12 @@ Frontmatter:
 
 ```yaml
 ---
-title: Why this site is written twice
-date: 2025-02-01
-tags: ['Language', 'Writing']
+title: Ten tips for learning Chinese by yourself
+date: 2026-08-05
+tags: ['Language', 'Mandarin']
 cover:
-  src: why-bilingual/cover.jpg # path inside src/assets/blog/
-  alt: A dark field split down the middle.
+  src: ten-tips-for-learning-chinese/cover.jpg # path inside src/assets/blog/
+  alt: The characters 聽, 說, 讀 and 寫 in jade across a dark field.
 ---
 ```
 
@@ -106,22 +110,56 @@ post's first rendered paragraph, and the reading time from word count for
 English and character count for Chinese, since the two are not measured in the
 same unit.
 
-Images live in `src/assets/blog/<post-slug>/` and are referenced from the body
-by a relative path (`../../../assets/blog/why-bilingual/content-tree.png`), so
-Astro optimises them. Prose styling — headings, quotes, code blocks, figures,
-galleries, embeds — is [`src/styles/blog.css`](src/styles/blog.css), imported
-by `BlogPost.astro` rather than globally, so the home page never carries it.
-Code blocks are highlighted by Astro's built-in Shiki; the language label in
-the corner is drawn from the `data-language` attribute Shiki writes.
+Images live under `src/assets/` — covers under `src/assets/blog/<post-slug>/`
+— and are referenced from the body by a relative path
+(`../../../assets/certs/tocfl-score-report-2025.jpg`), so Astro optimises
+them. Prose styling — headings, quotes, code blocks, figures, galleries,
+embeds — is [`src/styles/blog.css`](src/styles/blog.css), imported by
+`BlogPost.astro` rather than globally, so the home page never carries it. Code
+blocks are highlighted by Astro's built-in Shiki; the language label in the
+corner is drawn from the `data-language` attribute Shiki writes.
 
-Two posts also appear on the home page, in `LatestPosts.astro`, as a `#blog`
-section between Speaking and Credentials — with its own tracked mark in the
-section rail, like every other section. It sits on the raised ground so it
-doesn't merge into Speaking above it, which is why Credentials below it is on
-paper: the page alternates all the way down. The route out to the full blog is
-the "All posts" link inside the section. On a post the rail becomes a table of
-contents built from the post's `h2`/`h3` headings, headed by an untracked mark
-back to the index.
+Two body features run through the markdown pipeline, which is Astro's default
+processor extended with `@astrojs/markdown-satteri` in
+[`astro.config.mjs`](astro.config.mjs):
+
+- **`[TOC]`** — a paragraph whose only content is `[TOC]` becomes, where it
+  stands, a box of links to the post's `h2`/`h3` headings, built by the hast
+  plugins in [`src/lib/markdown-toc.ts`](src/lib/markdown-toc.ts). The heading
+  ids are computed with the same rules Astro's own heading-ids pass uses, so
+  every link lands on the id the heading actually gets.
+- **Mermaid diagrams** — a <code>```mermaid</code> fence survives the build as
+  a code block and is rendered to a site-themed SVG on the client. Mermaid
+  itself is imported dynamically in `BlogPost.astro`, so only posts that
+  contain a diagram pay for the library.
+
+The two most recent posts also appear on the home page, in
+`LatestPosts.astro`, as a `#blog` section between Speaking and Credentials —
+with its own tracked mark in the section rail, like every other section. It
+sits on the raised ground so it doesn't merge into Speaking above it, which is
+why Credentials below it is on paper: the page alternates all the way down.
+The route out to the full blog is the "All posts" link inside the section. On
+a post the rail becomes a table of contents built from the post's `h2`/`h3`
+headings, headed by an untracked mark back to the index.
+
+The blog indexes themselves (`BlogIndex.astro`, rendered by both `/blog` and
+`/zh-tw/blog`) list every post in a locale, newest first, with a tag filter
+that only appears once there are at least two tags to choose between. Every
+post stays in the HTML either way — the filter only hides rows.
+
+Each post also carries its own furniture, assembled in
+[`src/layouts/BlogPost.astro`](src/layouts/BlogPost.astro):
+
+- **Read aloud** — the browser's own speech synthesis reads the article in the
+  page's language, skipping tables, code and diagrams (`ReadAloud.astro`). No
+  voice files, no third-party call.
+- **Share panel** — LinkedIn, X and Facebook share URLs plus a copy-link
+  button, all labelled (`ShareButtons.astro`).
+- **Comments** — a hosted [Cusdis](https://cusdis.com) widget. The thread id
+  is `<locale>:<slug>`, a stable route key, so renaming a post or moving
+  domains cannot split the conversation into a new thread. Its interface
+  strings live in `blog.commentsLocale` in the locale files.
+- **View counts** — see the analytics bullet under *SEO and analytics*.
 
 ## Adding or editing a language
 
@@ -156,15 +194,24 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
 - **Structured data** — a `ProfilePage` wrapping a `Person`, including
   `knowsLanguage`, `alumniOf`, `hasOccupation` and `hasCredential` (the three
   TOCFL results plus both certifications), so the Mandarin credentials are
-  machine-readable on both locales. Posts replace it with a `BlogPosting`
-  graph. Validate at
+  machine-readable on both locales. Posts replace it with a graph of their
+  own — the `BlogPosting`, the `Blog` it belongs to and the `Person` — and
+  each blog index declares its `Blog` the same way (`blogIndexSchema` in
+  [`src/lib/blog.ts`](src/lib/blog.ts)), so the index never falls back to the
+  home page's ProfilePage. Validate at
   [search.google.com/test/rich-results](https://search.google.com/test/rich-results).
-- **`robots.txt`** allows everything and points at the sitemap.
-  `sitemap.xml` is generated at build time by
-  [`src/pages/sitemap.xml.ts`](src/pages/sitemap.xml.ts) so `lastmod` tracks the
-  deploy instead of going stale, and lists both locales' home pages, blog
-  indexes and posts with the same hreflang alternates as the pages
-  themselves.
+- **`robots.txt`** allows everything and points at the sitemap. Both it and
+  `sitemap.xml` are generated at build time — by
+  [`src/pages/robots.txt.ts`](src/pages/robots.txt.ts) and
+  [`src/pages/sitemap.xml.ts`](src/pages/sitemap.xml.ts) — so the sitemap line
+  always names the deployed origin and `lastmod` tracks the deploy instead of
+  going stale. The sitemap lists both locales' home pages, blog indexes and
+  posts with the same hreflang alternates as the pages themselves.
+- **`llms.txt`** — generated at build time by
+  [`src/pages/llms.txt.ts`](src/pages/llms.txt.ts), following the format
+  proposed at llmstxt.org: an H1 site name, a blockquote summary, then one
+  section per locale listing the blog index and every post with its excerpt.
+  A new post lands here the same build it lands in the sitemap.
 - **Google Analytics 4** — property `G-YH3506Y1XQ`, carried over from the old
   site, set as `person.gaMeasurementId`. It is wrapped in
   `import.meta.env.PROD`, so `npm run dev` never sends hits to the property.
@@ -174,9 +221,10 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
   Chinese routes that share a slug, and embeds the result in each article. A
   count is shown only after it reaches 10 views. Expanding the card also shows
   the last 24 completed hourly buckets, the last 30 calendar days (including
-  the current partial day), and the top five countries across all time. The
-  source fallback is empty, so
-  local builds work without Analytics access.
+  the current partial day), the top ten countries across all time, and when
+  the report was generated — localised, in the GA property's own reporting
+  timezone. The compiled report lives at `src/data/page-views.json`; the
+  fallback is empty, so local builds work without Analytics access.
 
   To enable the sync, create a Google Cloud service account, enable the Google
   Analytics Data API for its project, then give that account **Viewer** access
@@ -192,8 +240,9 @@ driven by `src/data/content.en.ts` / `content.zh-TW.ts`:
 - **Old URLs** — `/en.html` is a `noindex` meta-refresh stub that
   canonicalises to `/`; `/zh.html` canonicalises to the new `/zh-tw` page. The
   old blog indexes at `/en/blog` and `/zh/blog` now point at `/blog` and
-  `/zh-tw/blog`; the portfolio indexes still point at `/`. This keeps existing
-  inbound links and search equity landing on the rebuild.
+  `/zh-tw/blog`; the portfolio indexes point at the home page's `#work`
+  section. This keeps existing inbound links and search equity landing on the
+  rebuild.
 
 Note there is no cookie consent banner. The previous site ran GA the same way;
 if you want one, that needs adding before the GA script fires.
@@ -241,13 +290,12 @@ Two notes while the site is on the project URL:
 
 `public/CNAME` already contains the domain, so it ships with every build.
 
-`public/CNAME` already contains the domain, so it ships with every build.
-
 The previous site deployed over FTP to Bluehost.
 
 ## Redirects from the old URLs
 
 Old URLs that were indexed (`/en.html`, `/zh.html`, the portfolio and blog
 indexes) have meta-refresh stubs in `public/` so inbound links land on the
-rebuild rather than a 404. The two blog stubs point at the new blog; the rest
-point at the home page.
+rebuild rather than a 404. The two blog stubs point at the new blog, the
+portfolio stubs at the home page's `#work` section, and the home-page stubs at
+the home page itself.
