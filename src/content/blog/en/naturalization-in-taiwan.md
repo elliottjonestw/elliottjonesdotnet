@@ -26,49 +26,49 @@ The general naturalization requirements are established in Article 3 of the Nati
 
 * Has domicile in Taiwan
 * Has had at least 183 days of legal residence in Taiwan in each year for at least five consecutive years
-* Has legal capacity under both ROC law and the law of their country of nationality
+* Has legal capacity under ROC law and, where applicable, the law of their country of nationality
 * Has no bad conduct and no criminal-case record appearing on the police criminal record certificate
 * Has sufficient property or professional skills to be self-supporting or otherwise has a secure livelihood
 * Has basic language ability and basic knowledge of the rights and obligations of ROC nationals
 
 ### Exceptions
-The Nationality Act provides alternative naturalization routes for applicants with specified family ties to the ROC, particular birth or residence connections, high-level professional qualifications, special contributions, and accompanying minor children. Unless a provision expressly removes a requirement, applicants under Articles 4 and 5 remain subject to the applicable conditions in Article 3.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+The Nationality Act provides alternative naturalization routes for applicants with specified family ties to the ROC, particular birth or residence connections, high-level professional qualifications, special contributions, and accompanying minor children. Unless a provision expressly removes a requirement, applicants under Articles 4 and 5 remain subject to the applicable conditions in Article 3.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
 #### Spouses and specified family connections (Article 4(1))
-A foreign national or stateless person who has domicile in Taiwan and has had legal residence in Taiwan for at least 183 days in each year for three consecutive years may apply for naturalization under Article 4(1). Except where stated otherwise, the applicant must still meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+A foreign national or stateless person who has domicile in Taiwan and has had legal residence in Taiwan for at least 183 days in each year for three consecutive years may apply for naturalization under Article 4(1). Except where stated otherwise, the applicant must still meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
-A person married to an ROC national is exempt from the property or self-support requirement, but must meet the other applicable Article 3 requirements.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+A person married to an ROC national is exempt from the property or self-support requirement, but must meet the other applicable Article 3 requirements.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
 The same three-year residence route is also available to a person who:
 
 * Divorced an ROC national because of domestic violence and has not remarried;
 * Is the unremarried surviving spouse of an ROC national and remains in contact with the deceased spouse's family members, unless the marriage had lasted at least two years before the spouse's death;
-* Supports, exercises rights and obligations on behalf of, and personally meets and interacts with their ROC-national child who is legally incompetent or has limited legal competence;
+* Has factual support for, exercises or bears the rights and obligations toward, or has contact with their ROC-national child who lacks or has limited legal capacity;
 * Has a parent who is or was an ROC national;
 * Was adopted by an ROC national;
 * Was born in Taiwan; or
-* Is the guardian or assistant of an ROC national.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
+* Is the guardian or assistant of an ROC national.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup>
 
 #### Unmarried minors (Article 4(2))
-An unmarried minor who has domicile in Taiwan and has legally resided there for fewer than three years may apply for naturalization if a parent or adoptive parent is an ROC national, or if the minor is under the guardianship of a social-welfare authority or institution. Such applicants need not meet the ordinary requirements concerning legal capacity, financial self-sufficiency, or language and civic-knowledge proficiency; the statutory conduct requirement is not removed.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
+An unmarried minor who has domicile in Taiwan and has legally resided there for fewer than three years may apply for naturalization if a parent or adoptive parent is an ROC national, or if the minor is under the guardianship of a social-welfare authority or institution. Such applicants need not meet the ordinary requirements concerning legal capacity, financial self-sufficiency, or language and civic-knowledge proficiency; the statutory conduct requirement is not removed.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup>
 
 #### Birth and long-residence routes (Article 5(1)(1)–(2))
-Article 5 also permits naturalization, without the ordinary five-year/183-days-per-year requirement, for an applicant who has domicile in Taiwan, was born in Taiwan and whose father or mother was also born in Taiwan. The applicant must nevertheless meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+Article 5 also permits naturalization, without the ordinary five-year/183-days-per-year requirement, for an applicant who has domicile in Taiwan, was born in Taiwan and whose father or mother was also born in Taiwan. The applicant must nevertheless meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
-An applicant who has domicile in Taiwan and has legally resided there for at least ten consecutive years may likewise apply under Article 5. This route has no annual 183-day residence threshold, but the other Article 3 requirements continue to apply.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
+An applicant who has domicile in Taiwan and has legally resided there for at least ten consecutive years may likewise apply under Article 5. This route has no annual 183-day residence threshold, but the other Article 3 requirements continue to apply.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup>
 
 #### High-level professionals (Article 5(1)(3))
-A high-level professional recommended by the competent central authority, considered capable of benefiting the interests of the ROC, and approved through the statutory review process may apply for naturalization after either at least 183 days of legal residence in each year for two consecutive years or at least five consecutive years of legal residence. The applicant must still meet the Article 3 requirements other than its ordinary five-year residence requirement.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-13" aria-label="Reference 13">[13]</a></sup>
+A high-level professional recommended by the competent central authority, considered capable of benefiting the interests of the ROC, and approved through the statutory review process may apply for naturalization after either at least 183 days of legal residence in each year for two consecutive years or at least five consecutive years of legal residence. The applicant must still meet the Article 3 requirements other than its ordinary five-year residence requirement.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-13" aria-label="Reference 13">[13]</a></sup>
 
-High-level professionals naturalized under this provision are also exempt from the usual requirement to submit proof of loss of their original nationality.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+High-level professionals naturalized under this provision are also exempt from the usual requirement to submit proof of loss of their original nationality.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
 #### Special contributions to the ROC (Article 6)
-A foreign national or stateless person who has made special contributions to the ROC may apply for naturalization without meeting the requirements in Article 3. Permission is granted by the Ministry of the Interior following approval by the Executive Yuan, and successful applicants are exempt from the nationality-permit certificate fee.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+A foreign national or stateless person who has made special contributions to the ROC may apply for naturalization without meeting the requirements in Article 3. Permission is granted by the Ministry of the Interior following approval by the Executive Yuan, and successful applicants are exempt from the nationality-permit certificate fee.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
-Persons naturalized under Article 6 are exempt from the requirement to submit proof of loss of their original nationality.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+Persons naturalized under Article 6 are exempt from the requirement to submit proof of loss of their original nationality.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
 #### Accompanying minor children (Article 7)
-An unmarried child under 18 of a person applying for naturalization may apply for naturalization concurrently with that parent. The Enforcement Rules exempt such accompanying minors from submitting evidence of financial self-sufficiency or of language and civic-knowledge proficiency.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
+An unmarried child under 18 of a person applying for naturalization may apply for naturalization concurrently with that parent. The Enforcement Rules exempt such accompanying minors from submitting evidence of financial self-sufficiency or of language and civic-knowledge proficiency.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup>
 
 #### Language and civic-knowledge assessment
 The regulations provide less demanding ways to demonstrate the language and civic-knowledge requirement for applicants under Article 4(1) and Article 5. Applicants may meet the requirement through study at a domestic school, approved government educational programmes, or the naturalization test. The required programme hours and test pass marks are lower for Article 4 and Article 5 applicants than for ordinary Article 3 applicants. For applicants aged 65 or over, the course threshold is 72 hours and the naturalization-test pass mark is 50 points.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup>
@@ -101,6 +101,8 @@ For an ordinary naturalized national, the NIA may issue a Taiwan Area Resident C
 
 ![A Taiwan Area Resident Certificate (TARC).](../../../assets/blog/naturalization-in-taiwan/tarc.png)
 
+*A Taiwan Area Resident Certificate (TARC), issued to an ROC national without household registration who has been approved to reside in Taiwan.<sup><a href="#ref-17" aria-label="Reference 17">[17]</a></sup>*
+
 Residence as an NWOHR is legally distinct from settlement (<span lang="zh-Hant">定居</span>), the immigration status that precedes establishment of household registration.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup> An ordinary naturalized national residing in Taiwan under Article 9, paragraph 1, subparagraph 3 of the Immigration Act may generally apply for settlement after meeting one of the following residence periods:<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
 
 * Resided in Taiwan continuously for one year and been present for at least 335 days during that year
@@ -109,28 +111,28 @@ Residence as an NWOHR is legally distinct from settlement (<span lang="zh-Hant">
 
 The person must continue to satisfy the basis on which residence was granted when applying for settlement. Persons permitted to reside on the basis of having made special contributions to Taiwan or being high-level professionals are exempt from the minimum period of residence otherwise required before applying for settlement.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
 
-Applications for settlement are submitted to the NIA. Once an application has been approved, the NIA issues a Taiwan Area Settlement Certificate (<span lang="zh-Hant">臺灣地區定居證</span>),<sup><a href="#ref-18" aria-label="Reference 18">[18]</a></sup> not to be confused with an Alien Permanent Residence Certificate (APRC). A person granted settlement is required to complete initial household registration at the HHRO for their intended place of registration within 30 days; the NIA may terminate the settlement permission if the registration is not completed within that period. For persons of the applicable age, initial household registration also permits issuance of a National Identification Card.<sup><a href="#ref-19" aria-label="Reference 19">[19]</a></sup>
+Applications for settlement are submitted to the NIA. Once an application has been approved, the NIA issues a Taiwan Area Settlement Certificate (<span lang="zh-Hant">臺灣地區定居證</span>),<sup><a href="#ref-18" aria-label="Reference 18">[18]</a></sup> which is distinct from an Alien Permanent Residence Certificate (APRC).<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup> A person granted settlement is required to complete initial household registration at the HHRO for their intended place of registration within 30 days; the NIA may terminate the settlement permission if the registration is not completed within that period. A person aged 14 or over with household registration must apply for a National Identification Card.<sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup>
 
 The overall procedure for an ordinary applicant can therefore involve three distinct changes of legal status: from a foreign national to an ROC national through naturalization; from a newly naturalized NWOHR to a resident NWOHR under the Immigration Act; and, following permission for settlement and initial household registration, to an ROC national with household registration.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
 
 ### Revocation of naturalization
-In addition to the revocation required when an applicant fails to provide evidence of loss of their previous nationality under Article 9, Article 19 of the Nationality Act permits the Ministry of the Interior (MOI) to revoke a grant of naturalization if it discovers that the grant did not conform to the Act.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> MOI guidance identifies, among the conditions that may be relevant to such a finding, legal residence, legal capacity, conduct and criminal-record requirements, financial self-sufficiency, and compliance with the requirement concerning loss of previous nationality.<sup><a href="#ref-22" aria-label="Reference 22">[22]</a></sup>
+In addition to the revocation required when an applicant fails to provide evidence of loss of their previous nationality under Article 9, Article 19 of the Nationality Act permits the Ministry of the Interior (MOI) to revoke a grant of naturalization if it discovers that the grant did not conform to the Act.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> Whether a grant conformed to the Act depends on the requirements applicable to the applicant's route to naturalization, including the eligibility and loss-of-nationality requirements in Articles 3 to 9.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
-Except for revocation under Article 9, the MOI may exercise this power only within two years after learning of the non-compliance, and may not revoke naturalization more than five years after it took effect.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> The time limits do not apply where a final court judgment finds that the person obtained ROC nationality through a collusive sham marriage or adoption.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> The MOI has stated that this exception requires a court judgment and is not triggered solely by a report or allegation of a sham marriage.<sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
+Except for revocation under Article 9, the MOI may exercise this power only within two years after learning of the non-compliance, and may not revoke naturalization more than five years after it took effect.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> The time limits do not apply where a final court judgment finds that the person obtained ROC nationality through a collusive sham marriage or adoption.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> The MOI has stated that this exception requires a court judgment and is not triggered solely by a report or allegation of a sham marriage.<sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
 
-Before revoking naturalization under Article 19, the MOI must convene a review panel and give the person concerned an opportunity to state their views. This requirement does not apply where the person is found already to possess ROC nationality under Article 2 of the Act, or where a final court judgment has found that naturalization was obtained through a collusive sham marriage or adoption.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> The review panel has 11 to 13 members, including representatives of relevant authorities, impartial members of the public, and scholars or experts. Its directions allow the person concerned to attend and submit written views; where necessary, the panel may invite a representative, interpreter or witness to attend.<sup><a href="#ref-24" aria-label="Reference 24">[24]</a></sup>
+Before revoking naturalization under Article 19, the MOI must convene a review panel and give the person concerned an opportunity to state their views. This requirement does not apply where the person is found already to possess ROC nationality under Article 2 of the Act, or where a final court judgment has found that naturalization was obtained through a collusive sham marriage or adoption.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> The review panel has 11 to 13 members, including representatives of relevant authorities, impartial members of the public, and scholars or experts. Its directions allow the person concerned to attend and submit written views; where necessary, the panel may invite a representative, interpreter or witness to attend.<sup><a href="#ref-24" aria-label="Reference 24">[24]</a></sup>
 
 In 2018, the MOI stated that a person whose naturalization permission had been revoked could remain in Taiwan before recovering their original nationality, and could apply to naturalize again if they later met the statutory requirements.<sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
 
 ### Reported cases
-In 2013, the Ministry of the Interior revoked the naturalization permission of a Vietnamese woman after finding that, before her 2009 naturalization, she had engaged in an extramarital relationship and had a child with another man. The ministry relied on the then-applicable requirement that applicants be of "upright conduct" (<span lang="zh-Hant">品行端正</span>). In December 2013, the Taipei High Administrative Court dismissed her challenge to the revocation.<sup><a href="#ref-25" aria-label="Reference 25">[25]</a></sup><sup><a href="#ref-26" aria-label="Reference 26">[26]</a></sup>
+In 2013, the Ministry of the Interior revoked the naturalization permission of a Vietnamese woman after finding improper conduct involving an extramarital relationship and two daughters. The woman had been naturalized in September 2009. The ministry relied on the then-applicable requirement that applicants be of "upright conduct" (<span lang="zh-Hant">品行端正</span>). In December 2013, the Taipei High Administrative Court dismissed her challenge to the revocation.<sup><a href="#ref-25" aria-label="Reference 25">[25]</a></sup><sup><a href="#ref-26" aria-label="Reference 26">[26]</a></sup>
 
 ## Legal effects
 ### Electoral rights
 Naturalization alone does not immediately make a newly naturalized NWOHR eligible to vote. Under the Public Officials Election and Recall Act, electoral residence is determined by household-registration data, and electoral rolls are compiled from household-registration records. A naturalized national must therefore establish household registration and satisfy the other statutory voting requirements before becoming eligible to vote.<sup><a href="#ref-27" aria-label="Reference 27">[27]</a></sup>
 
 ### Eligibility for public office
-Naturalized nationals are subject to restrictions on holding certain public offices. Article 10 of the Nationality Act provides that a naturalized foreign national or stateless person may not hold a specified range of senior or elected offices, including president or vice president, legislator, premier or vice premier, senior positions in the five Yuans, deputy minister, ambassador, general officer in the armed forces and elected local-government office.<sup><a href="#ref-28" aria-label="Reference 28">[28]</a></sup> These restrictions generally cease ten years after the date of naturalization, unless another law provides otherwise.<sup><a href="#ref-29" aria-label="Reference 29">[29]</a></sup>
+Naturalized nationals are subject to restrictions on holding certain public offices. Article 10 of the Nationality Act provides that a naturalized foreign national or stateless person may not hold a specified range of senior or elected offices, including president or vice president, legislator, premier or vice premier, specified leadership and membership posts in the five Yuans, a political deputy minister of a ministry, ambassador, general officer in the armed forces and elected local-government office.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> These restrictions generally cease ten years after the date of naturalization, unless another law provides otherwise.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
 The ten-year period is also reflected in electoral legislation. The Public Officials Election and Recall Act provides that a person whose ROC nationality was acquired through naturalization at least ten years before an election may register as a candidate for public office, provided that the person otherwise satisfies the applicable candidacy requirements.<sup><a href="#ref-30" aria-label="Reference 30">[30]</a></sup> A separate and stricter rule applies to the presidency and vice presidency. Article 20 of the Presidential and Vice Presidential Election and Recall Act provides that persons whose ROC nationality was acquired through naturalization may not register as candidates for president or vice president; unlike the general restriction in Article 10 of the Nationality Act, this provision contains no ten-year exception.<sup><a href="#ref-31" aria-label="Reference 31">[31]</a></sup>
 
@@ -139,7 +141,7 @@ Taiwan's naturalization system has been the subject of academic debate concernin
 
 In a 2011 overview of Taiwan's immigration policy, Hong-zen Wang identified patriarchal *jus sanguinis*, population quality and national security as its three central ideologies. Wang argued that these premises produced differentiated treatment of marriage migrants, skilled workers and lower-skilled migrant workers.<sup><a href="#ref-32" aria-label="Reference 32">[32]</a></sup>
 
-A substantial part of the literature has focused on marriage migrants. Hong-zen Wang and Danièle Bélanger argued in 2008 that government policies, academic discourse and the activities of non-governmental organizations could reinforce portrayals of immigrant spouses as a population requiring "Taiwanization". They characterized the resulting position of immigrant spouses as a system of "differential citizenship", involving differences in both legal and social citizenship.<sup><a href="#ref-33" aria-label="Reference 33">[33]</a></sup> In a socio-legal study, Shu-chin Grace Kuo examined changes to the legal regulation of foreign spouses and analyzed those regulations in relation to citizenship, gender, patriarchy, social stability and national security. Her analysis considered naturalization as part of the broader legal regulation of marriage migrants and family relationships.<sup><a href="#ref-9" aria-label="Reference 9">[9]</a></sup>
+A substantial part of the literature has focused on marriage migrants. Hong-zen Wang and Danièle Bélanger argued in 2008 that government policies, academic discourse and the activities of non-governmental organizations could reinforce portrayals of immigrant spouses as a population requiring "Taiwanization". They characterized the resulting position of immigrant spouses as a system of "differential citizenship", involving differences in both legal and social citizenship.<sup><a href="#ref-33" aria-label="Reference 33">[33]</a></sup> In a socio-legal study, Shu-chin Grace Kuo examined the regulations governing foreign spouses in Taiwan.<sup><a href="#ref-9" aria-label="Reference 9">[9]</a></sup>
 
 Other scholarship has examined immigrant advocacy and competing conceptions of citizenship. Hsiao-Chuan Hsia examined the immigrant movement in Taiwan through the concepts of multicultural and multiple citizenship, arguing for a more inclusive conception of citizenship for immigrants.<sup><a href="#ref-34" aria-label="Reference 34">[34]</a></sup> Choo Chin Low subsequently examined campaigns to liberalize dual citizenship in Taiwan and the People's Republic of China. Low noted that immigrant advocates in Taiwan had sought to extend access to dual citizenship to persons who were not ROC nationals by birth, while characterizing the Taiwanese government as reluctant to liberalize the existing citizenship regime.<sup><a href="#ref-10" aria-label="Reference 10">[10]</a></sup>
 
@@ -154,10 +156,10 @@ Separate scholarship has addressed the citizenship position of spouses from main
 Debate over access to dual nationality has also continued outside academic literature. In 2024, an online petition proposed allowing foreign nationals who had held permanent residence in Taiwan for more than five years to naturalize without relinquishing their previous nationality. The petition passed the government's 5,000-signature threshold in October.<sup><a href="#ref-40" aria-label="Reference 40">[40]</a></sup> The MOI rejected the proposal the following month after it had received 5,746 signatures, citing the principle of a "single-nationality system" and concerns relating to limited resources, public finances, social welfare, national loyalty and national security. The ministry also pointed to the existing exemptions from the renunciation requirement for qualifying high-level professionals and persons who had made special contributions to the ROC.<sup><a href="#ref-41" aria-label="Reference 41">[41]</a></sup>
 
 ## Statistics
-The Ministry of the Interior (MOI) records naturalizations by the calendar year in which they are approved.<sup><a href="#ref-42" aria-label="Reference 42">[42]</a></sup> The number of approved naturalizations increased from 3,252 in 2016 to 5,366 in 2017, before declining overall to 1,875 in 2025. Women accounted for more than four-fifths of approvals in every year shown.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>
+The Ministry of the Interior (MOI) records naturalizations by calendar year.<sup><a href="#ref-42" aria-label="Reference 42">[42]</a></sup> The number of recorded naturalizations increased from 3,252 in 2016 to 5,366 in 2017, before declining overall to 1,875 in 2025. Women accounted for more than four-fifths of recorded naturalizations in every year shown.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>
 
 ### Annual total and sex
-**Naturalizations approved, 2016–2025<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>**
+**Recorded naturalizations, 2016–2025<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>**
 
 <table class="annual-naturalization-table">
   <colgroup>
@@ -195,8 +197,8 @@ The Ministry of the Interior (MOI) records naturalizations by the calendar year 
 Percentages are calculated from the MOI's sex-disaggregated totals. The category for spouses of ROC nationals excludes separately recorded spouse- and family-related categories, including eligible surviving spouses and persons divorced because of domestic violence.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>
 
 ### Reason for naturalization
-In 2025, naturalization as the spouse of an ROC national was the largest single category, accounting for 1,487 of the 1,875 approvals. The MOI separately recorded 47 high-level professionals and five persons naturalized for special contributions to the ROC.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>
-**Naturalizations approved in 2025, by recorded reason and sex<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>**
+In 2025, naturalization as the spouse of an ROC national was the largest single category, accounting for 1,487 of the 1,875 recorded naturalizations. The MOI separately recorded 47 high-level professionals and five persons naturalized for special contributions to the ROC.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>
+**Recorded naturalizations in 2025, by reason and sex<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>**
 
 | Recorded reason | Total | Men | Women |
 | --- | --- | --- | --- |
@@ -212,11 +214,11 @@ In 2025, naturalization as the spouse of an ROC national was the largest single 
 | Spouse of an ROC national divorced because of domestic violence | 2 | 0 | 2 |
 | Adopted by an ROC national | 1 | 1 | 0 |
 | Born in Taiwan | 1 | 1 | 0 |
-Rows with no approvals in 2025 are omitted.
+Rows with no recorded naturalizations in 2025 are omitted.
 
 ### Original nationality
-Vietnamese nationals were the largest group of persons naturalized in 2025, with 1,100 approvals, followed by Philippine nationals (253) and Indonesian nationals (170).<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup>
-**Naturalizations approved in 2025, by original nationality and sex<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup>**
+Vietnamese nationals were the largest group of persons naturalized in 2025, with 1,100 recorded naturalizations, followed by Philippine nationals (253) and Indonesian nationals (170).<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup>
+**Recorded naturalizations in 2025, by original nationality and sex<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup>**
 
 | Original nationality | Total | Men | Women |
 | --- | --- | --- | --- |
@@ -234,10 +236,10 @@ Vietnamese nationals were the largest group of persons naturalized in 2025, with
 | Cambodia | 4 | 0 | 4 |
 | Stateless or nationality unspecified | 2 | 2 | 0 |
 | Singapore | 1 | 1 | 0 |
-Categories with no approvals in 2025 are omitted.
+Categories with no recorded naturalizations in 2025 are omitted.
 
 ### Age
-**Naturalizations approved in 2025, by age group and sex<sup><a href="#ref-45" aria-label="Reference 45">[45]</a></sup>**
+**Recorded naturalizations in 2025, by age group and sex<sup><a href="#ref-45" aria-label="Reference 45">[45]</a></sup>**
 
 | Age group | Total | Men | Women |
 | --- | --- | --- | --- |
@@ -257,7 +259,7 @@ Categories with no approvals in 2025 are omitted.
 | 65 and over | 38 | 19 | 19 |
 
 ### County or city
-**Naturalizations approved in 2025, by county or city and sex<sup><a href="#ref-46" aria-label="Reference 46">[46]</a></sup>**
+**Recorded naturalizations in 2025, by county or city and sex<sup><a href="#ref-46" aria-label="Reference 46">[46]</a></sup>**
 
 | County or city | Total | Men | Women |
 | --- | --- | --- | --- |
@@ -318,25 +320,17 @@ Further amendments were promulgated in 2021 and 2024.<sup><a href="#ref-52" aria
 8. <span id="ref-8">Choo Chin Low. Taiwanese and German Citizenship Reforms: Integration of Immigrants without Challenging the Status Quo, 1990–2000. *European Journal of East Asian Studies*. vol. 12, no. 2, pp. 269–294. 2013. [doi:10.1163/15700615-13120206](https://doi.org/10.1163/15700615-13120206).</span>
 9. <span id="ref-9">Shu-chin Grace Kuo. [A Socio-Legal Analysis of the Regulations on Foreign Spouses in Taiwan](https://www.lawbank.com.tw/treatise/pl_article.aspx?AID=P000227799). *National Taiwan University Law Review*. vol. 6, no. 2, pp. 495–520. 2011. accessed 2026-08-15.</span>
 10. <span id="ref-10">Choo Chin Low. [Debates over liberalising dual citizenship: Prospects and limits in Taiwan and the People's Republic of China](https://ijaps.usm.my/?page_id=2516). *International Journal of Asia Pacific Studies*. vol. 11, no. 1, pp. 1–33. 2015. accessed 2026-08-15.</span>
-11. <span id="ref-11">[國籍法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001) (Nationality Act). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-16.</span>
-12. <span id="ref-12">[國籍法施行細則](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022) (Enforcement Rules of the Nationality Act). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-16.</span>
 13. <span id="ref-13">[歸化國籍之高級專業人才認定標準](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030033) (Standards for Defining High-Level Professionals for Naturalization). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-16.</span>
 14. <span id="ref-14">[歸化取得我國國籍者基本語言能力及國民權利義務基本常識認定標準](https://www.ris.gov.tw/documents/data/2/1/c73f9d8b-9d37-4620-9c23-5282b8e07a1a.pdf) (Standards for Identification of Basic Language Abilities and General Knowledge of the Rights and Duties of Naturalized R.O.C. Citizens). *Department of Household Registration, Ministry of the Interior*. PDF. accessed 2026-08-18.</span>
 15. <span id="ref-15">[國籍變更申請書（歸化、喪失、回復國籍及中華民國國籍證明）](https://www.gov.tw/News_Content_2_371529). *我的E政府*. 2021-11-03. accessed 2026-08-15. [archived copy](http://web.archive.org/web/20260115214240/https://www.gov.tw/News_Content_2_371529).</span>
 16. <span id="ref-16">[Enforcement Rules of the Nationality Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030022). *law.moj.gov.tw*. accessed 2026-08-15.</span>
 17. <span id="ref-17">[移民署中文網-臺灣地區無戶籍國民申請在臺灣地區居留或延期居留及變更居留原因送件須知](https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%B1%85%E7%95%99/362069/). *www.immigration.gov.tw*. accessed 2026-08-15.</span>
 18. <span id="ref-18">[移民署中文網-臺灣地區無戶籍國民連續居留或居留滿一定期間申請在臺灣地區定居送件須知](https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%AE%9A%E5%B1%85/36413/). *www.immigration.gov.tw*. accessed 2026-08-15.</span>
-19. <span id="ref-19">[常見問答](https://www.moi.gov.tw/News_toggle3.aspx?PageSize=30&n=174&page=1&sms=9015). *內政部全球資訊網-中文網*. accessed 2026-08-18.</span>
-20. <span id="ref-20">[國籍法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001) (Nationality Act). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-17.</span>
-21. <span id="ref-21">[國籍法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001) (Nationality Act). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-17.</span>
-22. <span id="ref-22">[國籍變更申請案件提憑證件一覽表](https://www.ris.gov.tw/documents/data/en/2/Voluntary-naturalization.pdf) (List of documents for applications to change nationality). *Department of Household Registration, Ministry of the Interior*. PDF. accessed 2026-08-17.</span>
 23. <span id="ref-23">[國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例](https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647) (Revocation of naturalization for sham marriages or adoptions accords with international legislative practice). *Ministry of the Interior*. 2018-10-03. accessed 2026-08-17.</span>
 24. <span id="ref-24">[撤銷國籍變更案件審查會設置及審查作業要點](https://www.ris.gov.tw/documents/data/2/1/6247adb5-2caa-4422-9f57-92c81b09501f.pdf) (Establishment of and Review Directions for the Review Panel on Revoking Nationality Applications). *Department of Household Registration, Ministry of the Interior*. PDF. 2018-08-20. accessed 2026-08-18.</span>
 25. <span id="ref-25">[內政部認定「品性不端」 撤銷國籍](https://news.pts.org.tw/article/257045) (MOI finds “improper conduct” and revokes nationality). *Public Television Service News*. 2013-12-10. accessed 2026-08-17.</span>
 26. <span id="ref-26">[外遇生女遭撤銷國籍 越女敗訴](https://www.chinatimes.com/amp/realtimenews/20131223005274-260503) (Vietnamese woman loses case after nationality revocation over extramarital child). *Central News Agency, via China Times*. 2013-12-23. accessed 2026-08-17.</span>
 27. <span id="ref-27">[Public Officials Election and Recall Act](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020010). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-15.</span>
-28. <span id="ref-28">[Nationality Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001). *law.moj.gov.tw*. accessed 2026-08-15.</span>
-29. <span id="ref-29">[Nationality Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001). *law.moj.gov.tw*. accessed 2026-08-15.</span>
 30. <span id="ref-30">[Public Officials Election and Recall Act](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020010). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-15.</span>
 31. <span id="ref-31">[Presidential and Vice Presidential Election and Recall Act](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020053). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-15.</span>
 32. <span id="ref-32">Hong-zen Wang. Immigration Trends and Policy Changes in Taiwan. *Asian and Pacific Migration Journal*. vol. 20, no. 2, pp. 169–194. 2011. [doi:10.1177/011719681102000203](https://doi.org/10.1177/011719681102000203).</span>
