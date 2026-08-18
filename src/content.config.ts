@@ -23,6 +23,8 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
+    /** Optional editorial update date, shown in the post header when present. */
+    lastUpdated: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
     /**
      * Cover art, used for the per-post og:image and the head of the post.

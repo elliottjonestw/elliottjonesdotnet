@@ -20,6 +20,8 @@ import { locales } from '../i18n/locales';
 import { canonicalUrl, withBase } from '../lib/url';
 import {
   indexRoute,
+  formatDate,
+  isoDate,
   listPath,
   metaDescription,
   localeOf,
@@ -38,7 +40,8 @@ interface Props {
 const { entry, newer, older } = Astro.props;
 const { post, locale, slug, excerpt, minutes, dateLabel, dateISO, cover } =
   entry;
-const { title, tags } = post.data;
+const { title, tags, lastUpdated } = post.data;
+const lastUpdatedISO = lastUpdated ? isoDate(lastUpdated) : undefined;
 type PageViewDetails = {
   allTime: number;
   last24Hours: number;
@@ -197,6 +200,20 @@ const structuredData = {
               </span>
             </p>
 
+            {
+              lastUpdated && lastUpdatedISO && (
+                <p
+                  class="last-updated mono-label mt-5"
+                  data-reveal
+                  style="--reveal-delay:90ms"
+                >
+                  <span>{blog.lastUpdated}&nbsp;</span><time datetime={lastUpdatedISO}>
+                    {formatDate(lastUpdated, locale)}
+                  </time>
+                </p>
+              )
+            }
+
             <ReadAloud labels={blog} />
           </header>
 
@@ -354,6 +371,24 @@ const structuredData = {
     margin-block-start: clamp(2.5rem, 5vw, 3.75rem);
     border-radius: 10px;
     border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  }
+
+  .last-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid color-mix(in oklab, var(--color-jade) 32%, transparent);
+    border-left: 2px solid var(--color-jade);
+    border-radius: 6px;
+    background: color-mix(in oklab, var(--color-jade) 7%, var(--color-paper));
+    color: var(--color-slate);
+  }
+
+  .last-updated time {
+    color: var(--color-ink);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
   }
 
   .post-nav {

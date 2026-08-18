@@ -529,6 +529,7 @@ export const en: SiteContent = {
     allPosts: 'All posts',
     byAuthor: 'By ',
     minRead: 'min read',
+    lastUpdated: 'Last updated',
     viewCountHeading: 'Article views',
     viewCount: '{count} views',
     viewCountDetailsOpen: 'View details',

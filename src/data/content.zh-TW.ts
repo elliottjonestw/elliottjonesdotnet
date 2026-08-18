@@ -523,6 +523,7 @@ export const zhTW: SiteContent = {
     allPosts: '所有文章',
     byAuthor: '作者：',
     minRead: '分鐘閱讀',
+    lastUpdated: '最後更新',
     viewCountHeading: '文章瀏覽次數',
     viewCount: '瀏覽 {count} 次',
     viewCountDetailsOpen: '展開詳情',
