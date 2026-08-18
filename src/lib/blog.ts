@@ -123,11 +123,24 @@ function stripTags(html: string): string {
     .trim();
 }
 
+/** About three lines in the 62ch-wide excerpt column. */
+const excerptLimit = 180;
+
+function limitExcerpt(text: string): string {
+  if (text.length <= excerptLimit) return text;
+
+  const slice = text.slice(0, excerptLimit - 1);
+  const space = slice.lastIndexOf(' ');
+  const cut =
+    space > excerptLimit * 0.55 ? slice.slice(0, space) : slice;
+  return `${cut.replace(/[\s,;:.，、；：]+$/, '')}…`;
+}
+
 /**
- * The post's opening paragraph, used as the listing excerpt, the card blurb and
- * the meta description. Taken from the rendered HTML rather than a frontmatter
- * field, so there is only one copy of the sentence and it cannot fall out of
- * step with the post.
+ * A compact version of the post's opening paragraph, used as the listing
+ * excerpt, card blurb and source for the meta description. Taken from the
+ * rendered HTML rather than a frontmatter field, so it cannot fall out of step
+ * with the post.
  *
  * The markdown body is the fallback for the case where the loader has not
  * rendered the entry — the first block that is not a heading, a fence, an
@@ -143,7 +156,7 @@ export function getExcerpt(post: Post): string {
   const first = html?.match(
     /<p\b(?![^>]*class="post-toc-title")[^>]*>([\s\S]*?)<\/p>/i,
   );
-  if (first) return stripTags(first[1]);
+  if (first) return limitExcerpt(stripTags(first[1]));
 
   const body = (post.body ?? '').replace(/```[\s\S]*?```/g, '');
   const block = body
@@ -153,7 +166,7 @@ export function getExcerpt(post: Post): string {
       (part) =>
         part && !/^([#>\-*|!]|\d+\.)/.test(part) && !/^\[toc\]$/i.test(part),
     );
-  return block ? stripTags(block).replace(/[*_`]/g, '') : '';
+  return block ? limitExcerpt(stripTags(block).replace(/[*_`]/g, '')) : '';
 }
 
 /**
