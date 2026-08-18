@@ -26,18 +26,16 @@ import {
   postRoute,
   slugOf,
   type PostSummary,
-  type TocEntry,
 } from '../lib/blog';
 
 interface Props {
   entry: PostSummary;
-  toc: TocEntry[];
   /** The posts either side of this one, by date, within the same locale. */
   newer?: PostSummary;
   older?: PostSummary;
 }
 
-const { entry, toc, newer, older } = Astro.props;
+const { entry, newer, older } = Astro.props;
 const { post, locale, slug, excerpt, minutes, dateLabel, dateISO, cover } =
   entry;
 const { title, tags } = post.data;
@@ -155,7 +153,7 @@ const structuredData = {
 <Base
   title={`${title} — ${person.name}`}
   description={description}
-  toc={toc}
+  rail="none"
   ogType="article"
   ogImage={share ? new URL(share.src, site).href : undefined}
   ogImageAlt={cover?.alt ?? person.ogImageAlt}

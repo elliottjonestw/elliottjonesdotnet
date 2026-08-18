@@ -6,7 +6,6 @@ import BlogPost from '../../../layouts/BlogPost.astro';
 import {
   getPosts,
   neighbours,
-  toToc,
   type PostSummary,
 } from '../../../lib/blog';
 
@@ -24,10 +23,10 @@ interface Props {
 }
 
 const { entry, posts } = Astro.props;
-const { Content, headings } = await render(entry.post);
+const { Content } = await render(entry.post);
 const { newer, older } = neighbours(posts, entry.slug);
 ---
 
-<BlogPost entry={entry} toc={toToc(headings)} newer={newer} older={older}>
+<BlogPost entry={entry} newer={newer} older={older}>
   <Content />
 </BlogPost>

@@ -7,20 +7,14 @@ import bodyFont from '@fontsource-variable/literata/files/literata-latin-wght-no
 import { getContent } from '../data/content';
 import { locales, resolveLocale, type LocaleCode } from '../i18n/locales';
 import { absoluteUrl, canonicalUrl, withBase } from '../lib/url';
-import type { TocEntry } from '../lib/blog';
 import LanguageSwitch from '../components/LanguageSwitch.astro';
 import SectionRail from '../components/SectionRail.astro';
 
 interface Props {
   title?: string;
   description?: string;
-  /**
-   * Which column stands at the left. 'sections' is the home page's nine
-   * marks; passing `toc` makes it a post's contents instead; 'none' is for
-   * pages that are neither — the blog index, whose entries are already a list.
-   */
+  /** Which column stands at the left. */
   rail?: 'sections' | 'none';
-  toc?: TocEntry[];
   /** Defaults to 'profile'; a post passes 'article'. */
   ogType?: string;
   /** Absolute URL of a per-page share image, replacing the site-wide og.jpg. */
@@ -50,7 +44,6 @@ const {
   title = person.metaTitle,
   description = person.metaDescription,
   rail = 'sections',
-  toc,
   ogType = 'profile',
   ogImage: ogImageOverride,
   ogImageAlt = person.ogImageAlt,
@@ -340,7 +333,7 @@ gtag('config', '${person.gaMeasurementId}');`}
         Sits above the language switch and the rail, both of which it crosses. */}
     <div class="scroll-progress no-print" aria-hidden="true"></div>
     <LanguageSwitch paths={altPaths} hideOnPrint={ogType === 'article'} />
-    {toc ? <SectionRail toc={toc} /> : rail === 'sections' && <SectionRail />}
+    {rail === 'sections' && <SectionRail />}
     <slot />
 
     {/* Reopen the other locale at the place the reader left, rather than at the

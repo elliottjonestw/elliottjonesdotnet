@@ -552,6 +552,34 @@
   color: var(--color-slate);
 }
 
+/* The annual-naturalization table has one descriptive column alongside five
+   short numeric columns. Fixed, explicit proportions prevent the browser from
+   assigning the surplus width to “Year” and let the longer final heading fit. */
+.prose .annual-naturalization-table {
+  table-layout: fixed;
+}
+
+.prose .annual-naturalization-table .year {
+  width: 12%;
+}
+
+.prose .annual-naturalization-table .total,
+.prose .annual-naturalization-table .women {
+  width: 13%;
+}
+
+.prose .annual-naturalization-table .men {
+  width: 9%;
+}
+
+.prose .annual-naturalization-table .women-percent {
+  width: 12%;
+}
+
+.prose .annual-naturalization-table .spouse {
+  width: 41%;
+}
+
 :lang(zh-Hant) .prose th {
   letter-spacing: 0.02em;
   text-transform: none;
