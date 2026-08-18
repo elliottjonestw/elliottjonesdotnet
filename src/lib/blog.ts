@@ -117,6 +117,12 @@ const entities: Record<string, string> = {
 
 function stripTags(html: string): string {
   return html
+    // Citations are useful in the article but make an automatic description
+    // noisy. They are consistently written as a superscript link to #ref-N.
+    .replace(
+      /<sup\b[^>]*>\s*<a\b[^>]*href=["']#ref-[^"']+["'][^>]*>[\s\S]*?<\/a>\s*<\/sup>/gi,
+      '',
+    )
     .replace(/<[^>]*>/g, '')
     .replace(/&(#39|amp|lt|gt|quot|nbsp);/g, (_, name) => entities[name] ?? _)
     .replace(/\s+/g, ' ')
