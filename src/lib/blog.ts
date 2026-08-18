@@ -134,7 +134,10 @@ function stripTags(html: string): string {
  * image or a quote.
  */
 export function getExcerpt(post: Post): string {
-  const html = post.rendered?.html;
+  // Opening callouts, such as a legal disclaimer, are supporting context rather
+  // than the article's description. Remove the whole aside so neither its label
+  // nor its body becomes the first paragraph shown on the all-posts page.
+  const html = post.rendered?.html.replace(/<aside\b[\s\S]*?<\/aside>/gi, '');
   // The [TOC] marker renders its own <p> title inside the contents box; a
   // post that opens with [TOC] must not have "Contents" as its excerpt.
   const first = html?.match(
