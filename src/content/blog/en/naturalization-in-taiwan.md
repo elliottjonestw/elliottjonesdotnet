@@ -3,6 +3,9 @@ title: Naturalization in Taiwan
 date: 2026-08-18
 lastUpdated: 2026-08-18
 tags: ['Taiwan', 'Law', 'Immigration']
+cover:
+  src: naturalization-in-taiwan/cover.png
+  alt: "Application forms and people follow a dotted path towards the outline of Taiwan."
 ---
 
 <aside class="callout" aria-label="Context">

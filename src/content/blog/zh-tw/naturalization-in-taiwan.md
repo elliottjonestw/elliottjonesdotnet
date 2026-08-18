@@ -3,6 +3,9 @@ title: 台灣歸化制度
 date: 2026-08-18
 lastUpdated: 2026-08-18
 tags: ['台灣', '法律', '移民']
+cover:
+  src: naturalization-in-taiwan/cover.png
+  alt: "申請表與人們沿著虛線路徑前往台灣輪廓。"
 ---
 
 <aside class="callout" aria-label="說明">
