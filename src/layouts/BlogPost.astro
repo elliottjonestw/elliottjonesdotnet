@@ -11,6 +11,7 @@ import ReadAloud from '../components/ReadAloud.astro';
 import PageViewCounter from '../components/PageViewCounter.astro';
 import Comments from '../components/Comments.astro';
 import ShareButtons from '../components/ShareButtons.astro';
+import DataCharts from '../components/DataCharts.astro';
 import pageViews from '../data/page-views.json';
 /* Loaded here rather than from global.css: the home page is every visitor's
    first request and never renders a word of prose. */
@@ -41,6 +42,7 @@ const { entry, newer, older } = Astro.props;
 const { post, locale, slug, excerpt, minutes, dateLabel, dateISO, cover } =
   entry;
 const { title, tags, lastUpdated } = post.data;
+const hasDataCharts = /\bdata-chart\s*=/.test(post.body ?? '');
 const lastUpdatedISO = lastUpdated ? isoDate(lastUpdated) : undefined;
 type PageViewDetails = {
   allTime: number;
@@ -235,6 +237,8 @@ const structuredData = {
           <div class="prose mt-14">
             <slot />
           </div>
+
+          {hasDataCharts && <DataCharts />}
 
           <PageViewCounter
             count={pageView?.allTime ?? 0}

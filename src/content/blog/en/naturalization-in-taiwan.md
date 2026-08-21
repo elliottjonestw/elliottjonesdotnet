@@ -1,7 +1,7 @@
 ---
 title: Naturalization in Taiwan
 date: 2026-08-18
-lastUpdated: 2026-08-18
+lastUpdated: 2026-08-21
 tags: ['Taiwan', 'Law', 'Immigration']
 cover:
   src: naturalization-in-taiwan/cover.png
@@ -162,130 +162,83 @@ The Ministry of the Interior (MOI) records naturalizations by the calendar year 
 ### Annual total and sex
 **Naturalizations approved, 2016–2025<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>**
 
-<table class="annual-naturalization-table">
-  <colgroup>
-    <col class="year" />
-    <col class="total" />
-    <col class="men" />
-    <col class="women" />
-    <col class="women-percent" />
-    <col class="spouse" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th scope="col">Year</th>
-      <th scope="col">Total</th>
-      <th scope="col">Men</th>
-      <th scope="col">Women</th>
-      <th scope="col">Women (%)</th>
-      <th scope="col">Recorded as spouse of an ROC national</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>2016</td><td>3,252</td><td>202</td><td>3,050</td><td>93.8</td><td>2,951</td></tr>
-    <tr><td>2017</td><td>5,366</td><td>443</td><td>4,923</td><td>91.7</td><td>4,668</td></tr>
-    <tr><td>2018</td><td>3,552</td><td>329</td><td>3,223</td><td>90.7</td><td>3,024</td></tr>
-    <tr><td>2019</td><td>3,438</td><td>341</td><td>3,097</td><td>90.1</td><td>2,960</td></tr>
-    <tr><td>2020</td><td>3,818</td><td>348</td><td>3,470</td><td>90.9</td><td>3,404</td></tr>
-    <tr><td>2021</td><td>4,079</td><td>396</td><td>3,683</td><td>90.3</td><td>3,671</td></tr>
-    <tr><td>2022</td><td>3,589</td><td>420</td><td>3,169</td><td>88.3</td><td>3,109</td></tr>
-    <tr><td>2023</td><td>3,336</td><td>435</td><td>2,901</td><td>87.0</td><td>2,904</td></tr>
-    <tr><td>2024</td><td>2,575</td><td>411</td><td>2,164</td><td>84.0</td><td>2,077</td></tr>
-    <tr><td>2025</td><td>1,875</td><td>325</td><td>1,550</td><td>82.7</td><td>1,487</td></tr>
-  </tbody>
-</table>
+<div class="article-chart" data-chart="naturalization:annual" aria-busy="true">
+
+<p>Loading chart…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:annual">
+
+<summary>View underlying data</summary>
+
+</details>
 
 Percentages are calculated from the MOI's sex-disaggregated totals. The category for spouses of ROC nationals excludes separately recorded spouse- and family-related categories, including eligible surviving spouses and persons divorced because of domestic violence.
 
 ### Reason for naturalization
 In 2025, naturalization as the spouse of an ROC national was the largest single category, accounting for 1,487 of the 1,875 approvals. The MOI separately recorded 47 high-level professionals and five persons naturalized for special contributions to the ROC.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>
+
 **Naturalizations approved in 2025, by recorded reason and sex<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup>**
 
-| Recorded reason | Total | Men | Women |
-| --- | --- | --- | --- |
-| Spouse of an ROC national | 1,487 | 149 | 1,338 |
-| Minor whose parent or adoptive parent is an ROC national | 111 | 55 | 56 |
-| Voluntary naturalization | 93 | 51 | 42 |
-| Person supporting or exercising rights and obligations for an ROC-national minor child | 49 | 2 | 47 |
-| High-level professional | 47 | 37 | 10 |
-| Ten years of legal residence | 35 | 18 | 17 |
-| Surviving spouse of an ROC national | 27 | 1 | 26 |
-| Accompanying child | 17 | 6 | 11 |
-| Special contributions to the ROC | 5 | 4 | 1 |
-| Spouse of an ROC national divorced because of domestic violence | 2 | 0 | 2 |
-| Adopted by an ROC national | 1 | 1 | 0 |
-| Born in Taiwan | 1 | 1 | 0 |
-Rows with no approvals in 2025 are omitted.
+<div class="article-chart" data-chart="naturalization:reason" aria-busy="true">
+
+<p>Loading chart…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:reason">
+
+<summary>View underlying data</summary>
+
+</details>
 
 ### Original nationality
 Vietnamese nationals were the largest group of persons naturalized in 2025, with 1,100 approvals, followed by Philippine nationals (253) and Indonesian nationals (170).<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup>
+
 **Naturalizations approved in 2025, by original nationality and sex<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup>**
 
-| Original nationality | Total | Men | Women |
-| --- | --- | --- | --- |
-| Vietnam | 1,100 | 93 | 1,007 |
-| Philippines | 253 | 29 | 224 |
-| Indonesia | 170 | 23 | 147 |
-| Other countries | 144 | 106 | 38 |
-| Myanmar | 77 | 25 | 52 |
-| Japan | 34 | 12 | 22 |
-| Malaysia | 32 | 12 | 20 |
-| Thailand | 32 | 7 | 25 |
-| United States | 12 | 8 | 4 |
-| Germany | 9 | 6 | 3 |
-| South Korea | 5 | 1 | 4 |
-| Cambodia | 4 | 0 | 4 |
-| Stateless or nationality unspecified | 2 | 2 | 0 |
-| Singapore | 1 | 1 | 0 |
-Categories with no approvals in 2025 are omitted.
+<div class="article-chart" data-chart="naturalization:nationality" aria-busy="true">
+
+<p>Loading chart…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:nationality">
+
+<summary>View underlying data</summary>
+
+</details>
 
 ### Age
 **Naturalizations approved in 2025, by age group and sex<sup><a href="#ref-45" aria-label="Reference 45">[45]</a></sup>**
 
-| Age group | Total | Men | Women |
-| --- | --- | --- | --- |
-| 0–4 | 11 | 4 | 7 |
-| 5–9 | 12 | 6 | 6 |
-| 10–14 | 45 | 20 | 25 |
-| 15–19 | 61 | 32 | 29 |
-| 20–24 | 30 | 4 | 26 |
-| 25–29 | 258 | 4 | 254 |
-| 30–34 | 372 | 26 | 346 |
-| 35–39 | 385 | 75 | 310 |
-| 40–44 | 332 | 62 | 270 |
-| 45–49 | 154 | 28 | 126 |
-| 50–54 | 100 | 19 | 81 |
-| 55–59 | 50 | 19 | 31 |
-| 60–64 | 27 | 7 | 20 |
-| 65 and over | 38 | 19 | 19 |
+<div class="article-chart" data-chart="naturalization:age" aria-busy="true">
+
+<p>Loading chart…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:age">
+
+<summary>View underlying data</summary>
+
+</details>
 
 ### County or city
 **Naturalizations approved in 2025, by county or city and sex<sup><a href="#ref-46" aria-label="Reference 46">[46]</a></sup>**
 
-| County or city | Total | Men | Women |
-| --- | --- | --- | --- |
-| New Taipei City | 363 | 81 | 282 |
-| Taoyuan City | 273 | 39 | 234 |
-| Taichung City | 219 | 30 | 189 |
-| Kaohsiung City | 162 | 23 | 139 |
-| Taipei City | 128 | 46 | 82 |
-| Tainan City | 125 | 22 | 103 |
-| Changhua County | 107 | 9 | 98 |
-| Yunlin County | 74 | 9 | 65 |
-| Hsinchu County | 71 | 9 | 62 |
-| Miaoli County | 67 | 13 | 54 |
-| Pingtung County | 52 | 5 | 47 |
-| Chiayi County | 46 | 4 | 42 |
-| Hsinchu City | 46 | 14 | 32 |
-| Nantou County | 42 | 7 | 35 |
-| Yilan County | 29 | 5 | 24 |
-| Keelung City | 27 | 4 | 23 |
-| Hualien County | 16 | 1 | 15 |
-| Chiayi City | 10 | 1 | 9 |
-| Taitung County | 8 | 2 | 6 |
-| Penghu County | 6 | 1 | 5 |
-| Kinmen County | 2 | 0 | 2 |
-| Lienchiang County | 2 | 0 | 2 |
+<div class="article-chart" data-chart="naturalization:place" aria-busy="true">
+
+<p>Loading chart…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:place">
+
+<summary>View underlying data</summary>
+
+</details>
 
 ## History
 The legal basis of naturalization in Taiwan derives from the Republic of China's Nationality Act, first promulgated by the Nationalist Government on 5 February 1929.<sup><a href="#ref-47" aria-label="Reference 47">[47]</a></sup> Taiwan was then under Japanese rule, and the ROC nationality system was not applied there until the change of administration following the Second World War. The ROC authorities regarded Taiwanese who had held Japanese nationality as having automatically recovered ROC nationality from 25 October 1945.

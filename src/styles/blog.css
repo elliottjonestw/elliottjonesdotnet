@@ -602,6 +602,80 @@
   }
 }
 
+/* ── Data charts ───────────────────────────────────────────────────────── */
+
+/* Observable Plot creates charts from the post's data at runtime. The
+   surrounding post stays readable while the small, post-only module loads,
+   then the plots take the place of this restrained loading surface. */
+.prose .article-chart {
+  margin-block: 2.25em;
+  padding: clamp(0.85rem, 2vw, 1.35rem);
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  border-radius: 10px;
+  background: var(--color-surface);
+}
+
+.prose .article-chart[aria-busy='true'] {
+  min-height: 8rem;
+}
+
+.prose .article-chart > p:only-child {
+  margin: 0;
+  color: var(--color-slate);
+}
+
+.prose .article-chart-title {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-jade);
+}
+
+.prose .article-chart-title + .article-plot + .article-chart-title {
+  margin-block-start: 2rem;
+}
+
+.prose :is(svg, figure).article-plot {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+}
+
+.prose figure.article-plot {
+  color: var(--color-ink);
+}
+
+/* Plot puts its generated legend in a small HTML wrapper when colour is used.
+   Keep that metadata in the same mono register as the rest of the article's
+   labels, without turning it into a competing headline. */
+.prose .article-plot legend,
+.prose .article-plot [aria-label='legend'] {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.prose .article-chart-data {
+  margin-block-start: -1em;
+}
+
+:lang(zh-Hant) .prose .article-chart-title {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  .prose .article-chart {
+    margin-inline: -0.25rem;
+    padding: 0.75rem;
+  }
+}
+
 /* ── Marks ─────────────────────────────────────────────────────────────── */
 
 .prose strong {

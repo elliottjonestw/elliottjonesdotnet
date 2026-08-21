@@ -1,7 +1,7 @@
 ---
 title: 台灣歸化制度
 date: 2026-08-18
-lastUpdated: 2026-08-18
+lastUpdated: 2026-08-21
 tags: ['台灣', '法律', '移民']
 cover:
   src: naturalization-in-taiwan/cover.png
@@ -164,130 +164,83 @@ Erin Aeran Chung 對日本、南韓與台灣所作的比較研究，探討公民
 ### 每年總數與性別
 **2016 至 2025 年歸化人數紀錄<sup><a href="#ref-43" aria-label="參考資料 43">[43]</a></sup>**
 
-<table class="annual-naturalization-table">
-  <colgroup>
-    <col class="year" />
-    <col class="total" />
-    <col class="men" />
-    <col class="women" />
-    <col class="women-percent" />
-    <col class="spouse" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th scope="col">年度</th>
-      <th scope="col">總計</th>
-      <th scope="col">男</th>
-      <th scope="col">女</th>
-      <th scope="col">女性（％）</th>
-      <th scope="col">記錄為國人配偶</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>2016</td><td>3,252</td><td>202</td><td>3,050</td><td>93.8</td><td>2,951</td></tr>
-    <tr><td>2017</td><td>5,366</td><td>443</td><td>4,923</td><td>91.7</td><td>4,668</td></tr>
-    <tr><td>2018</td><td>3,552</td><td>329</td><td>3,223</td><td>90.7</td><td>3,024</td></tr>
-    <tr><td>2019</td><td>3,438</td><td>341</td><td>3,097</td><td>90.1</td><td>2,960</td></tr>
-    <tr><td>2020</td><td>3,818</td><td>348</td><td>3,470</td><td>90.9</td><td>3,404</td></tr>
-    <tr><td>2021</td><td>4,079</td><td>396</td><td>3,683</td><td>90.3</td><td>3,671</td></tr>
-    <tr><td>2022</td><td>3,589</td><td>420</td><td>3,169</td><td>88.3</td><td>3,109</td></tr>
-    <tr><td>2023</td><td>3,336</td><td>435</td><td>2,901</td><td>87.0</td><td>2,904</td></tr>
-    <tr><td>2024</td><td>2,575</td><td>411</td><td>2,164</td><td>84.0</td><td>2,077</td></tr>
-    <tr><td>2025</td><td>1,875</td><td>325</td><td>1,550</td><td>82.7</td><td>1,487</td></tr>
-  </tbody>
-</table>
+<div class="article-chart" data-chart="naturalization:annual" aria-busy="true">
+
+<p>正在載入圖表…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:annual">
+
+<summary>查看原始資料</summary>
+
+</details>
 
 百分比依內政部按性別區分的總數計算。「國人配偶」類別不包括另行記錄的配偶及親屬相關類別，例如符合資格的未再婚生存配偶，以及因受家庭暴力離婚者。<sup><a href="#ref-43" aria-label="參考資料 43">[43]</a></sup>
 
 ### 歸化原因
 2025 年，以國人配偶身分歸化是最大的單一類別，占全年 1,875 名歸化者中的 1,487 人。內政部另記錄 47 名高級專業人才，以及五名有殊勳於中華民國者歸化。<sup><a href="#ref-43" aria-label="參考資料 43">[43]</a></sup>
+
 **2025 年按原因及性別區分的歸化人數紀錄<sup><a href="#ref-43" aria-label="參考資料 43">[43]</a></sup>**
 
-| 記錄原因 | 總計 | 男 | 女 |
-| --- | --- | --- | --- |
-| 國人配偶 | 1,487 | 149 | 1,338 |
-| 未成年人父、母、養父或養母現為國人 | 111 | 55 | 56 |
-| 自願 | 93 | 51 | 42 |
-| 對限制或無行為能力之我國籍子女，有扶養事實、行使負擔權利義務或會面交往 | 49 | 2 | 47 |
-| 高級專業人才 | 47 | 37 | 10 |
-| 合法居留 10 年以上 | 35 | 18 | 17 |
-| 國人配偶死亡未再婚，與配偶親屬往來或婚姻關係存續 2 年以上 | 27 | 1 | 26 |
-| 隨同 | 17 | 6 | 11 |
-| 殊勳我國 | 5 | 4 | 1 |
-| 為國人配偶受家暴離婚未再婚 | 2 | 0 | 2 |
-| 國人養子女 | 1 | 1 | 0 |
-| 出生於我國領域內 | 1 | 1 | 0 |
-2025 年沒有歸化紀錄的類別未列入表中。
+<div class="article-chart" data-chart="naturalization:reason" aria-busy="true">
+
+<p>正在載入圖表…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:reason">
+
+<summary>查看原始資料</summary>
+
+</details>
 
 ### 原屬國籍
 越南籍是 2025 年歸化人數最多的群體，共記錄 1,100 人；其次為菲律賓籍 253 人與印尼籍 170 人。<sup><a href="#ref-44" aria-label="參考資料 44">[44]</a></sup>
+
 **2025 年按原屬國籍及性別區分的歸化人數紀錄<sup><a href="#ref-44" aria-label="參考資料 44">[44]</a></sup>**
 
-| 原屬國籍 | 總計 | 男 | 女 |
-| --- | --- | --- | --- |
-| 越南 | 1,100 | 93 | 1,007 |
-| 菲律賓 | 253 | 29 | 224 |
-| 印尼 | 170 | 23 | 147 |
-| 其他國家 | 144 | 106 | 38 |
-| 緬甸 | 77 | 25 | 52 |
-| 日本 | 34 | 12 | 22 |
-| 馬來西亞 | 32 | 12 | 20 |
-| 泰國 | 32 | 7 | 25 |
-| 美國 | 12 | 8 | 4 |
-| 德國 | 9 | 6 | 3 |
-| 韓國 | 5 | 1 | 4 |
-| 柬埔寨（高棉） | 4 | 0 | 4 |
-| 無國籍（國籍不詳） | 2 | 2 | 0 |
-| 新加坡 | 1 | 1 | 0 |
-2025 年沒有歸化紀錄的類別未列入表中。
+<div class="article-chart" data-chart="naturalization:nationality" aria-busy="true">
+
+<p>正在載入圖表…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:nationality">
+
+<summary>查看原始資料</summary>
+
+</details>
 
 ### 年齡
 **2025 年按年齡組及性別區分的歸化人數紀錄<sup><a href="#ref-45" aria-label="參考資料 45">[45]</a></sup>**
 
-| 年齡組 | 總計 | 男 | 女 |
-| --- | --- | --- | --- |
-| 0–4 歲 | 11 | 4 | 7 |
-| 5–9 歲 | 12 | 6 | 6 |
-| 10–14 歲 | 45 | 20 | 25 |
-| 15–19 歲 | 61 | 32 | 29 |
-| 20–24 歲 | 30 | 4 | 26 |
-| 25–29 歲 | 258 | 4 | 254 |
-| 30–34 歲 | 372 | 26 | 346 |
-| 35–39 歲 | 385 | 75 | 310 |
-| 40–44 歲 | 332 | 62 | 270 |
-| 45–49 歲 | 154 | 28 | 126 |
-| 50–54 歲 | 100 | 19 | 81 |
-| 55–59 歲 | 50 | 19 | 31 |
-| 60–64 歲 | 27 | 7 | 20 |
-| 65 歲以上 | 38 | 19 | 19 |
+<div class="article-chart" data-chart="naturalization:age" aria-busy="true">
+
+<p>正在載入圖表…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:age">
+
+<summary>查看原始資料</summary>
+
+</details>
 
 ### 縣市
 **2025 年按縣市及性別區分的歸化人數紀錄<sup><a href="#ref-46" aria-label="參考資料 46">[46]</a></sup>**
 
-| 縣市別 | 總計 | 男 | 女 |
-| --- | --- | --- | --- |
-| 新北市 | 363 | 81 | 282 |
-| 桃園市 | 273 | 39 | 234 |
-| 臺中市 | 219 | 30 | 189 |
-| 高雄市 | 162 | 23 | 139 |
-| 臺北市 | 128 | 46 | 82 |
-| 臺南市 | 125 | 22 | 103 |
-| 彰化縣 | 107 | 9 | 98 |
-| 雲林縣 | 74 | 9 | 65 |
-| 新竹縣 | 71 | 9 | 62 |
-| 苗栗縣 | 67 | 13 | 54 |
-| 屏東縣 | 52 | 5 | 47 |
-| 嘉義縣 | 46 | 4 | 42 |
-| 新竹市 | 46 | 14 | 32 |
-| 南投縣 | 42 | 7 | 35 |
-| 宜蘭縣 | 29 | 5 | 24 |
-| 基隆市 | 27 | 4 | 23 |
-| 花蓮縣 | 16 | 1 | 15 |
-| 嘉義市 | 10 | 1 | 9 |
-| 臺東縣 | 8 | 2 | 6 |
-| 澎湖縣 | 6 | 1 | 5 |
-| 金門縣 | 2 | 0 | 2 |
-| 連江縣 | 2 | 0 | 2 |
+<div class="article-chart" data-chart="naturalization:place" aria-busy="true">
+
+<p>正在載入圖表…</p>
+
+</div>
+
+<details class="article-chart-data" data-chart-data="naturalization:place">
+
+<summary>查看原始資料</summary>
+
+</details>
 
 ## 歷史
 台灣歸化制度的法律基礎源自中華民國《國籍法》；該法最初由國民政府於 1929 年 2 月 5 日制定公布。<sup><a href="#ref-47" aria-label="參考資料 47">[47]</a></sup> 依中華民國政府對戰後情況的說明，原具有日本國籍的台灣人自 1945 年 10 月 25 日起自動回復中華民國國籍。<sup><a href="#ref-48" aria-label="參考資料 48">[48]</a></sup>

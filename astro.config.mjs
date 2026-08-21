@@ -49,5 +49,11 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // Plot is loaded by a client-side post enhancement, so it is not found by
+    // Vite's normal entry scan. Optimising it explicitly keeps localhost's
+    // module URL stable after a fresh dev-server restart.
+    optimizeDeps: {
+      include: ['@observablehq/plot'],
+    },
   },
 });

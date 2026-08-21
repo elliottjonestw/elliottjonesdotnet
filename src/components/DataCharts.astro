@@ -1,0 +1,105 @@
+---
+/**
+ * Generic, post-only chart enhancement.
+ *
+ * Markdown declares a mount as `data-chart="article:chart"`; Vite discovers
+ * the matching module in src/data/charts/ lazily. Adding a chart for a new
+ * article therefore needs no layout or component change.
+ */
+---
+
+<script>
+  import * as Plot from '@observablehq/plot';
+  import type { ArticleChart, ArticleChartModule, ChartContext, ChartLocale } from '../lib/article-charts';
+
+  type ChartHost = { element: HTMLElement; article: string; chart: string; key: string };
+
+  const hosts = Array.from(document.querySelectorAll<HTMLElement>('[data-chart]'))
+    .map((element): ChartHost | undefined => {
+      const [article, chart, ...rest] = (element.dataset.chart ?? '').split(':');
+      if (!article || !chart || rest.length > 0) return undefined;
+      return { element, article, chart, key: `${article}:${chart}` };
+    })
+    .filter((host): host is ChartHost => host !== undefined);
+
+  if (hosts.length > 0) {
+    const locale: ChartLocale = document.documentElement.lang.startsWith('zh') ? 'zh-Hant' : 'en';
+    const numberFormat = new Intl.NumberFormat(locale === 'en' ? 'en' : 'zh-TW');
+    const percentFormat = new Intl.NumberFormat(locale === 'en' ? 'en' : 'zh-TW', {
+      maximumFractionDigits: 1,
+    });
+    const style = getComputedStyle(document.documentElement);
+    const colour = (name: string) => style.getPropertyValue(name).trim();
+    const context: ChartContext = {
+      locale,
+      Plot,
+      numberFormat,
+      percentFormat,
+      colours: {
+        jade: colour('--color-jade'),
+        jadeBright: colour('--color-jade-bright'),
+        ink: colour('--color-ink'),
+        slate: colour('--color-slate'),
+        mist: colour('--color-mist'),
+      },
+    };
+    const loaders = import.meta.glob('../data/charts/*.ts');
+    const chartDefinitions = new Map<string, ArticleChart>();
+
+    await Promise.all([...new Set(hosts.map((host) => host.article))].map(async (article) => {
+      const load = loaders[`../data/charts/${article}.ts`];
+      if (!load) {
+        console.warn(`No chart module found for “${article}”.`);
+        return;
+      }
+      const module = await load() as ArticleChartModule;
+      const charts = module.createCharts(context);
+      Object.entries(charts).forEach(([name, definition]) => {
+        chartDefinitions.set(`${article}:${name}`, definition);
+      });
+    }));
+
+    const renderTable = (key: string, chart: ArticleChart) => {
+      const disclosure = document.querySelector<HTMLDetailsElement>(`[data-chart-data="${key}"]`);
+      if (!disclosure) return;
+      const table = document.createElement('table');
+      table.setAttribute('aria-label', chart.table.label);
+      const head = table.createTHead().insertRow();
+      chart.table.headers.forEach((label) => {
+        const cell = document.createElement('th');
+        cell.scope = 'col';
+        cell.textContent = label;
+        head.append(cell);
+      });
+      const body = table.createTBody();
+      chart.table.rows.forEach((values) => {
+        const row = body.insertRow();
+        values.forEach((value) => {
+          const cell = row.insertCell();
+          cell.textContent = typeof value === 'number' ? numberFormat.format(value) : value;
+        });
+      });
+      const summary = disclosure.querySelector('summary');
+      disclosure.replaceChildren(...(summary ? [summary, table] : [table]));
+    };
+
+    const renderCharts = () => {
+      hosts.forEach((host) => {
+        const chart = chartDefinitions.get(host.key);
+        if (!chart) return;
+        host.element.replaceChildren();
+        chart.render(host.element, Math.max(280, Math.floor(host.element.clientWidth)));
+        host.element.setAttribute('aria-busy', 'false');
+        renderTable(host.key, chart);
+      });
+    };
+
+    let frame = 0;
+    const resizeObserver = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(renderCharts);
+    });
+    hosts.forEach((host) => resizeObserver.observe(host.element));
+    renderCharts();
+  }
+</script>

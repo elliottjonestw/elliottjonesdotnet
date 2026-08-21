@@ -133,6 +133,52 @@ processor extended with `@astrojs/markdown-satteri` in
   itself is imported dynamically in `BlogPost.astro`, so only posts that
   contain a diagram pay for the library.
 
+### Adding data charts to a post
+
+Article charts use [Observable Plot](https://observablehq.com/plot/) and are
+data-driven: edit the source values, rebuild, and both the visual chart and
+its optional exact-data table update together. The generic loader in
+[`src/components/DataCharts.astro`](src/components/DataCharts.astro) is on
+every post, but it only downloads Plot and a chart module when the post has a
+chart mount.
+
+1. Create `src/data/charts/<article>.ts`, where `<article>` is a stable short
+   identifier such as `naturalization`. Export `createCharts`, conforming to
+   `ArticleChartModule` from
+   [`src/lib/article-charts.ts`](src/lib/article-charts.ts). The existing
+   [`src/data/charts/naturalization.ts`](src/data/charts/naturalization.ts) is
+   the full working example; keep raw numbers in a small neighbouring data
+   module when they are substantial.
+2. Return one named chart for each mount. A chart supplies `render(host,
+   width)`, which appends a Plot output, plus `table` data for the optional
+   disclosure. `context` provides the locale, number formatters, site colours
+   and the Plot API, so chart modules should not hardcode the page theme.
+3. Put a matching mount in both Markdown translations. For a chart named
+   `annual` in `src/data/charts/naturalization.ts`, use:
+
+   ```html
+   <div class="article-chart" data-chart="naturalization:annual" aria-busy="true">
+     <p>Loading chart…</p>
+   </div>
+
+   <details class="article-chart-data" data-chart-data="naturalization:annual">
+     <summary>View underlying data</summary>
+   </details>
+   ```
+
+   Translate the loading and summary copy in the other Markdown file. The
+   `data-chart` and `data-chart-data` values must be identical and use the
+   form `<module>:<chart-name>`. Omit the `<details>` block if an exact-data
+   disclosure is not useful.
+4. Run `npm run check` and `npm run build`. No route, layout, component import
+   or chart registry needs updating: Vite discovers every module in
+   `src/data/charts/` automatically.
+
+Use direct labels, a text alternative through Plot's `ariaLabel` and
+`ariaDescription` options, and an exact-data disclosure for charts that carry
+important values. The charts are enhanced client-side; the surrounding prose
+must still state the essential conclusion.
+
 The two most recent posts also appear on the home page, in
 `LatestPosts.astro`, as a `#blog` section between Speaking and Credentials —
 with its own tracked mark in the section rail, like every other section. It
