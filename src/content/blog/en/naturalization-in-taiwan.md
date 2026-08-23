@@ -1,7 +1,7 @@
 ---
 title: Naturalization in Taiwan
 date: 2026-08-18
-lastUpdated: 2026-08-21
+lastUpdated: 2026-08-23
 tags: ['Taiwan', 'Law', 'Immigration']
 cover:
   src: naturalization-in-taiwan/cover.png
@@ -16,11 +16,7 @@ cover:
 
 </aside>
 
-**Naturalization in Taiwan** is the legal process by which a foreign national or stateless person acquires nationality of the Republic of China (ROC). The Nationality Act recognizes naturalization as a basis for ROC nationality alongside nationality acquired by descent and in certain circumstances by birth.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> Naturalization is administered by the Ministry of the Interior (MOI) and is governed primarily by the Nationality Act and its Enforcement Rules.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup> Under the ordinary route, an applicant must generally have been legally resident in Taiwan for at least 183 days in each of five consecutive years and must satisfy requirements relating to legal capacity, conduct, financial self-sufficiency, basic language ability, and knowledge of the rights and obligations of ROC nationals.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> Reduced or exempted requirements apply to several categories of applicants, including spouses and certain former spouses of ROC nationals, persons with specified family connections to Taiwan, qualifying high-level professionals, and persons who have made special contributions to the ROC.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-3" aria-label="Reference 3">[3]</a></sup><sup><a href="#ref-4" aria-label="Reference 4">[4]</a></sup>
-
-Naturalization and household registration are separate legal processes. A person acquires ROC nationality when the MOI approves naturalization, but a newly naturalized person who has not established household registration is a national without household registration (NWOHR).<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup> Such nationals must complete separate residence and settlement procedures under the Immigration Act before establishing household registration and becoming eligible for a National Identification Card.<sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
-
-Except where an exemption applies, a foreign national who naturalizes must provide evidence of loss of their previous nationality within one year after naturalization.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> The present sequence, in which loss of the previous nationality generally occurs after ROC nationality has been granted, was introduced by amendments enacted in 2016 following cases in which applicants who had first renounced their original nationality were left stateless after failing to obtain ROC nationality.<sup><a href="#ref-3" aria-label="Reference 3">[3]</a></sup><sup><a href="#ref-7" aria-label="Reference 7">[7]</a></sup> Taiwan's naturalization regime has undergone repeated reform since the comprehensive revision of the Nationality Act in 2000, including major amendments in 2016 and 2024 that relaxed requirements for some foreign spouses, high-level professionals, stateless children and other applicants.<sup><a href="#ref-8" aria-label="Reference 8">[8]</a></sup><sup><a href="#ref-3" aria-label="Reference 3">[3]</a></sup><sup><a href="#ref-4" aria-label="Reference 4">[4]</a></sup> Naturalization policy, particularly the treatment of immigrant spouses, renunciation of previous nationality and access to dual nationality, has also been the subject of academic research and public debate.<sup><a href="#ref-9" aria-label="Reference 9">[9]</a></sup><sup><a href="#ref-7" aria-label="Reference 7">[7]</a></sup><sup><a href="#ref-10" aria-label="Reference 10">[10]</a></sup>
+**Naturalization in Taiwan** is the Ministry of the Interior (MOI)-administered process through which a foreign national or stateless person acquires Republic of China (ROC) nationality.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup> The ordinary route generally requires at least 183 days of legal residence in each of five consecutive years, as well as legal capacity, good conduct, financial self-sufficiency, and basic language and civic knowledge; some spouses, family members, minors, high-level professionals, and people with special contributions may use different rules.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup> Naturalization does not itself establish household registration: a newly naturalized person is an NWOHR and must complete separate residence and settlement procedures before becoming eligible for a National Identification Card.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup><sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup> Unless an exemption applies, proof of loss of previous nationality is required within one year after naturalization.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
 
 [TOC]
 
@@ -252,6 +248,491 @@ A major reform promulgated on 21 December 2016 amended, among other provisions, 
 By May 2019, the MOI reported that 502 people had obtained ROC nationality under relaxed post-2016 provisions, while a further 57 people who had made special contributions and 76 qualifying professionals had naturalized under the special routes allowing retention of their original nationality.<sup><a href="#ref-51" aria-label="Reference 51">[51]</a></sup>
 
 Further amendments were promulgated in 2021 and 2024.<sup><a href="#ref-52" aria-label="Reference 52">[52]</a></sup> The 2024 reform expanded protection for stateless children by allowing certain unmarried stateless minors under the guardianship of social-welfare authorities or institutions to apply for naturalization, adjusted provisions to reflect the reduction of Taiwan's age of majority to 18, and further relaxed the residence requirement for high-level professionals, allowing qualifying applicants to satisfy it through either two consecutive years with at least 183 days' legal residence in each year or at least five consecutive years of legal residence without the 183-day-per-year requirement.<sup><a href="#ref-53" aria-label="Reference 53">[53]</a></sup><sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-4" aria-label="Reference 4">[4]</a></sup>
+
+## Frequently asked questions
+
+These answers summarise the rules discussed above. They are not legal advice: check the linked primary sources and current guidance before applying.
+
+<details class="faq-group">
+
+<summary>Basics</summary>
+
+<dl class="faq-list">
+<div>
+<dt>What is naturalization in Taiwan?</dt>
+<dd>Naturalization is the legal process through which a foreign national or stateless person acquires Republic of China (ROC) nationality.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Who can apply for naturalization?</dt>
+<dd>Foreign nationals and stateless persons may apply if they meet an ordinary or alternative route under the Nationality Act.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Is naturalization the same as household registration?</dt>
+<dd>No. Naturalization grants ROC nationality; household registration is a separate later process under immigration and household-registration law.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup><sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup></dd>
+</div>
+<div>
+<dt>What is a national without household registration (NWOHR)?</dt>
+<dd>A newly naturalized person who has ROC nationality but has not yet established household registration is an NWOHR.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>Does naturalization immediately give me a National Identification Card?</dt>
+<dd>No. A newly naturalized person must first complete the separate settlement and household-registration process; initial household registration permits issuance of an ID card for people of the applicable age.<sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup><sup><a href="#ref-19" aria-label="Reference 19">[19]</a></sup></dd>
+</div>
+<div>
+<dt>Which government body approves naturalization?</dt>
+<dd>The Ministry of the Interior (MOI) has final authority to approve naturalization applications.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Which laws govern naturalization?</dt>
+<dd>The Nationality Act and its Enforcement Rules are the principal laws governing naturalization; later residence and settlement are governed principally by the Immigration Act and Household Registration Act.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup><sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup></dd>
+</div>
+<div>
+<dt>What is the ordinary route to naturalization?</dt>
+<dd>It generally requires legal residence in Taiwan for at least 183 days in each of five consecutive years, plus the other Article 3 requirements.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Can a stateless person apply for naturalization?</dt>
+<dd>Yes. The Nationality Act provides naturalization routes for foreign nationals and stateless persons.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>What happens after naturalization is approved?</dt>
+<dd>The applicant becomes an ROC national on the date permission is granted, then must complete the applicable residence, settlement and household-registration steps to obtain household registration.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Ordinary requirements</summary>
+
+<dl class="faq-list">
+<div>
+<dt>How long must I live in Taiwan before applying?</dt>
+<dd>Under the ordinary route, at least five consecutive years, with at least 183 days of legal residence in each year, are generally required.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>What does the 183-days-per-year rule mean?</dt>
+<dd>For the ordinary route, the applicant must have had at least 183 days of legal residence in Taiwan in each qualifying year.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Must the five years be consecutive?</dt>
+<dd>Yes, the ordinary route requires the residence condition to be met for five consecutive years.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Must my residence in Taiwan be legal?</dt>
+<dd>Yes. The ordinary route requires legal residence in Taiwan.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>What does legal capacity mean for an application?</dt>
+<dd>An ordinary applicant must have legal capacity under both ROC law and the law of the applicant's country of nationality.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Do I need a clean criminal record?</dt>
+<dd>The ordinary requirements include having no bad conduct and no criminal-case record appearing on the police criminal record certificate.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>What conduct requirement applies to applicants?</dt>
+<dd>An ordinary applicant must have no bad conduct; the detailed assessment is governed by separate regulations.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Must I prove financial self-sufficiency?</dt>
+<dd>Ordinarily, yes: applicants must have sufficient property or professional skills to be self-supporting, or otherwise have a secure livelihood. Some routes exempt this requirement.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Do I need Chinese-language ability?</dt>
+<dd>Ordinary applicants must demonstrate basic language ability through the routes specified in the applicable standards.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Do I need to know the rights and duties of ROC nationals?</dt>
+<dd>Ordinary applicants must have basic knowledge of the rights and obligations of ROC nationals, subject to the assessment rules and applicable exemptions.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Family and alternative routes</summary>
+
+<dl class="faq-list">
+<div>
+<dt>Can the spouse of an ROC national naturalize sooner?</dt>
+<dd>Yes. An eligible spouse may use the Article 4 route after at least 183 days of legal residence in each of three consecutive years, while remaining subject to applicable Article 3 conditions.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>How long must an ROC-national spouse live in Taiwan?</dt>
+<dd>The Article 4(1) spouse route generally requires at least 183 days of legal residence in each of three consecutive years.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Is an ROC-national spouse exempt from the financial requirement?</dt>
+<dd>Yes. A person married to an ROC national is exempt from the property or self-support requirement, but must meet the other applicable requirements.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a divorced survivor of domestic violence use the family route?</dt>
+<dd>Yes, if the person divorced an ROC national because of domestic violence and has not remarried, the Article 4(1) three-year route is available.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a surviving spouse of an ROC national apply?</dt>
+<dd>Yes, an unremarried surviving spouse may qualify under the conditions in Article 4(1), including the statutory rules on contact with the deceased spouse's family and the length of the marriage.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a person with an ROC-national parent use a shorter route?</dt>
+<dd>Yes. A person whose parent is or was an ROC national is among those able to use the Article 4(1) three-year route.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can an adopted person use the family route?</dt>
+<dd>Yes. A person adopted by an ROC national is included in the Article 4(1) route.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a person born in Taiwan use the family route?</dt>
+<dd>Yes. A person born in Taiwan is included among the Article 4(1) applicants able to use the three-year route.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a guardian or assistant of an ROC national use the family route?</dt>
+<dd>Yes. A person who is the guardian or assistant of an ROC national is included among the Article 4(1) applicants able to use the three-year route.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a parent caring for an ROC-national child use the family route?</dt>
+<dd>Yes, where the applicant supports, exercises rights and obligations on behalf of, and personally meets and interacts with an ROC-national child who is legally incompetent or has limited legal competence.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+</div>
+<div>
+<dt>Can an unmarried minor naturalize with an ROC-national parent?</dt>
+<dd>An unmarried minor with fewer than three years of legal residence may apply if a parent or adoptive parent is an ROC national, or if the minor is under the guardianship of a social-welfare authority or institution.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+</div>
+<div>
+<dt>Which requirements are waived for eligible unmarried minors?</dt>
+<dd>The rules remove the ordinary requirements concerning legal capacity, financial self-sufficiency, and language and civic knowledge; the conduct requirement remains.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+</div>
+<div>
+<dt>Is there a route for a person born in Taiwan whose parent was also born there?</dt>
+<dd>Yes. Article 5 permits naturalization without the ordinary five-year/183-days-per-year rule in that situation, although the other applicable Article 3 requirements remain.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Is there a ten-year residence route?</dt>
+<dd>Yes. A person with at least ten consecutive years of legal residence may apply under Article 5 without an annual 183-day threshold, while the other Article 3 requirements continue to apply.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+</div>
+<div>
+<dt>Can a high-level professional naturalize?</dt>
+<dd>Yes, if recommended by the competent central authority, found to have contributed to ROC interests, and approved through the statutory process. The residence condition may be met through either of the routes specified in Article 5.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-13" aria-label="Reference 13">[13]</a></sup></dd>
+</div>
+<div>
+<dt>Can a person who made special contributions to Taiwan naturalize?</dt>
+<dd>Yes. A person who has made special contributions to the ROC may apply without meeting Article 3's requirements, subject to MOI permission following Executive Yuan approval.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Can a child apply alongside a parent applying for naturalization?</dt>
+<dd>An unmarried child under 18 may apply concurrently with a parent; accompanying minors are exempt from providing evidence of financial self-sufficiency and language or civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Language and civic knowledge</summary>
+
+<dl class="faq-list">
+<div>
+<dt>How can I demonstrate Chinese-language and civic knowledge?</dt>
+<dd>The requirement may be met through study at a domestic school, approved government educational programmes, or the naturalization test, as applicable.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Can study at a Taiwanese school satisfy the requirement?</dt>
+<dd>Yes. The assessment standards provide study at a domestic school as one way to demonstrate the required language ability and civic knowledge.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Can a government educational programme satisfy it?</dt>
+<dd>Yes. Approved government educational programmes are another route specified in the assessment standards.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Is there a naturalization test?</dt>
+<dd>Yes. The naturalization test is one of the ways specified to meet the language and civic-knowledge requirement.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Do family-route applicants have lower thresholds?</dt>
+<dd>The required programme hours and test pass marks are lower for Article 4 applicants than for ordinary Article 3 applicants.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Do Article 5 applicants have lower thresholds?</dt>
+<dd>The required programme hours and test pass marks are lower for Article 5 applicants than for ordinary Article 3 applicants.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Are there lower thresholds for people aged 65 or older?</dt>
+<dd>Yes. The standards provide further reductions for Article 4 and Article 5 applicants aged 65 or over.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+</div>
+<div>
+<dt>Are accompanying minor children exempt from the test?</dt>
+<dd>Accompanying minor children are exempt from the Enforcement Rules' evidence requirement for language and civic-knowledge proficiency.<sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Applying and review</summary>
+
+<dl class="faq-list">
+<div>
+<dt>Must I apply in person?</dt>
+<dd>An application is made personally by the applicant or by the applicant's legal representative.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Can a legal representative apply for me?</dt>
+<dd>Yes. The Enforcement Rules allow an application to be made by the applicant's legal representative.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Where do I submit the application?</dt>
+<dd>File it at the household registration office responsible for your place of residence.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>What does the household registration office do with my application?</dt>
+<dd>It examines the application, verifies relevant information, and forwards it through the local government to the MOI.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>What does the local government do before the application reaches the MOI?</dt>
+<dd>The relevant municipal, county, or city government conducts a further examination before forwarding the application to the MOI.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Who makes the final decision?</dt>
+<dd>The MOI has final authority to grant permission for naturalization.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>What happens if documents are incomplete?</dt>
+<dd>If a deficiency can be corrected, the applicant must be given time to correct it; the application is rejected if the correction is not made in that period.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Do overseas documents need authentication?</dt>
+<dd>Documents issued outside Taiwan are subject to authentication requirements.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Do documents in another language need a Chinese translation?</dt>
+<dd>Foreign-language documents generally need an authenticated or notarized Chinese translation.<sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>How long does an application normally take?</dt>
+<dd>The central government's service portal lists a standard processing period of 30 days for nationality-change applications.<sup><a href="#ref-15" aria-label="Reference 15">[15]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Giving up previous nationality</summary>
+
+<dl class="faq-list">
+<div>
+<dt>Must I give up my previous nationality?</dt>
+<dd>Usually, yes. Unless an exemption applies, a foreign national who naturalizes must provide evidence of loss of previous nationality.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>When must proof of loss of previous nationality be submitted?</dt>
+<dd>It must generally be submitted within one year after the MOI grants permission for naturalization.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-2" aria-label="Reference 2">[2]</a></sup></dd>
+</div>
+<div>
+<dt>Do I become an ROC national before giving up my former nationality?</dt>
+<dd>Usually, yes. The MOI grants naturalization before the person completes the later loss-of-nationality requirement.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-3" aria-label="Reference 3">[3]</a></sup></dd>
+</div>
+<div>
+<dt>Why did Taiwan change that sequence in 2016?</dt>
+<dd>The reforms addressed cases in which applicants who had first renounced their original nationality did not obtain ROC nationality and were left stateless.<sup><a href="#ref-3" aria-label="Reference 3">[3]</a></sup></dd>
+</div>
+<div>
+<dt>What if my country only permits renunciation after a certain age?</dt>
+<dd>Where the previous country's law allows renunciation only after a particular age, the one-year period runs from the date the person reaches that age.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Are high-level professionals exempt from the renunciation requirement?</dt>
+<dd>Yes. Qualifying high-level professionals naturalized under Article 5 are exempt from submitting proof of loss of their original nationality.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>Are applicants with special contributions exempt?</dt>
+<dd>Yes. Persons naturalized for special contributions to the ROC are exempt from the requirement to submit proof of loss of their original nationality.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></dd>
+</div>
+<div>
+<dt>What if I cannot obtain proof for reasons outside my control?</dt>
+<dd>The requirement does not apply where a person cannot obtain evidence of loss of nationality for reasons not attributable to that person.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>Can the one-year period be extended?</dt>
+<dd>Extensions are permitted where legal or administrative restrictions imposed by the applicant's country of nationality prevent completion of the procedure.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-16" aria-label="Reference 16">[16]</a></sup></dd>
+</div>
+<div>
+<dt>When must I apply for an extension?</dt>
+<dd>An applicant generally must apply at least 30 days before the original deadline and provide evidence of having applied to the authorities of the country of nationality.<sup><a href="#ref-16" aria-label="Reference 16">[16]</a></sup></dd>
+</div>
+<div>
+<dt>What happens if I miss the deadline?</dt>
+<dd>If required evidence is not submitted within the prescribed or extended period, the MOI must revoke permission for naturalization.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Residence, settlement, and registration</summary>
+
+<dl class="faq-list">
+<div>
+<dt>On what date do I acquire ROC nationality?</dt>
+<dd>You acquire ROC nationality on the date the MOI grants permission for naturalization.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup></dd>
+</div>
+<div>
+<dt>What immigration status do I have after naturalization?</dt>
+<dd>Until household registration is established, a newly naturalized person is an NWOHR; residence and settlement follow separate procedures.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>Can a newly naturalized NWOHR apply to live in Taiwan?</dt>
+<dd>Yes. An NWOHR may apply to the National Immigration Agency for permission to reside in Taiwan.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup><sup><a href="#ref-17" aria-label="Reference 17">[17]</a></sup></dd>
+</div>
+<div>
+<dt>What is a TARC?</dt>
+<dd>A Taiwan Area Resident Certificate (TARC) is the residence document that the NIA may issue to an ordinary naturalized national after approval of the residence application.<sup><a href="#ref-17" aria-label="Reference 17">[17]</a></sup></dd>
+</div>
+<div>
+<dt>What documents are normally needed for a TARC application?</dt>
+<dd>NIA guidance lists documents including the naturalization approval certificate, Alien Resident Certificate, and evidence of the place of residence; requirements differ for some categories.<sup><a href="#ref-17" aria-label="Reference 17">[17]</a></sup></dd>
+</div>
+<div>
+<dt>Is a TARC the same as an ARC?</dt>
+<dd>No. The TARC is a Taiwan Area Resident Certificate issued to an NWOHR; the NIA guidance separately lists the applicant's ARC among the supporting documents for an ordinary naturalized applicant.<sup><a href="#ref-17" aria-label="Reference 17">[17]</a></sup></dd>
+</div>
+<div>
+<dt>What is settlement (定居)?</dt>
+<dd>Settlement is the immigration status that precedes establishment of household registration and is legally distinct from residence as an NWOHR.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>Can I apply for settlement after one year of residence?</dt>
+<dd>An ordinary naturalized national may generally apply after one continuous year in Taiwan with presence for at least 335 days in that year.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>Can I apply after two years of residence?</dt>
+<dd>An ordinary naturalized national may generally apply after two consecutive years with presence for at least 270 days in each year.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>Can I apply after five years of residence?</dt>
+<dd>An ordinary naturalized national may generally apply after five consecutive years with presence for at least 183 days in each year.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>Are high-level professionals exempt from the settlement residence period?</dt>
+<dd>Persons permitted to reside because of special contributions to Taiwan or as high-level professionals are exempt from the otherwise required minimum residence period before applying for settlement.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup></dd>
+</div>
+<div>
+<dt>What is a TAPRC?</dt>
+<dd>A Taiwan Area Permanent Residence Certificate (TAPRC) is issued by the NIA when a settlement application is approved; it is not an Alien Permanent Residence Certificate (APRC).<sup><a href="#ref-18" aria-label="Reference 18">[18]</a></sup></dd>
+</div>
+<div>
+<dt>How soon must I establish household registration after settlement?</dt>
+<dd>A person granted settlement must complete initial household registration at the relevant household registration office within 30 days; otherwise, the NIA may terminate settlement permission.<sup><a href="#ref-19" aria-label="Reference 19">[19]</a></sup></dd>
+</div>
+<div>
+<dt>When can I receive a National Identification Card?</dt>
+<dd>For people of the applicable age, initial household registration following settlement permits issuance of a National Identification Card.<sup><a href="#ref-19" aria-label="Reference 19">[19]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>Revocation and legal effects</summary>
+
+<dl class="faq-list">
+<div>
+<dt>Can naturalization be revoked?</dt>
+<dd>Yes. The MOI may revoke a grant that did not conform to the Nationality Act, and it must revoke permission when the required proof of loss of previous nationality is not supplied in time.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup></dd>
+</div>
+<div>
+<dt>What can cause revocation?</dt>
+<dd>MOI guidance identifies matters including legal residence, legal capacity, conduct and criminal-record requirements, financial self-sufficiency, and the loss-of-previous-nationality requirement as relevant to whether a grant conformed to the Act.<sup><a href="#ref-22" aria-label="Reference 22">[22]</a></sup></dd>
+</div>
+<div>
+<dt>Are there time limits on revocation?</dt>
+<dd>Except for the Article 9 rule, the MOI may act only within two years after learning of non-compliance and may not revoke more than five years after naturalization took effect, subject to the sham-marriage or sham-adoption exception.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup></dd>
+</div>
+<div>
+<dt>Are sham marriages and sham adoptions treated differently?</dt>
+<dd>The ordinary time limits do not apply where a final court judgment finds that nationality was obtained through a collusive sham marriage or adoption.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup></dd>
+</div>
+<div>
+<dt>Do I get a chance to respond before revocation?</dt>
+<dd>Before revocation under Article 19, the MOI must generally convene a review panel and give the person an opportunity to state their views, subject to stated exceptions.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-24" aria-label="Reference 24">[24]</a></sup></dd>
+</div>
+<div>
+<dt>Can a naturalized citizen vote immediately?</dt>
+<dd>No. Naturalization alone does not make an NWOHR eligible to vote; electoral residence is determined by household-registration data and other statutory conditions still apply.<sup><a href="#ref-27" aria-label="Reference 27">[27]</a></sup></dd>
+</div>
+<div>
+<dt>Can a naturalized citizen hold public office?</dt>
+<dd>Naturalized foreign nationals and stateless persons face statutory restrictions on a range of senior and elected offices.<sup><a href="#ref-28" aria-label="Reference 28">[28]</a></sup></dd>
+</div>
+<div>
+<dt>How long do most public-office restrictions last?</dt>
+<dd>The restrictions generally cease ten years after the date of naturalization, unless another law provides otherwise.<sup><a href="#ref-29" aria-label="Reference 29">[29]</a></sup></dd>
+</div>
+<div>
+<dt>Can a naturalized citizen run for ordinary elected office after ten years?</dt>
+<dd>Election law allows registration as a candidate where ROC nationality was acquired through naturalization at least ten years before the election, provided the other candidacy requirements are met.<sup><a href="#ref-30" aria-label="Reference 30">[30]</a></sup></dd>
+</div>
+<div>
+<dt>Can a naturalized citizen run for president or vice president?</dt>
+<dd>No. The Presidential and Vice Presidential Election and Recall Act does not provide a ten-year exception for people whose ROC nationality was acquired through naturalization.<sup><a href="#ref-31" aria-label="Reference 31">[31]</a></sup></dd>
+</div>
+</dl>
+
+</details>
+
+<details class="faq-group">
+
+<summary>History, policy, and statistics</summary>
+
+<dl class="faq-list">
+<div>
+<dt>When was the Nationality Act first promulgated?</dt>
+<dd>The Nationalist Government first promulgated the Nationality Act on 5 February 1929.<sup><a href="#ref-47" aria-label="Reference 47">[47]</a></sup></dd>
+</div>
+<div>
+<dt>When did ROC nationality law begin applying in Taiwan?</dt>
+<dd>Taiwan was under Japanese rule when the Act was first promulgated; the ROC nationality system was not applied there until the post-Second World War change of administration.<sup><a href="#ref-47" aria-label="Reference 47">[47]</a></sup><sup><a href="#ref-48" aria-label="Reference 48">[48]</a></sup></dd>
+</div>
+<div>
+<dt>What changed in the 2000 nationality-law revision?</dt>
+<dd>The comprehensive revision established much of the modern structure, including the distinction between nationality by descent and naturalization and recognition of nationality transmitted through either an ROC-national father or mother.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-47" aria-label="Reference 47">[47]</a></sup><sup><a href="#ref-49" aria-label="Reference 49">[49]</a></sup></dd>
+</div>
+<div>
+<dt>What changed in the 2016 reform?</dt>
+<dd>The reforms changed the sequence for loss of previous nationality, broadened some family-based provisions, and allowed qualifying high-level professionals and people with special contributions to retain their original nationality.<sup><a href="#ref-3" aria-label="Reference 3">[3]</a></sup><sup><a href="#ref-50" aria-label="Reference 50">[50]</a></sup></dd>
+</div>
+<div>
+<dt>What changed in the 2024 reform?</dt>
+<dd>The reform expanded a route for certain stateless minors, reflected the age of majority becoming 18, and relaxed the residence requirement for qualifying high-level professionals.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-4" aria-label="Reference 4">[4]</a></sup><sup><a href="#ref-53" aria-label="Reference 53">[53]</a></sup></dd>
+</div>
+<div>
+<dt>Why is dual nationality debated in Taiwan?</dt>
+<dd>Research and public debate have examined the renunciation requirement in relation to migrant spouses, statelessness, Taiwan's political status, and competing views of citizenship and integration.<sup><a href="#ref-7" aria-label="Reference 7">[7]</a></sup><sup><a href="#ref-10" aria-label="Reference 10">[10]</a></sup></dd>
+</div>
+<div>
+<dt>What did the 2024 dual-nationality petition propose?</dt>
+<dd>The petition proposed allowing foreign nationals who had held permanent residence in Taiwan for more than five years to naturalize without relinquishing their previous nationality.<sup><a href="#ref-40" aria-label="Reference 40">[40]</a></sup></dd>
+</div>
+<div>
+<dt>Why did the MOI reject that petition?</dt>
+<dd>The MOI cited the single-nationality system, limited resources, public finances, social welfare, national loyalty, national security, and existing exemptions for some high-level professionals and people with special contributions.<sup><a href="#ref-41" aria-label="Reference 41">[41]</a></sup></dd>
+</div>
+<div>
+<dt>What was the most common recorded reason for naturalization in 2025?</dt>
+<dd>Naturalization as the spouse of an ROC national was the largest single recorded category in 2025, with 1,487 of 1,875 approvals.<sup><a href="#ref-43" aria-label="Reference 43">[43]</a></sup></dd>
+</div>
+<div>
+<dt>Which former nationality was most common among people naturalized in 2025?</dt>
+<dd>Vietnamese nationals were the largest group, with 1,100 approvals, followed by Philippine nationals and Indonesian nationals.<sup><a href="#ref-44" aria-label="Reference 44">[44]</a></sup></dd>
+</div>
+</dl>
+
+</details>
 
 ## Relevant legislation
 * [Nationality Act](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001)
