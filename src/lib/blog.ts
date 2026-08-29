@@ -11,6 +11,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import type { ImageMetadata } from 'astro';
 import type { LocaleCode } from '../i18n/locales';
 import { getContent } from '../data/content';
+import { personSameAs } from '../data/profile-metadata';
 import { canonicalUrl, withBase } from './url';
 
 export type Post = CollectionEntry<'blog'>;
@@ -204,6 +205,11 @@ export function isoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+/** The date that represents a post's latest substantive published content. */
+export function effectiveModifiedDate(post: PostSummary): string {
+  return isoDate(post.post.data.lastUpdated ?? post.post.data.date);
+}
+
 export function formatDate(date: Date, locale: LocaleCode): string {
   return new Intl.DateTimeFormat(
     locale === 'zh-Hant-TW' ? 'zh-Hant-TW' : 'en-GB',
@@ -364,7 +370,7 @@ export async function blogIndexSchema(locale: LocaleCode, site: URL | string) {
         name: person.name,
         jobTitle: person.role,
         url: home,
-        sameAs: [person.linkedin],
+        sameAs: personSameAs,
       },
     ],
   };

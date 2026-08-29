@@ -1,11 +1,18 @@
 import type { APIRoute } from 'astro';
 import { locales, type LocaleCode } from '../i18n/locales';
+import { profileModified } from '../data/profile-metadata';
 import { canonicalUrl, withBase } from '../lib/url';
-import { getAllPosts, indexRoute, isoDate, postRoute } from '../lib/blog';
+import {
+  effectiveModifiedDate,
+  getAllPosts,
+  indexRoute,
+  postRoute,
+} from '../lib/blog';
 
 /**
- * Generated at build time rather than kept as a static file, so both lastmod and
- * the URL track the current deploy instead of drifting.
+ * Generated at build time so the URLs and content-based modification dates stay
+ * in sync. Static-page dates come from deliberately maintained source data,
+ * never from the current deployment.
  *
  * Every entry carries an <xhtml:link> to each locale's copy of the same page
  * (including itself) plus x-default — the standard way to tell crawlers the
@@ -26,7 +33,6 @@ interface Entry {
 
 export const GET: APIRoute = async ({ site }) => {
   const origin = site ?? 'https://elliottjones.net';
-  const today = new Date().toISOString().slice(0, 10);
 
   const homePaths = Object.fromEntries(
     locales.map((locale) => [locale.code, locale.path]),
@@ -37,6 +43,15 @@ export const GET: APIRoute = async ({ site }) => {
   ) as Record<LocaleCode, string>;
 
   const posts = await getAllPosts();
+  const newestPostModifiedByLocale = new Map<LocaleCode, string>();
+  for (const post of posts) {
+    const modified = effectiveModifiedDate(post);
+    const current = newestPostModifiedByLocale.get(post.locale);
+    if (!current || modified > current) {
+      newestPostModifiedByLocale.set(post.locale, modified);
+    }
+  }
+
   /** Which locales each slug was actually written in. */
   const written = new Map<string, Set<LocaleCode>>();
   for (const post of posts) {
@@ -49,14 +64,14 @@ export const GET: APIRoute = async ({ site }) => {
     ...locales.map((locale) => ({
       paths: homePaths,
       locale: locale.code,
-      lastmod: today,
+      lastmod: profileModified[locale.code],
       changefreq: 'monthly',
       priority: '1.0',
     })),
     ...locales.map((locale) => ({
       paths: indexPaths,
       locale: locale.code,
-      lastmod: posts.length ? posts[0].dateISO : today,
+      lastmod: newestPostModifiedByLocale.get(locale.code) ?? profileModified[locale.code],
       changefreq: 'weekly',
       priority: '0.7',
     })),
@@ -70,7 +85,7 @@ export const GET: APIRoute = async ({ site }) => {
         ]),
       ) as Record<LocaleCode, string>,
       locale: post.locale,
-      lastmod: isoDate(post.post.data.date),
+      lastmod: effectiveModifiedDate(post),
       changefreq: 'yearly',
       priority: '0.6',
     })),

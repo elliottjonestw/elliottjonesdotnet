@@ -22,6 +22,7 @@ import paint51Zoom from '../assets/projects/paint5-1-zoom.png';
 import mandaShot from '../assets/projects/manda-1.png';
 import mandaShot2 from '../assets/projects/manda-2.png';
 import { speakingTalks } from './shared/speaking';
+import { personProfiles } from './profile-metadata';
 import type { SiteContent } from './content';
 
 export const zhTW: SiteContent = {
@@ -31,7 +32,7 @@ export const zhTW: SiteContent = {
     company: '睿控網安',
     location: '台北，台灣',
     email: 'elliottpublic.ghbxi@passinbox.com',
-    linkedin: 'https://www.linkedin.com/in/elliottjonesjiehan/',
+    linkedin: personProfiles.linkedin,
     siteUrl: 'https://elliottjones.net',
     metaTitle: 'Elliott Jones — 台北雙語客戶成功經理',
     metaDescription:

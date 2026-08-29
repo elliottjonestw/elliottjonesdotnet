@@ -5,6 +5,7 @@ import '../styles/global.css';
 import displayFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
 import bodyFont from '@fontsource-variable/literata/files/literata-latin-wght-normal.woff2?url';
 import { getContent } from '../data/content';
+import { personSameAs, profileModified } from '../data/profile-metadata';
 import { locales, resolveLocale, type LocaleCode } from '../i18n/locales';
 import { absoluteUrl, canonicalUrl, withBase } from '../lib/url';
 import LanguageSwitch from '../components/LanguageSwitch.astro';
@@ -83,6 +84,7 @@ const profileGraph = {
       name: title,
       description,
       inLanguage: lang,
+      dateModified: profileModified[lang],
       primaryImageOfPage: { '@id': `${home}/#og` },
       mainEntity: { '@id': `${home}/#person` },
     },
@@ -102,7 +104,7 @@ const profileGraph = {
       url: home,
       email: `mailto:${person.email}`,
       image: siteOgImage.href,
-      sameAs: [person.linkedin],
+      sameAs: personSameAs,
       nationality: { '@type': 'Country', name: isZh ? '英國' : 'United Kingdom' },
       address: {
         '@type': 'PostalAddress',

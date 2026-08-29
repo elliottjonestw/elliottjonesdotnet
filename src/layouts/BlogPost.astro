@@ -17,6 +17,7 @@ import pageViews from '../data/page-views.json';
    first request and never renders a word of prose. */
 import '../styles/blog.css';
 import { getContent } from '../data/content';
+import { personSameAs } from '../data/profile-metadata';
 import { locales } from '../i18n/locales';
 import { canonicalUrl, withBase } from '../lib/url';
 import {
@@ -126,7 +127,7 @@ const structuredData = {
       description,
       inLanguage: locale,
       datePublished: dateISO,
-      dateModified: dateISO,
+      dateModified: lastUpdatedISO ?? dateISO,
       keywords: tags,
       url: canonical,
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
@@ -149,7 +150,7 @@ const structuredData = {
       name: person.name,
       jobTitle: person.role,
       url: home,
-      sameAs: [person.linkedin],
+      sameAs: personSameAs,
     },
   ],
 };

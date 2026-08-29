@@ -21,6 +21,7 @@ import paint51Zoom from '../assets/projects/paint5-1-zoom.png';
 import mandaShot from '../assets/projects/manda-1.png';
 import mandaShot2 from '../assets/projects/manda-2.png';
 import { speakingTalks } from './shared/speaking';
+import { personProfiles } from './profile-metadata';
 import type { SiteContent } from './content';
 
 export const en: SiteContent = {
@@ -30,7 +31,7 @@ export const en: SiteContent = {
     company: 'TXOne Networks',
     location: 'Taipei, Taiwan',
     email: 'elliottpublic.ghbxi@passinbox.com',
-    linkedin: 'https://www.linkedin.com/in/elliottjonesjiehan/',
+    linkedin: personProfiles.linkedin,
     siteUrl: 'https://elliottjones.net',
     metaTitle: 'Elliott Jones — Bilingual Customer Success Manager in Taipei',
     metaDescription:
