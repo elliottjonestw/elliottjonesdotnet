@@ -201,10 +201,6 @@ Each post also carries its own furniture, assembled in
   voice files, no third-party call.
 - **Share panel** — LinkedIn, X and Facebook share URLs plus a copy-link
   button, all labelled (`ShareButtons.astro`).
-- **Comments** — a hosted [Cusdis](https://cusdis.com) widget. The thread id
-  is `<locale>:<slug>`, a stable route key, so renaming a post or moving
-  domains cannot split the conversation into a new thread. Its interface
-  strings live in `blog.commentsLocale` in the locale files.
 - **View counts** — see the analytics bullet under *SEO and analytics*.
 
 ## Adding or editing a language

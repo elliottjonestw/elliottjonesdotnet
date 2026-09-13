@@ -263,24 +263,6 @@ export interface SiteContent {
     viewCountCountries: string;
     /** Timestamp below the expanded card. `{date}` is replaced locally. */
     viewCountUpdated: string;
-    /** Heading above the hosted discussion thread. */
-    commentsHeading: string;
-    /** Label above the hosted comment composer. */
-    commentsComposerLabel: string;
-    /** Locale strings passed into the hosted comments widget. */
-    commentsLocale: {
-      post_comment: string;
-      loading: string;
-      email: string;
-      nickname: string;
-      reply_placeholder: string;
-      reply_btn: string;
-      sending: string;
-      mod_badge: string;
-      content_is_required: string;
-      nickname_is_required: string;
-      comment_has_been_sent: string;
-    };
     publishedOn: string;
     newerPost: string;
     olderPost: string;
