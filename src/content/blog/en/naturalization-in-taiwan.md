@@ -1,7 +1,7 @@
 ---
 title: Naturalization in Taiwan
 date: 2026-08-18
-lastUpdated: 2026-08-23
+lastUpdated: 2026-09-30
 tags: ['Taiwan', 'Law', 'Immigration']
 cover:
   src: naturalization-in-taiwan/cover.png
@@ -34,7 +34,7 @@ The general naturalization requirements are established in Article 3 of the Nati
 The Nationality Act provides alternative naturalization routes for applicants with specified family ties to the ROC, particular birth or residence connections, high-level professional qualifications, special contributions, and accompanying minor children. Unless a provision expressly removes a requirement, applicants under Articles 4 and 5 remain subject to the applicable conditions in Article 3.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
 
 #### Spouses and specified family connections (Article 4(1))
-A foreign national or stateless person who has had legal residence in Taiwan for at least 183 days in each year for three consecutive years may apply for naturalization under Article 4(1). Except where stated otherwise, the applicant must still meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+A foreign national or stateless person currently domiciled in ROC territory who has had legal residence in Taiwan for at least 183 days in each year for three consecutive years may apply for naturalization under Article 4(1). Except where stated otherwise, the applicant must still meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
 
 A person married to an ROC national is exempt from the property or self-support requirement, but must meet the other applicable Article 3 requirements.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
 
@@ -42,7 +42,7 @@ The same three-year residence route is also available to a person who:
 
 * Divorced an ROC national because of domestic violence and has not remarried;
 * Is the unremarried surviving spouse of an ROC national and remains in contact with the deceased spouse's family members, unless the marriage had lasted at least two years before the spouse's death;
-* Supports, exercises rights and obligations on behalf of, and personally meets and interacts with their ROC-national child who is legally incompetent or has limited legal competence;
+* Supports, exercises rights and obligations concerning, or meets and interacts with their ROC-national child who is legally incompetent or has limited legal competence;
 * Has a parent who is or was an ROC national;
 * Was adopted by an ROC national;
 * Was born in Taiwan; or
@@ -52,12 +52,12 @@ The same three-year residence route is also available to a person who:
 An unmarried minor who has legally resided in Taiwan for fewer than three years may apply for naturalization if a parent or adoptive parent is an ROC national, or if the minor is under the guardianship of a social-welfare authority or institution. Such applicants need not meet the ordinary requirements concerning legal capacity, financial self-sufficiency, or language and civic-knowledge proficiency; the statutory conduct requirement is not removed.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
 
 #### Birth and long-residence routes (Article 5(1)(1)–(2))
-Article 5 also permits naturalization, without the ordinary five-year/183-days-per-year requirement, for an applicant who was born in Taiwan and whose father or mother was also born in Taiwan. The applicant must nevertheless meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
+Article 5 also permits naturalization, without the ordinary five-year/183-days-per-year requirement, for an applicant currently domiciled in ROC territory who was born in Taiwan and whose father or mother was also born in Taiwan. The applicant must nevertheless meet the Article 3 requirements concerning legal capacity, conduct, financial self-sufficiency, and language and civic knowledge.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
 
-An applicant who has legally resided in Taiwan for at least ten consecutive years may likewise apply under Article 5. This route has no annual 183-day residence threshold, but the other Article 3 requirements continue to apply.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
+An applicant currently domiciled in ROC territory who has legally resided in Taiwan for at least ten consecutive years may likewise apply under Article 5. This route has no annual 183-day residence threshold, but the other Article 3 requirements continue to apply.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
 
 #### High-level professionals (Article 5(1)(3))
-A high-level professional recommended by the competent central authority, found to have contributed to the interests of the ROC, and approved through the statutory review process may apply for naturalization after either at least 183 days of legal residence in each year for two consecutive years or at least five consecutive years of legal residence. The applicant must still meet the Article 3 requirements other than its ordinary five-year residence requirement.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-13" aria-label="Reference 13">[13]</a></sup>
+A high-level professional currently domiciled in ROC territory, recommended by the competent central authority, found to have contributed to the interests of the ROC, and approved through the statutory review process may apply for naturalization after either at least 183 days of legal residence in each year for two consecutive years or at least five consecutive years of legal residence. The applicant must still meet the Article 3 requirements other than its ordinary five-year residence requirement.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-13" aria-label="Reference 13">[13]</a></sup>
 
 High-level professionals naturalized under this provision are also exempt from the usual requirement to submit proof of loss of their original nationality.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup>
 
@@ -70,7 +70,7 @@ Persons naturalized under Article 6 are exempt from the requirement to submit pr
 An unmarried child under 18 of a person applying for naturalization may apply for naturalization concurrently with that parent. The Enforcement Rules exempt such accompanying minors from submitting evidence of financial self-sufficiency or of language and civic-knowledge proficiency.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup>
 
 #### Language and civic-knowledge assessment
-The regulations provide less demanding ways to demonstrate the language and civic-knowledge requirement for applicants under Article 4(1) and Article 5. Applicants may meet the requirement through study at a domestic school, approved government educational programmes, or the naturalization test. The required programme hours and test pass marks are lower for Article 4 and Article 5 applicants than for ordinary Article 3 applicants, with further reductions for applicants aged 65 or over.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup>
+The regulations provide less demanding ways to demonstrate the language and civic-knowledge requirement for applicants under Article 4(1) and Article 5. Applicants may meet the requirement through study at a domestic school, approved government educational programmes, or the naturalization test. The required programme hours and test pass marks are lower for Article 4 and Article 5 applicants than for ordinary Article 3 applicants. For applicants aged 65 or over under Article 3, Article 4(1), or Article 5, the standards provide a 72-hour programme threshold or a test pass mark of 50.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup>
 
 ## Process
 A foreign national who is granted naturalization acquires ROC nationality on the date that the MOI grants permission. Establishing household registration is a subsequent process governed principally by the Immigration Act and Household Registration Act; until that process is completed, a newly naturalized person is a national without household registration (NWOHR).<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
@@ -108,21 +108,65 @@ Residence as an NWOHR is legally distinct from settlement (<span lang="zh-Hant">
 
 The person must continue to satisfy the basis on which residence was granted when applying for settlement. Persons permitted to reside on the basis of having made special contributions to Taiwan or being high-level professionals are exempt from the minimum period of residence otherwise required before applying for settlement.<sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
 
-Applications for settlement are submitted to the NIA. Once an application has been approved, the NIA issues a Taiwan Area Permanent Residence Certificate (TAPRC) (<span lang="zh-Hant">臺灣地區定居證</span>),<sup><a href="#ref-18" aria-label="Reference 18">[18]</a></sup> not to be confused with an Alien Permanent Residence Certificate (APRC). A person granted settlement is required to complete initial household registration at the HHRO for their intended place of registration within 30 days; the NIA may terminate the settlement permission if the registration is not completed within that period. For persons of the applicable age, initial household registration also permits issuance of a National Identification Card.<sup><a href="#ref-19" aria-label="Reference 19">[19]</a></sup>
+Applications for settlement are submitted to the NIA. Once an application has been approved, the NIA issues a Taiwan Area Permanent Residence Certificate (TAPRC) (<span lang="zh-Hant">臺灣地區定居證</span>),<sup><a href="#ref-18" aria-label="Reference 18">[18]</a></sup> not to be confused with an Alien Permanent Residence Certificate (APRC). A person granted settlement is required to complete initial household registration at the HHRO for their intended place of registration within 30 days; the NIA may terminate the settlement permission if the registration is not completed within that period. A person with household registration aged 14 or over must apply for an initial National Identification Card; one under 14 may also apply.<sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup>
 
 The overall procedure for an ordinary applicant can therefore involve three distinct changes of legal status: from a foreign national to an ROC national through naturalization; from a newly naturalized NWOHR to a resident NWOHR under the Immigration Act; and, following permission for settlement and initial household registration, to an ROC national with household registration.<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup><sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup><sup><a href="#ref-5" aria-label="Reference 5">[5]</a></sup>
 
 ### Revocation of naturalization
-In addition to the revocation required when an applicant fails to provide evidence of loss of their previous nationality under Article 9, Article 19 of the Nationality Act permits the Ministry of the Interior (MOI) to revoke a grant of naturalization if it discovers that the grant did not conform to the Act.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> MOI guidance identifies, among the conditions that may be relevant to such a finding, legal residence, legal capacity, conduct and criminal-record requirements, financial self-sufficiency, and compliance with the requirement concerning loss of previous nationality.<sup><a href="#ref-22" aria-label="Reference 22">[22]</a></sup>
 
-Except for revocation under Article 9, the MOI may exercise this power only within two years after learning of the non-compliance, and may not revoke naturalization more than five years after it took effect.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> The time limits do not apply where a final court judgment finds that the person obtained ROC nationality through a collusive sham marriage or adoption.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> The MOI has stated that this exception requires a court judgment and is not triggered solely by a report or allegation of a sham marriage.<sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
+Article 19 allows revocation of a naturalization approval that did not comply with the Nationality Act. Three questions matter: **what was wrong with the approval, how long the MOI has to revoke it, and what review must happen first**. In an ordinary Article 19 case, the MOI faces both a two-year limit after learning of the non-compliance and a five-year limit after naturalization took effect; the MOI must act before either period runs out.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup>
 
-Before revoking naturalization under Article 19, the MOI must convene a review panel and give the person concerned an opportunity to state their views. This requirement does not apply where the person is found already to possess ROC nationality under Article 2 of the Act, or where a final court judgment has found that naturalization was obtained through a collusive sham marriage or adoption.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> The review panel has 11 to 13 members, including representatives of relevant authorities, impartial members of the public, and scholars or experts. Its directions allow the person concerned to attend, submit written views, and, where necessary, be assisted by a representative or interpreter or call witnesses.<sup><a href="#ref-24" aria-label="Reference 24">[24]</a></sup>
+#### Grounds for revocation
+Revocation under Article 19 requires a legal defect in the original approval; something the person did later is not enough by itself.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup> MOI application guidance identifies potentially relevant requirements such as residence, legal capacity, conduct, criminal-case records and financial self-sufficiency.<sup><a href="#ref-22" aria-label="Reference 22">[22]</a></sup> Article 9 separately requires revocation when a person who must provide proof of loss of previous nationality fails to do so within the applicable period; it also provides extensions and exemptions, discussed under [loss of previous nationality](#loss-of-previous-nationality).<sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
+
+#### Deadline for revoking a naturalization approval
+For an ordinary Article 19 revocation, **both time limits apply**: the MOI must exercise its revocation power within two years after learning of the non-compliance **and** no more than five years after naturalization took effect. The MOI must act before either period runs out. These are not alternative periods: five years to discover a problem does not produce another two years to act.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup> The statutory trigger for the first period is the MOI learning of the non-compliance. It is not automatically the date of an offence, complaint, investigation or conviction.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup>
+
+Under Article 8, nationality is acquired on the date the MOI approves naturalization. That is the starting point for the five-year outside limit, rather than later collection of a certificate, passport issue, settlement, household registration or receipt of an identity card.<sup><a href="#ref-54" aria-label="Reference 54">[54]</a></sup> The following simplified illustrations assume an ordinary case and no applicable statutory exception; they show the interaction of the periods, not actual cases or precise day-counting deadlines.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup>
+
+| When the MOI learns of the non-compliance | Time left to revoke under the ordinary Article 19 rule |
+| --- | --- |
+| One year after naturalization | The two-year period expires three years after naturalization. |
+| Four years after naturalization | The five-year outside limit leaves only one year. |
+| Four years and six months after naturalization | Only six months remain before the five-year outside limit. |
+| Six years after naturalization | The ordinary five-year revocation period has already expired. |
+
+Opening an investigation does not, by itself, appear in Article 19 as a replacement for either deadline. The examples do not address any case-specific dispute over precisely when the MOI learned of non-compliance.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup> In 2018, the MOI defended retaining the five-year period on the basis that obtaining concrete evidence through judicial proceedings can take more than two years; that was the ministry's policy explanation, not an additional time-limit rule.<sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
+
+#### Later findings about conduct before naturalization
+What if someone is convicted *after* approval for conduct that occurred *before* it, when no conviction existed at approval? There are two separate questions: whether the original approval failed an applicable eligibility condition, and whether revocation remains within time. For routes subject to Article 3's conduct condition, the Act requires both **no bad conduct** and **no criminal-case record on the police criminal record certificate**. Neither condition can simply be reduced to “no previous convictions”.<sup><a href="#ref-55" aria-label="Reference 55">[55]</a></sup>
+
+The current *Regulations Governing Determination of No Bad Conduct for Naturalization* identify particular disqualifying circumstances, qualifications and routes to a favourable determination. They cover specified criminal dispositions and other conduct; an allegation that someone “broke a law” is not itself the regulatory test.<sup><a href="#ref-56" aria-label="Reference 56">[56]</a></sup> Article 6 **of those conduct regulations** says that, for a criminal defendant whose case is under investigation or trial, the conduct determination must await the relevant final non-prosecution decision, deferred-prosecution disposition or judgment. This is distinct from Article 6 of the Nationality Act, which concerns special contributions.<sup><a href="#ref-56" aria-label="Reference 56">[56]</a></sup>
+
+A later conviction does not automatically establish that the approval was unlawful when made, nor does a clean certificate at approval conclusively settle every conduct issue. The answer depends on the alleged conduct, whether proceedings were pending, the date and terms of approval, the eventual disposition, the eligibility rules applicable to that route and the MOI's relevant knowledge. This is an interpretation of how Articles 3 and 19 and the conduct regulations interact; the sources cited here do not establish a general holding for this precise hypothetical.<sup><a href="#ref-55" aria-label="Reference 55">[55]</a></sup><sup><a href="#ref-56" aria-label="Reference 56">[56]</a></sup><sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup> If an ordinary revocation is proposed six years after approval, it encounters Article 19's five-year outside limit even if the conviction came later. The specific statutory exceptions below must be assessed separately; a conviction does not itself restart the five-year period.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup>
+
+#### Exceptions to the time limits
+Article 19 excludes revocation **under Article 9(1)** from its ordinary deadline provision. This concerns failure to supply required proof of loss of previous nationality within the applicable period, taking account of Article 9's extensions and exemptions. It does not mean every question involving dual nationality falls outside the ordinary limits.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-1" aria-label="Reference 1">[1]</a></sup>
+
+The other express deadline exception requires a **final court judgment establishing that ROC nationality was obtained through a collusive sham marriage or adoption**. Article 19 does not extend this exception to every false statement, fraud allegation or criminal conviction. The MOI has explained that a report or allegation alone does not satisfy the court-judgment requirement.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
+
+#### Review procedure and its separate exceptions
+Before an Article 19 revocation, the MOI must ordinarily convene a review panel and give the person an opportunity to state their views. The panel has 11–13 members: government representatives, impartial members of the public, and scholars or experts. At least half must be from the latter two groups, and neither gender may account for less than one-third.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-57" aria-label="Reference 57">[57]</a></sup>
+
+The directions provide an opportunity to attend and speak, or to submit written views if unable to attend. Where necessary, the panel may invite representatives or assistants, interpreters, witnesses, relevant officials and other attendees with panel consent. The person may submit supporting material, and the MOI must notify the review result in writing. The invitation of additional attendees is conditional; it is not an unrestricted personal power to summon witnesses.<sup><a href="#ref-57" aria-label="Reference 57">[57]</a></sup>
+
+Article 19 makes two exceptions to **this panel-and-response requirement**: a determination that the person already possesses ROC nationality under **Article 2 of the Nationality Act (國籍法)**, and the final-court-judgment sham-marriage or adoption situation described above.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup> Article 2 lists nationality through a parent at birth, the specified case of birth after an ROC-national parent's death, birth in ROC territory when both parents are unknown or stateless, **and naturalization**. Its parent-based rules also have a transitional provision for people under 20 when the 9 February 2000 amendment took effect.<sup><a href="#ref-58" aria-label="Reference 58">[58]</a></sup>
+
+As a *hypothetical illustration based on reading Articles 2, 3 and 19 together*, someone who already acquired and retained ROC nationality through a parent might mistakenly have been processed as a foreign national applying to naturalize. Cancelling that unnecessary approval is conceptually different from extinguishing nationality that exists independently of it. The statute does not narrate this example, and Article 2's inclusion of naturalization does **not** exempt every naturalized person from review.<sup><a href="#ref-58" aria-label="Reference 58">[58]</a></sup><sup><a href="#ref-55" aria-label="Reference 55">[55]</a></sup><sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup> The Article 2 exception concerns the requirement to convene a review panel and provide an opportunity to state views. It does not itself remove the ordinary revocation time limits.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup>
+
+| Situation | Time limits | Review panel and opportunity to state views |
+| --- | --- | --- |
+| Ordinary Article 19 non-compliance | Both the two-year knowledge limit and five-year outside limit apply. | Required. |
+| Revocation under Article 9(1) for missing required proof of loss of previous nationality | Excluded from Article 19's ordinary deadline provision. | Article 19 does not list this as a panel exception. |
+| Determination that the person already possesses nationality under Article 2 | No deadline exception stated for this reason. | Express exception to the panel-and-response requirement. |
+| Final court judgment establishing nationality obtained through collusive sham marriage or adoption | Express exception to both ordinary limits. | Express exception to the panel-and-response requirement. |
+
+These columns reflect separate paragraphs of Article 19; an exception in one does not create an exception in the other.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup>
 
 In 2018, the MOI stated that a person whose naturalization permission had been revoked could remain in Taiwan while seeking restoration of their original nationality, and could apply to naturalize again if they later met the statutory requirements.<sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup>
 
 ### Reported cases
-In 2013, the Ministry of the Interior revoked the naturalization permission of a Vietnamese woman after finding that, before her 2009 naturalization, she had engaged in an extramarital relationship and had a child with another man. The ministry relied on the then-applicable requirement that applicants be of "upright conduct" (<span lang="zh-Hant">品行端正</span>). In December 2013, the Taipei High Administrative Court dismissed her challenge to the revocation.<sup><a href="#ref-25" aria-label="Reference 25">[25]</a></sup><sup><a href="#ref-26" aria-label="Reference 26">[26]</a></sup>
+In 2013, the Ministry of the Interior revoked the naturalization permission of a Vietnamese woman after finding that, before her 2009 naturalization, she had engaged in an extramarital relationship and had two daughters with another man. The ministry relied on the then-applicable requirement that applicants be of "upright conduct" (<span lang="zh-Hant">品行端正</span>). In December 2013, the Taipei High Administrative Court dismissed her challenge to the revocation.<sup><a href="#ref-25" aria-label="Reference 25">[25]</a></sup><sup><a href="#ref-26" aria-label="Reference 26">[26]</a></sup> This case applied an earlier conduct standard and does not establish how the current conduct regulations would apply to another case.
 
 ## Legal effects
 ### Electoral rights
@@ -355,6 +399,8 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 
 <summary>Family and alternative routes</summary>
 
+<p>Applicants under the Article 4(1) and Article 5 routes described below must currently be domiciled in ROC territory.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup></p>
+
 <dl class="faq-list">
 <div>
 <dt>Can the spouse of an ROC national naturalize sooner?</dt>
@@ -394,7 +440,7 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 </div>
 <div>
 <dt>Can a parent caring for an ROC-national child use the family route?</dt>
-<dd>Yes, where the applicant supports, exercises rights and obligations on behalf of, and personally meets and interacts with an ROC-national child who is legally incompetent or has limited legal competence.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
+<dd>Yes, where the applicant supports, exercises rights and obligations concerning, or meets and interacts with an ROC-national child who is legally incompetent or has limited legal competence.<sup><a href="#ref-11" aria-label="Reference 11">[11]</a></sup><sup><a href="#ref-12" aria-label="Reference 12">[12]</a></sup></dd>
 </div>
 <div>
 <dt>Can an unmarried minor naturalize with an ROC-national parent?</dt>
@@ -459,7 +505,7 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 </div>
 <div>
 <dt>Are there lower thresholds for people aged 65 or older?</dt>
-<dd>Yes. The standards provide further reductions for Article 4 and Article 5 applicants aged 65 or over.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
+<dd>Yes. For applicants aged 65 or over under Article 3, Article 4(1), or Article 5, the standards provide a 72-hour programme threshold or a test pass mark of 50.<sup><a href="#ref-14" aria-label="Reference 14">[14]</a></sup></dd>
 </div>
 <div>
 <dt>Are accompanying minor children exempt from the test?</dt>
@@ -630,7 +676,7 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 </div>
 <div>
 <dt>When can I receive a National Identification Card?</dt>
-<dd>For people of the applicable age, initial household registration following settlement permits issuance of a National Identification Card.<sup><a href="#ref-19" aria-label="Reference 19">[19]</a></sup></dd>
+<dd>After initial household registration, a person aged 14 or over must apply for a National Identification Card; one under 14 may also apply.<sup><a href="#ref-6" aria-label="Reference 6">[6]</a></sup></dd>
 </div>
 </dl>
 
@@ -650,16 +696,28 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 <dd>MOI guidance identifies matters including legal residence, legal capacity, conduct and criminal-record requirements, financial self-sufficiency, and the loss-of-previous-nationality requirement as relevant to whether a grant conformed to the Act.<sup><a href="#ref-22" aria-label="Reference 22">[22]</a></sup></dd>
 </div>
 <div>
-<dt>Are there time limits on revocation?</dt>
-<dd>Except for the Article 9 rule, the MOI may act only within two years after learning of non-compliance and may not revoke more than five years after naturalization took effect, subject to the sham-marriage or sham-adoption exception.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup></dd>
+<dt>How long does the MOI have to revoke a naturalization approval?</dt>
+<dd>In an ordinary Article 19 case, both limits apply: the MOI must act within two years after learning of the non-compliance and no more than five years after naturalization took effect. The MOI must act before either period runs out; the periods do not add up to seven years. See <a href="#deadline-for-revoking-a-naturalization-approval">the worked examples</a>.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup></dd>
+</div>
+<div>
+<dt>When does the five-year revocation period start?</dt>
+<dd>It starts when naturalization is approved and nationality is acquired under Article 8, not when a certificate, passport or identity card is obtained or household registration is established.<sup><a href="#ref-54" aria-label="Reference 54">[54]</a></sup></dd>
+</div>
+<div>
+<dt>Can a later conviction for earlier conduct affect naturalization?</dt>
+<dd>Possibly, but not automatically. The MOI would need to establish a defect in the original approval under the eligibility rules applicable to that person, then satisfy the applicable revocation deadline. The conviction date does not itself restart the five-year period or necessarily start the two-year period. See <a href="#later-findings-about-conduct-before-naturalization">later findings about earlier conduct</a>.<sup><a href="#ref-55" aria-label="Reference 55">[55]</a></sup><sup><a href="#ref-56" aria-label="Reference 56">[56]</a></sup><sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup></dd>
 </div>
 <div>
 <dt>Are sham marriages and sham adoptions treated differently?</dt>
-<dd>The ordinary time limits do not apply where a final court judgment finds that nationality was obtained through a collusive sham marriage or adoption.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup></dd>
+<dd>Yes, but the deadline exception requires a final court judgment establishing that nationality was obtained through the collusive sham marriage or adoption. An allegation alone is insufficient.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-23" aria-label="Reference 23">[23]</a></sup></dd>
 </div>
 <div>
-<dt>Do I get a chance to respond before revocation?</dt>
-<dd>Before revocation under Article 19, the MOI must generally convene a review panel and give the person an opportunity to state their views, subject to stated exceptions.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-24" aria-label="Reference 24">[24]</a></sup></dd>
+<dt>What does the Article 2 exception mean?</dt>
+<dd>Article 2 of the Nationality Act (國籍法) lists several ways to possess ROC nationality, including naturalization. If the MOI determines that a person already possesses ROC nationality under Article 2, Article 19 excepts that revocation from its panel-and-response requirement. It does not itself waive the ordinary time limits or exempt every naturalized person from review. See <a href="#review-procedure-and-its-separate-exceptions">the explanation</a>.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-58" aria-label="Reference 58">[58]</a></sup></dd>
+</div>
+<div>
+<dt>When must the MOI provide a review and an opportunity to respond?</dt>
+<dd>Before an Article 19 revocation, ordinarily. Article 19 excepts the Article 2 nationality determination and the final-judgment sham-marriage or adoption situation. It does not list Article 9 as a panel exception. See <a href="#review-procedure-and-its-separate-exceptions">the comparison</a>.<sup><a href="#ref-20" aria-label="Reference 20">[20]</a></sup><sup><a href="#ref-21" aria-label="Reference 21">[21]</a></sup></dd>
 </div>
 <div>
 <dt>Can a naturalized citizen vote immediately?</dt>
@@ -768,7 +826,7 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 21. <span id="ref-21">[Nationality Act](https://www.ris.gov.tw/documents/data/en/2/Nationality-Act.pdf). *Department of Household Registration, Ministry of the Interior*. PDF. accessed 2026-08-17.</span>
 22. <span id="ref-22">[國籍變更申請案件提憑證件一覽表](https://www.ris.gov.tw/documents/data/en/2/Voluntary-naturalization.pdf) (List of documents for applications to change nationality). *Department of Household Registration, Ministry of the Interior*. PDF. accessed 2026-08-17.</span>
 23. <span id="ref-23">[國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例](https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647) (Revocation of naturalization for sham marriages or adoptions accords with international legislative practice). *Ministry of the Interior*. 2018-10-03. accessed 2026-08-17.</span>
-24. <span id="ref-24">[Establishment of and Review Directions for the Review Panel on Revoking Nationality Applications](https://www.ris.gov.tw/documents/data/en/2/2189736f-71b3-4c06-8948-d45a688b04b9.pdf). *Department of Household Registration, Ministry of the Interior*. PDF. 2018-08-20. accessed 2026-08-17.</span>
+24. <span id="ref-24">[Establishment of and Review Directions for the Review Panel on Revoking Nationality Applications](https://www.ris.gov.tw/documents/data/en/2/Establishment-of-and-Review-Directions-for-the-Review-Panel-on-Revoking-Nationality-Applications.pdf). *Department of Household Registration, Ministry of the Interior*. PDF. amended 2018-08-20. accessed 2026-09-30.</span>
 25. <span id="ref-25">[內政部認定「品性不端」 撤銷國籍](https://news.pts.org.tw/article/257045) (MOI finds “improper conduct” and revokes nationality). *Public Television Service News*. 2013-12-10. accessed 2026-08-17.</span>
 26. <span id="ref-26">[外遇生女遭撤銷國籍 越女敗訴](https://www.chinatimes.com/amp/realtimenews/20131223005274-260503) (Vietnamese woman loses case after nationality revocation over extramarital child). *Central News Agency*. 2013-12-23. accessed 2026-08-17.</span>
 27. <span id="ref-27">[Public Officials Election and Recall Act](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020010). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-08-15.</span>
@@ -794,7 +852,12 @@ These answers summarise the rules discussed above. They are not legal advice: ch
 47. <span id="ref-47">[Nationality Act - Legislative History - Laws & Regulations Database of The Republic of China (Taiwan)](https://law.moj.gov.tw/ENG/LawClass/LawHistory.aspx?pcode=D0030001). *law.moj.gov.tw*. accessed 2026-08-15.</span>
 48. <span id="ref-48">[Source document](https://art.archives.gov.tw/tw/art/1757.html)</span>
 49. <span id="ref-49">Stephanie Low. [New nationality rules welcomed](https://www.taipeitimes.com/News/local/archives/2000/01/19/0000020452). *Taipei Times*. 2000-01-19. accessed 2026-08-15.</span>
-50. <span id="ref-50">[擁抱國際 內政部：歸化規定已大幅放寬](http://www.moi.gov.tw/News_Content.aspx?n=8&s=14624). *內政部全球資訊網-中文網*. 2022-02-14. accessed 2026-08-15.</span>
+50. <span id="ref-50">[擁抱國際 內政部：歸化規定已大幅放寬](http://www.moi.gov.tw/News_Content.aspx?n=8&s=14624). *內政部全球資訊網-中文網*. 2018-07-02. accessed 2026-09-30.</span>
 51. <span id="ref-51">Hsin-po Huang. [Amended rules allow 635 naturalizations in two years](https://www.taipeitimes.com/News/front/archives/2019/05/05/2003714578). *Taipei Times*. 2019-05-05. accessed 2026-08-15.</span>
 52. <span id="ref-52">[國籍法 沿革-全國法規資料庫](https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=D0030001). *law.moj.gov.tw*. accessed 2026-08-15.</span>
 53. <span id="ref-53">[「國籍法」修正案三讀通過 林右昌：保障兒童取得國籍權利 加強延攬優秀外國人才](http://www.moi.gov.tw/News_Content.aspx?n=2&s=315474). *內政部全球資訊網-中文網*. 2024-05-07. accessed 2026-08-15.</span>
+54. <span id="ref-54">[國籍法第8條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8&pcode=D0030001) (Nationality Act, Article 8). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-09-30.</span>
+55. <span id="ref-55">[國籍法第3條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3&pcode=D0030001) (Nationality Act, Article 3). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-09-30.</span>
+56. <span id="ref-56">[歸化國籍無不良素行認定辦法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030034) (Regulations Governing Determination of No Bad Conduct for Naturalisation). *Laws & Regulations Database of the Republic of China (Taiwan)*. amended 2026-07-14. accessed 2026-09-30. The departmental directory's English version was listed as revised in 2022 and is not used for the current rules.</span>
+57. <span id="ref-57">[撤銷國籍變更案件審查會設置及審查作業要點](https://www.ris.gov.tw/documents/data/2/1/6247adb5-2caa-4422-9f57-92c81b09501f.pdf) (Review-panel establishment and operating directions). *Department of Household Registration, Ministry of the Interior*. PDF. amended 2018-08-20. accessed 2026-09-30.</span>
+58. <span id="ref-58">[國籍法第2條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2&pcode=D0030001) (Nationality Act, Article 2). *Laws & Regulations Database of the Republic of China (Taiwan)*. accessed 2026-09-30.</span>
