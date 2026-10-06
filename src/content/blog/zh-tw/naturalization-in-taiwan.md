@@ -1,7 +1,7 @@
 ---
 title: 台灣歸化制度
 date: 2026-08-18
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-06
 tags: ['台灣', '法律', '移民']
 cover:
   src: naturalization-in-taiwan/cover.png
@@ -169,7 +169,16 @@ cover:
 
 第 19 條分別規定期限與審查程序；其中一欄有例外，不代表另一欄也有例外。<sup><a href="#ref-1" aria-label="參考資料 1">[1]</a></sup><sup><a href="#ref-58" aria-label="參考資料 58">[58]</a></sup>
 
-2018 年，內政部表示，歸化許可遭撤銷者，在回復原有國籍以前仍可留在台灣；日後如果符合《國籍法》規定，也可再次申請歸化。<sup><a href="#ref-23" aria-label="參考資料 23">[23]</a></sup>
+#### 撤銷後的居留與國籍
+內政部在 2018 年 10 月 3 日的聲明中表示，歸化許可遭撤銷者，在回復原有國籍前仍可在台灣居留，居留期間可以工作及參加全民健康保險，日後符合各項法定要件時也可再次申請歸化。<sup><a href="#ref-23" aria-label="參考資料 23">[23]</a></sup> 這是內政部當時的政策說明，並非現行移民權益的完整說明。獲准繼續居留，本身不會使當事人回復國籍或取得永久居留；若原屬國拒絕回復其國籍，該聲明也未說明可保證獲得何種長期安排。<sup><a href="#ref-23" aria-label="參考資料 23">[23]</a></sup>
+
+當事人若確已喪失中華民國國籍，且沒有其他國家依該國法律認定其為國民，可能處於《國籍法施行細則》第 3 條所定義的無國籍狀態。<sup><a href="#ref-2" aria-label="參考資料 2">[2]</a></sup> 無國籍與臺灣地區無戶籍國民（NWOHR）是不同概念：後者須具有中華民國國籍，不能將撤銷歸化理解為單純回到無戶籍國民身分。<sup><a href="#ref-5" aria-label="參考資料 5">[5]</a></sup>
+
+依《入出國及移民法》第 93 條，該法關於外國人的規定準用於無國籍人民。第 26 條則為特定情況提供申請居留、經許可後核發外僑居留證（ARC）的途徑，包括喪失中華民國國籍而尚未取得外國國籍，以及喪失原國籍而尚未取得中華民國國籍。僅憑這些條文，不能推論每件依《國籍法》第 19 條撤銷歸化的案件，都會自動取得相同的 ARC，或恢復原有的 ARC、外僑永久居留證（APRC）。<sup><a href="#ref-5" aria-label="參考資料 5">[5]</a></sup>
+
+再次申請歸化不等於自動恢復國籍，仍須符合適用的法定要件。《國籍法》第 3 條允許無國籍人申請歸化，因此回復外國國籍並非再次申請的一律必要前提。<sup><a href="#ref-55" aria-label="參考資料 55">[55]</a></sup> 不過，居留原因會影響年限計算：《國籍法施行細則》第 5 條第 2 項第 4 款規定，以喪失原國籍、尚未取得我國國籍、等待回復原國籍為居留原因者，其居留期間不計入《國籍法》第 3 至 5 條的合法居留期間。這是針對特定居留類別的排除，並非所有撤銷後的居留期間或所有無國籍人的居留期間都不計入；獲准留下，不一定代表這段時間可計入再次申請歸化所需的年限。<sup><a href="#ref-2" aria-label="參考資料 2">[2]</a></sup>
+
+獲准繼續居留，本身也不代表可以出國旅行並返回台灣。《護照條例》第 25 條第 2 項第 5 款規定，持照人喪失中華民國國籍時應註銷護照；<sup><a href="#ref-59" aria-label="參考資料 59">[59]</a></sup>《入出國及移民法》第 34 條則另行規範居留外國人的重入國許可。<sup><a href="#ref-5" aria-label="參考資料 5">[5]</a></sup>
 
 ### 報導案例
 以下報導案例適用當時的「品行端正」要件，不能用來推定現行《歸化國籍無不良素行認定辦法》對其他個案的結論。2013 年，內政部認定一名越南籍女子婚外情並生下兩名女兒，涉及品性不端，因此撤銷其歸化許可。該女子於 2009 年歸化。內政部依據的是當時適用的「品行端正」要件。同年 12 月，臺北高等行政法院駁回她對撤銷處分提起的訴訟。<sup><a href="#ref-25" aria-label="參考資料 25">[25]</a></sup><sup><a href="#ref-26" aria-label="參考資料 26">[26]</a></sup>
@@ -810,10 +819,10 @@ Erin Aeran Chung 對日本、南韓與台灣所作的比較研究，探討公民
 ## 參考資料
 
 1. <span id="ref-1">[國籍法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001)。*全國法規資料庫*。查閱日期：2026-08-16。</span>
-2. <span id="ref-2">[國籍法施行細則](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022)。*全國法規資料庫*。查閱日期：2026-08-16。</span>
+2. <span id="ref-2">[國籍法施行細則](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022)。*全國法規資料庫*。包括第 3 條（無國籍人定義）及第 5 條第 2 項第 4 款（不計入歸化年限的特定居留類別）。查閱日期：2026-10-06。</span>
 3. <span id="ref-3">陳俊華。[立院三讀 外配歸化國籍不須財力證明](https://www.cna.com.tw/news/aipl/201612090305.aspx)。*中央通訊社*。2016-12-09。查閱日期：2026-08-18。</span>
 4. <span id="ref-4">黃巧雯。[國籍法放寬居留年限 籃協拚新歸化球員瓊斯盃亮相](https://www.cna.com.tw/news/aspt/202405070327.aspx)。*中央通訊社*。2024-05-07。查閱日期：2026-08-18。</span>
-5. <span id="ref-5">[入出國及移民法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080132)。*全國法規資料庫*。查閱日期：2026-08-15。</span>
+5. <span id="ref-5">[入出國及移民法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080132)。*全國法規資料庫*。包括第 3 條第 1、5 款（國民與無戶籍國民定義）、第 26 條第 1、2 款（喪失國籍後的居留申請）、第 34 條（重入國許可）及第 93 條（無國籍人民準用規定）。查閱日期：2026-10-06。</span>
 6. <span id="ref-6">[戶籍法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030006)。*全國法規資料庫*。查閱日期：2026-08-15。</span>
 7. <span id="ref-7">Isabelle Cheng。Reality or pretense? Renouncing nationality and organized hypocrisy of the sovereignty of Taiwan。*Asian and Pacific Migration Journal*。第 26 卷第 4 期，頁 436–458。2017。[doi:10.1177/0117196817746429](https://doi.org/10.1177/0117196817746429)。</span>
 8. <span id="ref-8">Choo Chin Low。Taiwanese and German Citizenship Reforms: Integration of Immigrants without Challenging the Status Quo, 1990–2000。*European Journal of East Asian Studies*。第 12 卷第 2 期，頁 269–294。2013。[doi:10.1163/15700615-13120206](https://doi.org/10.1163/15700615-13120206)。</span>
@@ -825,7 +834,7 @@ Erin Aeran Chung 對日本、南韓與台灣所作的比較研究，探討公民
 16. <span id="ref-16">[國籍法施行細則](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022)。*全國法規資料庫*。查閱日期：2026-08-15。</span>
 17. <span id="ref-17">[臺灣地區無戶籍國民申請在臺灣地區居留或延期居留及變更居留原因送件須知](https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%B1%85%E7%95%99/362069/)。*內政部移民署*。查閱日期：2026-08-15。</span>
 18. <span id="ref-18">[臺灣地區無戶籍國民連續居留或居留滿一定期間申請在臺灣地區定居送件須知](https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%AE%9A%E5%B1%85/36413/)。*內政部移民署*。查閱日期：2026-08-15。</span>
-23. <span id="ref-23">[國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例](https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647)。*內政部*。2018-10-03。查閱日期：2026-08-17。</span>
+23. <span id="ref-23">[國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例](https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647)。*內政部*。2018-10-03。查閱日期：2026-10-06。</span>
 24. <span id="ref-24">[撤銷國籍變更案件審查會設置及審查作業要點](https://www.ris.gov.tw/documents/data/2/1/6247adb5-2caa-4422-9f57-92c81b09501f.pdf)。*內政部戶政司*。PDF。2018-08-20 修正。查閱日期：2026-09-30。</span>
 25. <span id="ref-25">[內政部認定「品性不端」 撤銷國籍](https://news.pts.org.tw/article/257045)。*公視新聞網*。2013-12-10。查閱日期：2026-08-17。</span>
 26. <span id="ref-26">[外遇生女遭撤銷國籍 越女敗訴](https://www.chinatimes.com/amp/realtimenews/20131223005274-260503)。*中央通訊社，經由中國時報*。2013-12-23。查閱日期：2026-08-17。</span>
@@ -856,7 +865,8 @@ Erin Aeran Chung 對日本、南韓與台灣所作的比較研究，探討公民
 53. <span id="ref-53">[「國籍法」修正案三讀通過 林右昌：保障兒童取得國籍權利 加強延攬優秀外國人才](https://www.moi.gov.tw/News_Content.aspx?n=2&s=315474)。*內政部*。2024-05-07。查閱日期：2026-08-18。</span>
 
 54. <span id="ref-54">[國籍法第 8 條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8&pcode=D0030001)。*全國法規資料庫*。查閱日期：2026-09-30。</span>
-55. <span id="ref-55">[國籍法第 3 條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3&pcode=D0030001)。*全國法規資料庫*。查閱日期：2026-09-30。</span>
+55. <span id="ref-55">[國籍法第 3 條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3&pcode=D0030001)。*全國法規資料庫*。查閱日期：2026-10-06。</span>
 56. <span id="ref-56">[歸化國籍無不良素行認定辦法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030034)。*全國法規資料庫*。2026-07-14 修正。查閱日期：2026-09-30。</span>
 57. <span id="ref-57">[國籍法第 2 條](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2&pcode=D0030001)。*全國法規資料庫*。查閱日期：2026-09-30。</span>
 58. <span id="ref-58">[Nationality Act](https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001)。*全國法規資料庫英文版*。查閱日期：2026-09-30。</span>
+59. <span id="ref-59">[Passport Act（護照條例）](https://www.boca.gov.tw/cp-144-471-13088-2.html)，第 25 條第 2 項第 5 款（喪失中華民國國籍後註銷護照）。*外交部領事事務局*。官方英文版。查閱日期：2026-10-06。</span>
