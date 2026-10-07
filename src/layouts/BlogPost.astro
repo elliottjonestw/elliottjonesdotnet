@@ -284,6 +284,16 @@ const structuredData = {
 </Base>
 
 <script>
+  // A source may support several passages. Return to the citation the reader
+  // actually followed, with the first citation as the no-JavaScript fallback.
+  document.querySelectorAll<HTMLAnchorElement>('sup a[id][href^="#ref-source-"]').forEach((citation) => {
+    citation.addEventListener('click', () => {
+      const source = document.getElementById(citation.hash.slice(1));
+      const backlink = source?.querySelector<HTMLAnchorElement>('.reference-backlink');
+      if (backlink) backlink.href = `#${citation.id}`;
+    });
+  });
+
   const diagrams = document.querySelectorAll<HTMLElement>(
     'pre[data-language="mermaid"]',
   );
