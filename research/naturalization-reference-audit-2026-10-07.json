@@ -1,0 +1,2636 @@
+{
+  "checked_on": "2026-10-07",
+  "articles": [
+    "src/content/blog/en/naturalization-in-taiwan.md",
+    "src/content/blog/zh-tw/naturalization-in-taiwan.md"
+  ],
+  "method": "Checked the claims associated with every numbered reference against primary legislation, agency guidance, official statistics, original reporting, publisher abstracts or author manuscripts. Direct HTTP status is recorded separately from whether the source content was readable through the web reader. Public sources were submitted to Wayback after their claim checks. Only service-confirmed captures are linked.",
+  "scope": {
+    "references": 47,
+    "unique_source_urls": 78,
+    "archive_results": {
+      "new_capture": 59,
+      "existing_capture": 4,
+      "unavailable": 15
+    },
+    "references_without_archive": [
+      24,
+      26,
+      29,
+      42,
+      43
+    ],
+    "statistics": {
+      "values_checked": 226,
+      "errors": []
+    }
+  },
+  "limitations": [
+    "Publisher bot challenges do not necessarily indicate broken links. Where a DOI destination was challenged, an accessible author manuscript or publisher abstract was used, as specified in the per-reference verification.",
+    "Full paywalled academic papers and the full subscriber-only Focus Taiwan report were not used when only abstracts or a headline/lead were available.",
+    "Wayback replay URLs returned connection-refused errors in this environment. New capture links are based on successful Save Page Now responses; older captures are based on CDX records reporting HTTP 200. Replay rendering could not be independently verified."
+  ],
+  "removed_or_replaced_sources": [
+    {
+      "previous_reference": 48,
+      "change": "Removed an uncited, generic MOI FAQ page; retained its legacy anchor with the relevant NIA guidance. No article claim was removed."
+    },
+    {
+      "reference": 20,
+      "change": "Replaced inaccessible China Times/CNA reprint with the Ministry of Justice court-judgment digest."
+    },
+    {
+      "reference": 32,
+      "change": "Replaced DOI link resolving to a publisher 404 with the University of Portsmouth repository; retained DOI text as a bibliographic identifier."
+    },
+    {
+      "references": [
+        44,
+        46
+      ],
+      "change": "Replaced failing HTTP links with working HTTPS versions."
+    }
+  ],
+  "references": [
+    {
+      "reference": 1,
+      "claim_check": "supported_as_worded",
+      "verification": "Current Chinese Articles 2–10 and 19 support eligibility, exceptions, effective date, renunciation and revocation. Added the Article 9 Foreign Affairs verification condition for extensions.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001",
+          "labels": {
+            "en": [
+              "國籍法 / Nationality Act"
+            ],
+            "zh-tw": [
+              "國籍法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007025827/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001",
+            "timestamp": "20261007025827",
+            "captured_http_status": null,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 159 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tNationality Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007025945/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030001",
+            "timestamp": "20261007025945",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "200",
+              "title": "\n\tNationality Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+              "error": ""
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2&pcode=D0030001",
+          "labels": {
+            "en": [
+              "2"
+            ],
+            "zh-tw": [
+              "2"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2&pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法§2-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007025946/https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2&pcode=D0030001",
+            "timestamp": "20261007025946",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 164 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3&pcode=D0030001",
+          "labels": {
+            "en": [
+              "3"
+            ],
+            "zh-tw": [
+              "3"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3&pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法§3-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030020/https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3&pcode=D0030001",
+            "timestamp": "20261007030020",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 152 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8&pcode=D0030001",
+          "labels": {
+            "en": [
+              "8"
+            ],
+            "zh-tw": [
+              "8"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8&pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法§8-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "existing_capture",
+              "error": ""
+            },
+            "fresh_save_message": "Job failed.",
+            "kind": "existing_capture",
+            "url": "https://web.archive.org/web/20261007031222/https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8&pcode=D0030001",
+            "timestamp": "20261007031222",
+            "captured_http_status": "200",
+            "confirmation": "Wayback CDX index, filtered to status 200"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 2,
+      "claim_check": "supported_as_worded",
+      "verification": "Checked current Chinese rules on domicile, excluded residence, applications, evidence, extension timing, certificates and authentication; corresponding English text also accessible.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022",
+          "labels": {
+            "en": [
+              "國籍法施行細則 / Enforcement Rules of the Nationality Act"
+            ],
+            "zh-tw": [
+              "國籍法施行細則"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法施行細則-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007025904/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030022",
+            "timestamp": "20261007025904",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 159 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030022",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030022",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tEnforcement Rules of the Nationality Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030030/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030022",
+            "timestamp": "20261007030030",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 154 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 3,
+      "claim_check": "supported_as_worded",
+      "verification": "Checked Articles 3, 9, 10, 26, 34 and 93: nationality versus household registration; separate residence and settlement; 335/270/183-day alternatives; qualifying exemptions; post-loss residence and re-entry.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080132",
+          "labels": {
+            "en": [
+              "入出國及移民法 / Immigration Act"
+            ],
+            "zh-tw": [
+              "入出國及移民法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080132",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t入出國及移民法-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030314/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080132",
+            "timestamp": "20261007030314",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 160 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0080132",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0080132",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tImmigration Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030313/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0080132",
+            "timestamp": "20261007030313",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 167 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 4,
+      "claim_check": "supported_as_worded",
+      "verification": "Articles 15 and 57 support initial household registration and ID-card requirements. Both official language versions accessible.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030006",
+          "labels": {
+            "en": [
+              "戶籍法 / Household Registration Act"
+            ],
+            "zh-tw": [
+              "戶籍法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030006",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t戶籍法-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030517/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030006",
+            "timestamp": "20261007030517",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 155 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030006",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030006",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tHousehold Registration Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030335/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030006",
+            "timestamp": "20261007030335",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 166 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 5,
+      "claim_check": "supported_as_worded",
+      "verification": "Articles 12–15, 75 and 77 support the age, guardianship and legal-capacity explanation. Legal capacity still depends on both applicable legal systems under the Nationality Act.",
+      "sources": [
+        {
+          "url": "https://mojlaw.moj.gov.tw/LawContent.aspx?LSID=FL001351&TypeSort=1&lawNumber=1",
+          "labels": {
+            "en": [
+              "Civil Code"
+            ],
+            "zh-tw": [
+              "民法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://mojlaw.moj.gov.tw/LawContent.aspx?LSID=FL001351&TypeSort=1&lawNumber=1",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t法務部-民法  20260817\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030519/https://mojlaw.moj.gov.tw/LawContent.aspx?LSID=FL001351&TypeSort=1&lawNumber=1",
+            "timestamp": "20261007030519",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 164 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=75",
+          "labels": {
+            "en": [
+              "Article 75"
+            ],
+            "zh-tw": [
+              "第 75 條"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=75",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t民法§75-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030650/https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=75",
+            "timestamp": "20261007030650",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 147 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=77",
+          "labels": {
+            "en": [
+              "Article 77"
+            ],
+            "zh-tw": [
+              "第 77 條"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=77",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t民法§77-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030715/https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=77",
+            "timestamp": "20261007030715",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 152 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 6,
+      "claim_check": "supported_as_worded",
+      "verification": "Chinese PDF and English text dated 2017-06-03 agree on one year of school, 200/72/100 course hours, age-65 provisions and 70/60/50 test marks.",
+      "sources": [
+        {
+          "url": "https://www.ris.gov.tw/documents/data/2/1/c73f9d8b-9d37-4620-9c23-5282b8e07a1a.pdf",
+          "labels": {
+            "en": [
+              "歸化取得我國國籍者基本語言能力及國民權利義務基本常識認定標準"
+            ],
+            "zh-tw": [
+              "歸化取得我國國籍者基本語言能力及國民權利義務基本常識認定標準"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.ris.gov.tw/documents/data/2/1/c73f9d8b-9d37-4620-9c23-5282b8e07a1a.pdf",
+            "content_type": "application/pdf",
+            "title": " 1 \n歸化取得我國國籍者基本語言能力及國民權利義\n務基本常識認定標準 \n內政部 94 年 11 月 15 日台內戶字第 0940063086 號令訂定發布  \n內政部 95 年 8 月 23 日台內戶字第 0950136980 號令修正  \n內政部 98 年 10 月 14 日",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030722/https://www.ris.gov.tw/documents/data/2/1/c73f9d8b-9d37-4620-9c23-5282b8e07a1a.pdf",
+            "timestamp": "20261007030722",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 141 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://glrs.moi.gov.tw/EngLawContent.aspx?lan=E&id=420",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://glrs.moi.gov.tw/EngLawContent.aspx?lan=E&id=420",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tMinistry of the Interior -Content\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "[]\n"
+            },
+            "fresh_save_message": "The target server didn't respond in time for https://glrs.moi.gov.tw/EngLawContent.aspx?lan=E&id=420. Please try again later. (HTTP status=504)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 7,
+      "claim_check": "supported_as_worded",
+      "verification": "Checked Chinese regulations amended 2026-07-14, including Article 6 on pending criminal proceedings. The older English translation is dated 2022 and is explicitly not used as the current rule.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030034",
+          "labels": {
+            "en": [
+              "歸化國籍無不良素行認定辦法"
+            ],
+            "zh-tw": [
+              "歸化國籍無不良素行認定辦法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030034",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t歸化國籍無不良素行認定辦法-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030843/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030034",
+            "timestamp": "20261007030843",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 147 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030034",
+          "labels": {
+            "en": [
+              "older English translation"
+            ],
+            "zh-tw": [
+              "較舊英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030034",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tRegulations Governing the Assessment Criteria for No Illicit or Illegal Behavior of People Applying for Naturalization - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031946/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030034",
+            "timestamp": "20261007031946",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 8,
+      "claim_check": "supported_as_worded",
+      "verification": "Chinese professional-recognition standards support central-authority recommendation and statutory assessment. The residence and renunciation rules are also checked against Nationality Act Articles 5 and 9.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030033",
+          "labels": {
+            "en": [
+              "歸化國籍之高級專業人才認定標準"
+            ],
+            "zh-tw": [
+              "歸化國籍之高級專業人才認定標準"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030033",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t歸化國籍之高級專業人才認定標準-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030403/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030033",
+            "timestamp": "20261007030403",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 151 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030033",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文譯文"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030033",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tStandards for Defining High-Level Professionals for Naturalization - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032026/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0030033",
+            "timestamp": "20261007032026",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 9,
+      "claim_check": "supported_as_worded",
+      "verification": "The live service entry lists 30 days. This is application processing, not total residence-to-ID time. Replaced the uncorroborated older publication date with the displayed page-update date.",
+      "sources": [
+        {
+          "url": "https://www.gov.tw/News_Content_2_371529",
+          "labels": {
+            "en": [
+              "國籍變更申請書（歸化、喪失、回復國籍及中華民國國籍證明）"
+            ],
+            "zh-tw": [
+              "國籍變更申請書（歸化、喪失、回復國籍及中華民國國籍證明）"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.gov.tw/News_Content_2_371529",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t我的E政府-申辦服務-國籍變更申請書（歸化、喪失、回復國籍及中華民國國籍證明）\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030452/https://www.gov.tw/News_Content_2_371529",
+            "timestamp": "20261007030452",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 146 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 10,
+      "claim_check": "supported_as_worded",
+      "verification": "Both historical reports support the 2016 renunciation-sequence reform and spouse financial-evidence change. Current eligibility is sourced to legislation rather than historical news.",
+      "sources": [
+        {
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2016/12/14/2003661193",
+          "labels": {
+            "en": [
+              "Changes to naturalization for foreign spouses outlined"
+            ],
+            "zh-tw": [
+              "Changes to naturalization for foreign spouses outlined"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.taipeitimes.com/News/taiwan/archives/2016/12/14/2003661193",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Changes to naturalization for foreign spouses outlined - Taipei Times",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "existing_capture",
+              "error": ""
+            },
+            "fresh_save_message": "The target server blocks access to https://www.taipeitimes.com/News/taiwan/archives/2016/12/14/2003661193. (HTTP status=403)",
+            "kind": "existing_capture",
+            "url": "https://web.archive.org/web/20260816091700/https://www.taipeitimes.com/News/taiwan/archives/2016/12/14/2003661193",
+            "timestamp": "20260816091700",
+            "captured_http_status": "200",
+            "confirmation": "Wayback CDX index, filtered to status 200",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 144 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://www.cna.com.tw/news/aipl/201612090305.aspx",
+          "labels": {
+            "en": [
+              "立院三讀 外配歸化國籍不須財力證明"
+            ],
+            "zh-tw": [
+              "立院三讀 外配歸化國籍不須財力證明"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.cna.com.tw/news/aipl/201612090305.aspx",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tç«é¢ä¸è®  å¤éæ­¸ååç±ä¸é è²¡åè­æ | æ¿æ²» | ä¸­å¤®ç¤¾ CNA\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030858/https://www.cna.com.tw/news/aipl/201612090305.aspx",
+            "timestamp": "20261007030858",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 156 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 11,
+      "claim_check": "supported_as_worded",
+      "verification": "Publisher blocks automated direct requests; University of Portsmouth author manuscript confirms the sovereignty, renunciation, household-registration and statelessness argument. Added manuscript title link.",
+      "sources": [
+        {
+          "url": "https://pure.port.ac.uk/ws/portalfiles/portal/7998492/reality_or_pretense.pdf",
+          "labels": {
+            "en": [
+              "Reality or pretense? Renouncing nationality and organized hypocrisy of the sovereignty of Taiwan"
+            ],
+            "zh-tw": [
+              "Reality or pretense? Renouncing nationality and organized hypocrisy of the sovereignty of Taiwan"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://pure.port.ac.uk/ws/portalfiles/portal/7998492/reality_or_pretense.pdf",
+            "content_type": "application/pdf",
+            "title": "1 \nReality or Pretense? Renouncing Nationality and Organized Hypocrisy of the Sovereignty \nof Taiwan \nIsabelle Cheng, University of Portsmou",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032108/https://pure.port.ac.uk/ws/portalfiles/portal/7998492/reality_or_pretense.pdf",
+            "timestamp": "20261007032108",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        },
+        {
+          "url": "https://doi.org/10.1177/0117196817746429",
+          "labels": {
+            "en": [
+              "doi:10.1177/0117196817746429"
+            ],
+            "zh-tw": [
+              "doi:10.1177/0117196817746429"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://journals.sagepub.com/doi/10.1177/0117196817746429",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "<html><head><meta charset=\"UTF-8\"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margi"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.1177/0117196817746429. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 12,
+      "claim_check": "supported_as_worded",
+      "verification": "NIA Chinese guideline 0303 confirms the naturalization certificate, ARC and address-document list and differentiated application categories.",
+      "sources": [
+        {
+          "url": "https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%B1%85%E7%95%99/362069/",
+          "labels": {
+            "en": [
+              "臺灣地區無戶籍國民申請在臺灣地區居留或延期居留及變更居留原因送件須知"
+            ],
+            "zh-tw": [
+              "臺灣地區無戶籍國民申請在臺灣地區居留或延期居留及變更居留原因送件須知"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%B1%85%E7%95%99/362069/",
+            "content_type": "text/html; charset=utf-8",
+            "title": "移民署中文網-臺灣地區無戶籍國民申請在臺灣地區居留或延期居留及變更居留原因送件須知 ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030506/https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%B1%85%E7%95%99/362069/",
+            "timestamp": "20261007030506",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 207 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 13,
+      "claim_check": "supported_as_worded",
+      "verification": "NIA Chinese guideline 0305 and English guidance confirm settlement procedures and the registration deadline counted from the day after certificate issuance. Guideline 0306 confirms the English term Taiwan Area Permanent Resident Certificate. Updated body and FAQ accordingly.",
+      "sources": [
+        {
+          "url": "https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%AE%9A%E5%B1%85/36413/",
+          "labels": {
+            "en": [
+              "臺灣地區無戶籍國民連續居留或居留滿一定期間申請在臺灣地區定居送件須知"
+            ],
+            "zh-tw": [
+              "臺灣地區無戶籍國民連續居留或居留滿一定期間申請在臺灣地區定居送件須知"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%AE%9A%E5%B1%85/36413/",
+            "content_type": "text/html; charset=utf-8",
+            "title": "移民署中文網-臺灣地區無戶籍國民連續居留或居留滿一定期間申請在臺灣地區定居送件須知 ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030525/https://www.immigration.gov.tw/5385/7244/7250/7281/%E5%AE%9A%E5%B1%85/36413/",
+            "timestamp": "20261007030525",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 164 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://www.immigration.gov.tw/5475/5478/141465/141808/141950/",
+          "labels": {
+            "en": [
+              "English version"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.immigration.gov.tw/5475/5478/141465/141808/141950/",
+            "content_type": "text/html; charset=utf-8",
+            "title": "National Immigration Agency, R.O.C. (Taiwan) - 0305 Guidelines for the Application for Continuous or Periodic Residence for Nationals without Registered Permanent Residence in the Taiwan Area ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031353/https://www.immigration.gov.tw/5475/5478/141465/141808/141950/",
+            "timestamp": "20261007031353",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 166 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://www.immigration.gov.tw/5475/5478/141465/141808/141948/",
+          "labels": {
+            "en": [
+              "Guideline 0306: permanent resident certificate terminology"
+            ],
+            "zh-tw": [
+              "英文送件須知 0306：定居證英文名稱"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.immigration.gov.tw/5475/5478/141465/141808/141948/",
+            "content_type": "text/html; charset=utf-8",
+            "title": "National Immigration Agency, R.O.C. (Taiwan) - 0306 Guidelines for Nationals Without Registered Permanent Residence in the Taiwan Area Applying for Registered Permanent Residence in the Taiwan Area ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031408/https://www.immigration.gov.tw/5475/5478/141465/141808/141948/",
+            "timestamp": "20261007031408",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 148 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 14,
+      "claim_check": "supported_as_worded",
+      "verification": "PDF is explicitly revised September 2020. It supports the stated categories of eligibility requirements, but is historical guidance and contains superseded details elsewhere. Added version label and checked current rules against references 1 and 2.",
+      "sources": [
+        {
+          "url": "https://www.ris.gov.tw/documents/data/en/2/Voluntary-naturalization.pdf",
+          "labels": {
+            "en": [
+              "List of Documents as Required for Application for Nationality Alteration"
+            ],
+            "zh-tw": [
+              "List of Documents as Required for Application for Nationality Alteration"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.ris.gov.tw/documents/data/en/2/Voluntary-naturalization.pdf",
+            "content_type": "application/pdf",
+            "title": "1 \n \nList of Documents as Required for Application for Nationality Alteration  \nApplication \nitem \nA. Naturalization of nationality  \nApplic",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030920/https://www.ris.gov.tw/documents/data/en/2/Voluntary-naturalization.pdf",
+            "timestamp": "20261007030920",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 150 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 15,
+      "claim_check": "supported_as_worded",
+      "verification": "MOI's 2018-10-03 statement supports the attributed historical statements on sham-marriage/adoption judgments, residence, work, health insurance and possible reapplication. It is not presented as a complete current immigration-rights guarantee.",
+      "sources": [
+        {
+          "url": "https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647",
+          "labels": {
+            "en": [
+              "國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例"
+            ],
+            "zh-tw": [
+              "國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法對於假結婚或假收養撤銷歸化 符合國際立法通例\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030932/https://www.moi.gov.tw/News_Content.aspx?n=8&s=14647",
+            "timestamp": "20261007030932",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 156 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 16,
+      "claim_check": "supported_as_worded",
+      "verification": "Chinese and English directions dated 2018-08-20 support panel composition, attendance/written representations, conditional invitations of additional attendees, supporting material and written notice.",
+      "sources": [
+        {
+          "url": "https://www.ris.gov.tw/documents/data/2/1/6247adb5-2caa-4422-9f57-92c81b09501f.pdf",
+          "labels": {
+            "en": [
+              "撤銷國籍變更案件審查會設置及審查作業要點"
+            ],
+            "zh-tw": [
+              "撤銷國籍變更案件審查會設置及審查作業要點"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.ris.gov.tw/documents/data/2/1/6247adb5-2caa-4422-9f57-92c81b09501f.pdf",
+            "content_type": "application/pdf",
+            "title": "1 \n \n撤銷國籍變更案件審查會設置及審查作業要點 \n中華民國 106 年 5 月 26 日台內戶字第 1061201017 號令訂定發布 \n中華民國 107 年 8 月 20 日台內戶字第 1071203109 號令修正發布 \n一、內政部(以下簡稱本部)為處理撤銷歸化、喪失或回",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007030938/https://www.ris.gov.tw/documents/data/2/1/6247adb5-2caa-4422-9f57-92c81b09501f.pdf",
+            "timestamp": "20261007030938",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 163 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://www.ris.gov.tw/documents/data/en/2/Establishment-of-and-Review-Directions-for-the-Review-Panel-on-Revoking-Nationality-Applications.pdf",
+          "labels": {
+            "en": [
+              "English translation"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.ris.gov.tw/documents/data/en/2/Establishment-of-and-Review-Directions-for-the-Review-Panel-on-Revoking-Nationality-Applications.pdf",
+            "content_type": "application/pdf",
+            "title": "1 \n \nEstablishment of and Review Directions for the Review Panel on Revoking \nNationality Applications \nEnacted and promulgated per order No",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031116/https://www.ris.gov.tw/documents/data/en/2/Establishment-of-and-Review-Directions-for-the-Review-Panel-on-Revoking-Nationality-Applications.pdf",
+            "timestamp": "20261007031116",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 162 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 17,
+      "claim_check": "supported_as_worded",
+      "verification": "Official English Nationality Act PDF amended 2024-05-24 corroborates the Article 19 procedural exceptions. Chinese current statute remains the main authority.",
+      "sources": [
+        {
+          "url": "https://www.ris.gov.tw/documents/data/en/2/Nationality-Act.pdf",
+          "labels": {
+            "en": [
+              "Nationality Act"
+            ],
+            "zh-tw": [
+              "Nationality Act（國籍法英譯）"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.ris.gov.tw/documents/data/en/2/Nationality-Act.pdf",
+            "content_type": "application/pdf",
+            "title": "1 \n \nNationality Act \nThe Nationality Act, comprising a total of 20 articles, was formulated and promulgated by the \nNational Government of ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031024/https://www.ris.gov.tw/documents/data/en/2/Nationality-Act.pdf",
+            "timestamp": "20261007031024",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 149 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 18,
+      "claim_check": "supported_as_worded",
+      "verification": "Passport Act Article 25(2)(5) supports passport cancellation after loss of ROC nationality; re-entry is independently sourced to the Immigration Act.",
+      "sources": [
+        {
+          "url": "https://www.boca.gov.tw/cp-144-471-13088-2.html",
+          "labels": {
+            "en": [
+              "Passport Act"
+            ],
+            "zh-tw": [
+              "Passport Act（護照條例）"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.boca.gov.tw/cp-144-471-13088-2.html",
+            "content_type": "text/html; charset=utf-8",
+            "title": "Bureau of Consular Affairs, Ministry of Foreign Affairs, Republic of China(Taiwan)-Passport Act",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031047/https://www.boca.gov.tw/cp-144-471-13088-2.html",
+            "timestamp": "20261007031047",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 152 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 19,
+      "claim_check": "supported_as_worded",
+      "verification": "PTS report confirms the 2013 revocation and two daughters by the time of reporting. It does not establish that both births preceded naturalization. Corrected that implication without dropping the reported two-daughter fact.",
+      "sources": [
+        {
+          "url": "https://news.pts.org.tw/article/257045",
+          "labels": {
+            "en": [
+              "內政部認定「品性不端」 撤銷國籍"
+            ],
+            "zh-tw": [
+              "內政部認定「品性不端」 撤銷國籍"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://news.pts.org.tw/article/257045",
+            "content_type": "text/html; charset=utf-8",
+            "title": "內政部認定\"品性不端\" 撤銷國籍 - 2013年12月10日 ｜ 公視新聞網 PNN",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031126/https://news.pts.org.tw/article/257045",
+            "timestamp": "20261007031126",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 159 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 20,
+      "claim_check": "supported_as_worded",
+      "verification": "China Times/CNA reprint was inaccessible to both direct fetch and web reader. Replaced with the Ministry of Justice's official reproduction of Taipei High Administrative Court 102年度訴字第1339號, dated 2013-12-19, in Administrative Procedure Act Case Digest vol. 10, pp. 117–119. Confirms September 2009 naturalization, conduct rationale and court rejection of the challenge.",
+      "sources": [
+        {
+          "url": "https://www.moj.gov.tw/media/2561/68221524844.pdf?mediaDL=true",
+          "labels": {
+            "en": [
+              "臺北高等行政法院 102 年度訴字第 1339 號判決"
+            ],
+            "zh-tw": [
+              "臺北高等行政法院 102 年度訴字第 1339 號判決"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.moj.gov.tw/media/2561/68221524844.pdf?mediaDL=true",
+            "content_type": "application/pdf",
+            "title": " \n行政程序法  \n裁判要旨彙編(十) \n \n \n \n \n \n \n \n \n \n \n \n \n \n法務部編印 \n中華民國 104 年 12 月 \n例 言  \n例   言  \n一、本部前曾於 93 年 7 月、94 年 10 月、95 年 10 月、96 年 12\n月、98 年 12 ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031230/https://www.moj.gov.tw/media/2561/68221524844.pdf?mediaDL=true",
+            "timestamp": "20261007031230",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 148 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 21,
+      "claim_check": "supported_as_worded",
+      "verification": "Official election legislation supports household-registration-based electoral rolls and the ten-year naturalization requirement for candidacy. Checked both languages; eligibility to vote and candidacy remain distinct.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020010",
+          "labels": {
+            "en": [
+              "Public Officials Election and Recall Act"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020010",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tPublic officials Election And Recall Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031124/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020010",
+            "timestamp": "20261007031124",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 144 ms: Couldn't connect to server\n"
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
+          "labels": {
+            "zh-tw": [
+              "公職人員選舉罷免法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t公職人員選舉罷免法-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031400/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
+            "timestamp": "20261007031400",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 159 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 22,
+      "claim_check": "supported_as_worded",
+      "verification": "Article 20 of presidential election legislation bars naturalized nationals from presidential and vice-presidential candidacy without a ten-year exception.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020053",
+          "labels": {
+            "en": [
+              "Presidential and Vice Presidential Election and Recall Act"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020053",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tPresidential and Vice Presidential Election and Recall Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031405/https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0020053",
+            "timestamp": "20261007031405",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "200",
+              "title": "\n\tPresidential and Vice Presidential Election and Recall Act - Article Content - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+              "error": ""
+            }
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020053",
+          "labels": {
+            "zh-tw": [
+              "總統副總統選舉罷免法"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020053",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t總統副總統選舉罷免法（新 84.08.09 制定）-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031538/https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020053",
+            "timestamp": "20261007031538",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 141 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 23,
+      "claim_check": "supported_as_worded",
+      "verification": "University-hosted author article confirms the three ideological themes and distinction between skilled labor, marriage migration and low-skilled workers. Added a readable full-text title link; DOI publisher direct access is challenged.",
+      "sources": [
+        {
+          "url": "https://twsouthernsoc.nsysu.edu.tw/wp-content/uploads/2021/03/Immigration-Trends-and-Policy-Changes-in-Taiwan-.pdf",
+          "labels": {
+            "en": [
+              "Immigration Trends and Policy Changes in Taiwan"
+            ],
+            "zh-tw": [
+              "Immigration Trends and Policy Changes in Taiwan"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://twsouthernsoc.nsysu.edu.tw/wp-content/uploads/2021/03/Immigration-Trends-and-Policy-Changes-in-Taiwan-.pdf",
+            "content_type": "application/pdf",
+            "title": "See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/276324983\nImmigration Trends a",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032230/https://twsouthernsoc.nsysu.edu.tw/wp-content/uploads/2021/03/Immigration-Trends-and-Policy-Changes-in-Taiwan-.pdf",
+            "timestamp": "20261007032230",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        },
+        {
+          "url": "https://doi.org/10.1177/011719681102000203",
+          "labels": {
+            "en": [
+              "doi:10.1177/011719681102000203"
+            ],
+            "zh-tw": [
+              "doi:10.1177/011719681102000203"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://journals.sagepub.com/doi/10.1177/011719681102000203",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "[]\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.1177/011719681102000203. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 24,
+      "claim_check": "supported_as_worded",
+      "verification": "University-hosted article confirms the Taiwanization and differential-citizenship analysis of policy, academic discourse and NGOs. Added full-text title link; DOI publisher direct access is challenged.",
+      "sources": [
+        {
+          "url": "https://twsouthernsoc.nsysu.edu.tw/wp-content/uploads/2020/02/Taiwanizing-Female-Immigrant-Spouses-and-Materializing-Differential-Citizenship.pdf",
+          "labels": {
+            "en": [
+              "Taiwanizing female immigrant spouses and materializing differential citizenship"
+            ],
+            "zh-tw": [
+              "Taiwanizing female immigrant spouses and materializing differential citizenship"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://twsouthernsoc.nsysu.edu.tw/wp-content/uploads/2020/02/Taiwanizing-Female-Immigrant-Spouses-and-Materializing-Differential-Citizenship.pdf",
+            "content_type": "application/pdf",
+            "title": "See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/248984222\nTaiwanizing Female I",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (28) Operation timed out after 30010 milliseconds with 0 bytes received\n"
+            },
+            "fresh_save_message": "The target server didn't respond in time for https://twsouthernsoc.nsysu.edu.tw/wp-content/uploads/2020/02/Taiwanizing-Female-Immigrant-Spouses-and-Materializing-Differential-Citizenship.pdf. Please try again later. (HTTP status=504)",
+            "kind": "unavailable"
+          }
+        },
+        {
+          "url": "https://doi.org/10.1080/13621020701794224",
+          "labels": {
+            "en": [
+              "doi:10.1080/13621020701794224"
+            ],
+            "zh-tw": [
+              "doi:10.1080/13621020701794224"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://www.tandfonline.com/doi/abs/10.1080/13621020701794224",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (28) Operation timed out after 30010 milliseconds with 0 bytes received\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.1080/13621020701794224. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 25,
+      "claim_check": "supported_as_worded",
+      "verification": "The journal-hosted full text and Lawbank bibliographic record support the socio-legal, gender, patriarchy, social-stability and national-security summary. Added the university-hosted journal PDF after Wayback timed out on the Lawbank record.",
+      "sources": [
+        {
+          "url": "https://www.law.ntu.edu.tw/center/media/k2/attachments/03-Article-Kuo.pdf",
+          "labels": {
+            "en": [
+              "A Socio-Legal Analysis of the Regulations on Foreign Spouses in Taiwan"
+            ],
+            "zh-tw": [
+              "A Socio-Legal Analysis of the Regulations on Foreign Spouses in Taiwan"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.law.ntu.edu.tw/center/media/k2/attachments/03-Article-Kuo.pdf",
+            "content_type": "application/pdf",
+            "title": " \n \nArticle \nA Socio-Legal Analysis of the Regulations on \nForeign Spouses in Taiwan  \nShu-chin Grace Kuo*  \nABSTRACT \n \nThis paper focuses ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032217/https://www.law.ntu.edu.tw/center/media/k2/attachments/03-Article-Kuo.pdf",
+            "timestamp": "20261007032217",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        },
+        {
+          "url": "https://www.lawbank.com.tw/treatise/pl_article.aspx?AID=P000227799",
+          "labels": {
+            "en": [
+              "Bibliographic record"
+            ],
+            "zh-tw": [
+              "書目資料"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.lawbank.com.tw/treatise/pl_article.aspx?AID=P000227799",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t法源法律網-法學論著-法學期刊-National Taiwan University Law Review第 6 卷 第 2 期 (2011.09)-A Socio-Legal Analysis of the Regulations on Foreign Spouses in Taiwan\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 151 ms: Couldn't connect to server\n"
+            },
+            "fresh_save_message": "The target server didn't respond in time for https://www.lawbank.com.tw/treatise/pl_article.aspx?AID=P000227799. Please try again later. (HTTP status=504)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 26,
+      "claim_check": "supported_as_worded",
+      "verification": "Publisher abstract, available through the web reader despite a direct-fetch bot challenge, supports the discussion of multicultural and multiple citizenship and immigrant advocacy. Full paywalled text was not used.",
+      "sources": [
+        {
+          "url": "https://journals.sagepub.com/doi/10.1177/011719680901800102",
+          "labels": {
+            "en": [
+              "Foreign Brides, Multiple Citizenship and the Immigrant Movement in Taiwan"
+            ],
+            "zh-tw": [
+              "Foreign Brides, Multiple Citizenship and the Immigrant Movement in Taiwan"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://journals.sagepub.com/doi/10.1177/011719680901800102",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "<html><head><meta charset=\"UTF-8\"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margi"
+            },
+            "fresh_save_message": "The target server blocks access to https://journals.sagepub.com/doi/10.1177/011719680901800102. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        },
+        {
+          "url": "https://doi.org/10.1177/011719680901800102",
+          "labels": {
+            "en": [
+              "doi:10.1177/011719680901800102"
+            ],
+            "zh-tw": [
+              "doi:10.1177/011719680901800102"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://journals.sagepub.com/doi/10.1177/011719680901800102",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "[]\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.1177/011719680901800102. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 27,
+      "claim_check": "supported_as_worded",
+      "verification": "Journal's own abstract supports the discussion of dual-citizenship advocacy and government reluctance. Metadata matches author, year, volume and pages.",
+      "sources": [
+        {
+          "url": "https://ijaps.usm.my/?page_id=2516",
+          "labels": {
+            "en": [
+              "Debates over liberalising dual citizenship: Prospects and limits in Taiwan and the People's Republic of China"
+            ],
+            "zh-tw": [
+              "Debates over liberalising dual citizenship: Prospects and limits in Taiwan and the People's Republic of China"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://ijaps.usm.my/?page_id=2516",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Debates over Liberalising Dual Citizenship, by Low Choo Chin",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031615/https://ijaps.usm.my/?page_id=2516",
+            "timestamp": "20261007031615",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 143 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 28,
+      "claim_check": "supported_as_worded",
+      "verification": "Cambridge publisher description supports the comparative Japan/South Korea/Taiwan and civil-society discussion. Book metadata and DOI verified.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1017/9781107337077",
+          "labels": {
+            "en": [
+              "Immigrant Incorporation in East Asian Democracies",
+              "doi:10.1017/9781107337077"
+            ],
+            "zh-tw": [
+              "Immigrant Incorporation in East Asian Democracies",
+              "doi:10.1017/9781107337077"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.cambridge.org/core/books/immigrant-incorporation-in-east-asian-democracies/35E05BA7A17B1D0C7B02DCBEA44C64AC",
+            "content_type": "text/html; charset=utf-8",
+            "title": "Immigrant Incorporation in East Asian Democracies  Logo for Cambridge Core from Cambridge University Press. Click to return to homepage.   Logo for Cambridge Core from Cambridge University Press. Click to return to homepage. ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031733/https://www.cambridge.org/core/books/immigrant-incorporation-in-east-asian-democracies/35E05BA7A17B1D0C7B02DCBEA44C64AC",
+            "timestamp": "20261007031733",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 29,
+      "claim_check": "supported_as_worded",
+      "verification": "Publisher abstract retrieved through web search supports the class-based desirability hierarchy across China, Japan, Korea, Taiwan, Malaysia and Singapore. Direct requests encounter a bot challenge. Full paywalled text was not used.",
+      "sources": [
+        {
+          "url": "https://www.tandfonline.com/doi/abs/10.1080/13621025.2021.1926096",
+          "labels": {
+            "en": [
+              "The historical development of the nature of 'desirability' in naturalisation regimes in East and Southeast Asia"
+            ],
+            "zh-tw": [
+              "The historical development of the nature of 'desirability' in naturalisation regimes in East and Southeast Asia"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://www.tandfonline.com/doi/abs/10.1080/13621025.2021.1926096",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "<html><head><meta charset=\"UTF-8\"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margi"
+            },
+            "fresh_save_message": "The target server blocks access to https://www.tandfonline.com/doi/abs/10.1080/13621025.2021.1926096. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        },
+        {
+          "url": "https://doi.org/10.1080/13621025.2021.1926096",
+          "labels": {
+            "en": [
+              "doi:10.1080/13621025.2021.1926096"
+            ],
+            "zh-tw": [
+              "doi:10.1080/13621025.2021.1926096"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://www.tandfonline.com/doi/full/10.1080/13621025.2021.1926096",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 160 ms: Couldn't connect to server\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.1080/13621025.2021.1926096. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 30,
+      "claim_check": "supported_as_worded",
+      "verification": "Cambridge chapter summary supports the gender, nationality, race, class, culture, ethnicity and statelessness discussion. Corrected chapter/book ordering and included all three editors; print year 2025 retained.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1017/9781009399555.011",
+          "labels": {
+            "en": [
+              "Gender, Nationality and Statelessness: Marriage Migration to East Asia"
+            ],
+            "zh-tw": [
+              "Gender, Nationality and Statelessness: Marriage Migration to East Asia"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.cambridge.org/core/books/abs/statelessness-in-asia/gender-nationality-and-statelessness/4A588362F7DF0CE174A95B2065FDE5CD",
+            "content_type": "text/html; charset=utf-8",
+            "title": "Gender, Nationality and Statelessness (Chapter 7) - Statelessness in Asia  Logo for Cambridge Core from Cambridge University Press. Click to return to homepage.   Logo for Cambridge Core from Cambridge University Press. Click to return to homepage. ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031715/https://www.cambridge.org/core/books/abs/statelessness-in-asia/gender-nationality-and-statelessness/4A588362F7DF0CE174A95B2065FDE5CD",
+            "timestamp": "20261007031715",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response",
+            "replay_check": {
+              "http_status": "000",
+              "title": "",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 208 ms: Couldn't connect to server\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reference": 31,
+      "claim_check": "supported_as_worded",
+      "verification": "Pacific Affairs' own article page confirms the summary concerning mainland-Chinese spouses, civil-service work and family reunification. Added this accessible title link alongside the DOI.",
+      "sources": [
+        {
+          "url": "https://pacificaffairs.ubc.ca/articles/marital-immigration-and-graduated-citizenship-post-naturalization-restrictions-on-mainland-chinese-spouses-in-taiwan/",
+          "labels": {
+            "en": [
+              "Marital Immigration and Graduated Citizenship: Post-Naturalization Restrictions on Mainland Chinese Spouses in Taiwan"
+            ],
+            "zh-tw": [
+              "Marital Immigration and Graduated Citizenship: Post-Naturalization Restrictions on Mainland Chinese Spouses in Taiwan"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://pacificaffairs.ubc.ca/articles/marital-immigration-and-graduated-citizenship-post-naturalization-restrictions-on-mainland-chinese-spouses-in-taiwan/",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Browser Verification | UBC Cybersecurity",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032604/https://pacificaffairs.ubc.ca/articles/marital-immigration-and-graduated-citizenship-post-naturalization-restrictions-on-mainland-chinese-spouses-in-taiwan/",
+            "timestamp": "20261007032604",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        },
+        {
+          "url": "https://doi.org/10.5509/201083173",
+          "labels": {
+            "en": [
+              "doi:10.5509/201083173"
+            ],
+            "zh-tw": [
+              "doi:10.5509/201083173"
+            ]
+          },
+          "live_check": {
+            "status": 403,
+            "effective_url": "https://www.tandfonline.com/doi/full/10.5509/201083173",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Just a moment...",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 146 ms: Couldn't connect to server\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.5509/201083173. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 32,
+      "claim_check": "supported_as_worded",
+      "verification": "The DOI resolves to a publisher 404. University of Portsmouth author repository confirms title, book, pages and the chapter's household-registration/integration argument. Replaced dead clickable DOI with author-repository title link; retained DOI as an identifier.",
+      "sources": [
+        {
+          "url": "https://researchportal.port.ac.uk/en/publications/cross-strait-marriages-and-immigration-policies/",
+          "labels": {
+            "en": [
+              "Cross-strait marriages and immigration policies"
+            ],
+            "zh-tw": [
+              "Cross-strait marriages and immigration policies"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://researchportal.port.ac.uk/en/publications/cross-strait-marriages-and-immigration-policies/",
+            "content_type": "text/html;charset=UTF-8",
+            "title": "\n        Cross-strait marriages and immigration policies\n      -  University of Portsmouth",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031803/https://researchportal.port.ac.uk/en/publications/cross-strait-marriages-and-immigration-policies/",
+            "timestamp": "20261007031803",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 33,
+      "claim_check": "supported_as_worded",
+      "verification": "PTS report confirms the permanent-resident petition, its five-year proposal and passage of the 5,000-signature threshold in October 2024.",
+      "sources": [
+        {
+          "url": "https://news.pts.org.tw/article/720460",
+          "labels": {
+            "en": [
+              "「歸化台籍不棄原籍」連署達門檻 內政部：2個月內回應訴求"
+            ],
+            "zh-tw": [
+              "「歸化台籍不棄原籍」連署達門檻 內政部：2個月內回應訴求"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://news.pts.org.tw/article/720460",
+            "content_type": "text/html; charset=utf-8",
+            "title": "「歸化台籍不棄原籍」連署達門檻 內政部：2個月內回應訴求 ｜ 公視新聞網 PNN",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007031840/https://news.pts.org.tw/article/720460",
+            "timestamp": "20261007031840",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 34,
+      "claim_check": "supported_as_worded",
+      "verification": "Official JOIN proposal and MOI response, together with Taipei Times/CNA report, confirm 5,746 signatures and the attributed reasons for rejection in November 2024. Original Chinese wording retained.",
+      "sources": [
+        {
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2024/11/28/2003827635",
+          "labels": {
+            "en": [
+              "Interior ministry rejects petition to allow dual citizenship for foreign residents"
+            ],
+            "zh-tw": [
+              "Interior ministry rejects petition to allow dual citizenship for foreign residents"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.taipeitimes.com/News/taiwan/archives/2024/11/28/2003827635",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Interior ministry rejects petition to allow dual citizenship for foreign residents - Taipei Times",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "existing_capture",
+              "error": ""
+            },
+            "fresh_save_message": "The target server blocks access to https://www.taipeitimes.com/News/taiwan/archives/2024/11/28/2003827635. (HTTP status=403)",
+            "kind": "existing_capture",
+            "url": "https://web.archive.org/web/20260816023523/https://www.taipeitimes.com/News/taiwan/archives/2024/11/28/2003827635",
+            "timestamp": "20260816023523",
+            "captured_http_status": "200",
+            "confirmation": "Wayback CDX index, filtered to status 200"
+          }
+        },
+        {
+          "url": "https://join.gov.tw/idea/detail/951c745d-4484-4923-953f-4cdaefe7f344",
+          "labels": {
+            "en": [
+              "給在台灣永久居留的外國人一個平等歸化台灣國籍的機會"
+            ],
+            "zh-tw": [
+              "給在台灣永久居留的外國人一個平等歸化台灣國籍的機會"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://join.gov.tw/idea/detail/951c745d-4484-4923-953f-4cdaefe7f344",
+            "content_type": "text/html;charset=UTF-8",
+            "title": "\n  \n    給在台灣永久居留的外國人一個平等歸化台灣國籍的機會-\n\t提點子\n      -公共政策網路參與平臺",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032004/https://join.gov.tw/idea/detail/951c745d-4484-4923-953f-4cdaefe7f344",
+            "timestamp": "20261007032004",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 35,
+      "claim_check": "supported_as_worded",
+      "verification": "Official statistical metadata defines the population as approved/filed nationality-acquisition cases and the reference period as January–December approvals, rather than applications or later household registrations.",
+      "sources": [
+        {
+          "url": "https://www.stat.gov.tw/News_NoticeCalendar_Content_temp.aspx?MetaI_D=320&n=3717&year=2025",
+          "labels": {
+            "en": [
+              "國籍之取得"
+            ],
+            "zh-tw": [
+              "國籍之取得"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.stat.gov.tw/News_NoticeCalendar_Content_temp.aspx?MetaI_D=320&n=3717&year=2025",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t中華民國統計資訊網-預告發布時間表\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032004/https://www.stat.gov.tw/News_NoticeCalendar_Content_temp.aspx?MetaI_D=320&n=3717&year=2025",
+            "timestamp": "20261007032004",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 36,
+      "claim_check": "supported_as_worded",
+      "verification": "Downloaded official CSV linked from dataset 62557. All 2016–2025 annual total/men/women/spouse values and all 2025 reason-by-sex values in the chart data match.",
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/62557",
+          "labels": {
+            "en": [
+              "歸化及喪失國籍人數按原因及性別分"
+            ],
+            "zh-tw": [
+              "歸化及喪失國籍人數按原因及性別分"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://data.gov.tw/dataset/62557",
+            "content_type": "text/html;charset=utf-8",
+            "title": "歸化及喪失國籍人數按原因及性別分 ｜ 政府資料開放平臺 金標章 白金標章",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032125/https://data.gov.tw/dataset/62557",
+            "timestamp": "20261007032125",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 37,
+      "claim_check": "supported_as_worded",
+      "verification": "Downloaded 2025 official nationality-by-sex CSV linked from dataset 62554. All displayed category and sex values match; zero categories omitted consistently.",
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/62554",
+          "labels": {
+            "en": [
+              "歸化國籍人數按原屬國籍及性別分"
+            ],
+            "zh-tw": [
+              "歸化國籍人數按原屬國籍及性別分"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://data.gov.tw/dataset/62554",
+            "content_type": "text/html;charset=utf-8",
+            "title": "歸化國籍人數按原屬國籍及性別分 ｜ 政府資料開放平臺 金標章",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032125/https://data.gov.tw/dataset/62554",
+            "timestamp": "20261007032125",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 38,
+      "claim_check": "supported_as_worded",
+      "verification": "Downloaded 2025 official age-by-sex CSV linked from dataset 62561. All displayed age-group total/men/women values match. Added the official 2025 CSV as a direct source link; its downloaded bytes match the CSV used for the numerical checks.",
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/62561",
+          "labels": {
+            "en": [
+              "歸化及喪失國籍人數按5歲年齡及性別分"
+            ],
+            "zh-tw": [
+              "歸化及喪失國籍人數按5歲年齡及性別分"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://data.gov.tw/dataset/62561",
+            "content_type": "text/html;charset=utf-8",
+            "title": "歸化及喪失國籍人數按5歲年齡及性別分 ｜ 政府資料開放平臺 金標章 白金標章",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "existing_capture",
+              "error": ""
+            },
+            "fresh_save_message": "Job failed.",
+            "kind": "existing_capture",
+            "url": "https://web.archive.org/web/20241119151212/https://data.gov.tw/dataset/62561",
+            "timestamp": "20241119151212",
+            "captured_http_status": "200",
+            "confirmation": "Wayback CDX index, filtered to status 200"
+          }
+        },
+        {
+          "url": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/9C436E20-BC98-466A-BF86-28618E0E2922/resource/CB9A303F-80C3-4E9B-85DD-68D8F6A20CC8/download",
+          "labels": {
+            "en": [
+              "2025 data (CSV)"
+            ],
+            "zh-tw": [
+              "2025 年資料（CSV）"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/9C436E20-BC98-466A-BF86-28618E0E2922/resource/CB9A303F-80C3-4E9B-85DD-68D8F6A20CC8/download",
+            "content_type": "text/csv;charset=UTF-8",
+            "title": "",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032603/https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/9C436E20-BC98-466A-BF86-28618E0E2922/resource/CB9A303F-80C3-4E9B-85DD-68D8F6A20CC8/download",
+            "timestamp": "20261007032603",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 39,
+      "claim_check": "supported_as_worded",
+      "verification": "Downloaded 2025 official county/city CSV linked from dataset 62563. All displayed county/city total/men/women values match. Across references 36–39, 226 numeric values checked with no discrepancies.",
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/62563",
+          "labels": {
+            "en": [
+              "各縣市歸化國籍人數按性別分"
+            ],
+            "zh-tw": [
+              "各縣市歸化國籍人數按性別分"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://data.gov.tw/dataset/62563",
+            "content_type": "text/html;charset=utf-8",
+            "title": "各縣市歸化國籍人數按性別分 ｜ 政府資料開放平臺 金標章 白金標章",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032403/https://data.gov.tw/dataset/62563",
+            "timestamp": "20261007032403",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 40,
+      "claim_check": "supported_as_worded",
+      "verification": "Official Chinese and English legislative history confirms 1929 promulgation, the 23-article February 2000 revision, 21 December 2016 reform, and the 2021/2024 amendments.",
+      "sources": [
+        {
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=D0030001",
+          "labels": {
+            "en": [
+              "國籍法沿革 / Nationality Act: legislative history"
+            ],
+            "zh-tw": [
+              "國籍法沿革"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t國籍法 沿革-全國法規資料庫\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032422/https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=D0030001",
+            "timestamp": "20261007032422",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        },
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawHistory.aspx?pcode=D0030001",
+          "labels": {
+            "en": [
+              "English version"
+            ],
+            "zh-tw": [
+              "英文版"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://law.moj.gov.tw/ENG/LawClass/LawHistory.aspx?pcode=D0030001",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tNationality Act - Legislative History - Laws & Regulations Database of The Republic of China (Taiwan)\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032504/https://law.moj.gov.tw/ENG/LawClass/LawHistory.aspx?pcode=D0030001",
+            "timestamp": "20261007032504",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 41,
+      "claim_check": "supported_as_worded",
+      "verification": "National Archives educational record supports the account attributed to ROC authorities, including the 1945 effective date, January 1946 directive and overseas registration route.",
+      "sources": [
+        {
+          "url": "https://art.archives.gov.tw/tw/art/1757.html",
+          "labels": {
+            "en": [
+              "國籍恢復與臺人返臺"
+            ],
+            "zh-tw": [
+              "國籍恢復與臺人返臺"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://art.archives.gov.tw/tw/art/1757.html",
+            "content_type": "text/html",
+            "title": "檔案支援教學網－國籍恢復與臺人返臺",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032458/https://art.archives.gov.tw/tw/art/1757.html",
+            "timestamp": "20261007032458",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 42,
+      "claim_check": "supported_as_worded",
+      "verification": "Contemporary Taipei Times reporting supports the discussion of the replacement of paternal-only descent rules and problems affecting children of Taiwanese mothers and foreign fathers.",
+      "sources": [
+        {
+          "url": "https://www.taipeitimes.com/News/local/archives/2000/01/19/0000020452",
+          "labels": {
+            "en": [
+              "New nationality rules welcomed"
+            ],
+            "zh-tw": [
+              "New nationality rules welcomed"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.taipeitimes.com/News/local/archives/2000/01/19/0000020452",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "New nationality rules welcomed - Taipei Times",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "<html><head><meta charset=\"UTF-8\"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margi"
+            },
+            "fresh_save_message": "The target server blocks access to https://www.taipeitimes.com/News/local/archives/2000/01/19/0000020452. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 43,
+      "claim_check": "supported_as_worded",
+      "verification": "Brill publisher abstract confirms the comparison with Germany and the argument that reforms retained the states' positions on jus sanguinis and dual nationality. Bibliographic details match. Linked the article title directly to the publisher page while retaining the DOI.",
+      "sources": [
+        {
+          "url": "https://brill.com/view/journals/ejea/12/2/article-p269_7.xml",
+          "labels": {
+            "en": [
+              "Taiwanese and German Citizenship Reforms: Integration of Immigrants without Challenging the Status Quo, 1990–2000"
+            ],
+            "zh-tw": [
+              "Taiwanese and German Citizenship Reforms: Integration of Immigrants without Challenging the Status Quo, 1990–2000"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://brill.com/view/journals/ejea/12/2/article-p269_7.xml",
+            "content_type": "text/html;charset=UTF-8",
+            "title": "Taiwanese and German Citizenship Reforms: Integration of Immigrants without Challenging the Status Quo, 1990â2000 in: European Journal of East Asian Studies Volume 12 Issue 2 (2013) ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (7) Failed to connect to web.archive.org port 443 after 150 ms: Couldn't connect to server\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://brill.com/view/journals/ejea/12/2/article-p269_7.xml. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        },
+        {
+          "url": "https://doi.org/10.1163/15700615-13120206",
+          "labels": {
+            "en": [
+              "doi:10.1163/15700615-13120206"
+            ],
+            "zh-tw": [
+              "doi:10.1163/15700615-13120206"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://brill.com/view/journals/ejea/12/2/article-p269_7.xml",
+            "content_type": "text/html;charset=UTF-8",
+            "title": "Taiwanese and German Citizenship Reforms: Integration of Immigrants without Challenging the Status Quo, 1990â2000 in: European Journal of East Asian Studies Volume 12 Issue 2 (2013) ",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "[]\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://doi.org/10.1163/15700615-13120206. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 44,
+      "claim_check": "supported_as_worded",
+      "verification": "MOI's 2018 statement confirms special-contribution/professional renunciation exemptions and relaxed rules for specified former spouses. Replaced failing HTTP URL with working HTTPS.",
+      "sources": [
+        {
+          "url": "https://www.moi.gov.tw/News_Content.aspx?n=8&s=14624",
+          "labels": {
+            "en": [
+              "擁抱國際 內政部：歸化規定已大幅放寬"
+            ],
+            "zh-tw": [
+              "擁抱國際 內政部：歸化規定已大幅放寬"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.moi.gov.tw/News_Content.aspx?n=8&s=14624",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t擁抱國際  內政部：歸化規定已大幅放寬\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032630/https://www.moi.gov.tw/News_Content.aspx?n=8&s=14624",
+            "timestamp": "20261007032630",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 45,
+      "claim_check": "supported_as_worded",
+      "verification": "Taipei Times and CNA reports agree on 502 beneficiaries of relaxed provisions plus 57 special-contribution and 76 professional naturalizations. No current eligibility rule is inferred from the reports.",
+      "sources": [
+        {
+          "url": "https://www.taipeitimes.com/News/front/archives/2019/05/05/2003714578",
+          "labels": {
+            "en": [
+              "Amended rules allow 635 naturalizations in two years"
+            ],
+            "zh-tw": [
+              "Amended rules allow 635 naturalizations in two years"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.taipeitimes.com/News/front/archives/2019/05/05/2003714578",
+            "content_type": "text/html; charset=UTF-8",
+            "title": "Amended rules allow 635 naturalizations in two years - Taipei Times",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "error",
+            "existing_capture_lookup": {
+              "status": "lookup_failed",
+              "error": "curl: (28) Operation timed out after 30007 milliseconds with 0 bytes received\n"
+            },
+            "fresh_save_message": "The target server blocks access to https://www.taipeitimes.com/News/front/archives/2019/05/05/2003714578. (HTTP status=403)",
+            "kind": "unavailable"
+          }
+        },
+        {
+          "url": "https://www.cna.com.tw/news/aipl/201905040028.aspx",
+          "labels": {
+            "en": [
+              "國籍法修正2年 助逾600人歸化"
+            ],
+            "zh-tw": [
+              "國籍法修正2年 助逾600人歸化"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.cna.com.tw/news/aipl/201905040028.aspx",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tåç±æ³ä¿®æ­£2å¹´ å©é¾600äººæ­¸å | æ¿æ²» | ä¸­å¤®ç¤¾ CNA\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032803/https://www.cna.com.tw/news/aipl/201905040028.aspx",
+            "timestamp": "20261007032803",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 46,
+      "claim_check": "supported_as_worded",
+      "verification": "MOI's 2024-05-07 release supports guardianship provisions, age wording, professional residence alternatives and the fee exemption. Replaced failing HTTP URL with working HTTPS; checked final law separately.",
+      "sources": [
+        {
+          "url": "https://www.moi.gov.tw/News_Content.aspx?n=2&s=315474",
+          "labels": {
+            "en": [
+              "「國籍法」修正案三讀通過 林右昌：保障兒童取得國籍權利 加強延攬優秀外國人才"
+            ],
+            "zh-tw": [
+              "「國籍法」修正案三讀通過 林右昌：保障兒童取得國籍權利 加強延攬優秀外國人才"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.moi.gov.tw/News_Content.aspx?n=2&s=315474",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\t「國籍法」修正案三讀通過  林右昌：保障兒童取得國籍權利 加強延攬優秀外國人才\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032754/https://www.moi.gov.tw/News_Content.aspx?n=2&s=315474",
+            "timestamp": "20261007032754",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    },
+    {
+      "reference": 47,
+      "claim_check": "supported_as_worded",
+      "verification": "Focus Taiwan link works but now exposes only its headline and lead; full text requires subscription. The lead supports the broad reform description. Chinese CNA reporting supports the two-year change; detailed final provisions independently verified in references 1 and 46. Added an access label.",
+      "sources": [
+        {
+          "url": "https://focustaiwan.tw/politics/202405070018",
+          "labels": {
+            "en": [
+              "Amendments easing naturalization rules clear legislative floor"
+            ],
+            "zh-tw": [
+              "Amendments easing naturalization rules clear legislative floor"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://focustaiwan.tw/politics/202405070018",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tAmendments easing naturalization rules clear legislative floor - Focus Taiwan\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032926/https://focustaiwan.tw/politics/202405070018",
+            "timestamp": "20261007032926",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        },
+        {
+          "url": "https://www.cna.com.tw/news/aspt/202405070327.aspx",
+          "labels": {
+            "en": [
+              "國籍法放寬居留年限 籃協拚新歸化球員瓊斯盃亮相"
+            ],
+            "zh-tw": [
+              "國籍法放寬居留年限 籃協拚新歸化球員瓊斯盃亮相"
+            ]
+          },
+          "live_check": {
+            "status": 200,
+            "effective_url": "https://www.cna.com.tw/news/aspt/202405070327.aspx",
+            "content_type": "text/html; charset=utf-8",
+            "title": "\n\tåç±æ³æ¾å¯¬å±çå¹´é ç±åææ°æ­¸åçå¡çæ¯çäº®ç¸ | éå | ä¸­å¤®ç¤¾ CNA\n",
+            "error": ""
+          },
+          "archive": {
+            "fresh_save_status": "success",
+            "kind": "new_capture",
+            "url": "https://web.archive.org/web/20261007032835/https://www.cna.com.tw/news/aspt/202405070327.aspx",
+            "timestamp": "20261007032835",
+            "captured_http_status": 200,
+            "confirmation": "Wayback Save Page Now success response"
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "astro_check": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 1,
+      "hint": "Existing deprecated document.execCommand clipboard fallback."
+    },
+    "production_build": "passed",
+    "git_diff_check": "passed",
+    "bilingual_citation_sequences": "172 citations in matching order",
+    "internal_links": "All generated fragment links resolve; all IDs are unique.",
+    "visual_check": "English and Chinese overview sections use H2 headings outside callouts, with no strong elements in article prose. Chinese reference list with archive links renders without overflow."
+  }
+}
