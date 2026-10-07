@@ -20,17 +20,6 @@ cover:
 
 [TOC]
 
-## 各階段一覽
-
-1. 符合要件並提出申請。 先符合適用途徑的要件，再向住所地戶政事務所申請，由內政部決定是否許可歸化。<sup><a id="cite-1-4" href="#ref-source-1" aria-label="參考資料 1">[1]</a></sup><sup><a id="cite-2-2" href="#ref-source-2" aria-label="參考資料 2">[2]</a></sup>
-2. 取得國籍。 自許可歸化之日起成為中華民國國民。在設立戶籍以前，身分是臺灣地區無戶籍國民（NWOHR）。<sup><a id="cite-1-5" href="#ref-source-1" aria-label="參考資料 1">[1]</a></sup><sup><a id="cite-3-2" href="#ref-source-3" aria-label="參考資料 3">[3]</a></sup>
-3. 申請居留，再申請定居。 以無戶籍國民身分向內政部移民署（NIA）申請居留。一般途徑須再符合另一段居留期間，才能申請定居；部分類別免除此一等待期間。<sup><a id="cite-3-3" href="#ref-source-3" aria-label="參考資料 3">[3]</a></sup>
-4. 設立戶籍並申請身分證。 定居獲准後，須自定居證核發翌日起 30 日內辦理初設戶籍登記。已設籍且年滿 14 歲者應申請初領國民身分證；未滿 14 歲者也可申請。<sup><a id="cite-3-4" href="#ref-source-3" aria-label="參考資料 3">[3]</a></sup><sup><a id="cite-13-4" href="#ref-source-13" aria-label="參考資料 13">[13]</a></sup><sup><a id="cite-4-2" href="#ref-source-4" aria-label="參考資料 4">[4]</a></sup>
-
-同時須注意的要求：除適用豁免者外，通常須在歸化後一年內提出喪失原有國籍證明。在依法應提出的證明尚未提出以前，不會獲准定居。年齡相關規定與展延可能改變期限，詳見[喪失原有國籍](#喪失原有國籍)。<sup><a id="cite-1-6" href="#ref-source-1" aria-label="參考資料 1">[1]</a></sup><sup><a id="cite-2-3" href="#ref-source-2" aria-label="參考資料 2">[2]</a></sup>
-
-歸化前所需的居留期間，與歸化後、定居前所需的居留期間，是兩項不同的要求。下文會分別說明。<sup><a id="cite-1-7" href="#ref-source-1" aria-label="參考資料 1">[1]</a></sup><sup><a id="cite-3-5" href="#ref-source-3" aria-label="參考資料 3">[3]</a></sup>
-
 ## 要件
 《國籍法》第 3 條規定一般歸化要件。外國人或無國籍人符合以下全部條件時，可以申請：<sup><a id="cite-1-8" href="#ref-source-1" aria-label="參考資料 1">[1]</a></sup><sup><a id="cite-2-4" href="#ref-source-2" aria-label="參考資料 2">[2]</a></sup>
 

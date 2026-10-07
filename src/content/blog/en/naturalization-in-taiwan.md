@@ -20,17 +20,6 @@ Naturalization in Taiwan is the Ministry of the Interior (MOI)-administered proc
 
 [TOC]
 
-## The stages at a glance
-
-1. Qualify and apply. Meet the requirements for your route, then apply through your local household registration office. The Ministry of the Interior decides whether to approve naturalization.<sup><a id="cite-1-4" href="#ref-source-1" aria-label="Reference 1">[1]</a></sup><sup><a id="cite-2-2" href="#ref-source-2" aria-label="Reference 2">[2]</a></sup>
-2. Acquire nationality. You become an ROC national on the approval date. Until you establish household registration, you are a national without household registration (NWOHR).<sup><a id="cite-1-5" href="#ref-source-1" aria-label="Reference 1">[1]</a></sup><sup><a id="cite-3-2" href="#ref-source-3" aria-label="Reference 3">[3]</a></sup>
-3. Apply for residence, then settlement. Apply to the National Immigration Agency (NIA) for residence as an NWOHR. The ordinary route then requires a separate period of residence before you can apply for settlement; some categories are exempt from that waiting period.<sup><a id="cite-3-3" href="#ref-source-3" aria-label="Reference 3">[3]</a></sup>
-4. Register your household and apply for an ID. After settlement approval, complete initial household registration within 30 days, counted from the day after your settlement certificate is issued. Registered nationals aged 14 or over must apply for a National Identification Card; those under 14 may also apply.<sup><a id="cite-3-4" href="#ref-source-3" aria-label="Reference 3">[3]</a></sup><sup><a id="cite-13-4" href="#ref-source-13" aria-label="Reference 13">[13]</a></sup><sup><a id="cite-4-2" href="#ref-source-4" aria-label="Reference 4">[4]</a></sup>
-
-A requirement alongside these stages: unless exempt, you must provide proof of loss of your previous nationality, generally within one year after naturalization. Settlement cannot be approved while required proof remains outstanding. Age-related rules and extensions can change the deadline; see [loss of previous nationality](#loss-of-previous-nationality).<sup><a id="cite-1-6" href="#ref-source-1" aria-label="Reference 1">[1]</a></sup><sup><a id="cite-2-3" href="#ref-source-2" aria-label="Reference 2">[2]</a></sup>
-
-The residence needed before naturalization and the residence needed after naturalization, before settlement, are separate requirements. The detailed rules for both follow below.<sup><a id="cite-1-7" href="#ref-source-1" aria-label="Reference 1">[1]</a></sup><sup><a id="cite-3-5" href="#ref-source-3" aria-label="Reference 3">[3]</a></sup>
-
 ## Requirements
 Article 3 of the Nationality Act sets the general requirements. A foreign national or stateless person may apply if they meet all of the following:<sup><a id="cite-1-8" href="#ref-source-1" aria-label="Reference 1">[1]</a></sup><sup><a id="cite-2-4" href="#ref-source-2" aria-label="Reference 2">[2]</a></sup>
 
