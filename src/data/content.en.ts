@@ -25,6 +25,15 @@ import { personProfiles } from './profile-metadata';
 import type { SiteContent } from './content';
 
 export const en: SiteContent = {
+  imageViewer: {
+    title: 'Image preview',
+    expand: 'View larger',
+    close: 'Close',
+    actualSize: 'Actual size',
+    fit: 'Fit to screen',
+    original: 'Open original image',
+  },
+
   languagePrompt: {
     label: 'Language preference',
     title: 'Switch to English?',

@@ -70,6 +70,24 @@ Download the `.woff2` the returned CSS points at, save it over
 `src/assets/fonts/noto-sans-tc-gloss.woff2`, and update the `unicode-range` in
 the `@font-face` block in [`src/styles/global.css`](src/styles/global.css).
 
+### Expandable images
+
+The paperwork scans, project screenshots and blog covers use `ExpandableImage.astro` around
+their existing thumbnails. It links to the original image and opts into the
+shared `ImageLightbox.astro` viewer in `Base.astro`. To enable another image,
+wrap its thumbnail with `<ExpandableImage image={image} alt={alt} caption={caption}>`.
+The viewer offers fit-to-screen and scrollable actual-size views, restores focus
+when closed, and supports Escape and backdrop dismissal. Without JavaScript,
+the link opens the original image directly. Labels live in each content module's
+`imageViewer` field.
+
+Blog article bodies opt in with `data-expand-images`: the viewer automatically
+wraps their rendered images with accessible expansion links, preserving
+`<picture>` sources, figure captions and any existing image links. Markdown
+images use Astro's full-size processed source. Without JavaScript, article-body
+images keep their normal static presentation; explicit `ExpandableImage`
+wrappers still link to the original file.
+
 ## Writing a post
 
 Posts are Markdown files in an Astro content collection, declared in

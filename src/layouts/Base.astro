@@ -10,6 +10,7 @@ import { locales, resolveLocale, type LocaleCode } from '../i18n/locales';
 import { absoluteUrl, canonicalUrl, withBase } from '../lib/url';
 import LanguageSwitch from '../components/LanguageSwitch.astro';
 import SectionRail from '../components/SectionRail.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 
 interface Props {
   title?: string;
@@ -337,6 +338,7 @@ gtag('config', '${person.gaMeasurementId}');`}
     <LanguageSwitch paths={altPaths} hideOnPrint={ogType === 'article'} />
     {rail === 'sections' && <SectionRail />}
     <slot />
+    <ImageLightbox />
 
     {/* Reopen the other locale at the place the reader left, rather than at the
         top of the page. The switch records which section the top of the window

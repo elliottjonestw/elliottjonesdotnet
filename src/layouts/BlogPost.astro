@@ -10,6 +10,7 @@ import Base from './Base.astro';
 import ReadAloud from '../components/ReadAloud.astro';
 import PageViewCounter from '../components/PageViewCounter.astro';
 import ShareButtons from '../components/ShareButtons.astro';
+import ExpandableImage from '../components/ExpandableImage.astro';
 import DataCharts from '../components/DataCharts.astro';
 import pageViews from '../data/page-views.json';
 /* Loaded here rather than from global.css: the home page is every visitor's
@@ -221,20 +222,24 @@ const structuredData = {
 
           {
             cover && (
-              <Image
-                src={cover.image}
-                alt={cover.alt}
-                widths={[640, 960, 1280]}
-                sizes="(min-width:1024px) 46rem, 92vw"
-                quality={88}
-                class="post-cover"
-                loading="eager"
-                fetchpriority="high"
-              />
+              <div class="post-cover-frame">
+                <ExpandableImage image={cover.image} alt={cover.alt}>
+                  <Image
+                    src={cover.image}
+                    alt={cover.alt}
+                    widths={[640, 960, 1280]}
+                    sizes="(min-width:1024px) 46rem, 92vw"
+                    quality={88}
+                    class="post-cover"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </ExpandableImage>
+              </div>
             )
           }
 
-          <div class="prose mt-14">
+          <div class="prose mt-14" data-expand-images>
             <slot />
           </div>
 
@@ -371,10 +376,13 @@ const structuredData = {
     letter-spacing: -0.03em;
   }
 
+  .post-cover-frame {
+    margin-block-start: clamp(2.5rem, 5vw, 3.75rem);
+  }
+
   .post-cover {
     width: 100%;
     height: auto;
-    margin-block-start: clamp(2.5rem, 5vw, 3.75rem);
     border-radius: 10px;
     border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
   }

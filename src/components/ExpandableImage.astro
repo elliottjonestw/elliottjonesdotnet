@@ -1,0 +1,39 @@
+---
+import type { ImageMetadata } from 'astro';
+import { getContent } from '../data/content';
+import { resolveLocale } from '../i18n/locales';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  caption?: string;
+}
+
+const { image, alt, caption = alt } = Astro.props;
+const { imageViewer } = getContent(resolveLocale(Astro.currentLocale));
+---
+
+{/* The original file remains an ordinary link without JavaScript, and only
+    downloads when opened. The slot keeps each thumbnail's existing layout. */}
+<a
+  href={image.src}
+  data-expand-image
+  data-image-alt={alt}
+  data-image-caption={caption}
+  data-image-width={image.width}
+  data-image-height={image.height}
+  aria-label={`${imageViewer.expand}: ${alt}`}
+  class="group relative block cursor-zoom-in rounded-lg"
+>
+  <slot />
+  <span
+    class="no-print pointer-events-none absolute right-3 bottom-3 flex items-center gap-2 rounded-full border border-paper/20 bg-ink/90 px-3 py-2 font-display text-xs font-medium text-paper shadow-sm"
+    aria-hidden="true"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" />
+      <path d="m3 3 6 6m12-6-6 6M3 21l6-6m12 6-6-6" />
+    </svg>
+    {imageViewer.expand}
+  </span>
+</a>

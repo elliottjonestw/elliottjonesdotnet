@@ -130,6 +130,14 @@ export interface Certificate {
 }
 
 export interface SiteContent {
+  imageViewer: {
+    title: string;
+    expand: string;
+    close: string;
+    actualSize: string;
+    fit: string;
+    original: string;
+  };
   /** Shown in the suggested language, rather than the current page's language. */
   languagePrompt: {
     label: string;

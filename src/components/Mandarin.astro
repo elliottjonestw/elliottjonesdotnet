@@ -3,6 +3,7 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import ScoreChart from './ScoreChart.astro';
 import SectionSeam from './SectionSeam.astro';
+import ExpandableImage from './ExpandableImage.astro';
 import { getContent } from '../data/content';
 import { resolveLocale } from '../i18n/locales';
 
@@ -182,18 +183,18 @@ const { speakingVideo } = mandarin;
               <figure class="group">
                 {/* Fixed A4 box so both scans render at exactly the same size
                     despite tiny differences in their scanned aspect ratios. */}
-                <div
-                  class="aspect-[1/1.414] overflow-hidden rounded-lg border border-paper/12 bg-surface p-3"
-                >
-                  <Image
-                    src={cert.image}
-                    alt={`${cert.label}: ${cert.caption}`}
-                    widths={[380, 640, 900]}
-                    sizes="(min-width:640px) 22rem, 90vw"
-                    class="h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
+                <ExpandableImage image={cert.image} alt={`${cert.label}: ${cert.caption}`} caption={cert.caption}>
+                  <div class="aspect-[1/1.414] overflow-hidden rounded-lg border border-paper/12 bg-surface p-3">
+                    <Image
+                      src={cert.image}
+                      alt={`${cert.label}: ${cert.caption}`}
+                      widths={[380, 640, 900]}
+                      sizes="(min-width:640px) 22rem, 90vw"
+                      class="h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                  </div>
+                </ExpandableImage>
                 <figcaption class="mono-label mt-3 text-paper/55">
                   {cert.caption}
                 </figcaption>

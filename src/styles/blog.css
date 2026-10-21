@@ -497,8 +497,41 @@
 
 /* A standalone image — Markdown's `![alt](src)`, which arrives wrapped in a
    paragraph of its own — is treated as a figure too. */
-.prose p:has(> img:only-child) {
+.prose p:has(> img:only-child, > a[data-expand-image]:only-child) {
   margin-block: 2.25em;
+}
+
+/* The viewer wraps rendered Markdown images without changing their size or
+   treating them like underlined prose links. */
+.prose a[data-expand-image] {
+  position: relative;
+  display: block;
+  cursor: zoom-in;
+  border-radius: 10px;
+  background-image: none;
+}
+
+.prose a[data-expand-image]::after {
+  content: attr(data-image-expand-label);
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgb(245 247 244 / 20%);
+  border-radius: 999px;
+  background: rgb(12 26 27 / 90%);
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  pointer-events: none;
+}
+
+@media print {
+  .prose a[data-expand-image]::after {
+    display: none;
+  }
 }
 
 /* ── Galleries ─────────────────────────────────────────────────────────── */
@@ -531,7 +564,7 @@
    paragraph, and the standalone-image rule above would space it as if it were
    alone on the page. p:has() outweighs a plain descendant selector, so the
    same selector is repeated inside :is() to win the specificity back. */
-.prose .gallery :is(figure, p, p:has(> img:only-child)) {
+.prose .gallery :is(figure, p, p:has(> img:only-child, > a[data-expand-image]:only-child)) {
   margin: 0;
 }
 

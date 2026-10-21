@@ -26,6 +26,15 @@ import { personProfiles } from './profile-metadata';
 import type { SiteContent } from './content';
 
 export const zhTW: SiteContent = {
+  imageViewer: {
+    title: '圖片預覽',
+    expand: '放大檢視',
+    close: '關閉',
+    actualSize: '原始大小',
+    fit: '符合螢幕大小',
+    original: '開啟原始圖片',
+  },
+
   languagePrompt: {
     label: '語言偏好',
     title: '切換至中文？',

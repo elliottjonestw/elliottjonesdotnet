@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import SectionHeading from './SectionHeading.astro';
+import ExpandableImage from './ExpandableImage.astro';
 import { getContent } from '../data/content';
 import { resolveLocale } from '../i18n/locales';
 
@@ -70,15 +71,17 @@ const { projects } = getContent(resolveLocale(Astro.currentLocale));
               <div class="mx-auto flex w-full max-w-md flex-col gap-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:self-center">
                 {project.shots.map((shot, s) => (
                   <figure class={s === 0 ? '' : 'hidden md:block'}>
-                    <Image
-                      src={shot.image}
-                      alt={shot.alt}
-                      widths={[420, 640, 840]}
-                      sizes="(min-width:1024px) 21rem, (min-width:640px) 28rem, 92vw"
-                      quality={90}
-                      class="w-full rounded-lg border border-ink/12"
-                      loading="lazy"
-                    />
+                    <ExpandableImage image={shot.image} alt={shot.alt} caption={shot.caption}>
+                      <Image
+                        src={shot.image}
+                        alt={shot.alt}
+                        widths={[420, 640, 840]}
+                        sizes="(min-width:1024px) 21rem, (min-width:640px) 28rem, 92vw"
+                        quality={90}
+                        class="w-full rounded-lg border border-ink/12"
+                        loading="lazy"
+                      />
+                    </ExpandableImage>
                     <figcaption class="mono-label mt-3 text-slate">
                       {shot.caption}
                     </figcaption>
