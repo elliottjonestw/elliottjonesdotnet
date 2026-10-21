@@ -25,6 +25,15 @@ import { personProfiles } from './profile-metadata';
 import type { SiteContent } from './content';
 
 export const en: SiteContent = {
+  languagePrompt: {
+    label: 'Language preference',
+    title: 'Switch to English?',
+    description:
+      'Your browser’s preferred language isn’t Chinese. Would you like to read this page in English?',
+    switchLabel: 'Switch to English',
+    stayLabel: 'Continue in Chinese',
+  },
+
   person: {
     name: 'Elliott Jones',
     role: 'Product Customer Success Manager',

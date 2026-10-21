@@ -130,6 +130,14 @@ export interface Certificate {
 }
 
 export interface SiteContent {
+  /** Shown in the suggested language, rather than the current page's language. */
+  languagePrompt: {
+    label: string;
+    title: string;
+    description: string;
+    switchLabel: string;
+    stayLabel: string;
+  };
   person: {
     name: string;
     role: string;

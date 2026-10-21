@@ -26,6 +26,14 @@ import { personProfiles } from './profile-metadata';
 import type { SiteContent } from './content';
 
 export const zhTW: SiteContent = {
+  languagePrompt: {
+    label: '語言偏好',
+    title: '切換至中文？',
+    description: '您的瀏覽器偏好使用中文。要以繁體中文閱讀此頁嗎？',
+    switchLabel: '切換至中文',
+    stayLabel: '繼續閱讀英文版',
+  },
+
   person: {
     name: 'Elliott Jones',
     role: '產品客戶成功經理',

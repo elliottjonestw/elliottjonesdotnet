@@ -1,6 +1,7 @@
 ---
 import { locales, resolveLocale, type LocaleCode } from '../i18n/locales';
 import { withBase } from '../lib/url';
+import { getContent } from '../data/content';
 
 interface Props {
   /**
@@ -15,6 +16,9 @@ interface Props {
 
 const { paths, hideOnPrint = false } = Astro.props;
 const lang = resolveLocale(Astro.currentLocale);
+const suggestedLocale = locales.find((locale) => locale.code !== lang)!;
+const suggestedHref = withBase(paths?.[suggestedLocale.code] ?? suggestedLocale.path);
+const prompt = getContent(suggestedLocale.code).languagePrompt;
 ---
 
 {/* Fixed in the top corner on every page, with its own opaque pill rather
@@ -43,10 +47,11 @@ const lang = resolveLocale(Astro.currentLocale);
         </span>
       ) : (
         <a
-          href={withBase(paths?.[locale.code] ?? locale.path)}
+          href={suggestedHref}
           aria-label={locale.name}
           class="mono-label flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors duration-300 hover:bg-ink/8 hover:text-ink min-[480px]:h-auto min-[480px]:w-auto min-[480px]:px-3 min-[480px]:py-1.5 min-[480px]:text-slate"
           data-lang-link
+          data-locale={locale.code}
         >
           {/* Tracking is set for a run of Latin capitals; on a lone glyph it
               only pushes it off centre. */}
@@ -62,7 +67,80 @@ const lang = resolveLocale(Astro.currentLocale);
   }
 </nav>
 
+<dialog
+  data-language-prompt
+  data-current-locale={lang}
+  lang={suggestedLocale.code}
+  aria-labelledby="language-prompt-title"
+  aria-describedby="language-prompt-description"
+  class="language-prompt no-print m-auto max-h-[calc(100dvh-2.5rem)] w-[calc(100%-2.5rem)] max-w-md overflow-y-auto rounded-2xl border border-ink/15 bg-paper p-6 text-ink shadow-2xl sm:p-8"
+>
+  <p class="eyebrow mb-4 text-jade">{prompt.label}</p>
+  <h2 id="language-prompt-title" class="text-2xl leading-tight sm:text-3xl">
+    {prompt.title}
+  </h2>
+  <p id="language-prompt-description" class="mt-4 text-base text-slate">
+    {prompt.description}
+  </p>
+  <div class="mt-7 flex flex-col gap-3 font-display text-sm font-semibold">
+    <a
+      href={suggestedHref}
+      data-lang-link
+      data-locale={suggestedLocale.code}
+      class="rounded-full bg-jade px-5 py-3 text-center text-paper transition-colors hover:bg-ink"
+    >
+      {prompt.switchLabel}
+    </a>
+    <button
+      type="button"
+      data-language-stay
+      autofocus
+      class="cursor-pointer rounded-full border border-ink/20 px-5 py-3 transition-colors hover:bg-ink/8"
+    >
+      {prompt.stayLabel}
+    </button>
+  </div>
+</dialog>
+
+<style>
+  .language-prompt::backdrop {
+    background: rgb(12 26 27 / 55%);
+    backdrop-filter: blur(4px);
+  }
+
+  :global(html:has([data-language-prompt][open])) {
+    overflow: hidden;
+  }
+</style>
+
 <script>
+  const dialog = document.querySelector<HTMLDialogElement>('[data-language-prompt]');
+  const choiceKey = 'locale-choice';
+
+  // A choice acknowledges the suggestion; it never redirects later visits.
+  // Session storage also covers browsers where persistent storage is blocked.
+  const rememberChoice = (locale: string) => {
+    for (const storage of ['localStorage', 'sessionStorage'] as const) {
+      try {
+        window[storage].setItem(choiceKey, locale);
+      } catch {
+        // Choosing a language must still work when storage is unavailable.
+      }
+    }
+  };
+
+  const hasChoice = () => {
+    for (const storage of ['localStorage', 'sessionStorage'] as const) {
+      try {
+        const choice = window[storage].getItem(choiceKey);
+        if (choice === 'en' || choice === 'zh-Hant-TW') return true;
+      } catch {
+        // Try the other storage mechanism before showing the suggestion.
+      }
+    }
+    return false;
+  };
+
   // Preserve the reading position across a language switch, so the other
   // locale opens exactly where the reader was rather than at the top.
   //
@@ -115,6 +193,28 @@ const lang = resolveLocale(Astro.currentLocale);
   for (const link of document.querySelectorAll<HTMLAnchorElement>(
     '[data-lang-link]',
   )) {
-    link.addEventListener('click', remember);
+    link.addEventListener('click', () => {
+      rememberChoice(link.dataset.locale!);
+      // Remove the modal before the outgoing view-transition snapshot.
+      dialog?.close();
+      remember();
+    });
+  }
+
+  if (dialog) {
+    const stay = () => {
+      rememberChoice(dialog.dataset.currentLocale!);
+      dialog.close();
+    };
+    dialog.querySelector('[data-language-stay]')?.addEventListener('click', stay);
+    dialog.addEventListener('cancel', stay); // Escape is also a choice to stay.
+
+    // Use the first preference, so Chinese as a secondary language does not
+    // override a visitor's preferred English (or any other non-Chinese language).
+    const language = navigator.languages?.[0] || navigator.language;
+    if (language && !hasChoice() && typeof dialog.showModal === 'function') {
+      const preferredLocale = /^zh(?:[-_]|$)/i.test(language) ? 'zh-Hant-TW' : 'en';
+      if (preferredLocale !== dialog.dataset.currentLocale) dialog.showModal();
+    }
   }
 </script>

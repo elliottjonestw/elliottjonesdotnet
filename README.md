@@ -205,6 +205,16 @@ Each post also carries its own furniture, assembled in
 
 ## Adding or editing a language
 
+`LanguageSwitch.astro` also offers a language suggestion when the browser's
+first preferred language disagrees with the current page: any `zh` variant
+suggests Traditional Chinese, and other languages suggest English. The native
+dialog uses the suggested language and the corner switch's page destination
+and reading-position handling. Accepting, declining, pressing Escape, or using
+the corner switch saves `locale-choice` in local storage (with a session-storage
+fallback), suppressing future prompts without redirecting later visits. With
+storage blocked, switching and dismissing still work for the current page.
+Prompt copy lives in each content module's `languagePrompt` field.
+
 Locales are declared in two places that need to agree:
 [`astro.config.mjs`](astro.config.mjs) (`i18n.locales`, which controls
 routing) and [`src/i18n/locales.ts`](src/i18n/locales.ts) (`locales`, which
